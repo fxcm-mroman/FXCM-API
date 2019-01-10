@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaAPI &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install" href="install.html" />
+    <link rel="prev" title="ForexConnectAPI" href="forexconnectapi.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">RestAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnectAPI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JavaAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>JavaAPI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/javaapi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="javaapi">
+<h1>JavaAPI<a class="headerlink" href="#javaapi" title="Permalink to this headline">¶</a></h1>
+<p>Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.</p>
+<p>## How to start:
+1) A FXCM account. You can apply for a demo account [here](<a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">https://www.fxcm.com/uk/algorithmic-trading/api-trading/</a>)
+2) Download the [package at here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip">https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip</a>)
+3) Documents are in the package at trading_sdkfxcm-apijavadoc.
+4) Sample code at trading_sdkfxcm-apisrcQATest.java
+5) How to run QATest example:
+To run the program, it needs to be passed as below arguments:
+(loginid) (loginpwd) (connection_name) (hostUrl) (test_command)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>loginid:</dt>
+<dd>Your Trading station username</dd>
+<dt>loginpwd:</dt>
+<dd>Your Trading station password</dd>
+<dt>connection_name:</dt>
+<dd>“Demo” or “Real”</dd>
+<dt>hostUrl:</dt>
+<dd><a class="reference external" href="http://www.fxcorporate.com/Hosts.jsp">http://www.fxcorporate.com/Hosts.jsp</a></dd>
+</dl>
+<p>test_command is one of the following:
+LISTEN:    Just listen for message, do not do anything</p>
+<blockquote>
+<div>CMO:       createMarketOrder (previously quoted)
+SSLMO:     set Stop/Limit on an open position
+USLMO:     update Stop/Limit price on a positon
+DSLMO:     delete Stop/Limit from a position
+CEO:       create entry order
+SSLEO:     set Stop/Limit on an entry order
+USLEO:     update Stop/Limit on an entry order
+DSLEO:     remove Stop/Limit on an entry order
+DEO:       remove Entry Order
+CLOSEMO:   close positon
+UREO:      Update rate on an entry order
+MDH:       Retrieve Marke data history
+RECONNECT: Reconnect the session</div></blockquote>
+</div></blockquote>
+<p>## How to login:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>private void setup(IGenericMessageListener aGenericListener, boolean aPrintStatus) {</dt>
+<dd><dl class="first docutils">
+<dt>try {</dt>
+<dd><blockquote class="first">
+<div>// step 1: get an instance of IGateway from the GatewayFactory</div></blockquote>
+<dl class="docutils">
+<dt>if (mFxcmGateway == null) {</dt>
+<dd>mFxcmGateway = GatewayFactory.createGateway();</dd>
+</dl>
+<p>}
+/*</p>
+<blockquote>
+<div>step 2: register a generic message listener with the gateway, this
+listener in particular gets all messages that are related to the trading
+platform Quote,OrderSingle,ExecutionReport, etc…</div></blockquote>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>/
+mFxcmGateway.registerGenericMessageListener(aGenericListener);
+mStatusListener = new DefaultStatusListener(aPrintStatus);
+mFxcmGateway.registerStatusMessageListener(mStatusListener);
+if (!mFxcmGateway.isConnected()) {</p>
+<blockquote>
+<div><p>System.out.println(“client: login”);
+FXCMLoginProperties properties = new FXCMLoginProperties(mUsername, mPassword, mStation, mServer, mConfigFile);
+/*</p>
+<blockquote>
+<div>step 3: call login on the gateway, this method takes an instance of FXCMLoginProperties
+which takes 4 parameters: username,password,terminal and server or path to a Hosts.xml
+file which it uses for resolving servers. As soon as the login  method executes your listeners begin
+receiving asynch messages from the FXCM servers.</div></blockquote>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>/
+mFxcmGateway.login(properties);</p>
+</div></blockquote>
+<p class="last">}
+//after login you must retrieve your trading session status and get accounts to receive messages
+mFxcmGateway.requestTradingSessionStatus();
+mAccountMassID = mFxcmGateway.requestAccounts();</p>
+</dd>
+<dt>} catch (Exception e) {</dt>
+<dd>e.printStackTrace();</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>## How to get the rollover:</p>
+<p>With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions.</p>
+<blockquote>
+<div><p>For example:
+getFXCMSymInterestBuy() = 0.12     you will get $0.12 for 10k
+getFXCMSymInterestSell() = -0.39    you will pay $0.39  for 10k</p>
+<p>the 10k in this example is the server default base unit size, it can be found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”</p>
+</div></blockquote>
+<p>## Real Case Study:
+1. How to build Rsi signal and back testing using FXCM Java API. &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip</a>” target=”_blank”&gt; click here&lt;/a&gt;
+2. Learn how to build and backtest CCI Oscillator strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip</a>”&gt;here&lt;/a&gt;.
+3. Lean how to build and back test Breakout strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip</a>”&gt;here&lt;/a&gt;.
+4. Lean how to build and back test Range Stochastic Strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip</a>”&gt;here&lt;/a&gt;.
+5. Lean how to build and back test Mean Reversion Strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip</a>”&gt;here&lt;/a&gt;.</p>
+<p>## Note:
+o       This is for personal use and abides by our [EULA](<a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">https://www.fxcm.com/uk/forms/eula/</a>)</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>## Release Note:
+build.number=260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;</p>
+<p>## Disclaimer:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](<a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf">https://docs.fxcorporate.com/financial-services-guide-au.pdf</a>), [Product Disclosure Statement](<a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">https://www.fxcm.com/au/legal/product-disclosure-statements/</a>), and [Terms of Business](<a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf">https://docs.fxcorporate.com/tob_au_en.pdf</a>). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="forexconnectapi.html" class="btn btn-neutral" title="ForexConnectAPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, FXCM
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

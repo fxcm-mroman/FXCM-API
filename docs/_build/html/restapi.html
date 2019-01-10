@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RestAPI &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Options</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>RestAPI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/restapi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="restapi">
+<h1>RestAPI<a class="headerlink" href="#restapi" title="Permalink to this headline">¶</a></h1>
+<p>Our REST API is a web-based API using a Websocket connection and was developed with algorithmic trading in mind.</p>
+<p>Developers and investors can create custom trading applications, integrate into our platform, back test strategies and build robot trading. Calls can be made in any language that supports a standard HTTP.</p>
+<p>We utilize the new OAuth 2.0 specification for authentication via token. This allows for a more secure authorization to access your application and can easily be integrated with web applications, mobile devices, and desktop platforms</p>
+<p>With the use of the socket.io library, the API has streaming capability and will push data notifications in a JSON format. Your application will have access to our real-time streaming market data, subscribe in real time access to trading tables and place live trades.</p>
+<p>## FXCM Trading hours:
+FXCM’s trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. for CFD, please check [CFD Product Guide.](<a class="reference external" href="http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf">http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf</a>)</p>
+<p>## How to start:
+1.      Quick start guide in python at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx">https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx</a>)
+2.      Quick start guide in Node.js at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx">https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx</a>)
+3.      Quick start guide in Java at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf">https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf</a>)
+4.  Java sample code at [here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip">https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip</a>)
+5.  C# sample code at [here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip">https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip</a>)
+6.      Apply for a [demo account](<a class="reference external" href="https://www.fxcm.com/uk/forex-trading-demo/">https://www.fxcm.com/uk/forex-trading-demo/</a>)  Generate access token. You can generate one from the &lt;a href=”<a class="reference external" href="https://tradingstation.fxcm.com/">https://tradingstation.fxcm.com/</a>”&gt;Trading Station web&lt;/a&gt;. Click on User Account &gt; Token Management on the upper right hand of the website. For Live account, please send your username to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>, we will need to enable Rest API access. For demo account, Rest API access was enabled by default.
+7.      Download Rest API pdf documents at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf">https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf</a>”&gt;here&lt;/a&gt;
+8. Start coding.  You will need to reference the &lt;a href=”<a class="reference external" href="https://socket.io/docs/client-api/">https://socket.io/docs/client-api/</a>”&gt;socket.io library&lt;/a&gt; in your code.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Using Javascript, click &lt;a href=”<a class="reference external" href="https://www.npmjs.com/package/socket.io">https://www.npmjs.com/package/socket.io</a>”&gt;here&lt;/a&gt;</li>
+<li>Using Python, click &lt;a href=”<a class="reference external" href="https://pypi.python.org/pypi/socketIO-client">https://pypi.python.org/pypi/socketIO-client</a>”&gt;here&lt;/a&gt;</li>
+</ol>
+</div></blockquote>
+<p>## How to connect:
+Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters</p>
+<div class="line-block">
+<div class="line">Header | Description | Values | Req’d |</div>
+<div class="line">— | — <a href="#id1"><span class="problematic" id="id2">|</span></a>— <a href="#id3"><span class="problematic" id="id4">|</span></a>— |</div>
+<div class="line">HTTP version | Version of HTTP used | HTTP/1.1 | Y |</div>
+<div class="line">User-Agent | Identification of the client software | xxxxxx_software | Y |</div>
+<div class="line">Accept | Acceptable response MIME type | application/json | Y |</div>
+<div class="line">Content-Type | Media type of the request | application/x-www-form-urlencoded | Y |</div>
+<div class="line">Authorization | Authorization string containing “Bearer “, ID of socket.io connection and persistent token| ‘Bearer ‘ + socket_id + api_token | Y |</div>
+</div>
+<blockquote>
+<div>Sample Request
+GET /socket.io/?access_token=cj5wedhq3007v61fe935ihqed&amp;EIO=3&amp;transport=polling&amp;t=Lsd_lZY&amp;b64=1
+HTTP/1.1
+User-Agent: node-XMLHttpRequest
+Accept: <em>/</em>
+Host: api.fxcm.com
+Connection: close</div></blockquote>
+<p>## What ‘t’ means
+“t” is the table id:</p>
+<div class="line-block">
+<div class="line">t | table ID |</div>
+<div class="line">— | — |</div>
+<div class="line">1 | Open Position |</div>
+<div class="line">2 | Closed Position |</div>
+<div class="line">3 | Order |</div>
+<div class="line">5 | Summary |</div>
+<div class="line">6 | Account |</div>
+</div>
+<p>## Subscribe vs snapshot:
+FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.</p>
+<p>After susbcribe, data will be pushed to your socket whenever there is an update. You can susbcribe Market data stream /susbcribe or live table update /trading/susbcribe. You can also unsubscribe.
+You can request a snapshot of trading tables via /trading/get_model.</p>
+<blockquote>
+<div>Model choices: ‘Offer’, ‘OpenPosition’, ‘ClosedPosition’, ‘Order’, ‘Summary’, ‘LeverageProfile’, ‘Account’, ‘Properties’.</div></blockquote>
+<p>## OrderID vs TradeID:
+OrderID and TradeID are different.
+In Market order, an order id is created straightaway and it is in callback immediately.</p>
+<blockquote>
+<div>{“response”:{“executed”:true},”data”:{“type”:0,”orderId”:81712802}}</div></blockquote>
+<p>A trade id is not generated until after order is executed. You have to subscribe the order table and listing the live update and look up the trade id. You will not get trade id in snapshot, because that information was gone when you submit the request.</p>
+<blockquote>
+<div><p>Examples:
+Subscribing for Orders table:
+POST /trading/subscribe
+models=Order</p>
+<p>Placing Market order:
+POST /trading/open_trade
+account_id=1537581&amp;symbol=EUR%2FUSD&amp;is_buy=false&amp;rate=0&amp;amount=5&amp;order_type=AtMarket&amp;time_in_force=GTC</p>
+<p>Response from server:
+{“executed”:true}{“type”:0,”orderId”:390285837}</p>
+<p>Received Order record from /trading/subscribe with order_id and trade_id:
+{“t”:3,”ratePrecision”:5,”orderId”:”390285837”,”tradeId”:”170162801”,”time”:”04252018120716391”,”accountName”:”01537581”,”accountId”:”1537581”,”timeInForce”:”GTC”,”expireDate”:”“,”currency”:”EUR/USD”,”isBuy”:false,”buy”:0,”sell”:1.21818,”type”:”OM”,”status”:2,”amountK”:5,”currencyPoint”:0.5,”stopMove”:0,”stop”:0,”stopRate”:0,”limit”:0,”limitRate”:0,”isEntryOrder”:false,”ocoBulkId”:0,”isNetQuantity”:false,”isLimitOrder”:false,”isStopOrder”:false,”isELSOrder”:false,”stopPegBaseType”:-1,”limitPegBaseType”:-1,”range”:0,”action”:”I”}</p>
+</div></blockquote>
+<p>Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. in this case, its more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated.</p>
+<p>In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed.</p>
+<p>## limitation on historical candle download per request:</p>
+<div class="line-block">
+<div class="line">Time-frame | max days back | max num |</div>
+<div class="line">— | — | — |</div>
+<div class="line">m1 | 16 | 10,000 |</div>
+<div class="line">m5 | 56 | 10,000 |</div>
+<div class="line">m15 | 212 | 10,000 |</div>
+<div class="line">m30 | 316 | 10,000 |</div>
+<div class="line">h1 | 624 | 10,000 |</div>
+<div class="line">h2 | 1224 | 10,000 |</div>
+<div class="line">h3 | 2056 | 10,000 |</div>
+<div class="line">h4 | 2664 | 10,000 |</div>
+<div class="line">h6 | 3632 | 10,000 |</div>
+<div class="line">h8 | 5128 | 10,000 |</div>
+<div class="line">D1, W1, M1 | no limit | no limit |</div>
+</div>
+<p>## How to place trailing stop</p>
+<p>The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step</p>
+<blockquote>
+<div>Example Entry order with trailing stop of 10 pips:
+POST /trading/create_entry_order account_id=1537581&amp;symbol=EUR%2FUSD&amp;is_buy=true&amp;rate=1.1655&amp;amount=3&amp;order_type=Entry&amp;time_in_force=GTC&amp;stop=-50&amp;trailing_stop_step=10&amp;is_in_pips=true</div></blockquote>
+<p>## Difference between account name and account ID</p>
+<p>There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.</p>
+<blockquote>
+<div><p>Wrong:
+{“is_buy”:false,”account_id”:”00654061”,”symbol”:”EUR/USD”,”rate”:1.15,”amount”:11,”stop”:-40,”is_in_pips”:true,”order_type”:”AtMarket”,”time_in_force”:”GTC”}</p>
+<p>ERR noExec: /trading/create_entry_order
+{“code”:3,”message”:”Amount should be divisible by 10”,”parameters”:[“10”]}</p>
+<p>Correct:
+{“is_buy”:false,”account_id”:”654061”,”symbol”:”EUR/USD”,”rate”:1.15,”amount”:11,”stop”:-40,”is_in_pips”:true,”order_type”:”AtMarket”,”time_in_force”:”GTC”}</p>
+<p>request # 2  has been executed: {
+“response”: {“executed”: true}, “data”: {“type”: 0,”orderId”: 194963057}}</p>
+</div></blockquote>
+<p>## Real Case Study:</p>
+<p>1. Learn how to run BT backtest on FXCM historical data via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT</a> strategy on FXCM data.zip”&gt;here&lt;/a&gt;.
+What is &lt;a href=”<a class="reference external" href="http://pmorissette.github.io/bt/">http://pmorissette.github.io/bt/</a>”&gt;bt?&lt;/a&gt;
+2. Learn how to run QSTrader on FXCM data via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader</a> on FXCM data.zip”&gt;here&lt;/a&gt;.
+what is &lt;a href=”<a class="reference external" href="https://www.quantstart.com/qstrader">https://www.quantstart.com/qstrader</a>”&gt;QSTrader?&lt;/a&gt;
+3. Building/back testing RSI strategy via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip</a>”&gt;here&lt;/a&gt;.
+4. Building/back testing Moving Average Crossover strategy via RestAPI at [Here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip</a>)
+5. One video demonstrate how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform at &lt;a href=”<a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4">https://www.youtube.com/watch?v=m6llfznP4d4</a>”&gt;here&lt;/a&gt;</p>
+<p>## Note:
+o       This is for personal use and abides by our [EULA](<a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">https://www.fxcm.com/uk/forms/eula/</a>)</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>## Disclaimer:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](<a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf">https://docs.fxcorporate.com/financial-services-guide-au.pdf</a>), [Product Disclosure Statement](<a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">https://www.fxcm.com/au/legal/product-disclosure-statements/</a>), and [Terms of Business](<a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf">https://docs.fxcorporate.com/tob_au_en.pdf</a>). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, FXCM
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
