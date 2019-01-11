@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FXCM API Developer Documentation'
-copyright = '2019, FXCM'
-author = 'FXCM'
+copyright = '2019, Forex Capital Markets'
+author = 'Forex Capital Markets'
 
 # The short X.Y version
 version = ''
