@@ -11,6 +11,7 @@ FXCM API Developer Documentation
    javaapi
    install
    support
+   license
    
 
 
