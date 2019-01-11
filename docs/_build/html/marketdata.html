@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Market Data &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Support" href="support.html" />
+    <link rel="prev" title="JavaAPI" href="javaapi.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">RestAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnectAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JavaAPI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Market Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Market Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/marketdata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="market-data">
+<h1>Market Data<a class="headerlink" href="#market-data" title="Permalink to this headline">¶</a></h1>
+<p>Introduction</p>
+<p>FXCM provide several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.</p>
+<p>TickData</p>
+<p>Enjoy free access to our historical Tick Data.</p>
+<p>Our repository contains Tick Data from 4 January 2015. The data is compiled by trading instrument for that trading week. The files are stored in our public directory and is updated every Monday.</p>
+<p><a class="reference external" href="https://tickdata.fxcorporate.com">https://tickdata.fxcorporate.com</a>/{instrument}/{year}/{int of week of year}.csv.gz</p>
+<dl class="docutils">
+<dt>Instrument:</dt>
+<dd>AUDCAD, AUDCHF, AUDJPY, AUDNZD, CADCHF, EURAUD,
+EURCHF, EURGBP, EURJPY, EURUSD, GBPCHF, GBPJPY,
+GBPNZD, GBPUSD, NZDCAD, NZDCHF, NZDJPY, NZDUSD,
+USDCAD, USDCHF, USDJPY, AUDUSD, CADJPY, GBPCAD,
+USDTRY, EURNZD</dd>
+</dl>
+<p>Year:         2015, 2016, 2017, 2018</p>
+<p>Week:         1 to 52/53
+To give an example, the path for extracting EURUSD data for the 1st week of 2015 would be</p>
+<p><a class="reference external" href="https://tickdata.fxcorporate.com/EURUSD/2015/1.csv.gz">https://tickdata.fxcorporate.com/EURUSD/2015/1.csv.gz</a></p>
+<p>If you are familiar with Python, we have two scripts that you may use for Python 2.7 and Python 3.4</p>
+<p>Note:</p>
+<p>o       Losses can exceed deposits</p>
+<p>o       Past performance is not indicative of future results</p>
+<p>o       Timestamps are in UTC</p>
+<p>o       Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts</p>
+<p>o       This is for personal use and abides by our EULA</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>CandleData</p>
+<p>Enjoy free access to our historical Time Series or Candle Data.</p>
+<p>Our repository contains Candle Data from 1 January 2012. The data is compiled by trading instrument for that trading week for m1 &amp; H1, and trading year for D1. The files are stored in our public directory and is updated every Monday for minute (m1) and hour (H1) data only.</p>
+<p><a class="reference external" href="https://candledata.fxcorporate.com">https://candledata.fxcorporate.com</a>/{periodicity}/{instrument}/{year}/{int of week of year}.csv.gz</p>
+<blockquote>
+<div><p>Periodicity:  m1, H1, D1</p>
+<dl class="docutils">
+<dt>Instrument:   AUDCAD, AUDCHF, AUDJPY, AUDNZD, CADCHF, EURAUD,</dt>
+<dd>EURCHF, EURGBP, EURJPY, EURUSD, GBPCHF, GBPJPY,
+GBPNZD, GBPUSD, NZDCAD, NZDCHF, NZDJPY, NZDUSD,
+USDCAD, USDCHF, USDJPY</dd>
+</dl>
+<p>Year:         2012, 2013, 2014, 2015, 2016, 2017, 2018</p>
+<p>Week:         1 to 52/53 (only applicable to m1 and H1)</p>
+</div></blockquote>
+<p>To give an example, the path for extracting EURUSD minute-data for the 1st week of 2012 would be</p>
+<p><a class="reference external" href="https://candledata.fxcorporate.com/m1/EURUSD/2012/1.csv.gz">https://candledata.fxcorporate.com/m1/EURUSD/2012/1.csv.gz</a></p>
+<p>To give an example, the path for extracting EURUSD hourly-data for the 1st week of 2012 would be</p>
+<p><a class="reference external" href="https://candledata.fxcorporate.com/H1/EURUSD/2012/1.csv.gz">https://candledata.fxcorporate.com/H1/EURUSD/2012/1.csv.gz</a></p>
+<p>To give an example, the path for extracting EURUSD daily-data for 2012 would be</p>
+<p><a class="reference external" href="https://candledata.fxcorporate.com/D1/EURUSD/2012.csv.gz">https://candledata.fxcorporate.com/D1/EURUSD/2012.csv.gz</a></p>
+<p>If you are familiar with Python, we have three scripts that you may use for Python 2.7, Python 3.4, or a pandas data frame</p>
+<p>Note:</p>
+<p>o       Losses can exceed deposits</p>
+<p>o       Past performance is not indicative of future results</p>
+<p>o       Timestamps are in UTC</p>
+<p>o       Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts</p>
+<p>o       Daily data is only updated yearly</p>
+<p>o       This is for personal use and abides by our EULA</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>Order Flow</p>
+<p>Enjoy a free one-month sample of our historical Orders Data.</p>
+<p><a class="reference external" href="https://sampledata.fxcorporate.com/orders/sample.csv.gz">https://sampledata.fxcorporate.com/orders/sample.csv.gz</a></p>
+<dl class="docutils">
+<dt>Each data set would include:</dt>
+<dd>•DateTime (UTC)
+•Symbol
+•Quantity (Volume)
+•Rate (Price)</dd>
+</dl>
+<p>Note:</p>
+<p>o       Losses can exceed deposits</p>
+<p>o       Past performance is not indicative of future results</p>
+<p>o       Scope of the data may vary per product</p>
+<p>o       This is for personal use and abides by our EULA</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>Sentiment</p>
+<p>Enjoy a free one-month sample of our historical Sentiment Data also known as SSI.</p>
+<p><a class="reference external" href="https://sampledata.fxcorporate.com/sentiment">https://sampledata.fxcorporate.com/sentiment</a>/{instrument}.csv.gz</p>
+<dl class="docutils">
+<dt>Instrument:</dt>
+<dd>AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
+EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
+NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
+GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD</dd>
+<dt>Each data set would include:</dt>
+<dd>•DateTime (EST)
+•Symbol
+•Name
+•Value</dd>
+</dl>
+<p>Note:</p>
+<p>o       Losses can exceed deposits</p>
+<p>o       Past performance is not indicative of future results</p>
+<p>o       Scope of the data may vary per product</p>
+<p>o       This is for personal use and abides by our EULA</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<p>Volume</p>
+<p>Enjoy a free one-month sample of our historical Volume Data.</p>
+<p><a class="reference external" href="https://sampledata.fxcorporate.com/volume">https://sampledata.fxcorporate.com/volume</a>/{instrument}.csv.gz</p>
+<dl class="docutils">
+<dt>Instrument:</dt>
+<dd>AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
+EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
+NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
+GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD</dd>
+<dt>Each data set would include:</dt>
+<dd>•DateTime (UTC)
+•Symbol
+•Name
+•Value</dd>
+</dl>
+<p>Note:</p>
+<p>o       Losses can exceed deposits</p>
+<p>o       Past performance is not indicative of future results</p>
+<p>o       Scope of the data may vary per product</p>
+<p>o       This is for personal use and abides by our EULA</p>
+<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="support.html" class="btn btn-neutral float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="javaapi.html" class="btn btn-neutral" title="JavaAPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, FXCM
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

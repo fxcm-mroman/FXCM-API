@@ -9,7 +9,7 @@ FXCM API Developer Documentation
    fixapi
    forexconnectapi
    javaapi
-   install
+   marketdata
    support
    license
    
