@@ -14,10 +14,6 @@ FXCM API Developer Documentation
    license
    
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Indices and Tables:
-
 Indices and tables
 ==================
 
