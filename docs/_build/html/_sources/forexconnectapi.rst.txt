@@ -1,5 +1,5 @@
-ForexConnectAPI
-===============
+ForexConnect
+============
 
 This SDK is designed to get trading data, trade, load price histories and subscribe for the most recent prices. 
 It is intended to be used by FXCM clients on auto-trading robots and systems, 
