@@ -157,28 +157,44 @@
 <p>Developers and investors can create custom trading applications, integrate into our platform, back test strategies and build robot trading. Calls can be made in any language that supports a standard HTTP.</p>
 <p>We utilize the new OAuth 2.0 specification for authentication via token. This allows for a more secure authorization to access your application and can easily be integrated with web applications, mobile devices, and desktop platforms</p>
 <p>With the use of the socket.io library, the API has streaming capability and will push data notifications in a JSON format. Your application will have access to our real-time streaming market data, subscribe in real time access to trading tables and place live trades.</p>
-<p><strong>FXCM Trading hours</strong>:</p>
-<p>FXCM’s trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. for CFD, please check [CFD Product Guide.](<a class="reference external" href="http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf">http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf</a>)</p>
-<p><strong>How to start</strong>:</p>
+<p><strong>FXCM Trading hours</strong></p>
+<blockquote>
+<div>FXCM’s trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. For CFDs, please check the <a class="reference external" href="http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf">CFD Product Guide</a>.</div></blockquote>
+<p><strong>Getting Started</strong></p>
 <ol class="arabic simple">
-<li>Quick start guide in python at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx">https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx</a>)</li>
-<li>Quick start guide in Node.js at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx">https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx</a>)</li>
-<li>Quick start guide in Java at [here](<a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf">https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf</a>)</li>
-<li>Java sample code at [here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip">https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip</a>)</li>
-<li>C# sample code at [here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip">https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip</a>)</li>
-<li>Apply for a [demo account](<a class="reference external" href="https://www.fxcm.com/uk/forex-trading-demo/">https://www.fxcm.com/uk/forex-trading-demo/</a>)  Generate access token. You can generate one from the &lt;a href=”<a class="reference external" href="https://tradingstation.fxcm.com/">https://tradingstation.fxcm.com/</a>”&gt;Trading Station web&lt;/a&gt;. Click on User Account &gt; Token Management on the upper right hand of the website. For Live account, please send your username to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>, we will need to enable Rest API access. For demo account, Rest API access was enabled by default.</li>
-<li>Download Rest API pdf documents at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf">https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf</a>”&gt;here&lt;/a&gt;</li>
-<li>Start coding.  You will need to reference the &lt;a href=”<a class="reference external" href="https://socket.io/docs/client-api/">https://socket.io/docs/client-api/</a>”&gt;socket.io library&lt;/a&gt; in your code.<ol class="loweralpha">
-<li>Using Javascript, click &lt;a href=”<a class="reference external" href="https://www.npmjs.com/package/socket.io">https://www.npmjs.com/package/socket.io</a>”&gt;here&lt;/a&gt;</li>
-<li>Using Python, click &lt;a href=”<a class="reference external" href="https://pypi.python.org/pypi/socketIO-client">https://pypi.python.org/pypi/socketIO-client</a>”&gt;here&lt;/a&gt;</li>
-</ol>
+<li>Quick start guide<ul>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx/">Python</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx/">Node.js</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf/">Java</a></li>
+</ul>
+</li>
+<li>Sample code<ul>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip/">Java sample code</a></li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip/">C# sample code</a></li>
+</ul>
+</li>
+<li>Account setup<ul>
+<li>Apply for a <a class="reference external" href="https://www.fxcm.com/uk/forex-trading-demo/">demo account</a>.</li>
+<li>Generate access token. You can generate one from <a class="reference external" href="https://tradingstation.fxcm.com/">Trading Station web</a>. Click on User Account &gt; Token Management on the upper right hand of the website.</li>
+<li>For Live account, please send your username to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.</li>
+<li>Download Rest API pdf documents <a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/">here</a>.</li>
+<li><dl class="first docutils">
+<dt>Start coding.  You will need to reference the <a class="reference external" href="https://socket.io/docs/client-api/">socket.io library</a> in your code.</dt>
+<dd><ul class="first last">
+<li>Using Javascript, click <a class="reference external" href="https://www.npmjs.com/package/socket.io/">here</a>.</li>
+<li>Using Python, click <a class="reference external" href="https://pypi.python.org/pypi/socketIO-client/">here</a>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </li>
 </ol>
 <p><strong>How to connect</strong>:</p>
 <p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters</p>
 <div class="line-block">
 <div class="line">Header | Description | Values | Req’d |</div>
-<div class="line">— | — <a href="#id1"><span class="problematic" id="id2">|</span></a>— <a href="#id3"><span class="problematic" id="id4">|</span></a>— |</div>
+<div class="line">— | — <a href="#id3"><span class="problematic" id="id4">|</span></a>— <a href="#id5"><span class="problematic" id="id6">|</span></a>— |</div>
 <div class="line">HTTP version | Version of HTTP used | HTTP/1.1 | Y |</div>
 <div class="line">User-Agent | Identification of the client software | xxxxxx_software | Y |</div>
 <div class="line">Accept | Acceptable response MIME type | application/json | Y |</div>

@@ -10,7 +10,7 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 8
    :caption: Contents:
    
    restapi

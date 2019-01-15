@@ -9,31 +9,32 @@ We utilize the new OAuth 2.0 specification for authentication via token. This al
 
 With the use of the socket.io library, the API has streaming capability and will push data notifications in a JSON format. Your application will have access to our real-time streaming market data, subscribe in real time access to trading tables and place live trades.
 
-**FXCM Trading hours**::
+**FXCM Trading hours**
 
-FXCM's trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. for CFD, please check [CFD Product Guide.](http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf)
+    FXCM's trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. For CFDs, please check the `CFD Product Guide <http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf>`_.
 
-**How to start**::
+**Getting Started**
 
-1.	Quick start guide in python at [here](https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx)
- 
-2.	Quick start guide in Node.js at [here](https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx) 
+1. Quick start guide
 
-3.	Quick start guide in Java at [here](https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf)
+   * `Python <https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx/>`_
+   * `Node.js <https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_nodejs.docx/>`_
+   * `Java <https://github.com/fxcm/RestAPI/blob/master/FXCM%20JAVA%20REST%20API%20QuickStart.pdf/>`_
 
-4.  Java sample code at [here](https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip)
+2. Sample code
 
-5.  C# sample code at [here](https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip)
+   * `Java sample code <https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip/>`_
+   * `C# sample code <https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip/>`_
 
-6.	Apply for a [demo account](https://www.fxcm.com/uk/forex-trading-demo/)  Generate access token. You can generate one from the <a href="https://tradingstation.fxcm.com/">Trading Station web</a>. Click on User Account > Token Management on the upper right hand of the website. For Live account, please send your username to api@fxcm.com, we will need to enable Rest API access. For demo account, Rest API access was enabled by default.
+3. Account setup
 
-7.	Download Rest API pdf documents at <a href="https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf">here</a>
-
-8. Start coding.  You will need to reference the <a href="https://socket.io/docs/client-api/">socket.io library</a> in your code. 
-
-   a.	Using Javascript, click <a href="https://www.npmjs.com/package/socket.io">here</a>
-   
-   b.	 Using Python, click <a href="https://pypi.python.org/pypi/socketIO-client">here</a>
+   * Apply for a `demo account <https://www.fxcm.com/uk/forex-trading-demo/>`_. 
+   * Generate access token. You can generate one from `Trading Station web <https://tradingstation.fxcm.com/>`_. Click on User Account > Token Management on the upper right hand of the website. 
+   * For Live account, please send your username to api@fxcm.com, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.
+   * Download Rest API pdf documents `here <https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/>`_.
+   * Start coding.  You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code. 
+		- Using Javascript, click `here <https://www.npmjs.com/package/socket.io/>`_.
+		- Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
 
 
 **How to connect**::

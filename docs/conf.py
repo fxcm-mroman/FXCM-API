@@ -146,7 +146,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Crawler.tex', 'Crawler Documentation',
-     'FXCM Group', 'manual'),
+     'Forex Capital Markets', 'manual'),
 ]
 
 
