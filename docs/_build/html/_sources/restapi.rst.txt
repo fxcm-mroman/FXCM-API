@@ -30,16 +30,19 @@ With the use of the socket.io library, the API has streaming capability and will
 
    * Apply for a `demo account <https://www.fxcm.com/uk/forex-trading-demo/>`_. 
    * Generate access token. You can generate one from `Trading Station web <https://tradingstation.fxcm.com/>`_. Click on User Account > Token Management on the upper right hand of the website. 
-   * For Live account, please send your username to api@fxcm.com, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.
-   * Download Rest API pdf documents `here <https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/>`_.
-   * Start coding.  You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code. 
-		- Using Javascript, click `here <https://www.npmjs.com/package/socket.io/>`_.
-		- Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
+   * For live account, please send your username to api@fxcm.com, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.
+   
+4. Download Rest API pdf documents `here <https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/>`_.
+
+5. Start coding. You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code.
+
+   * Using Javascript, click `here <https://www.npmjs.com/package/socket.io/>`_.
+   * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
 
 
 **How to connect**::
 
-Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters
+Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:
 
 | Header | Description | Values | Req’d |
 | --- | --- |--- |--- |

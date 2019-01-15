@@ -176,22 +176,18 @@
 <li>Account setup<ul>
 <li>Apply for a <a class="reference external" href="https://www.fxcm.com/uk/forex-trading-demo/">demo account</a>.</li>
 <li>Generate access token. You can generate one from <a class="reference external" href="https://tradingstation.fxcm.com/">Trading Station web</a>. Click on User Account &gt; Token Management on the upper right hand of the website.</li>
-<li>For Live account, please send your username to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.</li>
+<li>For live account, please send your username to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.</li>
+</ul>
+</li>
 <li>Download Rest API pdf documents <a class="reference external" href="https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/">here</a>.</li>
-<li><dl class="first docutils">
-<dt>Start coding.  You will need to reference the <a class="reference external" href="https://socket.io/docs/client-api/">socket.io library</a> in your code.</dt>
-<dd><ul class="first last">
+<li>Start coding. You will need to reference the <a class="reference external" href="https://socket.io/docs/client-api/">socket.io library</a> in your code.<ul>
 <li>Using Javascript, click <a class="reference external" href="https://www.npmjs.com/package/socket.io/">here</a>.</li>
 <li>Using Python, click <a class="reference external" href="https://pypi.python.org/pypi/socketIO-client/">here</a>.</li>
-</ul>
-</dd>
-</dl>
-</li>
 </ul>
 </li>
 </ol>
 <p><strong>How to connect</strong>:</p>
-<p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters</p>
+<p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:</p>
 <div class="line-block">
 <div class="line">Header | Description | Values | Req’d |</div>
 <div class="line">— | — <a href="#id3"><span class="problematic" id="id4">|</span></a>— <a href="#id5"><span class="problematic" id="id6">|</span></a>— |</div>
