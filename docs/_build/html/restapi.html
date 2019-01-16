@@ -187,23 +187,63 @@
 </ol>
 <p><strong>How to connect</strong>:</p>
 <p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:</p>
-<div class="line-block">
-<div class="line">Header | Description | Values | Req’d |</div>
-<div class="line">— | — <a href="#id3"><span class="problematic" id="id4">|</span></a>— <a href="#id5"><span class="problematic" id="id6">|</span></a>— |</div>
-<div class="line">HTTP version | Version of HTTP used | HTTP/1.1 | Y |</div>
-<div class="line">User-Agent | Identification of the client software | xxxxxx_software | Y |</div>
-<div class="line">Accept | Acceptable response MIME type | application/json | Y |</div>
-<div class="line">Content-Type | Media type of the request | application/x-www-form-urlencoded | Y |</div>
-<div class="line">Authorization | Authorization string containing “Bearer “, ID of socket.io connection and persistent token| ‘Bearer ‘ + socket_id + api_token | Y |</div>
-</div>
-<blockquote>
-<div>Sample Request
-GET /socket.io/?access_token=cj5wedhq3007v61fe935ihqed&amp;EIO=3&amp;transport=polling&amp;t=Lsd_lZY&amp;b64=1
+<table border="1" class="colwidths-given longtable docutils" id="id3">
+<caption><span class="caption-text">HTTP Message</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP Message</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Header</td>
+<td>Description</td>
+<td>Values</td>
+<td>Req’d</td>
+</tr>
+<tr class="row-odd"><td>HTTP version</td>
+<td>Version of HTTP used</td>
+<td>HTTP/1.1</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>User-Agent</td>
+<td>Identification of the client software</td>
+<td>xxxxxx_software</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>Accept</td>
+<td>Acceptable response MIME type</td>
+<td>application/json</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>Content-Type</td>
+<td>Media type of the request</td>
+<td>application/x-www-form-urlencoded</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>Authorization</td>
+<td>Authorization string containing “Bearer “, ID of socket.io connection and persistent token</td>
+<td>‘Bearer ‘ + socket_id + api_token</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Sample Request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GET /socket.io/?access_token=cj5wedhq3007v61fe935ihqed&amp;EIO=3&amp;transport=polling&amp;t=Lsd_lZY&amp;b64=1
 HTTP/1.1
 User-Agent: node-XMLHttpRequest
-Accept: <em>/</em>
+Accept: */*
 Host: api.fxcm.com
-Connection: close</div></blockquote>
+Connection: close
+</pre></div>
+</div>
 <p>## What ‘t’ means
 “t” is the table id:</p>
 <div class="line-block">
