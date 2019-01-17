@@ -55,45 +55,54 @@ Clients should establish a persistent WebSocket connection using socket.io libra
 Sample Request:
 ::
 
-   GET /socket.io/?access_token=cj5wedhq3007v61fe935ihqed&EIO=3&transport=polling&t=Lsd_lZY&b64=1 
+   GET/socket.io/?access_token=cj5wedhq3007v61fe935ihqed&EIO=3&transport=polling&t=Lsd_lZY&b64=1
    HTTP/1.1 
    User-Agent: node-XMLHttpRequest 
    Accept: */* 
    Host: api.fxcm.com 
    Connection: close
 
-## What 't' means
+**What 't' means**::
+
 "t" is the table id: 
 
-| t | table ID |
-| --- | --- |
-| 1 | Open Position |
-| 2 | Closed Position |
-| 3 | Order |
-| 5 | Summary |
-| 6 | Account |
+.. tabularcolumns:: |p{2cm}|p{8cm}|
+	
+.. csv-table:: TableID
+   :file: _files/tableID.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1
 
-## Subscribe vs snapshot:
+**Subscribe vs snapshot**::
+
 FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.
 
 After susbcribe, data will be pushed to your socket whenever there is an update. You can susbcribe Market data stream /susbcribe or live table update /trading/susbcribe. You can also unsubscribe.
 You can request a snapshot of trading tables via /trading/get_model. 
 
+::
+
       Model choices: 'Offer', 'OpenPosition', 'ClosedPosition', 'Order', 'Summary', 'LeverageProfile', 'Account', 'Properties'.   
 
-## OrderID vs TradeID:
+**OrderID vs TradeID**::
+
 OrderID and TradeID are different.
 In Market order, an order id is created straightaway and it is in callback immediately. 
+
+::
 
       {"response":{"executed":true},"data":{"type":0,"orderId":81712802}}
 
 A trade id is not generated until after order is executed. You have to subscribe the order table and listing the live update and look up the trade id. You will not get trade id in snapshot, because that information was gone when you submit the request. 
 
+::
+
       Examples:
       Subscribing for Orders table:
       POST /trading/subscribe
       models=Order
-      
+
       Placing Market order:
       POST /trading/open_trade
       account_id=1537581&symbol=EUR%2FUSD&is_buy=false&rate=0&amount=5&order_type=AtMarket&time_in_force=GTC
@@ -109,32 +118,30 @@ Furthermore, a single market order can have many TradeIDs, if they are partial f
 
 In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed. 
 
-## limitation on historical candle download per request:
+**Limitation on historical candle download per request**:
 
-| Time-frame | max days back | max num |
-| --- | --- | --- |
-| m1 | 16 | 10,000 |
-| m5 | 56 | 10,000 |
-| m15 | 212 | 10,000 |
-| m30 | 316 | 10,000 |
-| h1 | 624 | 10,000 |
-| h2 | 1224 | 10,000 |
-| h3 | 2056 | 10,000 |
-| h4 | 2664 | 10,000 |
-| h6 | 3632 | 10,000 |
-| h8 | 5128 | 10,000 |
-| D1, W1, M1 | no limit | no limit |
+.. tabularcolumns:: |p{1cm}|p{8cm}|p{6cm}|
+	
+.. csv-table:: Candle download limit
+   :file: _files/candledownloadlimit.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1 1
 
-## How to place trailing stop 
+**How to place trailing stop**::
 
 The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step
       
+::
+
       Example Entry order with trailing stop of 10 pips:
       POST /trading/create_entry_order account_id=1537581&symbol=EUR%2FUSD&is_buy=true&rate=1.1655&amount=3&order_type=Entry&time_in_force=GTC&stop=-50&trailing_stop_step=10&is_in_pips=true
 
-## Difference between account name and account ID
+**Difference between account name and account ID**::
 
 There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.
+
+::
 
       Wrong:
       {"is_buy":false,"account_id":"00654061","symbol":"EUR/USD","rate":1.15,"amount":11,"stop":-40,"is_in_pips":true,"order_type":"AtMarket","time_in_force":"GTC"}
@@ -148,21 +155,24 @@ There is a difference bewteen account name and account id. usually removing the 
       request # 2  has been executed: {
       "response": {"executed": true}, "data": {"type": 0,"orderId": 194963057}}
 
-## Real Case Study:
+**Real Case Studies using REST API**:
 
-1. Learn how to run BT backtest on FXCM historical data via RestAPI at <a href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip">here</a>. 
-What is <a href="http://pmorissette.github.io/bt/">bt?</a> 
-2. Learn how to run QSTrader on FXCM data via RestAPI at <a href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip">here</a>. 
-what is <a href="https://www.quantstart.com/qstrader">QSTrader?</a>
-3. Building/back testing RSI strategy via RestAPI at <a href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip">here</a>.
-4. Building/back testing Moving Average Crossover strategy via RestAPI at [Here](https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip)
-5. One video demonstrate how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform at <a href="https://www.youtube.com/watch?v=m6llfznP4d4">here</a>
+	1. Learn how to run `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 
-## Note:
-o	This is for personal use and abides by our [EULA](https://www.fxcm.com/uk/forms/eula/)
+	2. Learn how to run `QSTrader <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip/>`_ using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
+
+	3. Building/back testing `RSI strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/>`_.
+	
+	4. Building/back testing `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
+	
+	5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform.
+	
+**Note**:
+
+o	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
 
 o	For more information, you may contact us: api@fxcm.com
 
-## Disclaimer:
+**Disclaimer**:
 
-Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](https://docs.fxcorporate.com/financial-services-guide-au.pdf), [Product Disclosure Statement](https://www.fxcm.com/au/legal/product-disclosure-statements/), and [Terms of Business](https://docs.fxcorporate.com/tob_au_en.pdf). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.
+Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the `Financial Services Guide <https://docs.fxcorporate.com/financial-services-guide-au.pdf/>`_, `Product Disclosure Statement  <https://www.fxcm.com/au/legal/product-disclosure-statements/>`_, and `Terms of Business <https://docs.fxcorporate.com/tob_au_en.pdf/>`_. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.

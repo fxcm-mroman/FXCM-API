@@ -187,8 +187,8 @@
 </ol>
 <p><strong>How to connect</strong>:</p>
 <p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:</p>
-<table border="1" class="colwidths-given longtable docutils" id="id3">
-<caption><span class="caption-text">HTTP Message</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given longtable docutils" id="id4">
+<caption><span class="caption-text">HTTP Message</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -229,14 +229,18 @@
 <td>Y</td>
 </tr>
 <tr class="row-odd"><td>Authorization</td>
-<td>Authorization string containing “Bearer “, ID of socket.io connection and persistent token</td>
+<td><dl class="first last docutils">
+<dt>Authorization string containing “Bearer “,</dt>
+<dd>ID of socket.io connection and persistent token</dd>
+</dl>
+</td>
 <td>‘Bearer ‘ + socket_id + api_token</td>
 <td>Y</td>
 </tr>
 </tbody>
 </table>
 <p>Sample Request:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GET /socket.io/?access_token=cj5wedhq3007v61fe935ihqed&amp;EIO=3&amp;transport=polling&amp;t=Lsd_lZY&amp;b64=1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GET/socket.io/?access_token=cj5wedhq3007v61fe935ihqed&amp;EIO=3&amp;transport=polling&amp;t=Lsd_lZY&amp;b64=1
 HTTP/1.1
 User-Agent: node-XMLHttpRequest
 Accept: */*
@@ -244,90 +248,178 @@ Host: api.fxcm.com
 Connection: close
 </pre></div>
 </div>
-<p>## What ‘t’ means
-“t” is the table id:</p>
-<div class="line-block">
-<div class="line">t | table ID |</div>
-<div class="line">— | — |</div>
-<div class="line">1 | Open Position |</div>
-<div class="line">2 | Closed Position |</div>
-<div class="line">3 | Order |</div>
-<div class="line">5 | Summary |</div>
-<div class="line">6 | Account |</div>
+<p><strong>What ‘t’ means</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;t&quot;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">table</span> <span class="nb">id</span><span class="p">:</span>
+</pre></div>
 </div>
-<p>## Subscribe vs snapshot:
-FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.</p>
+<table border="1" class="colwidths-given longtable docutils" id="id5">
+<caption><span class="caption-text">TableID</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">TableID</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>t</td>
+<td>table ID</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Open Position</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Closed Position</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Order</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>OCO Orders</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>Account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Subscribe vs snapshot</strong>:</p>
+<p>FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.</p>
 <p>After susbcribe, data will be pushed to your socket whenever there is an update. You can susbcribe Market data stream /susbcribe or live table update /trading/susbcribe. You can also unsubscribe.
 You can request a snapshot of trading tables via /trading/get_model.</p>
-<blockquote>
-<div>Model choices: ‘Offer’, ‘OpenPosition’, ‘ClosedPosition’, ‘Order’, ‘Summary’, ‘LeverageProfile’, ‘Account’, ‘Properties’.</div></blockquote>
-<p>## OrderID vs TradeID:
-OrderID and TradeID are different.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Model</span> <span class="n">choices</span><span class="p">:</span> <span class="s1">&#39;Offer&#39;</span><span class="p">,</span> <span class="s1">&#39;OpenPosition&#39;</span><span class="p">,</span> <span class="s1">&#39;ClosedPosition&#39;</span><span class="p">,</span> <span class="s1">&#39;Order&#39;</span><span class="p">,</span> <span class="s1">&#39;Summary&#39;</span><span class="p">,</span> <span class="s1">&#39;LeverageProfile&#39;</span><span class="p">,</span> <span class="s1">&#39;Account&#39;</span><span class="p">,</span> <span class="s1">&#39;Properties&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>OrderID vs TradeID</strong>:</p>
+<p>OrderID and TradeID are different.
 In Market order, an order id is created straightaway and it is in callback immediately.</p>
-<blockquote>
-<div>{“response”:{“executed”:true},”data”:{“type”:0,”orderId”:81712802}}</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:{</span><span class="s2">&quot;executed&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">},</span><span class="s2">&quot;data&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;orderId&quot;</span><span class="p">:</span><span class="mi">81712802</span><span class="p">}}</span>
+</pre></div>
+</div>
 <p>A trade id is not generated until after order is executed. You have to subscribe the order table and listing the live update and look up the trade id. You will not get trade id in snapshot, because that information was gone when you submit the request.</p>
-<blockquote>
-<div><p>Examples:
-Subscribing for Orders table:
-POST /trading/subscribe
-models=Order</p>
-<p>Placing Market order:
-POST /trading/open_trade
-account_id=1537581&amp;symbol=EUR%2FUSD&amp;is_buy=false&amp;rate=0&amp;amount=5&amp;order_type=AtMarket&amp;time_in_force=GTC</p>
-<p>Response from server:
-{“executed”:true}{“type”:0,”orderId”:390285837}</p>
-<p>Received Order record from /trading/subscribe with order_id and trade_id:
-{“t”:3,”ratePrecision”:5,”orderId”:”390285837”,”tradeId”:”170162801”,”time”:”04252018120716391”,”accountName”:”01537581”,”accountId”:”1537581”,”timeInForce”:”GTC”,”expireDate”:”“,”currency”:”EUR/USD”,”isBuy”:false,”buy”:0,”sell”:1.21818,”type”:”OM”,”status”:2,”amountK”:5,”currencyPoint”:0.5,”stopMove”:0,”stop”:0,”stopRate”:0,”limit”:0,”limitRate”:0,”isEntryOrder”:false,”ocoBulkId”:0,”isNetQuantity”:false,”isLimitOrder”:false,”isStopOrder”:false,”isELSOrder”:false,”stopPegBaseType”:-1,”limitPegBaseType”:-1,”range”:0,”action”:”I”}</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examples</span><span class="p">:</span>
+<span class="n">Subscribing</span> <span class="k">for</span> <span class="n">Orders</span> <span class="n">table</span><span class="p">:</span>
+<span class="n">POST</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">subscribe</span>
+<span class="n">models</span><span class="o">=</span><span class="n">Order</span>
+
+<span class="n">Placing</span> <span class="n">Market</span> <span class="n">order</span><span class="p">:</span>
+<span class="n">POST</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">open_trade</span>
+<span class="n">account_id</span><span class="o">=</span><span class="mi">1537581</span><span class="o">&amp;</span><span class="n">symbol</span><span class="o">=</span><span class="n">EUR</span><span class="o">%</span><span class="mi">2</span><span class="n">FUSD</span><span class="o">&amp;</span><span class="n">is_buy</span><span class="o">=</span><span class="n">false</span><span class="o">&amp;</span><span class="n">rate</span><span class="o">=</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">amount</span><span class="o">=</span><span class="mi">5</span><span class="o">&amp;</span><span class="n">order_type</span><span class="o">=</span><span class="n">AtMarket</span><span class="o">&amp;</span><span class="n">time_in_force</span><span class="o">=</span><span class="n">GTC</span>
+
+<span class="n">Response</span> <span class="kn">from</span> <span class="nn">server</span><span class="p">:</span>
+<span class="p">{</span><span class="s2">&quot;executed&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">}{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;orderId&quot;</span><span class="p">:</span><span class="mi">390285837</span><span class="p">}</span>
+
+<span class="n">Received</span> <span class="n">Order</span> <span class="n">record</span> <span class="kn">from</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">subscribe</span> <span class="k">with</span> <span class="n">order_id</span> <span class="ow">and</span> <span class="n">trade_id</span><span class="p">:</span>
+<span class="p">{</span><span class="s2">&quot;t&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;ratePrecision&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;orderId&quot;</span><span class="p">:</span><span class="s2">&quot;390285837&quot;</span><span class="p">,</span><span class="s2">&quot;tradeId&quot;</span><span class="p">:</span><span class="s2">&quot;170162801&quot;</span><span class="p">,</span><span class="s2">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;04252018120716391&quot;</span><span class="p">,</span><span class="s2">&quot;accountName&quot;</span><span class="p">:</span><span class="s2">&quot;01537581&quot;</span><span class="p">,</span><span class="s2">&quot;accountId&quot;</span><span class="p">:</span><span class="s2">&quot;1537581&quot;</span><span class="p">,</span><span class="s2">&quot;timeInForce&quot;</span><span class="p">:</span><span class="s2">&quot;GTC&quot;</span><span class="p">,</span><span class="s2">&quot;expireDate&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="p">:</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span><span class="s2">&quot;isBuy&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;buy&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;sell&quot;</span><span class="p">:</span><span class="mf">1.21818</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;OM&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;amountK&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;currencyPoint&quot;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span><span class="s2">&quot;stopMove&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;stop&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;stopRate&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;limit&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;limitRate&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;isEntryOrder&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;ocoBulkId&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;isNetQuantity&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;isLimitOrder&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;isStopOrder&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;isELSOrder&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;stopPegBaseType&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;limitPegBaseType&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;range&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;I&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. in this case, its more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated.</p>
 <p>In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed.</p>
-<p>## limitation on historical candle download per request:</p>
-<div class="line-block">
-<div class="line">Time-frame | max days back | max num |</div>
-<div class="line">— | — | — |</div>
-<div class="line">m1 | 16 | 10,000 |</div>
-<div class="line">m5 | 56 | 10,000 |</div>
-<div class="line">m15 | 212 | 10,000 |</div>
-<div class="line">m30 | 316 | 10,000 |</div>
-<div class="line">h1 | 624 | 10,000 |</div>
-<div class="line">h2 | 1224 | 10,000 |</div>
-<div class="line">h3 | 2056 | 10,000 |</div>
-<div class="line">h4 | 2664 | 10,000 |</div>
-<div class="line">h6 | 3632 | 10,000 |</div>
-<div class="line">h8 | 5128 | 10,000 |</div>
-<div class="line">D1, W1, M1 | no limit | no limit |</div>
-</div>
-<p>## How to place trailing stop</p>
+<p><strong>Limitation on historical candle download per request</strong>:</p>
+<table border="1" class="colwidths-given longtable docutils" id="id6">
+<caption><span class="caption-text">Candle download limit</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Download limits</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Time-frame</td>
+<td>Max Days Back</td>
+<td>Max Num</td>
+</tr>
+<tr class="row-odd"><td>m1</td>
+<td>16</td>
+<td>10,000</td>
+</tr>
+<tr class="row-even"><td>m5</td>
+<td>56</td>
+<td>10,000</td>
+</tr>
+<tr class="row-odd"><td>m15</td>
+<td>212</td>
+<td>10,000</td>
+</tr>
+<tr class="row-even"><td>m30</td>
+<td>316</td>
+<td>10,000</td>
+</tr>
+<tr class="row-odd"><td>h1</td>
+<td>624</td>
+<td>10,000</td>
+</tr>
+<tr class="row-even"><td>h2</td>
+<td>1224</td>
+<td>10,000</td>
+</tr>
+<tr class="row-odd"><td>h3</td>
+<td>2056</td>
+<td>10,000</td>
+</tr>
+<tr class="row-even"><td>h4</td>
+<td>2664</td>
+<td>10,000</td>
+</tr>
+<tr class="row-odd"><td>h6</td>
+<td>3632</td>
+<td>10,000</td>
+</tr>
+<tr class="row-even"><td>h8</td>
+<td>5128</td>
+<td>10,000</td>
+</tr>
+<tr class="row-odd"><td>D1, W1, M1</td>
+<td>no limit</td>
+<td>no limit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to place trailing stop</strong>:</p>
 <p>The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step</p>
-<blockquote>
-<div>Example Entry order with trailing stop of 10 pips:
-POST /trading/create_entry_order account_id=1537581&amp;symbol=EUR%2FUSD&amp;is_buy=true&amp;rate=1.1655&amp;amount=3&amp;order_type=Entry&amp;time_in_force=GTC&amp;stop=-50&amp;trailing_stop_step=10&amp;is_in_pips=true</div></blockquote>
-<p>## Difference between account name and account ID</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="n">Entry</span> <span class="n">order</span> <span class="k">with</span> <span class="n">trailing</span> <span class="n">stop</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">pips</span><span class="p">:</span>
+<span class="n">POST</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">create_entry_order</span> <span class="n">account_id</span><span class="o">=</span><span class="mi">1537581</span><span class="o">&amp;</span><span class="n">symbol</span><span class="o">=</span><span class="n">EUR</span><span class="o">%</span><span class="mi">2</span><span class="n">FUSD</span><span class="o">&amp;</span><span class="n">is_buy</span><span class="o">=</span><span class="n">true</span><span class="o">&amp;</span><span class="n">rate</span><span class="o">=</span><span class="mf">1.1655</span><span class="o">&amp;</span><span class="n">amount</span><span class="o">=</span><span class="mi">3</span><span class="o">&amp;</span><span class="n">order_type</span><span class="o">=</span><span class="n">Entry</span><span class="o">&amp;</span><span class="n">time_in_force</span><span class="o">=</span><span class="n">GTC</span><span class="o">&amp;</span><span class="n">stop</span><span class="o">=-</span><span class="mi">50</span><span class="o">&amp;</span><span class="n">trailing_stop_step</span><span class="o">=</span><span class="mi">10</span><span class="o">&amp;</span><span class="n">is_in_pips</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+<p><strong>Difference between account name and account ID</strong>:</p>
 <p>There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wrong</span><span class="p">:</span>
+<span class="p">{</span><span class="s2">&quot;is_buy&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;00654061&quot;</span><span class="p">,</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span><span class="mf">1.15</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;stop&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;is_in_pips&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="s2">&quot;AtMarket&quot;</span><span class="p">,</span><span class="s2">&quot;time_in_force&quot;</span><span class="p">:</span><span class="s2">&quot;GTC&quot;</span><span class="p">}</span>
+
+<span class="n">ERR</span> <span class="n">noExec</span><span class="p">:</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">create_entry_order</span>
+<span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Amount should be divisible by 10&quot;</span><span class="p">,</span><span class="s2">&quot;parameters&quot;</span><span class="p">:[</span><span class="s2">&quot;10&quot;</span><span class="p">]}</span>
+
+<span class="n">Correct</span><span class="p">:</span>
+<span class="p">{</span><span class="s2">&quot;is_buy&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;654061&quot;</span><span class="p">,</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span><span class="mf">1.15</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;stop&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;is_in_pips&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="s2">&quot;AtMarket&quot;</span><span class="p">,</span><span class="s2">&quot;time_in_force&quot;</span><span class="p">:</span><span class="s2">&quot;GTC&quot;</span><span class="p">}</span>
+
+<span class="n">request</span> <span class="c1"># 2  has been executed: {</span>
+<span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;executed&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;orderId&quot;</span><span class="p">:</span> <span class="mi">194963057</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Real Case Studies using REST API</strong>:</p>
 <blockquote>
-<div><p>Wrong:
-{“is_buy”:false,”account_id”:”00654061”,”symbol”:”EUR/USD”,”rate”:1.15,”amount”:11,”stop”:-40,”is_in_pips”:true,”order_type”:”AtMarket”,”time_in_force”:”GTC”}</p>
-<p>ERR noExec: /trading/create_entry_order
-{“code”:3,”message”:”Amount should be divisible by 10”,”parameters”:[“10”]}</p>
-<p>Correct:
-{“is_buy”:false,”account_id”:”654061”,”symbol”:”EUR/USD”,”rate”:1.15,”amount”:11,”stop”:-40,”is_in_pips”:true,”order_type”:”AtMarket”,”time_in_force”:”GTC”}</p>
-<p>request # 2  has been executed: {
-“response”: {“executed”: true}, “data”: {“type”: 0,”orderId”: 194963057}}</p>
+<div><ol class="arabic simple">
+<li>Learn how to run <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BTstrategyonFXCMdata.zip/">bt backtest</a> using FXCM historical data. What is <a class="reference external" href="http://pmorissette.github.io/bt/">bt</a>?</li>
+<li>Learn how to run <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTraderonFXCMdata.zip/">QSTrader</a> using FXCM data. What is <a class="reference external" href="https://www.quantstart.com/qstrader/">QSTrader</a>?</li>
+<li>Building/back testing <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/">RSI strategy</a>.</li>
+<li>Building/back testing <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/">Moving Average Crossover strategy</a>.</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4/">Video demonstration</a> on how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform.</li>
+</ol>
 </div></blockquote>
-<p>## Real Case Study:</p>
-<p>1. Learn how to run BT backtest on FXCM historical data via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT</a> strategy on FXCM data.zip”&gt;here&lt;/a&gt;.
-What is &lt;a href=”<a class="reference external" href="http://pmorissette.github.io/bt/">http://pmorissette.github.io/bt/</a>”&gt;bt?&lt;/a&gt;
-2. Learn how to run QSTrader on FXCM data via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader</a> on FXCM data.zip”&gt;here&lt;/a&gt;.
-what is &lt;a href=”<a class="reference external" href="https://www.quantstart.com/qstrader">https://www.quantstart.com/qstrader</a>”&gt;QSTrader?&lt;/a&gt;
-3. Building/back testing RSI strategy via RestAPI at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip</a>”&gt;here&lt;/a&gt;.
-4. Building/back testing Moving Average Crossover strategy via RestAPI at [Here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip</a>)
-5. One video demonstrate how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform at &lt;a href=”<a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4">https://www.youtube.com/watch?v=m6llfznP4d4</a>”&gt;here&lt;/a&gt;</p>
-<p>## Note:
-o       This is for personal use and abides by our [EULA](<a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">https://www.fxcm.com/uk/forms/eula/</a>)</p>
+<p><strong>Note</strong>:</p>
+<p>o       This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.</p>
 <p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>## Disclaimer:</p>
-<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](<a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf">https://docs.fxcorporate.com/financial-services-guide-au.pdf</a>), [Product Disclosure Statement](<a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">https://www.fxcm.com/au/legal/product-disclosure-statements/</a>), and [Terms of Business](<a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf">https://docs.fxcorporate.com/tob_au_en.pdf</a>). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+<p><strong>Disclaimer</strong>:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
 
 
