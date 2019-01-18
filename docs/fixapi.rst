@@ -13,7 +13,11 @@ Please refer to our `GitHub <https://github.com/fxcm/FIXAPI/>`_.
 
 **Contents**
 
-* [Prerequisites](#Prerequisites)
+.. _prerequisites: 
+
+Prerequisites
+-------------
+
 * [Connecting](#Connecting)
 * [Marketdata](#Marketdata)
 * [Table](#Table)
@@ -22,7 +26,7 @@ Please refer to our `GitHub <https://github.com/fxcm/FIXAPI/>`_.
 * [Disclaimer](#Disclaimer)
 
 
-**Prerequisites**
+Prerequisites :ref:`prerequisites`
 
 *	First open a demo TSII account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
 *	Send your login to api@fxcm.com to get FIX credentials. 
