@@ -84,10 +84,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fixapi.html#prerequisites">Prerequisites</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JAVA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
@@ -160,111 +157,105 @@
   <div class="section" id="java">
 <h1>JAVA<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
 <p>Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.</p>
-<p>## How to start:
-1) A FXCM account. You can apply for a demo account [here](<a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">https://www.fxcm.com/uk/algorithmic-trading/api-trading/</a>)
-2) Download the [package at here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip">https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip</a>)
-3) Documents are in the package at trading_sdkfxcm-apijavadoc.
-4) Sample code at trading_sdkfxcm-apisrcQATest.java
-5) How to run QATest example:
-To run the program, it needs to be passed as below arguments:
-(loginid) (loginpwd) (connection_name) (hostUrl) (test_command)</p>
+<p><strong>How to start:</strong></p>
+<ul class="simple">
+<li>A FXCM account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
+<li>Download the package <a class="reference external" href="https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/">here</a>.</li>
+<li>Documents are in the package at trading_sdkfxcm-apijavadoc.</li>
+<li>Sample code at trading_sdkfxcm-apisrcQATest.java</li>
+</ul>
+<p><strong>How to run the QATest example:</strong>
+To run the program, it needs to be passed as below arguments:</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>loginid:</dt>
-<dd>Your Trading station username</dd>
-<dt>loginpwd:</dt>
-<dd>Your Trading station password</dd>
-<dt>connection_name:</dt>
-<dd>“Demo” or “Real”</dd>
-<dt>hostUrl:</dt>
-<dd><a class="reference external" href="http://www.fxcorporate.com/Hosts.jsp">http://www.fxcorporate.com/Hosts.jsp</a></dd>
-</dl>
-<p>test_command is one of the following:
-LISTEN:    Just listen for message, do not do anything</p>
+<div><p><strong>(loginid) (loginpwd) (connection_name) (hostUrl) (test_command)</strong></p>
 <blockquote>
-<div>CMO:       createMarketOrder (previously quoted)
-SSLMO:     set Stop/Limit on an open position
-USLMO:     update Stop/Limit price on a positon
-DSLMO:     delete Stop/Limit from a position
-CEO:       create entry order
-SSLEO:     set Stop/Limit on an entry order
-USLEO:     update Stop/Limit on an entry order
-DSLEO:     remove Stop/Limit on an entry order
-DEO:       remove Entry Order
-CLOSEMO:   close positon
-UREO:      Update rate on an entry order
-MDH:       Retrieve Marke data history
-RECONNECT: Reconnect the session</div></blockquote>
+<div><ul class="simple">
+<li>loginid: your Trading Station username</li>
+<li>loginpwd: your Trading station password</li>
+<li>connection_name: “Demo” or “Real”</li>
+<li>hostUrl: <a class="reference external" href="http://www.fxcorporate.com/Hosts.jsp">http://www.fxcorporate.com/Hosts.jsp</a></li>
+</ul>
 </div></blockquote>
-<p>## How to login:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>private void setup(IGenericMessageListener aGenericListener, boolean aPrintStatus) {</dt>
-<dd><dl class="first docutils">
-<dt>try {</dt>
-<dd><blockquote class="first">
-<div>// step 1: get an instance of IGateway from the GatewayFactory</div></blockquote>
-<dl class="docutils">
-<dt>if (mFxcmGateway == null) {</dt>
-<dd>mFxcmGateway = GatewayFactory.createGateway();</dd>
-</dl>
-<p>}
-/*</p>
-<blockquote>
-<div>step 2: register a generic message listener with the gateway, this
-listener in particular gets all messages that are related to the trading
-platform Quote,OrderSingle,ExecutionReport, etc…</div></blockquote>
-<p><a href="#id1"><span class="problematic" id="id2">*</span></a>/
-mFxcmGateway.registerGenericMessageListener(aGenericListener);
-mStatusListener = new DefaultStatusListener(aPrintStatus);
-mFxcmGateway.registerStatusMessageListener(mStatusListener);
-if (!mFxcmGateway.isConnected()) {</p>
-<blockquote>
-<div><p>System.out.println(“client: login”);
-FXCMLoginProperties properties = new FXCMLoginProperties(mUsername, mPassword, mStation, mServer, mConfigFile);
-/*</p>
-<blockquote>
-<div>step 3: call login on the gateway, this method takes an instance of FXCMLoginProperties
-which takes 4 parameters: username,password,terminal and server or path to a Hosts.xml
-file which it uses for resolving servers. As soon as the login  method executes your listeners begin
-receiving asynch messages from the FXCM servers.</div></blockquote>
-<p><a href="#id3"><span class="problematic" id="id4">*</span></a>/
-mFxcmGateway.login(properties);</p>
+<p><strong>test_command</strong> is one of the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">LISTEN</span><span class="p">:</span>    <span class="n">Just</span> <span class="n">listen</span> <span class="k">for</span> <span class="n">message</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">do</span> <span class="n">anything</span>
+<span class="o">*</span> <span class="n">CMO</span><span class="p">:</span>       <span class="n">createMarketOrder</span> <span class="p">(</span><span class="n">previously</span> <span class="n">quoted</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">SSLMO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="nb">open</span> <span class="n">position</span>
+<span class="o">*</span> <span class="n">USLMO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">price</span> <span class="n">on</span> <span class="n">a</span> <span class="n">positon</span>
+<span class="o">*</span> <span class="n">DSLMO</span><span class="p">:</span>     <span class="n">delete</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">position</span>
+<span class="o">*</span> <span class="n">CEO</span><span class="p">:</span>       <span class="n">create</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="o">*</span> <span class="n">SSLEO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="o">*</span> <span class="n">USLEO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="o">*</span> <span class="n">DSLEO</span><span class="p">:</span>     <span class="n">remove</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="o">*</span> <span class="n">DEO</span><span class="p">:</span>       <span class="n">remove</span> <span class="n">Entry</span> <span class="n">Order</span>
+<span class="o">*</span> <span class="n">CLOSEMO</span><span class="p">:</span>   <span class="n">close</span> <span class="n">positon</span>
+<span class="o">*</span> <span class="n">UREO</span><span class="p">:</span>      <span class="n">Update</span> <span class="n">rate</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="o">*</span> <span class="n">MDH</span><span class="p">:</span>          <span class="n">Retrieve</span> <span class="n">Marke</span> <span class="n">data</span> <span class="n">history</span>
+<span class="o">*</span> <span class="n">RECONNECT</span><span class="p">:</span> <span class="n">Reconnect</span> <span class="n">the</span> <span class="n">session</span>
+</pre></div>
+</div>
 </div></blockquote>
-<p class="last">}
-//after login you must retrieve your trading session status and get accounts to receive messages
-mFxcmGateway.requestTradingSessionStatus();
-mAccountMassID = mFxcmGateway.requestAccounts();</p>
-</dd>
-<dt>} catch (Exception e) {</dt>
-<dd>e.printStackTrace();</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>## How to get the rollover:</p>
-<p>With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions.</p>
-<blockquote>
-<div><p>For example:
+<p><strong>How to login</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">(</span><span class="n">IGenericMessageListener</span> <span class="n">aGenericListener</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">aPrintStatus</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// step 1: get an instance of IGateway from the GatewayFactory</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">mFxcmGateway</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mFxcmGateway</span> <span class="o">=</span> <span class="n">GatewayFactory</span><span class="o">.</span><span class="na">createGateway</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="cm">/*</span>
+<span class="cm">            step 2: register a generic message listener with the gateway, this</span>
+<span class="cm">            listener in particular gets all messages that are related to the trading</span>
+<span class="cm">            platform Quote,OrderSingle,ExecutionReport, etc...</span>
+<span class="cm">        */</span>
+        <span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">registerGenericMessageListener</span><span class="o">(</span><span class="n">aGenericListener</span><span class="o">);</span>
+        <span class="n">mStatusListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultStatusListener</span><span class="o">(</span><span class="n">aPrintStatus</span><span class="o">);</span>
+        <span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">registerStatusMessageListener</span><span class="o">(</span><span class="n">mStatusListener</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">isConnected</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;client: login&quot;</span><span class="o">);</span>
+            <span class="n">FXCMLoginProperties</span> <span class="n">properties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FXCMLoginProperties</span><span class="o">(</span><span class="n">mUsername</span><span class="o">,</span> <span class="n">mPassword</span><span class="o">,</span> <span class="n">mStation</span><span class="o">,</span> <span class="n">mServer</span><span class="o">,</span> <span class="n">mConfigFile</span><span class="o">);</span>
+            <span class="cm">/*</span>
+<span class="cm">                step 3: call login on the gateway, this method takes an instance of FXCMLoginProperties</span>
+<span class="cm">                which takes 4 parameters: username,password,terminal and server or path to a Hosts.xml</span>
+<span class="cm">                file which it uses for resolving servers. As soon as the login  method executes your listeners begin</span>
+<span class="cm">                receiving asynch messages from the FXCM servers.</span>
+<span class="cm">            */</span>
+            <span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//after login you must retrieve your trading session status and get accounts to receive messages</span>
+        <span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">requestTradingSessionStatus</span><span class="o">();</span>
+        <span class="n">mAccountMassID</span> <span class="o">=</span> <span class="n">mFxcmGateway</span><span class="o">.</span><span class="na">requestAccounts</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>How to get the rollover</strong>:</p>
+<p>With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>For example:
 getFXCMSymInterestBuy() = 0.12     you will get $0.12 for 10k
-getFXCMSymInterestSell() = -0.39    you will pay $0.39  for 10k</p>
-<p>the 10k in this example is the server default base unit size, it can be found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”</p>
+getFXCMSymInterestSell() = -0.39    you will pay $0.39  for 10k
+
+The 10k in this example is the server default base unit size, it can be
+found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
+</pre></div>
+</div>
+<p><strong>Real Case Studies for using Java API:</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>How to build <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/">Rsi signal and back testing</a>    strategy.</li>
+<li>Learn how to build and backtest <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/">CCI Oscillator</a> strategy.</li>
+<li>Lean how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/">Breakout</a> strategy.</li>
+<li>Lean how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/">Range Stochastic</a> strategy .</li>
+<li>Learn how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/">Mean Reversion</a> strategy.</li>
+</ol>
 </div></blockquote>
-<p>## Real Case Study:
-1. How to build Rsi signal and back testing using FXCM Java API. &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip</a>” target=”_blank”&gt; click here&lt;/a&gt;
-2. Learn how to build and backtest CCI Oscillator strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip</a>”&gt;here&lt;/a&gt;.
-3. Lean how to build and back test Breakout strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip</a>”&gt;here&lt;/a&gt;.
-4. Lean how to build and back test Range Stochastic Strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip</a>”&gt;here&lt;/a&gt;.
-5. Lean how to build and back test Mean Reversion Strategy using Java API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip</a>”&gt;here&lt;/a&gt;.</p>
-<p>## Note:
-o       This is for personal use and abides by our [EULA](<a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">https://www.fxcm.com/uk/forms/eula/</a>)</p>
+<p><em>Note</em>:</p>
+<p>o       This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a></p>
 <p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>## Release Note:
-build.number=260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;</p>
-<p>## Disclaimer:</p>
-<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](<a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf">https://docs.fxcorporate.com/financial-services-guide-au.pdf</a>), [Product Disclosure Statement](<a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">https://www.fxcm.com/au/legal/product-disclosure-statements/</a>), and [Terms of Business](<a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf">https://docs.fxcorporate.com/tob_au_en.pdf</a>). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+<p><strong>Release Note</strong>:</p>
+<p>Build.number=260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;</p>
+<p><strong>Disclaimer</strong>:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
 
 
