@@ -161,68 +161,81 @@ It is intended to be used by FXCM clients on auto-trading robots and systems,
 chart and market analysis application, custom trading application on FXCM accounts.</p>
 <p>Forex Connect supports C++, C#, Java, VB, VBA, Windows, Linux and smart phones. And it is free.</p>
 <p>You can use ForexConnect on Trading station account, no extra setup required.</p>
-<p>If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015.
-It may give the users errors or not be compatible in certain cases.</p>
-<p>## How to start:
-1) A FXCM TSII account. You can apply for a demo account [here](<a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">https://www.fxcm.com/uk/algorithmic-trading/api-trading/</a>).
-2) Download [<strong>ForexConnect SDK</strong>](<a class="reference external" href="http://www.fxcodebase.com/wiki/index.php/Download">http://www.fxcodebase.com/wiki/index.php/Download</a>)
-3) Examples codes and documents are at ForexConnectAPI packages after installed.
-4) Online documents: [<strong>Getting Started</strong>](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf">https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf</a>)
-5) ForexConnect with Matlab, at [here](<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip</a>).
-6) ForexConnect sample code for Android/iOS/macOS/Python/Linux/Windows, at [here](<a class="reference external" href="https://github.com/gehtsoft/forex-connect/tree/master/samples">https://github.com/gehtsoft/forex-connect/tree/master/samples</a>).
-7) ForexConnect on Python at [here](<a class="reference external" href="http://fxcodebase.com/code/viewforum.php?f=51">http://fxcodebase.com/code/viewforum.php?f=51</a>)</p>
-<p>## Suggested Popular Development Platform IDE:
-[<strong>Windows 32bit and 64bit – Visual Studio 2005 and up</strong>](<a class="reference external" href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx">https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx</a>)</p>
-<p>[<strong>Linux 32bit and 64bit – Eclipse</strong>](<a class="reference external" href="https://eclipse.org/">https://eclipse.org/</a>)</p>
-<p>[<strong>iOS – Xcode</strong>](<a class="reference external" href="https://developer.apple.com/xcode/ide/">https://developer.apple.com/xcode/ide/</a>)</p>
-<p>[<strong>Android - Android Studio</strong>](<a class="reference external" href="https://developer.android.com/studio/intro/index.html">https://developer.android.com/studio/intro/index.html</a>)</p>
-<p>## Table manager vs Non-table manager:
-Table manager preload all tables to your local memoery, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the
-SummaryTable is only accessible through the table manager.
-Table manager presents a performance decrease because it is constantly recalculating fields.
-Non-table manager allow you to capture table updates adhoc via the use of a class that implements theIO2GResponseListener interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.</p>
-<p>## How to get current balance?
-You need to request the table from server. please refer to NonTableManagerSamples/PrintTable example program.</p>
-<blockquote>
-<div><p>private static O2GAccountRow GetAccount(O2GSession session)
-{</p>
-<blockquote>
-<div><p>O2GResponseReaderFactory readerFactory = session.getResponseReaderFactory();
-if (readerFactory == null)
-{</p>
-<blockquote>
-<div>throw new Exception(“Cannot create response reader factory”);</div></blockquote>
-<p>}
-O2GLoginRules loginRules = session.getLoginRules();
-O2GResponse response = loginRules.getTableRefreshResponse(O2GTableType.Accounts);
-O2GAccountsTableResponseReader accountsResponseReader = readerFactory.createAccountsTableReader(response);
-for (int i = 0; i &lt; accountsResponseReader.Count; i++)
-{</p>
-<blockquote>
-<div>O2GAccountRow accountRow = accountsResponseReader.getRow(i);
-Console.WriteLine(“AccountID: {0}, Balance: {1}”, accountRow.AccountID, accountRow.Balance);</div></blockquote>
-<p>}
-return accountsResponseReader.getRow(0);</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>## How to get price history:
-For pricehistory, you need to use non-table manage.
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.</p>
+</div>
+<p><strong>How to start</strong>:</p>
+<ol class="arabic simple">
+<li>A FXCM TSII account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
+<li>Download <a class="reference external" href="http://www.fxcodebase.com/wiki/index.php/Download/">ForexConnect SDK</a>.</li>
+<li>Examples codes and documents are at ForexConnectAPI packages after installed.</li>
+<li>Online documents: <a class="reference external" href="https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/">Getting Started</a>.</li>
+<li>ForexConnect with <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/">Matlab</a>.</li>
+<li>ForexConnect sample code for <a class="reference external" href="https://github.com/gehtsoft/forex-connect/tree/master/samples/">Android/iOS/macOS/Python/Linux/Windows</a>.</li>
+<li>ForexConnect using <a class="reference external" href="http://fxcodebase.com/code/viewforum.php?f=51/">Python</a>.</li>
+</ol>
+<p><strong>Suggested Popular Development Platform IDE</strong>:</p>
+<ul class="simple">
+<li>Windows 32bit and 64bit – <a class="reference external" href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx/">Visual Studio 2005 and up</a></li>
+<li>Linux 32bit and 64bit – <a class="reference external" href="https://eclipse.org/">Eclipse</a></li>
+<li>iOS – <a class="reference external" href="https://developer.apple.com/xcode/ide/">Xcode</a></li>
+<li>Android - <a class="reference external" href="https://developer.android.com/studio/intro/index.html/">Android Studio</a></li>
+</ul>
+<p><strong>Table manager vs Non-table manager</strong>:</p>
+<p>Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the SummaryTable is only accessible through the table manager. Table manager presents a performance decrease because it is constantly recalculating fields.</p>
+<p>Non-table manager allow you to capture table updates adhoc via the use of a class that implements the <strong>IO2GResponseListener</strong> interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.</p>
+<p><strong>How to get current balance</strong></p>
+<p>You need to request the table from server. Please refer to NonTableManagerSamples/PrintTable example program:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span>  <span class="k">private</span> <span class="k">static</span> <span class="n">O2GAccountRow</span> <span class="nf">GetAccount</span><span class="p">(</span><span class="n">O2GSession</span> <span class="n">session</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">O2GResponseReaderFactory</span> <span class="n">readerFactory</span> <span class="p">=</span> <span class="n">session</span><span class="p">.</span><span class="n">getResponseReaderFactory</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">readerFactory</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(</span><span class="s">&quot;Cannot create response reader factory&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">O2GLoginRules</span> <span class="n">loginRules</span> <span class="p">=</span> <span class="n">session</span><span class="p">.</span><span class="n">getLoginRules</span><span class="p">();</span>
+    <span class="n">O2GResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">loginRules</span><span class="p">.</span><span class="n">getTableRefreshResponse</span><span class="p">(</span><span class="n">O2GTableType</span><span class="p">.</span><span class="n">Accounts</span><span class="p">);</span>
+    <span class="n">O2GAccountsTableResponseReader</span> <span class="n">accountsResponseReader</span> <span class="p">=</span> <span class="n">readerFactory</span><span class="p">.</span><span class="n">createAccountsTableReader</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">accountsResponseReader</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">O2GAccountRow</span> <span class="n">accountRow</span> <span class="p">=</span> <span class="n">accountsResponseReader</span><span class="p">.</span><span class="n">getRow</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;AccountID: {0}, Balance: {1}&quot;</span><span class="p">,</span> <span class="n">accountRow</span><span class="p">.</span><span class="n">AccountID</span><span class="p">,</span> <span class="n">accountRow</span><span class="p">.</span><span class="n">Balance</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">accountsResponseReader</span><span class="p">.</span><span class="n">getRow</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>How to get price history</strong>:</p>
+<p>For pricehistory, you need to use non-table manager.
 You can see examples under NonTableManagerSamples/GetHistPrices</p>
-<p>## Real Case Study:
-1. Learn how to build and backtest Rsi signals using ForexConnect API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip</a>”&gt;here&lt;/a&gt;.
-2. Learn how to build and backtest CCI Oscillator strategy using ForexConnect API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip</a>”&gt;here&lt;/a&gt;.
-3. Learn how to build and backtest Breakout strategy using ForexConnect API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip</a>”&gt;here&lt;/a&gt;.
-4. Learn how to build and backtest Range Stochastic Strategy using ForexConnect API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip</a>”&gt;here&lt;/a&gt;.
-5. Learn how to build and backtest Mean Reversion Strategy using ForexConnect API at &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip</a>”&gt;here&lt;/a&gt;.
-6. Some examples like attached stop limit to position, create if-then ELS order, get rollover &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip</a>”&gt;at here&lt;/a&gt;.
-7. ForexConnect with Matlab, is coming….
-8. Using ForexConnect downloading historical data &lt;a href=”<a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip">https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip</a>”&gt;at here&lt;/a&gt;.</p>
-<p>## Note:
-o       This is for personal use and abides by our [EULA](<a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">https://www.fxcm.com/uk/forms/eula/</a>)</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>## Disclaimer:</p>
-<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the [Financial Services Guide](<a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf">https://docs.fxcorporate.com/financial-services-guide-au.pdf</a>), [Product Disclosure Statement](<a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">https://www.fxcm.com/au/legal/product-disclosure-statements/</a>), and [Terms of Business](<a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf">https://docs.fxcorporate.com/tob_au_en.pdf</a>). Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+<p><strong>Real Case Studies using ForexConnect API</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Learn how to build and backtest:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip/">Rsi signals</a></li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip/">CCI Oscillator</a></li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip/">Breakout strategy</a></li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip/">Range Stochastic Strategy</a></li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip/">Mean Reversion Strategy</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Some examples like <a class="reference external" href="ttps://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip/">attached stop limit to position, create if-then ELS order, get rollover</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://github.com/fxcm/ForexConnectAPI/blob/master/FXCM-MATLAB-master.zip/">Matlab</a> sample code</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip/">Historical data</a> download</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+<p><strong>Disclaimer</strong>:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
 
 
