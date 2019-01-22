@@ -11,6 +11,7 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    :caption: Contents:
    
    restapi
+   fxcmrest-php
    fixapi
    javaapi
    forexconnectapi

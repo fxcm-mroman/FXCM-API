@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Code Samples &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FIX" href="fixapi.html" />
+    <link rel="prev" title="REST API" href="restapi.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+            
+            <img src="_static/fxcm-blue-2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-on-backtesting-using-the-rest-api">Real Case Studies on Backtesting using the REST API</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fxcmpy-wrapper-using-ipython">fxcmpy wrapper using iPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fxcmrest-php-for-php">fxcmrest-php for PhP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-code">Sample Code::</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-on-backtesting-using-java-api">Real Case Studies on Backtesting using Java API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Code Samples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/fxcmrest-php.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="code-samples">
+<h1>Code Samples<a class="headerlink" href="#code-samples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fxcmpy-wrapper-using-ipython">
+<h2>fxcmpy wrapper using iPython<a class="headerlink" href="#fxcmpy-wrapper-using-ipython" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="fxcmrest-php-for-php">
+<h2>fxcmrest-php for PhP<a class="headerlink" href="#fxcmrest-php-for-php" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">FxcmRest</span></code> is a library for event-driven trading with FXCM over RestAPI using ReactPHP.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>PHP 7.0.2+</div></blockquote>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>The recommended way to install FxcmRest is through <a class="reference external" href="https://getcomposer.org/">Composer</a>.</p>
+<p>This command will install the latest stable version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ composer require fxcm/fxcmrest
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>As FXCM Rest API requires you to keep Socket.IO connection open through the whole time it is used, this library must be run within a php script and not as part of php generated website.</p>
+<p>Interaction can be done either by using a console or through HTTP requests handled directly by the php script for example with <code class="docutils literal notranslate"><span class="pre">\React\HTTP</span></code>.</p>
+<p>Main class of the library is <code class="docutils literal notranslate"><span class="pre">\FxcmRest\FxcmRest</span></code>. It must be instantiated with two objects:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">\React\EventLoop\LoopInterface</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\FxcmRest\Config</span></code></li>
+</ul>
+</div></blockquote>
+<p>Configuration class <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Config</span></code> must be instantiated with an array containing at least the two following parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">host</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">token</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configuration-parameters">
+<h3>Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">protocol</span></code> - either <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Protocol::HTTPS</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Protocol::HTTP</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">host</span></code> - either <code class="docutils literal notranslate"><span class="pre">api.fxcm.com</span></code> for Real accounts or <code class="docutils literal notranslate"><span class="pre">api-demo.fxcm.com</span></code> for Demo accounts</li>
+<li><code class="docutils literal notranslate"><span class="pre">port</span></code> - port number. <code class="docutils literal notranslate"><span class="pre">443</span></code> default</li>
+<li><code class="docutils literal notranslate"><span class="pre">token</span></code> - 40 char hexadecimal string</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-PhP notranslate"><div class="highlight"><pre><span></span><span class="x">connect() : null</span>
+</pre></div>
+</div>
+<p>Opens a connection to the server. When connection is complete, <cite>connected</cite> signal will be emitted.</p>
+<div class="highlight-PhP notranslate"><div class="highlight"><pre><span></span><span class="x">disconnect() : null</span>
+</pre></div>
+</div>
+<p>Disconnects from the server. When disconnection is complete, <cite>disconnected</cite> signal will be emitted.</p>
+<div class="highlight-PhP notranslate"><div class="highlight"><pre><span></span><span class="x">socketID() : string</span>
+</pre></div>
+</div>
+<p>If connected to the server, returns a string representing the socketID. If not connected, returns an empty string.</p>
+<div class="highlight-PhP notranslate"><div class="highlight"><pre><span></span><span class="x">request(\FxcmRest\HttpMethod $method, string $path, array $arguments, callable $callback) : null</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Sends a http request to the server. When request is completed, $callback will be called with two parameters:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">int</span></code> representing HTTP status code. 200 for OK</li>
+<li><code class="docutils literal notranslate"><span class="pre">string</span></code> representing server answer body</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">on(string $signalName, callable $callback) : null</span>
+</pre></div>
+</div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">Registers a $callback for a signal of $signalName. For a list of signals and parameters that are passed with them please see Signals section.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signals">
+<h3>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">connected</span></code> - Emitted when connection sequence is complete. After this socketID is valid and requests can be sent to the server. No parameters are passed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">disconnected</span></code> - Emitted when connection to the server is closed. No parameters are passed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">error</span></code> - Emitted on errors. Passes error description as string.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[Offer,OpenPosition,ClosedPosition,Account,Summary,Properties]</span></code> - Emmited on trading table changes. Passes table update contents as JSON string. Requires subscription through <code class="docutils literal notranslate"><span class="pre">/trading/subscribe</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">(EUR/USD,EUR/GBP,...)</span></code> - Emmited on price update. Passes the price update as a JSON string. Requires subscription through <cite>/subscribe</cite>.</p>
+</div>
+<div class="section" id="sample-code">
+<h3>Sample Code::<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$loop</span> <span class="o">=</span> <span class="nx">\React\EventLoop\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
+
+<span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\FxcmRest\Config</span><span class="p">([</span>
+<span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api-demo.fxcm.com&#39;</span><span class="p">,</span>
+<span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;YOUR_TOKEN&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="nv">$counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nv">$rest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\FxcmRest\FxcmRest</span><span class="p">(</span><span class="nv">$loop</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;/subscribe&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">&#39;pairs&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;EUR/USD&#39;</span><span class="p">],</span>
+        <span class="k">function</span><span class="p">(</span><span class="nv">$code</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$code</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;EUR/USD&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+                                        <span class="k">echo</span> <span class="s2">&quot;price update: </span><span class="si">{</span><span class="nv">$data</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+                                        <span class="nv">$counter</span><span class="o">++</span><span class="p">;</span>
+                                        <span class="k">if</span><span class="p">(</span><span class="nv">$counter</span> <span class="o">===</span> <span class="mi">5</span><span class="p">){</span>
+                                                <span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
+                                        <span class="p">}</span>
+                                <span class="p">});</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">);</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$e</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$loop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;socket error: </span><span class="si">{</span><span class="nv">$e</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">stop</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;disconnected&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$loop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;FxcmRest disconnected</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">stop</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+
+<span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p><strong>Disclaimer</strong></p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fixapi.html" class="btn btn-neutral float-right" title="FIX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="restapi.html" class="btn btn-neutral" title="REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Forex Capital Markets
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
