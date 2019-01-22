@@ -83,9 +83,32 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">JAVA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JAVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -157,7 +180,8 @@
   <div class="section" id="java">
 <h1>JAVA<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
 <p>Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.</p>
-<p><strong>How to start:</strong></p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>A FXCM account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
 <li>Download the package <a class="reference external" href="https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/">here</a>.</li>
@@ -177,24 +201,26 @@ To run the program, it needs to be passed as below arguments:</p>
 </ul>
 </div></blockquote>
 <p><strong>test_command</strong> is one of the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">LISTEN</span><span class="p">:</span>    <span class="n">Just</span> <span class="n">listen</span> <span class="k">for</span> <span class="n">message</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">do</span> <span class="n">anything</span>
-<span class="o">*</span> <span class="n">CMO</span><span class="p">:</span>       <span class="n">createMarketOrder</span> <span class="p">(</span><span class="n">previously</span> <span class="n">quoted</span><span class="p">)</span>
-<span class="o">*</span> <span class="n">SSLMO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="nb">open</span> <span class="n">position</span>
-<span class="o">*</span> <span class="n">USLMO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">price</span> <span class="n">on</span> <span class="n">a</span> <span class="n">positon</span>
-<span class="o">*</span> <span class="n">DSLMO</span><span class="p">:</span>     <span class="n">delete</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">position</span>
-<span class="o">*</span> <span class="n">CEO</span><span class="p">:</span>       <span class="n">create</span> <span class="n">entry</span> <span class="n">order</span>
-<span class="o">*</span> <span class="n">SSLEO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
-<span class="o">*</span> <span class="n">USLEO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
-<span class="o">*</span> <span class="n">DSLEO</span><span class="p">:</span>     <span class="n">remove</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
-<span class="o">*</span> <span class="n">DEO</span><span class="p">:</span>       <span class="n">remove</span> <span class="n">Entry</span> <span class="n">Order</span>
-<span class="o">*</span> <span class="n">CLOSEMO</span><span class="p">:</span>   <span class="n">close</span> <span class="n">positon</span>
-<span class="o">*</span> <span class="n">UREO</span><span class="p">:</span>      <span class="n">Update</span> <span class="n">rate</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
-<span class="o">*</span> <span class="n">MDH</span><span class="p">:</span>          <span class="n">Retrieve</span> <span class="n">Marke</span> <span class="n">data</span> <span class="n">history</span>
-<span class="o">*</span> <span class="n">RECONNECT</span><span class="p">:</span> <span class="n">Reconnect</span> <span class="n">the</span> <span class="n">session</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LISTEN</span><span class="p">:</span>    <span class="n">Just</span> <span class="n">listen</span> <span class="k">for</span> <span class="n">message</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">do</span> <span class="n">anything</span>
+<span class="n">CMO</span><span class="p">:</span>       <span class="n">createMarketOrder</span> <span class="p">(</span><span class="n">previously</span> <span class="n">quoted</span><span class="p">)</span>
+<span class="n">SSLMO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="nb">open</span> <span class="n">position</span>
+<span class="n">USLMO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">price</span> <span class="n">on</span> <span class="n">a</span> <span class="n">positon</span>
+<span class="n">DSLMO</span><span class="p">:</span>     <span class="n">delete</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">position</span>
+<span class="n">CEO</span><span class="p">:</span>       <span class="n">create</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="n">SSLEO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="n">USLEO</span><span class="p">:</span>     <span class="n">update</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="n">DSLEO</span><span class="p">:</span>     <span class="n">remove</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="n">DEO</span><span class="p">:</span>       <span class="n">remove</span> <span class="n">Entry</span> <span class="n">Order</span>
+<span class="n">CLOSEMO</span><span class="p">:</span>   <span class="n">close</span> <span class="n">positon</span>
+<span class="n">UREO</span><span class="p">:</span>      <span class="n">Update</span> <span class="n">rate</span> <span class="n">on</span> <span class="n">an</span> <span class="n">entry</span> <span class="n">order</span>
+<span class="n">MDH</span><span class="p">:</span>    <span class="n">Retrieve</span> <span class="n">Marke</span> <span class="n">data</span> <span class="n">history</span>
+<span class="n">RECONNECT</span><span class="p">:</span> <span class="n">Reconnect</span> <span class="n">the</span> <span class="n">session</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>How to login</strong>:</p>
+</div>
+<div class="section" id="how-to-login">
+<h2>How to login<a class="headerlink" href="#how-to-login" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">(</span><span class="n">IGenericMessageListener</span> <span class="n">aGenericListener</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">aPrintStatus</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span>
             <span class="c1">// step 1: get an instance of IGateway from the GatewayFactory</span>
@@ -229,7 +255,9 @@ To run the program, it needs to be passed as below arguments:</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p><strong>How to get the rollover</strong>:</p>
+</div>
+<div class="section" id="how-to-get-the-rollover">
+<h2>How to get the rollover<a class="headerlink" href="#how-to-get-the-rollover" title="Permalink to this headline">¶</a></h2>
 <p>With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>For example:
 getFXCMSymInterestBuy() = 0.12     you will get $0.12 for 10k
@@ -239,7 +267,9 @@ The 10k in this example is the server default base unit size, it can be
 found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 </pre></div>
 </div>
-<p><strong>Real Case Studies for using Java API:</strong></p>
+</div>
+<div class="section" id="real-case-studies-for-using-java-api">
+<h2>Real Case Studies for using Java API<a class="headerlink" href="#real-case-studies-for-using-java-api" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
 <li>How to build <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/">Rsi signal and back testing</a>    strategy.</li>
@@ -249,13 +279,17 @@ found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 <li>Learn how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/">Mean Reversion</a> strategy.</li>
 </ol>
 </div></blockquote>
-<p><em>Note</em>:</p>
-<p>o       This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a></p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p><strong>Release Note</strong>:</p>
-<p>Build.number=260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a></p>
+<p class="last">For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+</div>
+<p><strong>Release Notes</strong>:</p>
+<blockquote>
+<div>Build.number = 260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;</div></blockquote>
 <p><strong>Disclaimer</strong>:</p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
 </div>
 
 

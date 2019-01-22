@@ -83,10 +83,41 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ForexConnect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ForexConnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-get-current-balance">How to get current balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-get-price-history">How to get price history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-using-forexconnect-api">Real Case Studies using ForexConnect API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -165,27 +196,34 @@ chart and market analysis application, custom trading application on FXCM accoun
 <p class="first admonition-title">Note</p>
 <p class="last">If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.</p>
 </div>
-<p><strong>How to start</strong>:</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>A FXCM TSII account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
-<li>Download <a class="reference external" href="http://www.fxcodebase.com/wiki/index.php/Download/">ForexConnect SDK</a>.</li>
+<li>Download <a class="reference external" href="http://www.fxcodebase.com/wiki/index.php/Download/">ForexConnect SDK</a></li>
 <li>Examples codes and documents are at ForexConnectAPI packages after installed.</li>
-<li>Online documents: <a class="reference external" href="https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/">Getting Started</a>.</li>
-<li>ForexConnect with <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/">Matlab</a>.</li>
-<li>ForexConnect sample code for <a class="reference external" href="https://github.com/gehtsoft/forex-connect/tree/master/samples/">Android/iOS/macOS/Python/Linux/Windows</a>.</li>
-<li>ForexConnect using <a class="reference external" href="http://fxcodebase.com/code/viewforum.php?f=51/">Python</a>.</li>
+<li>Online documents: <a class="reference external" href="https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/">Getting Started</a></li>
+<li>ForexConnect with <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/">Matlab</a></li>
+<li>ForexConnect sample code for <a class="reference external" href="https://github.com/gehtsoft/forex-connect/tree/master/samples/">Android/iOS/macOS/Python/Linux/Windows</a></li>
+<li>ForexConnect using <a class="reference external" href="http://fxcodebase.com/code/viewforum.php?f=51/">Python</a></li>
 </ol>
-<p><strong>Suggested Popular Development Platform IDE</strong>:</p>
+</div>
+<div class="section" id="top-development-platform-ides">
+<h2>Top Development Platform IDEs<a class="headerlink" href="#top-development-platform-ides" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Windows 32bit and 64bit – <a class="reference external" href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx/">Visual Studio 2005 and up</a></li>
 <li>Linux 32bit and 64bit – <a class="reference external" href="https://eclipse.org/">Eclipse</a></li>
 <li>iOS – <a class="reference external" href="https://developer.apple.com/xcode/ide/">Xcode</a></li>
 <li>Android - <a class="reference external" href="https://developer.android.com/studio/intro/index.html/">Android Studio</a></li>
 </ul>
-<p><strong>Table manager vs Non-table manager</strong>:</p>
+</div>
+<div class="section" id="table-manager-vs-non-table-manager">
+<h2>Table manager vs Non-table manager<a class="headerlink" href="#table-manager-vs-non-table-manager" title="Permalink to this headline">¶</a></h2>
 <p>Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the SummaryTable is only accessible through the table manager. Table manager presents a performance decrease because it is constantly recalculating fields.</p>
 <p>Non-table manager allow you to capture table updates adhoc via the use of a class that implements the <strong>IO2GResponseListener</strong> interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.</p>
-<p><strong>How to get current balance</strong></p>
+</div>
+<div class="section" id="how-to-get-current-balance">
+<h2>How to get current balance<a class="headerlink" href="#how-to-get-current-balance" title="Permalink to this headline">¶</a></h2>
 <p>You need to request the table from server. Please refer to NonTableManagerSamples/PrintTable example program:</p>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span>  <span class="k">private</span> <span class="k">static</span> <span class="n">O2GAccountRow</span> <span class="nf">GetAccount</span><span class="p">(</span><span class="n">O2GSession</span> <span class="n">session</span><span class="p">)</span>
 <span class="p">{</span>
@@ -206,10 +244,14 @@ chart and market analysis application, custom trading application on FXCM accoun
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>How to get price history</strong>:</p>
+</div>
+<div class="section" id="how-to-get-price-history">
+<h2>How to get price history<a class="headerlink" href="#how-to-get-price-history" title="Permalink to this headline">¶</a></h2>
 <p>For pricehistory, you need to use non-table manager.
 You can see examples under NonTableManagerSamples/GetHistPrices</p>
-<p><strong>Real Case Studies using ForexConnect API</strong>:</p>
+</div>
+<div class="section" id="real-case-studies-using-forexconnect-api">
+<h2>Real Case Studies using ForexConnect API<a class="headerlink" href="#real-case-studies-using-forexconnect-api" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Learn how to build and backtest:</p>
 <blockquote>
@@ -236,6 +278,7 @@ For more information, you may contact us at <a class="reference external" href="
 </div>
 <p><strong>Disclaimer</strong>:</p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
 </div>
 
 

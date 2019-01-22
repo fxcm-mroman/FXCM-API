@@ -13,8 +13,8 @@ With the use of the socket.io library, the API has streaming capability and will
 
 FXCM's trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. For CFDs, please check the `CFD Product Guide <http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf>`_.
 
-**Getting Started**
--------------------
+Getting Started
+---------------
 
 1. Quick start guide
 
@@ -41,8 +41,8 @@ FXCM's trading hours vary by product. For forex, trading opens on Sundays betwee
    * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
 
 
-**How to connect**
-------------------
+How to connect
+--------------
 
 Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:
 
@@ -65,7 +65,7 @@ Sample Request:
    Host: api.fxcm.com 
    Connection: close
 
-**What 't' means**::
+What 't' means::
 
 "t" is the table id: 
 
@@ -78,8 +78,8 @@ Sample Request:
    :widths: 1 1
    :align: center
 
-**Subscribe vs snapshot**
--------------------------
+Subscribe vs snapshot
+---------------------
 
 FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.
 
@@ -90,7 +90,8 @@ You can request a snapshot of trading tables via /trading/get_model.
 
       Model choices: 'Offer', 'OpenPosition', 'ClosedPosition', 'Order', 'Summary', 'LeverageProfile', 'Account', 'Properties'.   
 
-**OrderID vs TradeID**::
+OrderID vs TradeID
+------------------
 
 OrderID and TradeID are different.
 In Market order, an order id is created straightaway and it is in callback immediately. 
@@ -99,7 +100,7 @@ In Market order, an order id is created straightaway and it is in callback immed
 
       {"response":{"executed":true},"data":{"type":0,"orderId":81712802}}
 
-A trade id is not generated until after order is executed. You have to subscribe the order table and listing the live update and look up the trade id. You will not get trade id in snapshot, because that information was gone when you submit the request. 
+A trade id is not generated until after order is executed. You have to subscribe the order table and listing the live update and look up the trade id. You will not get a trade id in snapshot as the information disappears when you submit the request. 
 
 ::
 
@@ -119,12 +120,12 @@ A trade id is not generated until after order is executed. You have to subscribe
       {"t":3,"ratePrecision":5,"orderId":"390285837","tradeId":"170162801","time":"04252018120716391","accountName":"01537581","accountId":"1537581","timeInForce":"GTC","expireDate":"","currency":"EUR/USD","isBuy":false,"buy":0,"sell":1.21818,"type":"OM","status":2,"amountK":5,"currencyPoint":0.5,"stopMove":0,"stop":0,"stopRate":0,"limit":0,"limitRate":0,"isEntryOrder":false,"ocoBulkId":0,"isNetQuantity":false,"isLimitOrder":false,"isStopOrder":false,"isELSOrder":false,"stopPegBaseType":-1,"limitPegBaseType":-1,"range":0,"action":"I"}
 
 
-Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. in this case, its more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated.
+Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. In this case, it's more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated order.
 
-In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed. 
+In an entry order, an order ID is in callback function. You can also see it on an order table sanpshot. but you will not get a TradeID until order been executed. 
 
-**Limitation on historical candle download per request**
---------------------------------------------------------
+Limitation on historical candle download per request
+----------------------------------------------------
 .. tabularcolumns:: |p{1cm}|p{8cm}|p{6cm}|
 	
 .. csv-table:: Candle download limit
@@ -134,20 +135,20 @@ In entry order, an order ID is in callback function. You can also see it on orde
    :widths: 1 1 1
    :align: center
 
-**How to place trailing stop**
-------------------------------
+How to place trailing stop
+--------------------------
 
-The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step
+The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. Parameter is trailing_stop_step.
       
 ::
 
       Example Entry order with trailing stop of 10 pips:
       POST /trading/create_entry_order account_id=1537581&symbol=EUR%2FUSD&is_buy=true&rate=1.1655&amount=3&order_type=Entry&time_in_force=GTC&stop=-50&trailing_stop_step=10&is_in_pips=true
 
-**Difference between account name and account ID**
---------------------------------------------------
+Difference between account name and account ID
+----------------------------------------------
 
-There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.
+There is a difference between account name and account id. Usually removing the heading zeros are account ID. You need to pass the account_id when placing orders. You can retrieve this information from /trading/get_model/accounts.
 
 ::
 
@@ -163,18 +164,17 @@ There is a difference bewteen account name and account id. usually removing the 
       request # 2  has been executed: {
       "response": {"executed": true}, "data": {"type": 0,"orderId": 194963057}}
 
-**Real Case Studies using REST API**
-------------------------------------
+Real Case Studies on Backtesting using the REST API
+---------------------------------------------------
+1. `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 
-	1. Learn how to run `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
+2. `QSTrader <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip/>`_ using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
 
-	2. Learn how to run `QSTrader <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip/>`_ using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
-
-	3. Building/back testing `RSI strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/>`_.
+3. `RSI strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/>`_.
 	
-	4. Building/back testing `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
+4. `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
 	
-	5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio via FXCM data on QuantConnect LEAN platform.
+5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio using FXCM data on QuantConnect LEAN platform.
 	
 .. note::
 

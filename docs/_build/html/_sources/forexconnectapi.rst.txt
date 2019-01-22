@@ -11,30 +11,34 @@ You can use ForexConnect on Trading station account, no extra setup required.
 
 .. note:: If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.
 
-**How to start**:
+Getting Started
+---------------
 
 1) A FXCM TSII account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_. 
-2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download/>`_.
+2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download/>`_
 3) Examples codes and documents are at ForexConnectAPI packages after installed.
-4) Online documents: `Getting Started <https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/>`_.
-5) ForexConnect with `Matlab <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/>`_.
-6) ForexConnect sample code for `Android/iOS/macOS/Python/Linux/Windows <https://github.com/gehtsoft/forex-connect/tree/master/samples/>`_.
-7) ForexConnect using `Python <http://fxcodebase.com/code/viewforum.php?f=51/>`_.
+4) Online documents: `Getting Started <https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/>`_
+5) ForexConnect with `Matlab <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/>`_
+6) ForexConnect sample code for `Android/iOS/macOS/Python/Linux/Windows <https://github.com/gehtsoft/forex-connect/tree/master/samples/>`_
+7) ForexConnect using `Python <http://fxcodebase.com/code/viewforum.php?f=51/>`_
 
-**Suggested Popular Development Platform IDE**:
+Top Development Platform IDEs
+-----------------------------
 
 * Windows 32bit and 64bit – `Visual Studio 2005 and up <https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx/>`_
 * Linux 32bit and 64bit – `Eclipse <https://eclipse.org/>`_
 * iOS – `Xcode <https://developer.apple.com/xcode/ide/>`_
 * Android - `Android Studio <https://developer.android.com/studio/intro/index.html/>`_
 
-**Table manager vs Non-table manager**:
+Table manager vs Non-table manager
+----------------------------------
 
 Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the SummaryTable is only accessible through the table manager. Table manager presents a performance decrease because it is constantly recalculating fields.
 
 Non-table manager allow you to capture table updates adhoc via the use of a class that implements the **IO2GResponseListener** interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.
 
-**How to get current balance**
+How to get current balance
+--------------------------
 
 You need to request the table from server. Please refer to NonTableManagerSamples/PrintTable example program:
 
@@ -58,13 +62,15 @@ You need to request the table from server. Please refer to NonTableManagerSample
           return accountsResponseReader.getRow(0);
       }
 
-**How to get price history**:
+How to get price history
+------------------------
 
 For pricehistory, you need to use non-table manager. 
 You can see examples under NonTableManagerSamples/GetHistPrices
 
 
-**Real Case Studies using ForexConnect API**:
+Real Case Studies using ForexConnect API
+----------------------------------------
 
 1. Learn how to build and backtest:
 

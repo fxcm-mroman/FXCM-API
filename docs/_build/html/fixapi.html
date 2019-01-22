@@ -84,25 +84,31 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started"><strong>Getting Started</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect"><strong>How to connect</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot"><strong>Subscribe vs snapshot</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request"><strong>Limitation on historical candle download per request</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop"><strong>How to place trailing stop</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id"><strong>Difference between account name and account ID</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api"><strong>Real Case Studies using REST API</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">FIX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites"><strong>Prerequisites</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#connecting"><strong>Connecting</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#marketdata"><strong>Marketdata</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#table"><strong>Table</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#order"><strong>Order</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sample-code"><strong>Sample code</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
@@ -179,8 +185,8 @@
 <p>In order to establish and maintain FIX connectivity, you must have an application that manages a network connection and which sends/receives FIX messages. An application that does this is referred to as a FIX engine. Today there are numerous commercial FIX engines as well as open-source alternatives, the most known of which is QuickFIX</p>
 <p>FXCM trading session reset weekly, it opens on Sundays between 5:00 PM ET and 5:15 PM ET. and closes on Fridays at 4:55 PM ET.</p>
 <p>Please refer to our <a class="reference external" href="https://github.com/fxcm/FIXAPI/">GitHub</a>.</p>
-<div class="section" id="prerequisites">
-<h2><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>First open a demo TSII account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
 <li>Send your login to <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a> to get FIX credentials.</li>
@@ -190,7 +196,7 @@
 </ul>
 </div>
 <div class="section" id="connecting">
-<h2><strong>Connecting</strong><a class="headerlink" href="#connecting" title="Permalink to this headline">¶</a></h2>
+<h2>Connecting<a class="headerlink" href="#connecting" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways to Logon, one is within the Logon message should include your Username(553) and Password(554). The other one is send Username(553) and Password(554) on User Request (35=BE). It is also important to note here that FXCM requires the TargetSubID on all messages, including your Logon:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="n">Logon</span> <span class="n">Messages</span>
 <span class="n">Send</span> <span class="n">Username</span><span class="o">/</span><span class="n">Password</span> <span class="n">on</span> <span class="n">Logon</span> <span class="p">(</span><span class="mi">35</span><span class="o">=</span><span class="n">A</span><span class="p">)</span>
@@ -205,7 +211,7 @@
 </div>
 </div>
 <div class="section" id="marketdata">
-<h2><strong>Marketdata</strong><a class="headerlink" href="#marketdata" title="Permalink to this headline">¶</a></h2>
+<h2>Marketdata<a class="headerlink" href="#marketdata" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Subscribe market price with 35=V MarketDataRequest. You will get MarketDataSnapshotFullRefresh(W) 35=W.</li>
 <li>The MarketDataSnapshotFullRefresh(W) message contains the updates to market data. It is obtained as a response to the MarketDataRequest(V) message. FIX connections are then subscription based for the market data; meaning, you must request it to receive it.</li>
@@ -224,7 +230,7 @@
 </div>
 </div>
 <div class="section" id="table">
-<h2><strong>Table</strong><a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<h2>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
 <p>Send Collateral Inquiry 35=BB, you will get Collateral report 35=BA, which contains account information:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span><span class="o">|</span><span class="mi">9</span><span class="o">=</span><span class="mi">88</span><span class="o">|</span><span class="mi">35</span><span class="o">=</span><span class="n">BB</span><span class="o">|</span><span class="mi">34</span><span class="o">=</span><span class="mi">4</span><span class="o">|</span><span class="mi">49</span><span class="o">=</span><span class="n">d101970033_client2</span><span class="o">|</span><span class="mi">52</span><span class="o">=</span><span class="mi">20180817</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mf">27.716</span><span class="o">|</span><span class="mi">56</span><span class="o">=</span><span class="n">FXCM</span><span class="o">|</span><span class="mi">57</span><span class="o">=</span><span class="n">U100D1</span><span class="o">|</span><span class="mi">263</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">909</span><span class="o">=</span><span class="mi">3</span><span class="o">|</span><span class="mi">10</span><span class="o">=</span><span class="mi">203</span><span class="o">|</span>
 <span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span><span class="o">|</span><span class="mi">9</span><span class="o">=</span><span class="mi">361</span><span class="o">|</span><span class="mi">35</span><span class="o">=</span><span class="n">BA</span><span class="o">|</span><span class="mi">34</span><span class="o">=</span><span class="mi">5</span><span class="o">|</span><span class="mi">49</span><span class="o">=</span><span class="n">FXCM</span><span class="o">|</span><span class="mi">50</span><span class="o">=</span><span class="n">U100D1</span><span class="o">|</span><span class="mi">52</span><span class="o">=</span><span class="mi">20180817</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mf">27.737</span><span class="o">|</span><span class="mi">56</span><span class="o">=</span><span class="n">d101970033_client2</span><span class="o">|</span><span class="mi">1</span><span class="o">=</span><span class="mi">01960313</span><span class="o">|</span><span class="mi">53</span><span class="o">=</span><span class="mi">1000</span><span class="o">|</span><span class="mi">336</span><span class="o">=</span><span class="n">FXC</span>  <span class="n">M</span><span class="o">|</span><span class="mi">625</span><span class="o">=</span><span class="n">U100D1</span><span class="o">|</span><span class="mi">898</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">901</span><span class="o">=</span><span class="mf">1000562.37</span><span class="o">|</span><span class="mi">908</span><span class="o">=</span><span class="mi">4647057334</span><span class="o">|</span><span class="mi">909</span><span class="o">=</span><span class="mi">3</span><span class="o">|</span><span class="mi">910</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">911</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">912</span><span class="o">=</span><span class="n">Y</span><span class="o">|</span><span class="mi">921</span><span class="o">=</span><span class="mf">1000562.37</span><span class="o">|</span><span class="mi">922</span><span class="o">=</span><span class="mf">1000562.37</span><span class="o">|</span><span class="mi">9038</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">9045</span><span class="o">=</span><span class="n">N</span><span class="o">|</span><span class="mi">904</span>        <span class="mi">6</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">9047</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">453</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">448</span><span class="o">=</span><span class="n">FXCM</span>       <span class="n">ID</span><span class="o">|</span><span class="mi">447</span><span class="o">=</span><span class="n">D</span><span class="o">|</span><span class="mi">452</span><span class="o">=</span><span class="mi">3</span><span class="o">|</span><span class="mi">802</span><span class="o">=</span><span class="mi">5</span><span class="o">|</span><span class="mi">523</span><span class="o">=</span><span class="mi">1960313</span><span class="o">|</span><span class="mi">803</span><span class="o">=</span><span class="mi">10</span><span class="o">|</span><span class="mi">523</span><span class="o">=</span><span class="n">d101970033</span><span class="o">|</span><span class="mi">803</span><span class="o">=</span><span class="mi">2</span><span class="o">|</span><span class="mi">523</span><span class="o">=</span><span class="n">fix</span><span class="o">-</span><span class="n">test138</span><span class="o">|</span><span class="mi">803</span><span class="o">=</span><span class="mi">22</span><span class="o">|</span><span class="mi">523</span><span class="o">=</span><span class="mi">32</span><span class="o">|</span><span class="mi">803</span><span class="o">=</span><span class="mi">26</span><span class="o">|</span><span class="mi">523</span><span class="o">=</span><span class="n">Y</span><span class="o">|</span><span class="mi">803</span><span class="o">=</span><span class="mi">4000</span><span class="o">|</span><span class="mi">10</span><span class="o">=</span><span class="mi">03</span>  <span class="mi">3</span><span class="o">|</span>
@@ -249,7 +255,7 @@
 </div>
 </div>
 <div class="section" id="order">
-<h2><strong>Order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<h2>Order<a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <p>Please set account number on tag 1, 1=00648329 when you place orders. Otherwise you will get error “No Account specified”.
 Place market order via 35=D. you will get execution report in 35=8:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">market</span> <span class="n">position</span><span class="p">:</span>
@@ -261,7 +267,7 @@ Place market order via 35=D. you will get execution report in 35=8:</p>
 </div>
 </div>
 <div class="section" id="sample-code">
-<h2><strong>Sample code</strong><a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
 <p>Sample programs in C++/C#/Java are <a class="reference external" href="https://github.com/fxcm/FIXAPI/tree/master/Sample%20Projects/">here</a>.</p>
 <p><strong>Disclaimer</strong></p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the Financial Services Guide, Product Disclosure Statement, and Terms of Business. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>

@@ -3,7 +3,8 @@ JAVA
 
 Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.
 
-**How to start:**
+Getting Started
+---------------
 
 * A FXCM account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.	
 * Download the package `here <https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/>`_.	
@@ -22,22 +23,23 @@ To run the program, it needs to be passed as below arguments:
 	
  	**test_command** is one of the following::
 	
-	   * LISTEN:    Just listen for message, do not do anything
-	   * CMO:       createMarketOrder (previously quoted)
-	   * SSLMO:     set Stop/Limit on an open position
-	   * USLMO:     update Stop/Limit price on a positon 
-	   * DSLMO:     delete Stop/Limit from a position
-	   * CEO:       create entry order 
-	   * SSLEO:     set Stop/Limit on an entry order
-	   * USLEO:     update Stop/Limit on an entry order
-	   * DSLEO:     remove Stop/Limit on an entry order
-	   * DEO:       remove Entry Order
-	   * CLOSEMO:   close positon
-	   * UREO:      Update rate on an entry order
-	   * MDH:	   Retrieve Marke data history
-	   * RECONNECT: Reconnect the session
+	   LISTEN:    Just listen for message, do not do anything
+	   CMO:       createMarketOrder (previously quoted)
+	   SSLMO:     set Stop/Limit on an open position
+	   USLMO:     update Stop/Limit price on a positon 
+	   DSLMO:     delete Stop/Limit from a position
+	   CEO:       create entry order 
+	   SSLEO:     set Stop/Limit on an entry order
+	   USLEO:     update Stop/Limit on an entry order
+	   DSLEO:     remove Stop/Limit on an entry order
+	   DEO:       remove Entry Order
+	   CLOSEMO:   close positon
+	   UREO:      Update rate on an entry order
+	   MDH:	   Retrieve Marke data history
+	   RECONNECT: Reconnect the session
 
-**How to login**:
+How to login
+------------
 
 .. code-block:: java
 
@@ -75,7 +77,8 @@ To run the program, it needs to be passed as below arguments:
     }
 
 
-**How to get the rollover**:
+How to get the rollover
+-----------------------
 
 With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions:
 ::
@@ -87,7 +90,8 @@ With Java API you can get the current rollover for each symbol, it can be done w
 	The 10k in this example is the server default base unit size, it can be 
 	found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 
-**Real Case Studies for using Java API:**
+Real Case Studies for using Java API
+------------------------------------
 
 	1. How to build `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ 	strategy. 
 	
@@ -99,15 +103,15 @@ With Java API you can get the current rollover for each symbol, it can be done w
 
 	5. Learn how to build and back test `Mean Reversion  	 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
 
-*Note*:
+.. note::
 
-o	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_
+	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_
 
-o	For more information, you may contact us: api@fxcm.com
+	For more information, you may contact us at api@fxcm.com
 
-**Release Note**:
+**Release Notes**:
 
-Build.number=260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;
+	Build.number = 260: Roll up of all previous builds, plus fixes for range entry order with Good Til Date semantics;
 
 **Disclaimer**:
 

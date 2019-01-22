@@ -83,11 +83,49 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Market Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-using-forexconnect-api">Real Case Studies using ForexConnect API</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#volume">Volume</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -156,9 +194,9 @@
             
   <div class="section" id="market-data">
 <h1>Market Data<a class="headerlink" href="#market-data" title="Permalink to this headline">¶</a></h1>
-<p><strong>Introduction</strong></p>
-<p>FXCM provide several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.</p>
-<p><strong>TickData</strong></p>
+<p>FXCM provides several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.</p>
+<div class="section" id="tickdata">
+<h2>TickData<a class="headerlink" href="#tickdata" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy free access to our historical Tick Data.</p>
 <p>Our repository contains Tick Data from 4 January 2015. The data is compiled by trading instrument for that trading week. The files are stored in our public directory and is updated every Monday:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tickdata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">instrument</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">int</span> <span class="n">of</span> <span class="n">week</span> <span class="n">of</span> <span class="n">year</span><span class="p">}</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
@@ -186,7 +224,9 @@ Data points are indicative and based on the lowest spreads available exclusively
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
 </div>
-<p><strong>CandleData</strong></p>
+</div>
+<div class="section" id="candledata">
+<h2>CandleData<a class="headerlink" href="#candledata" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy free access to our historical Time Series or Candle Data.</p>
 <p>Our repository contains Candle Data from 1 January 2012. The data is compiled by trading instrument for that trading week for m1 &amp; H1, and trading year for D1. The files are stored in our public directory and is updated every Monday for minute (m1) and hour (H1) data only:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">periodicity</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">instrument</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">int</span> <span class="n">of</span> <span class="n">week</span> <span class="n">of</span> <span class="n">year</span><span class="p">}</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
@@ -223,7 +263,9 @@ Data points are indicative and based on the lowest spreads available exclusively
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
 </div>
-<p><strong>Order Flow</strong></p>
+</div>
+<div class="section" id="order-flow">
+<h2>Order Flow<a class="headerlink" href="#order-flow" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy a free one-month sample of our historical Orders Data.</p>
 <p><a class="reference external" href="https://sampledata.fxcorporate.com/orders/sample.csv.gz">https://sampledata.fxcorporate.com/orders/sample.csv.gz</a></p>
 <dl class="docutils">
@@ -245,7 +287,9 @@ Data points are indicative and based on the lowest spreads available exclusively
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
 </div>
-<p><strong>Sentiment</strong></p>
+</div>
+<div class="section" id="sentiment">
+<h2>Sentiment<a class="headerlink" href="#sentiment" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy a free one-month sample of our historical Sentiment Data also known as SSI:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://sampledata.fxcorporate.com/sentiment/{instrument}.csv.gz
 
@@ -271,7 +315,9 @@ Data points are indicative and based on the lowest spreads available exclusively
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
 </div>
-<p><strong>Volume</strong></p>
+</div>
+<div class="section" id="volume">
+<h2>Volume<a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy a free one-month sample of our historical Volume Data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://sampledata.fxcorporate.com/volume/{instrument}.csv.gz
 
@@ -296,6 +342,7 @@ Timestamps are in UTC.
 Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
 </div>
 </div>
 

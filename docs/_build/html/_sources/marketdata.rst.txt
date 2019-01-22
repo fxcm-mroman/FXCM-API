@@ -1,11 +1,10 @@
 Market Data
 ===========
 
-**Introduction**
+FXCM provides several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.
 
-FXCM provide several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.
-
-**TickData**
+TickData
+--------
 
 Enjoy free access to our historical Tick Data.
 
@@ -38,7 +37,8 @@ If you are familiar with Python, we have two scripts that you may use for Python
 	This is for personal use and abides by our EULA.
 	For more information, you may contact us at api@fxcm.com.
 
-**CandleData**
+CandleData
+----------
 
 Enjoy free access to our historical Time Series or Candle Data.
 
@@ -80,7 +80,8 @@ If you are familiar with Python, we have three scripts that you may use for Pyth
 	This is for personal use and abides by our EULA.
 	For more information, you may contact us at api@fxcm.com.
 
-**Order Flow**
+Order Flow
+----------
 
 Enjoy a free one-month sample of our historical Orders Data.
 
@@ -101,7 +102,8 @@ Each data set would include:
 	This is for personal use and abides by our EULA.
 	For more information, you may contact us at api@fxcm.com.
 
-**Sentiment**
+Sentiment
+---------
 
 Enjoy a free one-month sample of our historical Sentiment Data also known as SSI:
 
@@ -130,7 +132,8 @@ Enjoy a free one-month sample of our historical Sentiment Data also known as SSI
 	This is for personal use and abides by our EULA.
 	For more information, you may contact us at api@fxcm.com.
 
-**Volume**
+Volume
+------
 
 Enjoy a free one-month sample of our historical Volume Data:
 
