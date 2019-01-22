@@ -9,7 +9,7 @@ Forex Connect supports C++, C#, Java, VB, VBA, Windows, Linux and smart phones. 
 
 You can use ForexConnect on Trading station account, no extra setup required.
 
-.. note:: If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.
+.. note:: If using ``O2G2`` namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.
 
 Getting Started
 ---------------
@@ -33,14 +33,14 @@ Top Development Platform IDEs
 Table manager vs Non-table manager
 ----------------------------------
 
-Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the SummaryTable is only accessible through the table manager. Table manager presents a performance decrease because it is constantly recalculating fields.
+Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the ``SummaryTable`` is only accessible through the table manager. ``Table manager`` presents a performance decrease because it is constantly recalculating fields.
 
-Non-table manager allow you to capture table updates adhoc via the use of a class that implements the **IO2GResponseListener** interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.
+``Non-table manager`` allow you to capture table updates adhoc via the use of a class that implements the ``IO2GResponseListener`` interface. It give performance advantage but you need to calculate some fields such as ``PipCost`` or ``P/L``.
 
 How to get current balance
 --------------------------
 
-You need to request the table from server. Please refer to NonTableManagerSamples/PrintTable example program:
+You need to request the table from server. Please refer to ``NonTableManagerSamples\PrintTable`` example program:
 
 .. code-block:: C#
 
@@ -66,11 +66,11 @@ How to get price history
 ------------------------
 
 For pricehistory, you need to use non-table manager. 
-You can see examples under NonTableManagerSamples/GetHistPrices
+You can see examples under ``NonTableManagerSamples\GetHistPrices``
 
 
-Real Case Studies using ForexConnect API
-----------------------------------------
+Real Case Studies on Backtesting using ForexConnect API
+-------------------------------------------------------
 
 1. Learn how to build and backtest:
 

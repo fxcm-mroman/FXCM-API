@@ -87,14 +87,15 @@
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-on-backtesting-using-the-rest-api">Real Case Studies on Backtesting using the REST API</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fixapi.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
@@ -104,13 +105,29 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JAVA</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-login">How to login</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-on-backtesting-using-java-api">Real Case Studies on Backtesting using Java API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -186,21 +203,23 @@
 <li>A FXCM account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
 <li>Download the package <a class="reference external" href="https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/">here</a>.</li>
 <li>Documents are in the package at trading_sdkfxcm-apijavadoc.</li>
-<li>Sample code at trading_sdkfxcm-apisrcQATest.java</li>
+<li>Sample code at <code class="docutils literal notranslate"><span class="pre">trading_sdk\fxcm-api\src\QATest.java</span></code></li>
 </ul>
-<p><strong>How to run the QATest example:</strong>
-To run the program, it needs to be passed as below arguments:</p>
+</div>
+<div class="section" id="running-qatest-java">
+<h2>Running QATest.java<a class="headerlink" href="#running-qatest-java" title="Permalink to this headline">¶</a></h2>
+<p>To run the program, it needs to be passed as below arguments:</p>
 <blockquote>
-<div><p><strong>(loginid) (loginpwd) (connection_name) (hostUrl) (test_command)</strong></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">loginid</span></code> <code class="docutils literal notranslate"><span class="pre">loginpwd</span></code> <code class="docutils literal notranslate"><span class="pre">connection_name</span></code> <code class="docutils literal notranslate"><span class="pre">hostUrl</span></code> <code class="docutils literal notranslate"><span class="pre">test_command</span></code></p>
 <blockquote>
 <div><ul class="simple">
 <li>loginid: your Trading Station username</li>
 <li>loginpwd: your Trading station password</li>
-<li>connection_name: “Demo” or “Real”</li>
+<li>connection_name: <code class="docutils literal notranslate"><span class="pre">Demo</span></code> or <code class="docutils literal notranslate"><span class="pre">Real</span></code></li>
 <li>hostUrl: <a class="reference external" href="http://www.fxcorporate.com/Hosts.jsp">http://www.fxcorporate.com/Hosts.jsp</a></li>
 </ul>
 </div></blockquote>
-<p><strong>test_command</strong> is one of the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">test_command</span></code> is one of the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LISTEN</span><span class="p">:</span>    <span class="n">Just</span> <span class="n">listen</span> <span class="k">for</span> <span class="n">message</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">do</span> <span class="n">anything</span>
 <span class="n">CMO</span><span class="p">:</span>       <span class="n">createMarketOrder</span> <span class="p">(</span><span class="n">previously</span> <span class="n">quoted</span><span class="p">)</span>
 <span class="n">SSLMO</span><span class="p">:</span>     <span class="nb">set</span> <span class="n">Stop</span><span class="o">/</span><span class="n">Limit</span> <span class="n">on</span> <span class="n">an</span> <span class="nb">open</span> <span class="n">position</span>
@@ -258,7 +277,7 @@ To run the program, it needs to be passed as below arguments:</p>
 </div>
 <div class="section" id="how-to-get-the-rollover">
 <h2>How to get the rollover<a class="headerlink" href="#how-to-get-the-rollover" title="Permalink to this headline">¶</a></h2>
-<p>With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions:</p>
+<p>With Java API you can get the current rollover for each symbol, it can be done with the functions <code class="docutils literal notranslate"><span class="pre">getFXCMSymInterestBuy()</span></code> and <code class="docutils literal notranslate"><span class="pre">getFXCMSymInterestSell()</span></code> from <code class="docutils literal notranslate"><span class="pre">TradingSecurity</span> <span class="pre">Class</span></code>,  for Long and Short positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>For example:
 getFXCMSymInterestBuy() = 0.12     you will get $0.12 for 10k
 getFXCMSymInterestSell() = -0.39    you will pay $0.39  for 10k
@@ -268,15 +287,15 @@ found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 </pre></div>
 </div>
 </div>
-<div class="section" id="real-case-studies-for-using-java-api">
-<h2>Real Case Studies for using Java API<a class="headerlink" href="#real-case-studies-for-using-java-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="real-case-studies-on-backtesting-using-java-api">
+<h2>Real Case Studies on Backtesting using Java API<a class="headerlink" href="#real-case-studies-on-backtesting-using-java-api" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
-<li>How to build <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/">Rsi signal and back testing</a>    strategy.</li>
-<li>Learn how to build and backtest <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/">CCI Oscillator</a> strategy.</li>
-<li>Lean how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/">Breakout</a> strategy.</li>
-<li>Lean how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/">Range Stochastic</a> strategy .</li>
-<li>Learn how to build and back test <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/">Mean Reversion</a> strategy.</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/">Rsi signal and back testing</a>    strategy.</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/">CCI Oscillator</a> strategy.</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/">Breakout</a> strategy.</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/">Range Stochastic</a> strategy .</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/">Mean Reversion</a> strategy.</li>
 </ol>
 </div></blockquote>
 <div class="admonition note">

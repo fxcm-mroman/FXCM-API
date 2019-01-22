@@ -9,19 +9,21 @@ Getting Started
 * A FXCM account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.	
 * Download the package `here <https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/>`_.	
 * Documents are in the package at trading_sdk\fxcm-api\javadoc.	
-* Sample code at trading_sdk\fxcm-api\src\QATest.java	
+* Sample code at ``trading_sdk\fxcm-api\src\QATest.java``	
 
-**How to run the QATest example:**
+Running QATest.java
+-------------------
+
 To run the program, it needs to be passed as below arguments:
 
-	**(loginid) (loginpwd) (connection_name) (hostUrl) (test_command)**
+	``loginid`` ``loginpwd`` ``connection_name`` ``hostUrl`` ``test_command``
 	   	     	
 	   * loginid: your Trading Station username
 	   * loginpwd: your Trading station password
-	   * connection_name: "Demo" or "Real"  
+	   * connection_name: ``Demo`` or ``Real`` 
 	   * hostUrl: http://www.fxcorporate.com/Hosts.jsp
 	
- 	**test_command** is one of the following::
+ 	``test_command`` is one of the following::
 	
 	   LISTEN:    Just listen for message, do not do anything
 	   CMO:       createMarketOrder (previously quoted)
@@ -80,7 +82,7 @@ How to login
 How to get the rollover
 -----------------------
 
-With Java API you can get the current rollover for each symbol, it can be done with the functions getFXCMSymInterestBuy()and getFXCMSymInterestSell() from TradingSecurity Class,  for Long and Short positions:
+With Java API you can get the current rollover for each symbol, it can be done with the functions ``getFXCMSymInterestBuy()`` and ``getFXCMSymInterestSell()`` from ``TradingSecurity Class``,  for Long and Short positions:
 ::
 
 	For example:
@@ -90,18 +92,18 @@ With Java API you can get the current rollover for each symbol, it can be done w
 	The 10k in this example is the server default base unit size, it can be 
 	found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 
-Real Case Studies for using Java API
-------------------------------------
+Real Case Studies on Backtesting using Java API
+-----------------------------------------------
 
-	1. How to build `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ 	strategy. 
+	1. `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ 	strategy. 
 	
-	2. Learn how to build and backtest `CCI Oscillator 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/>`_ strategy.
+	2. `CCI Oscillator 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/>`_ strategy.
 	
-	3. Lean how to build and back test `Breakout 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/>`_ strategy.
+	3. `Breakout <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/>`_ strategy.
  
-	4. Lean how to build and back test `Range Stochastic 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/>`_ strategy .
+	4. `Range Stochastic 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/>`_ strategy .
 
-	5. Learn how to build and back test `Mean Reversion  	 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
+	5. `Mean Reversion  	 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
 
 .. note::
 

@@ -87,10 +87,11 @@
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-using-rest-api">Real Case Studies using REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-on-backtesting-using-the-rest-api">Real Case Studies on Backtesting using the REST API</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a><ul>
@@ -104,9 +105,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-for-using-java-api">Real Case Studies for using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-on-backtesting-using-java-api">Real Case Studies on Backtesting using Java API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ForexConnect</a><ul>
@@ -115,10 +117,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-get-current-balance">How to get current balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-get-price-history">How to get price history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-using-forexconnect-api">Real Case Studies using ForexConnect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -194,7 +203,7 @@ chart and market analysis application, custom trading application on FXCM accoun
 <p>You can use ForexConnect on Trading station account, no extra setup required.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If using O2G2 namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.</p>
+<p class="last">If using <code class="docutils literal notranslate"><span class="pre">O2G2</span></code> namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.</p>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
@@ -219,12 +228,12 @@ chart and market analysis application, custom trading application on FXCM accoun
 </div>
 <div class="section" id="table-manager-vs-non-table-manager">
 <h2>Table manager vs Non-table manager<a class="headerlink" href="#table-manager-vs-non-table-manager" title="Permalink to this headline">¶</a></h2>
-<p>Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the SummaryTable is only accessible through the table manager. Table manager presents a performance decrease because it is constantly recalculating fields.</p>
-<p>Non-table manager allow you to capture table updates adhoc via the use of a class that implements the <strong>IO2GResponseListener</strong> interface. It give performance advantage but you need to calculate some fields such as PipCost or P/L.</p>
+<p>Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the <code class="docutils literal notranslate"><span class="pre">SummaryTable</span></code> is only accessible through the table manager. <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">manager</span></code> presents a performance decrease because it is constantly recalculating fields.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Non-table</span> <span class="pre">manager</span></code> allow you to capture table updates adhoc via the use of a class that implements the <code class="docutils literal notranslate"><span class="pre">IO2GResponseListener</span></code> interface. It give performance advantage but you need to calculate some fields such as <code class="docutils literal notranslate"><span class="pre">PipCost</span></code> or <code class="docutils literal notranslate"><span class="pre">P/L</span></code>.</p>
 </div>
 <div class="section" id="how-to-get-current-balance">
 <h2>How to get current balance<a class="headerlink" href="#how-to-get-current-balance" title="Permalink to this headline">¶</a></h2>
-<p>You need to request the table from server. Please refer to NonTableManagerSamples/PrintTable example program:</p>
+<p>You need to request the table from server. Please refer to <code class="docutils literal notranslate"><span class="pre">NonTableManagerSamples\PrintTable</span></code> example program:</p>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span>  <span class="k">private</span> <span class="k">static</span> <span class="n">O2GAccountRow</span> <span class="nf">GetAccount</span><span class="p">(</span><span class="n">O2GSession</span> <span class="n">session</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">O2GResponseReaderFactory</span> <span class="n">readerFactory</span> <span class="p">=</span> <span class="n">session</span><span class="p">.</span><span class="n">getResponseReaderFactory</span><span class="p">();</span>
@@ -248,10 +257,10 @@ chart and market analysis application, custom trading application on FXCM accoun
 <div class="section" id="how-to-get-price-history">
 <h2>How to get price history<a class="headerlink" href="#how-to-get-price-history" title="Permalink to this headline">¶</a></h2>
 <p>For pricehistory, you need to use non-table manager.
-You can see examples under NonTableManagerSamples/GetHistPrices</p>
+You can see examples under <code class="docutils literal notranslate"><span class="pre">NonTableManagerSamples\GetHistPrices</span></code></p>
 </div>
-<div class="section" id="real-case-studies-using-forexconnect-api">
-<h2>Real Case Studies using ForexConnect API<a class="headerlink" href="#real-case-studies-using-forexconnect-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="real-case-studies-on-backtesting-using-forexconnect-api">
+<h2>Real Case Studies on Backtesting using ForexConnect API<a class="headerlink" href="#real-case-studies-on-backtesting-using-forexconnect-api" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Learn how to build and backtest:</p>
 <blockquote>
