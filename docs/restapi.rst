@@ -14,6 +14,7 @@ With the use of the socket.io library, the API has streaming capability and will
 FXCM's trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. For CFDs, please check the `CFD Product Guide <http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf>`_.
 
 **Getting Started**
+-------------------
 
 1. Quick start guide
 
@@ -40,7 +41,8 @@ FXCM's trading hours vary by product. For forex, trading opens on Sundays betwee
    * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
 
 
-**How to connect**::
+**How to connect**
+------------------
 
 Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:
 
@@ -51,6 +53,7 @@ Clients should establish a persistent WebSocket connection using socket.io libra
    :header-rows: 1
    :class: longtable
    :widths: 1 1 1 1
+   :align: center
 
 Sample Request:
 ::
@@ -73,8 +76,10 @@ Sample Request:
    :header-rows: 1
    :class: longtable
    :widths: 1 1
+   :align: center
 
-**Subscribe vs snapshot**::
+**Subscribe vs snapshot**
+-------------------------
 
 FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.
 
@@ -118,8 +123,8 @@ Furthermore, a single market order can have many TradeIDs, if they are partial f
 
 In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed. 
 
-**Limitation on historical candle download per request**:
-
+**Limitation on historical candle download per request**
+--------------------------------------------------------
 .. tabularcolumns:: |p{1cm}|p{8cm}|p{6cm}|
 	
 .. csv-table:: Candle download limit
@@ -127,8 +132,10 @@ In entry order, an order ID is in callback function. You can also see it on orde
    :header-rows: 1
    :class: longtable
    :widths: 1 1 1
+   :align: center
 
-**How to place trailing stop**::
+**How to place trailing stop**
+------------------------------
 
 The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step
       
@@ -137,7 +144,8 @@ The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, nu
       Example Entry order with trailing stop of 10 pips:
       POST /trading/create_entry_order account_id=1537581&symbol=EUR%2FUSD&is_buy=true&rate=1.1655&amount=3&order_type=Entry&time_in_force=GTC&stop=-50&trailing_stop_step=10&is_in_pips=true
 
-**Difference between account name and account ID**::
+**Difference between account name and account ID**
+--------------------------------------------------
 
 There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.
 
@@ -155,7 +163,8 @@ There is a difference bewteen account name and account id. usually removing the 
       request # 2  has been executed: {
       "response": {"executed": true}, "data": {"type": 0,"orderId": 194963057}}
 
-**Real Case Studies using REST API**:
+**Real Case Studies using REST API**
+------------------------------------
 
 	1. Learn how to run `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 
@@ -165,13 +174,12 @@ There is a difference bewteen account name and account id. usually removing the 
 	
 	4. Building/back testing `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
 	
-	5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform.
+	5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio via FXCM data on QuantConnect LEAN platform.
 	
-**Note**:
+.. note::
 
-o	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
-
-o	For more information, you may contact us: api@fxcm.com
+	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
+	For more information, you may contact us at api@fxcm.com
 
 **Disclaimer**:
 

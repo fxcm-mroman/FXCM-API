@@ -83,7 +83,16 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started"><strong>Getting Started</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-connect"><strong>How to connect</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subscribe-vs-snapshot"><strong>Subscribe vs snapshot</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limitation-on-historical-candle-download-per-request"><strong>Limitation on historical candle download per request</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-place-trailing-stop"><strong>How to place trailing stop</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#difference-between-account-name-and-account-id"><strong>Difference between account name and account ID</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-case-studies-using-rest-api"><strong>Real Case Studies using REST API</strong></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a></li>
@@ -162,7 +171,8 @@
 <p>With the use of the socket.io library, the API has streaming capability and will push data notifications in a JSON format. Your application will have access to our real-time streaming market data, subscribe in real time access to trading tables and place live trades.</p>
 <p><strong>FXCM Trading hours</strong></p>
 <p>FXCM’s trading hours vary by product. For forex, trading opens on Sundays between 5:00 PM ET and 5:15 PM ET and closes on Fridays around 4:55 PM ET. For CFDs, please check the <a class="reference external" href="http://docs.fxcorporate.com/user-guide/ug-cfd-product-guide-ltd-en.pdf">CFD Product Guide</a>.</p>
-<p><strong>Getting Started</strong></p>
+<div class="section" id="getting-started">
+<h2><strong>Getting Started</strong><a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Quick start guide<ul>
 <li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Rest_quick_start_guide_python.docx/">Python</a></li>
@@ -188,9 +198,11 @@
 </ul>
 </li>
 </ol>
-<p><strong>How to connect</strong>:</p>
+</div>
+<div class="section" id="how-to-connect">
+<h2><strong>How to connect</strong><a class="headerlink" href="#how-to-connect" title="Permalink to this headline">¶</a></h2>
 <p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:</p>
-<table border="1" class="colwidths-given longtable docutils" id="id4">
+<table border="1" class="colwidths-given longtable docutils align-center" id="id4">
 <caption><span class="caption-text">HTTP Message</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
@@ -255,7 +267,7 @@ Connection: close
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;t&quot;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">table</span> <span class="nb">id</span><span class="p">:</span>
 </pre></div>
 </div>
-<table border="1" class="colwidths-given longtable docutils" id="id5">
+<table border="1" class="colwidths-given longtable docutils align-center" id="id5">
 <caption><span class="caption-text">TableID</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="50%" />
@@ -290,7 +302,9 @@ Connection: close
 </tr>
 </tbody>
 </table>
-<p><strong>Subscribe vs snapshot</strong>:</p>
+</div>
+<div class="section" id="subscribe-vs-snapshot">
+<h2><strong>Subscribe vs snapshot</strong><a class="headerlink" href="#subscribe-vs-snapshot" title="Permalink to this headline">¶</a></h2>
 <p>FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.</p>
 <p>After susbcribe, data will be pushed to your socket whenever there is an update. You can susbcribe Market data stream /susbcribe or live table update /trading/susbcribe. You can also unsubscribe.
 You can request a snapshot of trading tables via /trading/get_model.</p>
@@ -322,8 +336,10 @@ In Market order, an order id is created straightaway and it is in callback immed
 </div>
 <p>Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. in this case, its more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated.</p>
 <p>In entry order, an order ID is in callback function. You can also see it on order table sanpshot. but you will not get TradeID until order been executed.</p>
-<p><strong>Limitation on historical candle download per request</strong>:</p>
-<table border="1" class="colwidths-given longtable docutils" id="id6">
+</div>
+<div class="section" id="limitation-on-historical-candle-download-per-request">
+<h2><strong>Limitation on historical candle download per request</strong><a class="headerlink" href="#limitation-on-historical-candle-download-per-request" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given longtable docutils align-center" id="id6">
 <caption><span class="caption-text">Candle download limit</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
@@ -387,13 +403,17 @@ In Market order, an order id is created straightaway and it is in callback immed
 </tr>
 </tbody>
 </table>
-<p><strong>How to place trailing stop</strong>:</p>
+</div>
+<div class="section" id="how-to-place-trailing-stop">
+<h2><strong>How to place trailing stop</strong><a class="headerlink" href="#how-to-place-trailing-stop" title="Permalink to this headline">¶</a></h2>
 <p>The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. also the parameter is trailing_stop_step</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="n">Entry</span> <span class="n">order</span> <span class="k">with</span> <span class="n">trailing</span> <span class="n">stop</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">pips</span><span class="p">:</span>
 <span class="n">POST</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">create_entry_order</span> <span class="n">account_id</span><span class="o">=</span><span class="mi">1537581</span><span class="o">&amp;</span><span class="n">symbol</span><span class="o">=</span><span class="n">EUR</span><span class="o">%</span><span class="mi">2</span><span class="n">FUSD</span><span class="o">&amp;</span><span class="n">is_buy</span><span class="o">=</span><span class="n">true</span><span class="o">&amp;</span><span class="n">rate</span><span class="o">=</span><span class="mf">1.1655</span><span class="o">&amp;</span><span class="n">amount</span><span class="o">=</span><span class="mi">3</span><span class="o">&amp;</span><span class="n">order_type</span><span class="o">=</span><span class="n">Entry</span><span class="o">&amp;</span><span class="n">time_in_force</span><span class="o">=</span><span class="n">GTC</span><span class="o">&amp;</span><span class="n">stop</span><span class="o">=-</span><span class="mi">50</span><span class="o">&amp;</span><span class="n">trailing_stop_step</span><span class="o">=</span><span class="mi">10</span><span class="o">&amp;</span><span class="n">is_in_pips</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
-<p><strong>Difference between account name and account ID</strong>:</p>
+</div>
+<div class="section" id="difference-between-account-name-and-account-id">
+<h2><strong>Difference between account name and account ID</strong><a class="headerlink" href="#difference-between-account-name-and-account-id" title="Permalink to this headline">¶</a></h2>
 <p>There is a difference bewteen account name and account id. usually removing the heading zeros are account ID. and you need to pass account_id when you place orders. You can retrieve this information from /trading/get_model/Accounts.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wrong</span><span class="p">:</span>
 <span class="p">{</span><span class="s2">&quot;is_buy&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;00654061&quot;</span><span class="p">,</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span><span class="mf">1.15</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;stop&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;is_in_pips&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="s2">&quot;AtMarket&quot;</span><span class="p">,</span><span class="s2">&quot;time_in_force&quot;</span><span class="p">:</span><span class="s2">&quot;GTC&quot;</span><span class="p">}</span>
@@ -408,21 +428,26 @@ In Market order, an order id is created straightaway and it is in callback immed
 <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;executed&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;orderId&quot;</span><span class="p">:</span> <span class="mi">194963057</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p><strong>Real Case Studies using REST API</strong>:</p>
+</div>
+<div class="section" id="real-case-studies-using-rest-api">
+<h2><strong>Real Case Studies using REST API</strong><a class="headerlink" href="#real-case-studies-using-rest-api" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
 <li>Learn how to run <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BTstrategyonFXCMdata.zip/">bt backtest</a> using FXCM historical data. What is <a class="reference external" href="http://pmorissette.github.io/bt/">bt</a>?</li>
 <li>Learn how to run <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTraderonFXCMdata.zip/">QSTrader</a> using FXCM data. What is <a class="reference external" href="https://www.quantstart.com/qstrader/">QSTrader</a>?</li>
 <li>Building/back testing <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/">RSI strategy</a>.</li>
 <li>Building/back testing <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/">Moving Average Crossover strategy</a>.</li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4/">Video demonstration</a> on how to backtest strategies in Visual Studio via FXCM data On QuantConnect LEAN platform.</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4/">Video demonstration</a> on how to backtest strategies in Visual Studio via FXCM data on QuantConnect LEAN platform.</li>
 </ol>
 </div></blockquote>
-<p><strong>Note</strong>:</p>
-<p>o       This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+</div>
 <p><strong>Disclaimer</strong>:</p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
+</div>
 </div>
 
 

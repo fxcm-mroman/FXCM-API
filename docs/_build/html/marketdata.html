@@ -156,120 +156,147 @@
             
   <div class="section" id="market-data">
 <h1>Market Data<a class="headerlink" href="#market-data" title="Permalink to this headline">¶</a></h1>
-<p>Introduction</p>
+<p><strong>Introduction</strong></p>
 <p>FXCM provide several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.</p>
-<p>TickData</p>
+<p><strong>TickData</strong></p>
 <p>Enjoy free access to our historical Tick Data.</p>
-<p>Our repository contains Tick Data from 4 January 2015. The data is compiled by trading instrument for that trading week. The files are stored in our public directory and is updated every Monday.</p>
-<p><a class="reference external" href="https://tickdata.fxcorporate.com">https://tickdata.fxcorporate.com</a>/{instrument}/{year}/{int of week of year}.csv.gz</p>
-<dl class="docutils">
-<dt>Instrument:</dt>
-<dd>AUDCAD, AUDCHF, AUDJPY, AUDNZD, CADCHF, EURAUD,
-EURCHF, EURGBP, EURJPY, EURUSD, GBPCHF, GBPJPY,
-GBPNZD, GBPUSD, NZDCAD, NZDCHF, NZDJPY, NZDUSD,
-USDCAD, USDCHF, USDJPY, AUDUSD, CADJPY, GBPCAD,
-USDTRY, EURNZD</dd>
-</dl>
-<p>Year:         2015, 2016, 2017, 2018</p>
-<p>Week:         1 to 52/53
-To give an example, the path for extracting EURUSD data for the 1st week of 2015 would be</p>
-<p><a class="reference external" href="https://tickdata.fxcorporate.com/EURUSD/2015/1.csv.gz">https://tickdata.fxcorporate.com/EURUSD/2015/1.csv.gz</a></p>
+<p>Our repository contains Tick Data from 4 January 2015. The data is compiled by trading instrument for that trading week. The files are stored in our public directory and is updated every Monday:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tickdata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">instrument</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">int</span> <span class="n">of</span> <span class="n">week</span> <span class="n">of</span> <span class="n">year</span><span class="p">}</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">Instrument</span><span class="p">:</span>
+     <span class="n">AUDCAD</span><span class="p">,</span> <span class="n">AUDCHF</span><span class="p">,</span> <span class="n">AUDJPY</span><span class="p">,</span> <span class="n">AUDNZD</span><span class="p">,</span> <span class="n">CADCHF</span><span class="p">,</span> <span class="n">EURAUD</span><span class="p">,</span>
+     <span class="n">EURCHF</span><span class="p">,</span> <span class="n">EURGBP</span><span class="p">,</span> <span class="n">EURJPY</span><span class="p">,</span> <span class="n">EURUSD</span><span class="p">,</span> <span class="n">GBPCHF</span><span class="p">,</span> <span class="n">GBPJPY</span><span class="p">,</span>
+     <span class="n">GBPNZD</span><span class="p">,</span> <span class="n">GBPUSD</span><span class="p">,</span> <span class="n">NZDCAD</span><span class="p">,</span> <span class="n">NZDCHF</span><span class="p">,</span> <span class="n">NZDJPY</span><span class="p">,</span> <span class="n">NZDUSD</span><span class="p">,</span>
+     <span class="n">USDCAD</span><span class="p">,</span> <span class="n">USDCHF</span><span class="p">,</span> <span class="n">USDJPY</span><span class="p">,</span> <span class="n">AUDUSD</span><span class="p">,</span> <span class="n">CADJPY</span><span class="p">,</span> <span class="n">GBPCAD</span><span class="p">,</span>
+     <span class="n">USDTRY</span><span class="p">,</span> <span class="n">EURNZD</span>
+
+<span class="n">Year</span><span class="p">:</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span>
+<span class="n">Week</span><span class="p">:</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">52</span><span class="o">/</span><span class="mi">53</span>
+<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">week</span> <span class="n">of</span> <span class="mi">2015</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tickdata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2015</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
 <p>If you are familiar with Python, we have two scripts that you may use for Python 2.7 and Python 3.4</p>
-<p>Note:</p>
-<p>o       Losses can exceed deposits</p>
-<p>o       Past performance is not indicative of future results</p>
-<p>o       Timestamps are in UTC</p>
-<p>o       Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts</p>
-<p>o       This is for personal use and abides by our EULA</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>CandleData</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses can exceed deposits.
+Past performance is not indicative of future results.
+Timestamps are in UTC.
+Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
+This is for personal use and abides by our EULA.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+<p><strong>CandleData</strong></p>
 <p>Enjoy free access to our historical Time Series or Candle Data.</p>
-<p>Our repository contains Candle Data from 1 January 2012. The data is compiled by trading instrument for that trading week for m1 &amp; H1, and trading year for D1. The files are stored in our public directory and is updated every Monday for minute (m1) and hour (H1) data only.</p>
-<p><a class="reference external" href="https://candledata.fxcorporate.com">https://candledata.fxcorporate.com</a>/{periodicity}/{instrument}/{year}/{int of week of year}.csv.gz</p>
-<blockquote>
-<div><p>Periodicity:  m1, H1, D1</p>
-<dl class="docutils">
-<dt>Instrument:   AUDCAD, AUDCHF, AUDJPY, AUDNZD, CADCHF, EURAUD,</dt>
-<dd>EURCHF, EURGBP, EURJPY, EURUSD, GBPCHF, GBPJPY,
-GBPNZD, GBPUSD, NZDCAD, NZDCHF, NZDJPY, NZDUSD,
-USDCAD, USDCHF, USDJPY</dd>
-</dl>
-<p>Year:         2012, 2013, 2014, 2015, 2016, 2017, 2018</p>
-<p>Week:         1 to 52/53 (only applicable to m1 and H1)</p>
-</div></blockquote>
-<p>To give an example, the path for extracting EURUSD minute-data for the 1st week of 2012 would be</p>
-<p><a class="reference external" href="https://candledata.fxcorporate.com/m1/EURUSD/2012/1.csv.gz">https://candledata.fxcorporate.com/m1/EURUSD/2012/1.csv.gz</a></p>
-<p>To give an example, the path for extracting EURUSD hourly-data for the 1st week of 2012 would be</p>
-<p><a class="reference external" href="https://candledata.fxcorporate.com/H1/EURUSD/2012/1.csv.gz">https://candledata.fxcorporate.com/H1/EURUSD/2012/1.csv.gz</a></p>
-<p>To give an example, the path for extracting EURUSD daily-data for 2012 would be</p>
-<p><a class="reference external" href="https://candledata.fxcorporate.com/D1/EURUSD/2012.csv.gz">https://candledata.fxcorporate.com/D1/EURUSD/2012.csv.gz</a></p>
+<p>Our repository contains Candle Data from 1 January 2012. The data is compiled by trading instrument for that trading week for m1 &amp; H1, and trading year for D1. The files are stored in our public directory and is updated every Monday for minute (m1) and hour (H1) data only:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">periodicity</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">instrument</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">int</span> <span class="n">of</span> <span class="n">week</span> <span class="n">of</span> <span class="n">year</span><span class="p">}</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">Periodicity</span><span class="p">:</span>  <span class="n">m1</span><span class="p">,</span> <span class="n">H1</span><span class="p">,</span> <span class="n">D1</span>
+
+<span class="n">Instrument</span><span class="p">:</span>
+                 <span class="n">AUDCAD</span><span class="p">,</span> <span class="n">AUDCHF</span><span class="p">,</span> <span class="n">AUDJPY</span><span class="p">,</span> <span class="n">AUDNZD</span><span class="p">,</span> <span class="n">CADCHF</span><span class="p">,</span> <span class="n">EURAUD</span><span class="p">,</span>
+     <span class="n">EURCHF</span><span class="p">,</span> <span class="n">EURGBP</span><span class="p">,</span> <span class="n">EURJPY</span><span class="p">,</span> <span class="n">EURUSD</span><span class="p">,</span> <span class="n">GBPCHF</span><span class="p">,</span> <span class="n">GBPJPY</span><span class="p">,</span>
+     <span class="n">GBPNZD</span><span class="p">,</span> <span class="n">GBPUSD</span><span class="p">,</span> <span class="n">NZDCAD</span><span class="p">,</span> <span class="n">NZDCHF</span><span class="p">,</span> <span class="n">NZDJPY</span><span class="p">,</span> <span class="n">NZDUSD</span><span class="p">,</span>
+     <span class="n">USDCAD</span><span class="p">,</span> <span class="n">USDCHF</span><span class="p">,</span> <span class="n">USDJPY</span>
+
+<span class="n">Year</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span>
+
+<span class="n">Week</span><span class="p">:</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">52</span><span class="o">/</span><span class="mi">53</span> <span class="p">(</span><span class="n">only</span> <span class="n">applicable</span> <span class="n">to</span> <span class="n">m1</span> <span class="ow">and</span> <span class="n">H1</span><span class="p">)</span>
+
+<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">minute</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">week</span> <span class="n">of</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">m1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">hourly</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">week</span> <span class="n">of</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">H1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">daily</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">D1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mf">2012.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
 <p>If you are familiar with Python, we have three scripts that you may use for Python 2.7, Python 3.4, or a pandas data frame</p>
-<p>Note:</p>
-<p>o       Losses can exceed deposits</p>
-<p>o       Past performance is not indicative of future results</p>
-<p>o       Timestamps are in UTC</p>
-<p>o       Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts</p>
-<p>o       Daily data is only updated yearly</p>
-<p>o       This is for personal use and abides by our EULA</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>Order Flow</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses can exceed deposits.
+Past performance is not indicative of future results.
+Timestamps are in UTC.
+Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
+This is for personal use and abides by our EULA.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+<p><strong>Order Flow</strong></p>
 <p>Enjoy a free one-month sample of our historical Orders Data.</p>
 <p><a class="reference external" href="https://sampledata.fxcorporate.com/orders/sample.csv.gz">https://sampledata.fxcorporate.com/orders/sample.csv.gz</a></p>
 <dl class="docutils">
 <dt>Each data set would include:</dt>
-<dd>•DateTime (UTC)
-•Symbol
-•Quantity (Volume)
-•Rate (Price)</dd>
+<dd><ul class="first last simple">
+<li>DateTime (UTC)</li>
+<li>Symbol</li>
+<li>Quantity (Volume)</li>
+<li>Rate (Price)</li>
+</ul>
+</dd>
 </dl>
-<p>Note:</p>
-<p>o       Losses can exceed deposits</p>
-<p>o       Past performance is not indicative of future results</p>
-<p>o       Scope of the data may vary per product</p>
-<p>o       This is for personal use and abides by our EULA</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>Sentiment</p>
-<p>Enjoy a free one-month sample of our historical Sentiment Data also known as SSI.</p>
-<p><a class="reference external" href="https://sampledata.fxcorporate.com/sentiment">https://sampledata.fxcorporate.com/sentiment</a>/{instrument}.csv.gz</p>
-<dl class="docutils">
-<dt>Instrument:</dt>
-<dd>AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
-EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
-NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
-GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD</dd>
-<dt>Each data set would include:</dt>
-<dd>•DateTime (EST)
-•Symbol
-•Name
-•Value</dd>
-</dl>
-<p>Note:</p>
-<p>o       Losses can exceed deposits</p>
-<p>o       Past performance is not indicative of future results</p>
-<p>o       Scope of the data may vary per product</p>
-<p>o       This is for personal use and abides by our EULA</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
-<p>Volume</p>
-<p>Enjoy a free one-month sample of our historical Volume Data.</p>
-<p><a class="reference external" href="https://sampledata.fxcorporate.com/volume">https://sampledata.fxcorporate.com/volume</a>/{instrument}.csv.gz</p>
-<dl class="docutils">
-<dt>Instrument:</dt>
-<dd>AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
-EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
-NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
-GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD</dd>
-<dt>Each data set would include:</dt>
-<dd>•DateTime (UTC)
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses can exceed deposits.
+Past performance is not indicative of future results.
+Timestamps are in UTC.
+Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
+This is for personal use and abides by our EULA.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+<p><strong>Sentiment</strong></p>
+<p>Enjoy a free one-month sample of our historical Sentiment Data also known as SSI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://sampledata.fxcorporate.com/sentiment/{instrument}.csv.gz
+
+Instrument:
+         AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
+         EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
+         NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
+         GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD
+
+Each data set would include:
+•DateTime (EST)
 •Symbol
 •Name
-•Value</dd>
-</dl>
-<p>Note:</p>
-<p>o       Losses can exceed deposits</p>
-<p>o       Past performance is not indicative of future results</p>
-<p>o       Scope of the data may vary per product</p>
-<p>o       This is for personal use and abides by our EULA</p>
-<p>o       For more information, you may contact us: <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+•Value
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses can exceed deposits.
+Past performance is not indicative of future results.
+Timestamps are in UTC.
+Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
+This is for personal use and abides by our EULA.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+<p><strong>Volume</strong></p>
+<p>Enjoy a free one-month sample of our historical Volume Data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://sampledata.fxcorporate.com/volume/{instrument}.csv.gz
+
+Instrument:
+         AUDJPY, AUDUSD, CADJPY, CHFJPY, EURAUD, EURCAD, EURCHF, EURGBP,
+         EURJPY, EURNOK, EURSEK, EURUSD, GBPCHF, GBPJPY, GBPUSD, NZDJPY,
+         NZDUSD, USDCAD, USDCHF, USDCNH, USDJPY, USDNOK, USDSEK, FRA40,
+         GER30, JPN225, SPX500, UK100, US30, USOil, XAGUSD, XAUUSD
+
+Each data set would include:
+•DateTime (UTC)
+•Symbol
+•Name
+•Value
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses can exceed deposits.
+Past performance is not indicative of future results.
+Timestamps are in UTC.
+Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
+This is for personal use and abides by our EULA.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
 </div>
 
 
