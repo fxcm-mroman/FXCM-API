@@ -1,13 +1,7 @@
-Code Samples
-============
-
-fxcmpy wrapper using iPython
-----------------------------
-
 fxcmrest-php for PhP
 --------------------
 
-``FxcmRest`` is a library for event-driven trading with FXCM over RestAPI using ReactPHP.
+``FxcmRest`` is a library for event-driven trading with FXCM over RestAPI using ``ReactPHP``.
 
 Requirements
 ^^^^^^^^^^^^
@@ -49,99 +43,101 @@ Configuration Parameters
 
 Functions
 ^^^^^^^^^
-.. code-block:: PhP
+.. code-block:: php
 
 	connect() : null
 
-Opens a connection to the server. When connection is complete, `connected` signal will be emitted.
+1. Opens a connection to the server. When connection is complete, ``connected`` signal will be emitted.
 
-.. code-block:: PhP
+.. code-block:: php
 
 	disconnect() : null
 
-Disconnects from the server. When disconnection is complete, `disconnected` signal will be emitted. 
+2. Disconnects from the server. When disconnection is complete, ``disconnected`` signal will be emitted. 
 
-.. code-block:: PhP
+.. code-block:: php
 
 	socketID() : string
 
-If connected to the server, returns a string representing the socketID. If not connected, returns an empty string.
+3. If connected to the server, returns a string representing the socketID. If not connected, returns an empty string.
 
-.. code-block:: PhP
+.. code-block:: php
 
 	request(\FxcmRest\HttpMethod $method, string $path, array $arguments, callable $callback) : null
 
+4. Sends a http request to the server. When request is completed, ``$callback`` will be called with two parameters:
 
-Sends a http request to the server. When request is completed, $callback will be called with two parameters:
 	* ``int`` representing HTTP status code. 200 for OK
 	* ``string`` representing server answer body
 
-.. code-block:: php
+.. code-block:: Java
 
 	on(string $signalName, callable $callback) : null
 
-.. code-block:: php
-
-	Registers a $callback for a signal of $signalName. For a list of signals and parameters that are passed with them please see Signals section.
+5. Registers a ``$callback`` for a signal of ``$signalName``. For a list of signals and parameters that are passed with them please see **Signals** section.
  
 Signals
 ^^^^^^^
-``connected`` - Emitted when connection sequence is complete. After this socketID is valid and requests can be sent to the server. No parameters are passed.
+1. ``connected`` - Emitted when connection sequence is complete. After this socketID is valid and requests can be sent to the server. No parameters are passed.
 
-``disconnected`` - Emitted when connection to the server is closed. No parameters are passed.
+2. ``disconnected`` - Emitted when connection to the server is closed. No parameters are passed.
 
-``error`` - Emitted on errors. Passes error description as string.
+3. ``error`` - Emitted on errors. Passes error description as string.
 
-``[Offer,OpenPosition,ClosedPosition,Account,Summary,Properties]`` - Emmited on trading table changes. Passes table update contents as JSON string. Requires subscription through ``/trading/subscribe``
+4. ``[Offer,OpenPosition,ClosedPosition,Account,Summary,Properties]`` - Emmited on trading table changes. Passes table update contents as JSON string. Requires subscription through ``/trading/subscribe``
 
-``(EUR/USD,EUR/GBP,...)`` - Emmited on price update. Passes the price update as a JSON string. Requires subscription through `/subscribe`.
+5. ``(EUR/USD,EUR/GBP,...)`` - Emmited on price update. Passes the price update as a JSON string. Requires subscription through ``/subscribe``.
 
-Sample Code::
-^^^^^^^^^^^^^
+Sample Code
+^^^^^^^^^^^
 
 .. code-block:: php
 
-	<?php
-	require_once __DIR__ . '/vendor/autoload.php';
+    <?php
+    require_once __DIR__ . '/vendor/autoload.php';
 
-	$loop = \React\EventLoop\Factory::create();
+    $loop = \React\EventLoop\Factory::create();
 
-	$config = new \FxcmRest\Config([
-    	'host' => 'api-demo.fxcm.com',
-    	'token' => 'YOUR_TOKEN',
-	]);
+    $config = new \FxcmRest\Config([
+        'host' => 'api-demo.fxcm.com',
+        'token' => 'YOUR_TOKEN',
+    ]);
 
-	$counter = 0;
-	$rest = new \FxcmRest\FxcmRest($loop, $config);
-	$rest->on('connected', function() use ($rest,&$counter) {
-    	$rest->request('POST', '/subscribe',
-        	['pairs' => 'EUR/USD'],
-        	function($code, $data) use ($rest,&$counter) {
-            	if($code === 200) {
-					$rest->on('EUR/USD', function($data) use ($rest,&$counter) {
-						echo "price update: {$data}\n";
-						$counter++;
-						if($counter === 5){
-							$rest->disconnect();
-						}
-					});
-				}
-			}
-		);
-	});
-	$rest->on('error', function($e) use ($loop) {
-		echo "socket error: {$e}\n";
-		$loop->stop();
-	});
-	$rest->on('disconnected', function() use ($loop) {
-		echo "FxcmRest disconnected\n";
-		$loop->stop();
-	});
-	$rest->connect();
+    $counter = 0;
+    $rest = new \FxcmRest\FxcmRest($loop, $config);
+    $rest->on('connected', function() use ($rest,&$counter) {
+        $rest->request('POST', '/subscribe',
+            ['pairs' => 'EUR/USD'],
+            function($code, $data) use ($rest,&$counter) {
+                if($code === 200) {
+                    $rest->on('EUR/USD', function($data) use ($rest,&$counter) {
+                        echo "price update: {$data}\n";
+                        $counter++;
+                        if($counter === 5){
+                            $rest->disconnect();
+                        }
+                    });
+                }
+            }
+        );
+    });
+    $rest->on('error', function($e) use ($loop) {
+        echo "socket error: {$e}\n";
+        $loop->stop();
+    });
+    $rest->on('disconnected', function() use ($loop) {
+        echo "FxcmRest disconnected\n";
+        $loop->stop();
+    });
+    $rest->connect();
 
-	$loop->run();
-	?>
+    $loop->run();
+    ?>
 
+.. note::
+
+	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
+	For more information, you may contact us at api@fxcm.com
 
 **Disclaimer**
 

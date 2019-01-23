@@ -1,5 +1,5 @@
-REST API
-========
+RESTful API
+===========
 
 Our REST API is a web-based API using a Websocket connection and was developed with algorithmic trading in mind. 
 
@@ -163,18 +163,6 @@ There is a difference between account name and account id. Usually removing the 
       
       request # 2  has been executed: {
       "response": {"executed": true}, "data": {"type": 0,"orderId": 194963057}}
-
-Real Case Studies on Backtesting using the REST API
----------------------------------------------------
-1. `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
-
-2. `QSTrader <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip/>`_ using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
-
-3. `RSI strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/>`_.
-	
-4. `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
-	
-5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio using FXCM data on QuantConnect LEAN platform.
 	
 .. note::
 

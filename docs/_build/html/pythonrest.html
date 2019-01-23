@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python REST sample &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fxcmrest-php for PhP" href="fxcmrest-php.html" />
+    <link rel="prev" title="fxcmpy Python wrapper" href="fxcmpy.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+            
+            <img src="_static/fxcm-blue-2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">fxcmpy Python wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#project-description">Project description</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python REST sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-jupyter-notebook">Using Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#details">Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#candles">Candles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">fxcmrest-php for PhP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Backtesting using REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA Trading SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Python REST sample</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pythonrest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-rest-sample">
+<h1>Python REST sample<a class="headerlink" href="#python-rest-sample" title="Permalink to this headline">¶</a></h1>
+<p>Clone this repository by clicking <a class="reference external" href="https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-python3-example/">here</a>.</p>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Install python</li>
+<li>Run: pip install -r requirements.txt</li>
+<li>Within the fxcm_rest.json file:<ul>
+<li>Set log path via the logpath field</li>
+<li>Set debugLevel if desired</li>
+<li>Set subscription lists if desired</li>
+</ul>
+</li>
+<li>In the fxcm_rest_client_sample.py file:<ul>
+<li>Set your token and environment (demo/real)</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="using-jupyter-notebook">
+<h2>Using Jupyter Notebook<a class="headerlink" href="#using-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Install Python</li>
+<li>Run: pip install jupyter (if you don’t have jupyter installed already)</li>
+<li>Run: pip install -r requirements.txt</li>
+<li>In this directory run: jupyter notebook</li>
+<li>Start the RestApiNotebook.ipynb.</li>
+</ol>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>This API exposes the methods of the REST API as a class, dealing with all of the common tasks
+involved with setting up connections and wiring callback listeners for you. In addition to that
+there are a few convenience methods.</p>
+<p>A quick example is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fxcm_rest_api_token</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">trader</span> <span class="o">=</span> <span class="n">fxcm_rest_api_token</span><span class="o">.</span><span class="n">Trader</span><span class="p">(</span><span class="s1">&#39;YOURTOKEN&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
+<span class="n">trader</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+
+<span class="c1">#### Open Market Order</span>
+<span class="c1"># query account details and use the first account found</span>
+<span class="n">accounts</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;Account&quot;</span><span class="p">)</span>
+<span class="n">account_id</span> <span class="o">=</span> <span class="n">accounts</span><span class="p">[</span><span class="s1">&#39;accounts&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;accountId&#39;</span><span class="p">]</span>
+<span class="c1"># Open 10 lots on USD/JPY for the first account_id found.</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">open_trade</span><span class="p">(</span><span class="n">account_id</span><span class="p">,</span> <span class="s2">&quot;USD/JPY&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]:</span>
+<span class="c1"># close all USD/JPY trades.</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">close_all_for_symbol</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">)</span>
+
+<span class="c1">#### Historical Data request</span>
+<span class="n">basic</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">candles</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">,</span> <span class="s2">&quot;m1&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">basic</span><span class="p">)</span>
+<span class="n">date_fmt</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">candles</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">,</span> <span class="s2">&quot;m1&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">dt_fmt</span><span class="o">=</span><span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">date_fmt</span><span class="p">)</span>
+<span class="n">date_fmt_headers</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">candles_as_dict</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">,</span> <span class="s2">&quot;m1&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dt_fmt</span><span class="o">=</span><span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">date_fmt_headers</span><span class="p">)</span>
+<span class="c1">##### Price subscriptions</span>
+<span class="n">subscription_result</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">subscribe_symbol</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define alternative price update handler and supply that.</span>
+<span class="k">def</span> <span class="nf">pupdate</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Price update: &quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+<span class="n">subscription_result</span> <span class="o">=</span> <span class="n">trader</span><span class="o">.</span><span class="n">subscribe_symbol</span><span class="p">(</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">,</span> <span class="n">pupdate</span><span class="p">)</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="candles">
+<h2>Candles<a class="headerlink" href="#candles" title="Permalink to this headline">¶</a></h2>
+<p>All calls to candles allow either <code class="docutils literal notranslate"><span class="pre">instrument</span> <span class="pre">name</span></code>, or <code class="docutils literal notranslate"><span class="pre">offerId</span></code>. They also allow the <code class="docutils literal notranslate"><span class="pre">From</span></code> and <code class="docutils literal notranslate"><span class="pre">To</span></code> to be specified as timestamp or a date/time format that will be interpreted (“2017/08/01 10:00”, “Aug 1, 2017 10:00”, etc.).
+In addition to <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code>, <code class="docutils literal notranslate"><span class="pre">response</span></code>, <code class="docutils literal notranslate"><span class="pre">period_id</span></code> and <code class="docutils literal notranslate"><span class="pre">candles</span></code>, a <code class="docutils literal notranslate"><span class="pre">headers</span></code> field (not documented in the API notes) is returned, representing the candle fields.</p>
+<p><code class="docutils literal notranslate"><span class="pre">basic</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">basic</span><span class="p">[</span><span class="s1">&#39;candles&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span> <span class="n">item</span>
+
+<span class="p">[</span><span class="mi">1503694500</span><span class="p">,</span> <span class="mf">109.317</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.314</span><span class="p">,</span> <span class="mf">109.346</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.373</span><span class="p">,</span> <span class="mf">109.344</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1503694560</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.321</span><span class="p">,</span> <span class="mf">109.337</span><span class="p">,</span> <span class="mf">109.317</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.359</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.354</span><span class="p">,</span> <span class="mi">83</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1503694620</span><span class="p">,</span> <span class="mf">109.321</span><span class="p">,</span> <span class="mf">109.326</span><span class="p">,</span> <span class="mf">109.326</span><span class="p">,</span> <span class="mf">109.316</span><span class="p">,</span> <span class="mf">109.359</span><span class="p">,</span> <span class="mf">109.358</span><span class="p">,</span> <span class="mf">109.362</span><span class="p">,</span> <span class="mf">109.357</span><span class="p">,</span> <span class="mi">28</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">date_fmt</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">date_fmt</span><span class="p">[</span><span class="s1">&#39;candles&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span> <span class="n">item</span>
+
+<span class="p">[</span><span class="mi">1503694500</span><span class="p">,</span> <span class="mf">109.317</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.314</span><span class="p">,</span> <span class="mf">109.346</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.373</span><span class="p">,</span> <span class="mf">109.344</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="s1">&#39;2017/08/26 05:55:00&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1503694560</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">109.321</span><span class="p">,</span> <span class="mf">109.337</span><span class="p">,</span> <span class="mf">109.317</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.359</span><span class="p">,</span> <span class="mf">109.366</span><span class="p">,</span> <span class="mf">109.354</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="s1">&#39;2017/08/26 05:56:00&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1503694620</span><span class="p">,</span> <span class="mf">109.321</span><span class="p">,</span> <span class="mf">109.326</span><span class="p">,</span> <span class="mf">109.326</span><span class="p">,</span> <span class="mf">109.316</span><span class="p">,</span> <span class="mf">109.359</span><span class="p">,</span> <span class="mf">109.358</span><span class="p">,</span> <span class="mf">109.362</span><span class="p">,</span> <span class="mf">109.357</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;2017/08/26 05:57:00&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">date_fmt_headers</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">date_fmt_headers</span><span class="p">[</span><span class="s1">&#39;candles&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span> <span class="n">item</span>
+
+<span class="n">Headers</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="mi">1503694620</span><span class="p">,</span> <span class="n">bidopen</span><span class="o">=</span><span class="mf">109.321</span><span class="p">,</span> <span class="n">bidclose</span><span class="o">=</span><span class="mf">109.326</span><span class="p">,</span> <span class="n">bidhigh</span><span class="o">=</span><span class="mf">109.326</span><span class="p">,</span> <span class="n">bidlow</span><span class="o">=</span><span class="mf">109.316</span><span class="p">,</span> <span class="n">askopen</span><span class="o">=</span><span class="mf">109.359</span><span class="p">,</span> <span class="n">askclose</span><span class="o">=</span><span class="mf">109.358</span><span class="p">,</span> <span class="n">askhigh</span><span class="o">=</span><span class="mf">109.362</span><span class="p">,</span> <span class="n">asklow</span><span class="o">=</span><span class="mf">109.357</span><span class="p">,</span> <span class="n">tickqty</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span> <span class="n">datestring</span><span class="o">=</span><span class="s1">&#39;2017/08/26 05:57:00&#39;</span><span class="p">)</span>
+<span class="n">Headers</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="mi">1503694680</span><span class="p">,</span> <span class="n">bidopen</span><span class="o">=</span><span class="mf">109.326</span><span class="p">,</span> <span class="n">bidclose</span><span class="o">=</span><span class="mf">109.312</span><span class="p">,</span> <span class="n">bidhigh</span><span class="o">=</span><span class="mf">109.326</span><span class="p">,</span> <span class="n">bidlow</span><span class="o">=</span><span class="mf">109.31</span><span class="p">,</span> <span class="n">askopen</span><span class="o">=</span><span class="mf">109.358</span><span class="p">,</span> <span class="n">askclose</span><span class="o">=</span><span class="mf">109.374</span><span class="p">,</span> <span class="n">askhigh</span><span class="o">=</span><span class="mf">109.376</span><span class="p">,</span> <span class="n">asklow</span><span class="o">=</span><span class="mf">109.358</span><span class="p">,</span> <span class="n">tickqty</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">datestring</span><span class="o">=</span><span class="s1">&#39;2017/08/26 05:58:00&#39;</span><span class="p">)</span>
+<span class="n">Headers</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="mi">1503694740</span><span class="p">,</span> <span class="n">bidopen</span><span class="o">=</span><span class="mf">109.312</span><span class="p">,</span> <span class="n">bidclose</span><span class="o">=</span><span class="mf">109.312</span><span class="p">,</span> <span class="n">bidhigh</span><span class="o">=</span><span class="mf">109.312</span><span class="p">,</span> <span class="n">bidlow</span><span class="o">=</span><span class="mf">109.31</span><span class="p">,</span> <span class="n">askopen</span><span class="o">=</span><span class="mf">109.374</span><span class="p">,</span> <span class="n">askclose</span><span class="o">=</span><span class="mf">109.374</span><span class="p">,</span> <span class="n">askhigh</span><span class="o">=</span><span class="mf">109.374</span><span class="p">,</span> <span class="n">asklow</span><span class="o">=</span><span class="mf">109.372</span><span class="p">,</span> <span class="n">tickqty</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">datestring</span><span class="o">=</span><span class="s1">&#39;2017/08/26 05:59:00&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">date_fmt_headers</span><span class="p">[</span><span class="s1">&#39;candles&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: Ask Close [</span><span class="si">%s</span><span class="s2">], High Bid [</span><span class="si">%s</span><span class="s2">] &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">datestring</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">askclose</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">bidhigh</span><span class="p">)</span>
+
+<span class="mi">2017</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">26</span> <span class="mi">05</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span> <span class="n">Ask</span> <span class="n">Close</span> <span class="p">[</span><span class="mf">109.358</span><span class="p">],</span> <span class="n">High</span> <span class="n">Bid</span> <span class="p">[</span><span class="mf">109.326</span><span class="p">]</span>
+<span class="mi">2017</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">26</span> <span class="mi">05</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span> <span class="n">Ask</span> <span class="n">Close</span> <span class="p">[</span><span class="mf">109.374</span><span class="p">],</span> <span class="n">High</span> <span class="n">Bid</span> <span class="p">[</span><span class="mf">109.326</span><span class="p">]</span>
+<span class="mi">2017</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">26</span> <span class="mi">05</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span> <span class="n">Ask</span> <span class="n">Close</span> <span class="p">[</span><span class="mf">109.374</span><span class="p">],</span> <span class="n">High</span> <span class="n">Bid</span> <span class="p">[</span><span class="mf">109.312</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">subscribe_symbol</span> <span class="pre">-</span> <span class="pre">default</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="sa">u</span><span class="s1">&#39;Updated&#39;</span><span class="p">:</span> <span class="mi">1504167080</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">110.467</span><span class="p">,</span> <span class="mf">110.488</span><span class="p">,</span> <span class="mf">110.629</span><span class="p">,</span> <span class="mf">110.156</span><span class="p">],</span> <span class="sa">u</span><span class="s1">&#39;Symbol&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;USD/JPY&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="sa">u</span><span class="s1">&#39;Updated&#39;</span><span class="p">:</span> <span class="mi">1504167081</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">110.469</span><span class="p">,</span> <span class="mf">110.49</span><span class="p">,</span> <span class="mf">110.629</span><span class="p">,</span> <span class="mf">110.156</span><span class="p">],</span> <span class="sa">u</span><span class="s1">&#39;Symbol&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;USD/JPY&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">subscribe_symbol</span> <span class="pre">-</span> <span class="pre">overridden</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Price</span> <span class="n">update</span><span class="p">:</span>  <span class="p">{</span><span class="s2">&quot;Updated&quot;</span><span class="p">:</span><span class="mi">1504167248</span><span class="p">,</span><span class="s2">&quot;Rates&quot;</span><span class="p">:[</span><span class="mf">110.446</span><span class="p">,</span><span class="mf">110.468</span><span class="p">,</span><span class="mf">110.629</span><span class="p">,</span><span class="mf">110.156</span><span class="p">],</span><span class="s2">&quot;Symbol&quot;</span><span class="p">:</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">}</span>
+<span class="n">Price</span> <span class="n">update</span><span class="p">:</span>  <span class="p">{</span><span class="s2">&quot;Updated&quot;</span><span class="p">:</span><span class="mi">1504167250</span><span class="p">,</span><span class="s2">&quot;Rates&quot;</span><span class="p">:[</span><span class="mf">110.446</span><span class="p">,</span><span class="mf">110.468</span><span class="p">,</span><span class="mf">110.629</span><span class="p">,</span><span class="mf">110.156</span><span class="p">],</span><span class="s2">&quot;Symbol&quot;</span><span class="p">:</span><span class="s2">&quot;USD/JPY&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fxcmrest-php.html" class="btn btn-neutral float-right" title="fxcmrest-php for PhP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fxcmpy.html" class="btn btn-neutral" title="fxcmpy Python wrapper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Forex Capital Markets
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

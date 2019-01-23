@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FIX &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  <title>FIX API &mdash; FXCM API Developer Documentation 1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="JAVA" href="javaapi.html" />
-    <link rel="prev" title="Code Samples" href="fxcmrest-php.html" /> 
+    <link rel="next" title="JAVA Trading SDK" href="javaapi.html" />
+    <link rel="prev" title="Backtesting using REST API" href="realcasebt.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,7 +83,7 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">RESTful API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
@@ -91,20 +91,31 @@
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#real-case-studies-on-backtesting-using-the-rest-api">Real Case Studies on Backtesting using the REST API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">Code Samples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#fxcmpy-wrapper-using-ipython">fxcmpy wrapper using iPython</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#fxcmrest-php-for-php">fxcmrest-php for PhP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">fxcmpy Python wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#project-description">Project description</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python REST sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#details">Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#candles">Candles</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">FIX</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">fxcmrest-php for PhP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Backtesting using REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FIX API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#marketdata">Marketdata</a></li>
@@ -113,15 +124,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA Trading SDK</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#real-case-studies-on-backtesting-using-java-api">Real Case Studies on Backtesting using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect SDK</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
@@ -185,7 +196,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>FIX</li>
+      <li>FIX API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,8 +215,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fix">
-<h1>FIX<a class="headerlink" href="#fix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fix-api">
+<h1>FIX API<a class="headerlink" href="#fix-api" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><em>Based on FIX designed for institutional traders.</em></div></blockquote>
 <p>FIX API using FIX Protocol 4.4 designed for real-time, custom institutional interface which push up to 200 price update per second (not available on other APIs). It is our fastest and most popular solution. You will get full range of trading order types available at FXCM.</p>
@@ -332,10 +343,10 @@ Place market order via 35=D. you will get execution report in <code class="docut
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="javaapi.html" class="btn btn-neutral float-right" title="JAVA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="javaapi.html" class="btn btn-neutral float-right" title="JAVA Trading SDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fxcmrest-php.html" class="btn btn-neutral" title="Code Samples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="realcasebt.html" class="btn btn-neutral" title="Backtesting using REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
