@@ -37,12 +37,14 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    :caption: Java API:
    
    javaapi
+   javabacktest
    
 .. toctree::
    :maxdepth: 2
    :caption: ForexConnect API:
    
    forexconnectapi
+   forexconnectbt
    
 .. toctree::
    :maxdepth: 2

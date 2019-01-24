@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="marketdata.html" />
-    <link rel="prev" title="Overview" href="javaapi.html" /> 
+    <link rel="next" title="Sample Code" href="forexconnectbt.html" />
+    <link rel="prev" title="Backtesting" href="javabacktest.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,12 +85,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#connect">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#candle-request-limit">Candle Request Limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#placing-trailing-stops">Placing Trailing Stops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#account-name-vs-account-id">Account Name vs Account ID</a></li>
 </ul>
 </li>
 </ul>
@@ -148,11 +148,11 @@
 <li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#rollover">Rollover</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="javabacktest.html">Backtesting</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ForexConnect API:</span></p>
 <ul class="current">
@@ -162,9 +162,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#request-current-balance">Request Current Balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#retrieve-price-history">Retrieve Price History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#backtesting-sample-code">Backtesting Sample Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectbt.html">Sample Code</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Marketdata:</span></p>
 <ul>
@@ -306,28 +306,6 @@ chart and market analysis application, custom trading application on FXCM accoun
 <h2>Retrieve Price History<a class="headerlink" href="#retrieve-price-history" title="Permalink to this headline">¶</a></h2>
 <p>For pricehistory, you need to use non-table manager.
 You can see examples under <code class="docutils literal notranslate"><span class="pre">NonTableManagerSamples\GetHistPrices</span></code></p>
-</div>
-<div class="section" id="backtesting-sample-code">
-<h2>Backtesting Sample Code<a class="headerlink" href="#backtesting-sample-code" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Learn how to build and backtest:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip/">Rsi signals</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip/">CCI Oscillator</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip/">Breakout strategy</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip/">Range Stochastic Strategy</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip/">Mean Reversion Strategy</a></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Some examples like <a class="reference external" href="ttps://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip/">attached stop limit to position, create if-then ELS order, get rollover</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/fxcm/ForexConnectAPI/blob/master/FXCM-MATLAB-master.zip/">Matlab</a> sample code</p>
-</li>
-<li><p class="first"><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip/">Historical data</a> download</p>
-</li>
-</ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.
@@ -346,10 +324,10 @@ For more information, you may contact us at <a class="reference external" href="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="marketdata.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="forexconnectbt.html" class="btn btn-neutral float-right" title="Sample Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="javaapi.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="javabacktest.html" class="btn btn-neutral" title="Backtesting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

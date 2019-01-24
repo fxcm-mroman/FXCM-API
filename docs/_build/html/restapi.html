@@ -85,12 +85,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-connect">How to connect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#orderid-vs-tradeid">OrderID vs TradeID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-place-trailing-stop">How to place trailing stop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#candle-request-limit">Candle Request Limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#placing-trailing-stops">Placing Trailing Stops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-name-vs-account-id">Account Name vs Account ID</a></li>
 </ul>
 </li>
 </ul>
@@ -148,11 +148,11 @@
 <li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#rollover">Rollover</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="javabacktest.html">Backtesting</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ForexConnect API:</span></p>
 <ul>
@@ -162,9 +162,9 @@
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#request-current-balance">Request Current Balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#retrieve-price-history">Retrieve Price History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#backtesting-sample-code">Backtesting Sample Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectbt.html">Sample Code</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Marketdata:</span></p>
 <ul>
@@ -278,8 +278,8 @@
 </li>
 </ol>
 </div>
-<div class="section" id="how-to-connect">
-<h2>How to connect<a class="headerlink" href="#how-to-connect" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connect">
+<h2>Connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h2>
 <p>Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:</p>
 <table border="1" class="colwidths-given longtable docutils align-center" id="id3">
 <caption><span class="caption-text">HTTP Message</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
@@ -383,7 +383,7 @@ Connection: close
 </table>
 </div>
 <div class="section" id="subscribe-vs-snapshot">
-<h2>Subscribe vs snapshot<a class="headerlink" href="#subscribe-vs-snapshot" title="Permalink to this headline">¶</a></h2>
+<h2>Subscribe vs Snapshot<a class="headerlink" href="#subscribe-vs-snapshot" title="Permalink to this headline">¶</a></h2>
 <p>FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.</p>
 <p>After susbcribe, data will be pushed to your socket whenever there is an update. You can susbcribe Market data stream /susbcribe or live table update /trading/susbcribe. You can also unsubscribe.
 You can request a snapshot of trading tables via /trading/get_model.</p>
@@ -418,8 +418,8 @@ In Market order, an order id is created straightaway and it is in callback immed
 <p>Furthermore, a single market order can have many TradeIDs, if they are partial fills or closing of other orders. In this case, it’s more approriate to provide the OrderID which ties back to that spcific market order request, from there you can join this OrderID to any associated order.</p>
 <p>In an entry order, an order ID is in callback function. You can also see it on an order table sanpshot. but you will not get a TradeID until order been executed.</p>
 </div>
-<div class="section" id="limitation-on-historical-candle-download-per-request">
-<h2>Limitation on historical candle download per request<a class="headerlink" href="#limitation-on-historical-candle-download-per-request" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="candle-request-limit">
+<h2>Candle Request Limit<a class="headerlink" href="#candle-request-limit" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-given longtable docutils align-center" id="id5">
 <caption><span class="caption-text">Candle download limit</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -485,16 +485,16 @@ In Market order, an order id is created straightaway and it is in callback immed
 </tbody>
 </table>
 </div>
-<div class="section" id="how-to-place-trailing-stop">
-<h2>How to place trailing stop<a class="headerlink" href="#how-to-place-trailing-stop" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="placing-trailing-stops">
+<h2>Placing Trailing Stops<a class="headerlink" href="#placing-trailing-stops" title="Permalink to this headline">¶</a></h2>
 <p>The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. Parameter is trailing_stop_step.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="n">Entry</span> <span class="n">order</span> <span class="k">with</span> <span class="n">trailing</span> <span class="n">stop</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">pips</span><span class="p">:</span>
 <span class="n">POST</span> <span class="o">/</span><span class="n">trading</span><span class="o">/</span><span class="n">create_entry_order</span> <span class="n">account_id</span><span class="o">=</span><span class="mi">1537581</span><span class="o">&amp;</span><span class="n">symbol</span><span class="o">=</span><span class="n">EUR</span><span class="o">%</span><span class="mi">2</span><span class="n">FUSD</span><span class="o">&amp;</span><span class="n">is_buy</span><span class="o">=</span><span class="n">true</span><span class="o">&amp;</span><span class="n">rate</span><span class="o">=</span><span class="mf">1.1655</span><span class="o">&amp;</span><span class="n">amount</span><span class="o">=</span><span class="mi">3</span><span class="o">&amp;</span><span class="n">order_type</span><span class="o">=</span><span class="n">Entry</span><span class="o">&amp;</span><span class="n">time_in_force</span><span class="o">=</span><span class="n">GTC</span><span class="o">&amp;</span><span class="n">stop</span><span class="o">=-</span><span class="mi">50</span><span class="o">&amp;</span><span class="n">trailing_stop_step</span><span class="o">=</span><span class="mi">10</span><span class="o">&amp;</span><span class="n">is_in_pips</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="difference-between-account-name-and-account-id">
-<h2>Difference between account name and account ID<a class="headerlink" href="#difference-between-account-name-and-account-id" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="account-name-vs-account-id">
+<h2>Account Name vs Account ID<a class="headerlink" href="#account-name-vs-account-id" title="Permalink to this headline">¶</a></h2>
 <p>There is a difference between account name and account id. Usually removing the heading zeros are account ID. You need to pass the account_id when placing orders. You can retrieve this information from /trading/get_model/accounts.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wrong</span><span class="p">:</span>
 <span class="p">{</span><span class="s2">&quot;is_buy&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;00654061&quot;</span><span class="p">,</span><span class="s2">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span><span class="s2">&quot;rate&quot;</span><span class="p">:</span><span class="mf">1.15</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;stop&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;is_in_pips&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="s2">&quot;AtMarket&quot;</span><span class="p">,</span><span class="s2">&quot;time_in_force&quot;</span><span class="p">:</span><span class="s2">&quot;GTC&quot;</span><span class="p">}</span>

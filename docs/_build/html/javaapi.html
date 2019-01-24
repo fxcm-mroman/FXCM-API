@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="forexconnectapi.html" />
+    <link rel="next" title="Backtesting" href="javabacktest.html" />
     <link rel="prev" title="Sample Projects" href="fixcode.html" /> 
 
   
@@ -85,12 +85,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#connect">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#limitation-on-historical-candle-download-per-request">Limitation on historical candle download per request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-place-trailing-stop">How to place trailing stop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#candle-request-limit">Candle Request Limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#placing-trailing-stops">Placing Trailing Stops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#account-name-vs-account-id">Account Name vs Account ID</a></li>
 </ul>
 </li>
 </ul>
@@ -148,11 +148,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-qatest-java">Running QATest.java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-login">How to login</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-get-the-rollover">How to get the rollover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#backtesting-using-java-api">Backtesting using Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rollover">Rollover</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="javabacktest.html">Backtesting</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ForexConnect API:</span></p>
 <ul>
@@ -162,9 +162,9 @@
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#request-current-balance">Request Current Balance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#retrieve-price-history">Retrieve Price History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#backtesting-sample-code">Backtesting Sample Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectbt.html">Sample Code</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Marketdata:</span></p>
 <ul>
@@ -286,8 +286,8 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="how-to-login">
-<h2>How to login<a class="headerlink" href="#how-to-login" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">(</span><span class="n">IGenericMessageListener</span> <span class="n">aGenericListener</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">aPrintStatus</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span>
             <span class="c1">// step 1: get an instance of IGateway from the GatewayFactory</span>
@@ -323,8 +323,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="how-to-get-the-rollover">
-<h2>How to get the rollover<a class="headerlink" href="#how-to-get-the-rollover" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rollover">
+<h2>Rollover<a class="headerlink" href="#rollover" title="Permalink to this headline">¶</a></h2>
 <p>With Java API you can get the current rollover for each symbol, it can be done with the functions <code class="docutils literal notranslate"><span class="pre">getFXCMSymInterestBuy()</span></code> and <code class="docutils literal notranslate"><span class="pre">getFXCMSymInterestSell()</span></code> from <code class="docutils literal notranslate"><span class="pre">TradingSecurity</span> <span class="pre">Class</span></code>,  for Long and Short positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>For example:
 getFXCMSymInterestBuy() = 0.12     you will get $0.12 for 10k
@@ -334,18 +334,6 @@ The 10k in this example is the server default base unit size, it can be
 found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 </pre></div>
 </div>
-</div>
-<div class="section" id="backtesting-using-java-api">
-<h2>Backtesting using Java API<a class="headerlink" href="#backtesting-using-java-api" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/">Rsi signal and back testing</a>    strategy.</li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/">CCI Oscillator</a> strategy.</li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/">Breakout</a> strategy.</li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/">Range Stochastic</a> strategy .</li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/">Mean Reversion</a> strategy.</li>
-</ol>
-</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a></p>
@@ -367,7 +355,7 @@ found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="forexconnectapi.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="javabacktest.html" class="btn btn-neutral float-right" title="Backtesting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="fixcode.html" class="btn btn-neutral" title="Sample Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -42,8 +42,8 @@ Getting Started
    * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
 
 
-How to connect
-==============
+Connect
+=======
 
 Clients should establish a persistent WebSocket connection using socket.io library. All non-solicited updates will be sent over this connection. Client requests are to be sent via normal HTTP messages. Every HTTP message must contain following parameters:
 
@@ -79,7 +79,7 @@ What 't' means::
    :widths: 1 1
    :align: center
 
-Subscribe vs snapshot
+Subscribe vs Snapshot
 =====================
 
 FXCM Rest API provides two ways to deliever data. susbcribe vs snapshot.
@@ -125,8 +125,8 @@ Furthermore, a single market order can have many TradeIDs, if they are partial f
 
 In an entry order, an order ID is in callback function. You can also see it on an order table sanpshot. but you will not get a TradeID until order been executed. 
 
-Limitation on historical candle download per request
-====================================================
+Candle Request Limit
+====================
 .. tabularcolumns:: |p{1cm}|p{8cm}|p{6cm}|
 	
 .. csv-table:: Candle download limit
@@ -136,7 +136,7 @@ Limitation on historical candle download per request
    :widths: 1 1 1
    :align: center
 
-How to place trailing stop
+Placing Trailing Stops
 ==========================
 
 The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. Parameter is trailing_stop_step.
@@ -146,7 +146,7 @@ The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, nu
       Example Entry order with trailing stop of 10 pips:
       POST /trading/create_entry_order account_id=1537581&symbol=EUR%2FUSD&is_buy=true&rate=1.1655&amount=3&order_type=Entry&time_in_force=GTC&stop=-50&trailing_stop_step=10&is_in_pips=true
 
-Difference between account name and account ID
+Account Name vs Account ID
 ==============================================
 
 There is a difference between account name and account id. Usually removing the heading zeros are account ID. You need to pass the account_id when placing orders. You can retrieve this information from /trading/get_model/accounts.

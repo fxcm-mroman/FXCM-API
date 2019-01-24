@@ -41,8 +41,8 @@ To run the program, it needs to be passed as below arguments:
 	   MDH:	   Retrieve Marke data history
 	   RECONNECT: Reconnect the session
 
-How to login
-============
+Login
+=====
 
 .. code-block:: java
 
@@ -80,8 +80,8 @@ How to login
     }
 
 
-How to get the rollover
-=======================
+Rollover
+========
 
 With Java API you can get the current rollover for each symbol, it can be done with the functions ``getFXCMSymInterestBuy()`` and ``getFXCMSymInterestSell()`` from ``TradingSecurity Class``,  for Long and Short positions:
 ::
@@ -92,19 +92,6 @@ With Java API you can get the current rollover for each symbol, it can be done w
 
 	The 10k in this example is the server default base unit size, it can be 
 	found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
-
-Backtesting using Java API
-==========================
-
-	1. `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ 	strategy. 
-	
-	2. `CCI Oscillator 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/>`_ strategy.
-	
-	3. `Breakout <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/>`_ strategy.
- 
-	4. `Range Stochastic 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/>`_ strategy .
-
-	5. `Mean Reversion  	 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
 
 .. note::
 
