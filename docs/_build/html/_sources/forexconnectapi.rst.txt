@@ -1,12 +1,12 @@
-========
-Overview
-========
+=========================
+ForexConnect Overview
+=========================
 
 This SDK is designed to get trading data, trade, load price histories and subscribe for the most recent prices. 
 It is intended to be used by FXCM clients on auto-trading robots and systems, 
 chart and market analysis application, custom trading application on FXCM accounts.
 
-ForexConnect supports C++, C#, Java, VB, VBA, Windows, Linux and smart phones. And it is free.
+ForexConnect supports ``Python``, ``C++``, ``C#``, ``Java``, ``VB``, ``VBA``, ``Windows``, ``Linux``, ``iOS`` and ``Android`` for mobile devices. And it is free.
 
 You can use ForexConnect on Trading station account, no extra setup required.
 

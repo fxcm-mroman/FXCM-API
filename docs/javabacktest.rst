@@ -1,6 +1,6 @@
-===========
-Backtesting
-===========
+===============
+Java Strategies
+===============
 
 	1. `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ strategy. 
 	

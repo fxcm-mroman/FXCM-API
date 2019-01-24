@@ -1,6 +1,6 @@
-===========
-Sample Code
-===========
+=========================
+ForexConnect Sample Codes
+=========================
 
 1. Learn how to build and backtest:
 

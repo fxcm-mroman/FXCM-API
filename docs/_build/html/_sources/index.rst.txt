@@ -14,6 +14,7 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    
 .. toctree::
    :maxdepth: 2
+   :caption: FXCM Python Wrapper
    
    fxcmpy
    
