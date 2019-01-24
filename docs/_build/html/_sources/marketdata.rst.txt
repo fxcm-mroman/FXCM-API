@@ -1,10 +1,11 @@
-Market Data
-===========
+========
+Overview
+========
 
 FXCM provides several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.
 
 TickData
---------
+========
 
 Enjoy free access to our historical Tick Data.
 
@@ -38,7 +39,7 @@ If you are familiar with Python, we have two scripts that you may use for Python
 	For more information, you may contact us at api@fxcm.com.
 
 CandleData
-----------
+==========
 
 Enjoy free access to our historical Time Series or Candle Data.
 
@@ -81,7 +82,7 @@ If you are familiar with Python, we have three scripts that you may use for Pyth
 	For more information, you may contact us at api@fxcm.com.
 
 Order Flow
-----------
+==========
 
 Enjoy a free one-month sample of our historical Orders Data.
 
@@ -103,7 +104,7 @@ Each data set would include:
 	For more information, you may contact us at api@fxcm.com.
 
 Sentiment
----------
+=========
 
 Enjoy a free one-month sample of our historical Sentiment Data also known as SSI:
 
@@ -133,7 +134,7 @@ Enjoy a free one-month sample of our historical Sentiment Data also known as SSI
 	For more information, you may contact us at api@fxcm.com.
 
 Volume
-------
+======
 
 Enjoy a free one-month sample of our historical Volume Data:
 
@@ -161,3 +162,7 @@ Enjoy a free one-month sample of our historical Volume Data:
 	Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
 	This is for personal use and abides by our EULA.
 	For more information, you may contact us at api@fxcm.com.
+	
+**Disclaimer**:
+
+Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the `Financial Services Guide <https://docs.fxcorporate.com/financial-services-guide-au.pdf/>`_, `Product Disclosure Statement  <https://www.fxcm.com/au/legal/product-disclosure-statements/>`_, and `Terms of Business <https://docs.fxcorporate.com/tob_au_en.pdf/>`_. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.

@@ -1,10 +1,11 @@
-JAVA Trading SDK
-================
+========
+Overview
+========
 
 Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.
 
 Getting Started
----------------
+===============
 
 * A FXCM account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.	
 * Download the package `here <https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/>`_.	
@@ -12,7 +13,7 @@ Getting Started
 * Sample code at ``trading_sdk\fxcm-api\src\QATest.java``	
 
 Running QATest.java
--------------------
+===================
 
 To run the program, it needs to be passed as below arguments:
 
@@ -41,7 +42,7 @@ To run the program, it needs to be passed as below arguments:
 	   RECONNECT: Reconnect the session
 
 How to login
-------------
+============
 
 .. code-block:: java
 
@@ -80,7 +81,7 @@ How to login
 
 
 How to get the rollover
------------------------
+=======================
 
 With Java API you can get the current rollover for each symbol, it can be done with the functions ``getFXCMSymInterestBuy()`` and ``getFXCMSymInterestSell()`` from ``TradingSecurity Class``,  for Long and Short positions:
 ::
@@ -93,7 +94,7 @@ With Java API you can get the current rollover for each symbol, it can be done w
 	found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
 
 Backtesting using Java API
---------------------------
+==========================
 
 	1. `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ 	strategy. 
 	

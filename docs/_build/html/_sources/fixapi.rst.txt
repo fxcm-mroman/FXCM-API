@@ -1,5 +1,6 @@
-FIX API
-=======
+========
+Overview
+========
 
    *Based on FIX designed for institutional traders.*
 
@@ -12,7 +13,7 @@ FXCM trading session reset weekly, it opens on Sundays between 5:00 PM ET and 5:
 Please refer to our `GitHub <https://github.com/fxcm/FIXAPI/>`_.
 
 Getting Started
----------------
+===============
 
 *	First open a demo TSII account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
 *	Send your login to api@fxcm.com to get FIX credentials. 
@@ -22,7 +23,7 @@ Getting Started
 *	You also need to download FIX protocol package. `QuickFix/J or QuickFix/N <http://www.quickfixj.org/>`_.
 
 Connecting
-----------
+==========
 
 There are two ways to Logon, one is within the Logon message should include your ``Username(553)`` and ``Password(554)``. The other one is send ``Username(553)`` and ``Password(554)`` on ``User Request (35=BE)``. It is also important to note here that FXCM requires the ``TargetSubID`` on all messages, including your Logon:
 
@@ -47,7 +48,7 @@ Example Logon Messages
 	8=FIX.4.4|9=92| 35=A| 34=1| 49=FXCM| 50=U100D1 |52=20120927-13:15:34.810| 56=fx1294946_client1| 98=0| 108=30| 141=Y| 10=187|
 
 Marketdata
-----------
+==========
 
 *	Subscribe market price with ``35=V MarketDataRequest``. You will get ``MarketDataSnapshotFullRefresh(W) 35=W``.
 *	The ``MarketDataSnapshotFullRefresh(W)`` message contains the updates to market data. It is obtained as a response to the ``MarketDataRequest(V)`` message. FIX connections are then subscription based for the market data; meaning, you must request it to receive it.
@@ -72,7 +73,7 @@ You can also subscribe security in list, instead of just one security:
 	
 
 Table
------
+=====
 
 Send Collateral Inquiry ``35=BB``, you will get Collateral report ``35=BA``, which contains account information:
 
@@ -111,7 +112,7 @@ For closed positions, please send positions request ``35=AN ``with ``724=1 (Trad
 	8=FIX.4.4|9=702|35=AP|34=20|49=FXCM|50=U100D1|52=20151111-21:01:11.936|56=d101968168_client1|1=01958448|11=FIX.4.4:d101968168_client1->FXCM/U100D1-1428599035518-4|15=EUR|37=202027586|55=EUR/USD|60=20150519-03:30:43|325=N|336=FXCM|526=fix_example_test|581=6|625=U100D1|710=5|715=20151111|721=3533878441|724=1|727=13|728=0|730=1.06572|731=1|734=0|912=Y|9000=1|9040=-6.08|9041=78911063|9042=20150409-17:03:56|9043=1.12979|9044=20150519-03:30:43|9048=U100D1_16679142D2EE08ABE053142B3C0A452A_05192015032653174913_QCV-127|9049=FXTS|9052=640.7|9053=0.8|9054=204437509|453=1|448=FXCMID|447=D|452=3|802=4|523=32|803=26|523=d101968168|803=2|523=fix-test112|803=22|523=1958448|803=10|702=1|703=TQ|704=10000|753=1|707=CASH|708=0|10=042|
 
 Order
------
+=====
 
 Please set account number on ``tag 1``, 1=00648329 when you place orders. Otherwise you will get error "No Account specified".
 Place market order via 35=D. you will get execution report in ``35=8``:
@@ -127,11 +128,6 @@ Place market order via 35=D. you will get execution report in ``35=8``:
 ::
 
 	35=820160411-06:16:51.399: 8=FIX.4.4 9=478 35=8 34=15 49=FXCM 50=U100D1 52=20160411-06:16:51.177 56=D101546502001_client1 1=01537581 6=2047.53 11=635959630109097564 14=10 15=USD 17=821172034 31=2047.53 32=10 37=225909074 38=10 39=2 40=1 44=2047.53 54=1 55=SPX500 58=Executed 59=1 60=20160411-06:16:51 99=0 150=F 151=0 211=0 336=FXCM 625=U100D1 835=0 836=0 1094=0 9000=1010 9041=89603919 9050=OM 9051=F 9061=0 453=1 448=FXCM ID 447=D 452=3 802=4523=1537581 803=10 523=d101546502001 803=2 523=Halpert 803=22 523=32 803=26 10=088
-
-Sample code
------------
-
-Sample programs in C++/C#/Java are `here <https://github.com/fxcm/FIXAPI/tree/master/Sample%20Projects/>`_.
 
 **Disclaimer**
 

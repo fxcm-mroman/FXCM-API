@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>fxcmpy Python wrapper &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  <title>FXCM Python Wrapper &mdash; FXCM API Developer Documentation 1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python REST sample" href="pythonrest.html" />
-    <link rel="prev" title="RESTful API" href="restapi.html" /> 
+    <link rel="next" title="Python" href="pythonrest.html" />
+    <link rel="prev" title="Overview" href="restapi.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,9 +81,9 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">RESTful API</a><ul>
+              <p class="caption"><span class="caption-text">RESTful API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
@@ -93,18 +93,23 @@
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">fxcmpy Python wrapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#project-description">Project description</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FXCM Python Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python REST sample</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">REST Sample Codes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#getting-started">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#details">Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#candles">Candles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">fxcmrest-php for PhP</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">PHP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
@@ -114,17 +119,33 @@
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Backtesting using REST API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX API</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Technical Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting">Backtesting</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FIX API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixapi.html#sample-code">Sample code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA Trading SDK</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixcode.html">Sample Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-fix-example">C++ FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-net-fix-example">C# .NET FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#java-fix-example">Java FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#lamm-trading-example">LAMM Trading Example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Java API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
@@ -132,16 +153,22 @@
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect SDK</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">ForexConnect API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#request-current-balance">Request Current Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#retrieve-price-history">Retrieve Price History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#backtesting-sample-code">Backtesting Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">Marketdata:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
@@ -196,7 +223,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>fxcmpy Python wrapper</li>
+      <li>FXCM Python Wrapper</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,15 +242,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fxcmpy-python-wrapper">
-<h1>fxcmpy Python wrapper<a class="headerlink" href="#fxcmpy-python-wrapper" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project-description">
-<h2>Project description<a class="headerlink" href="#project-description" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="fxcm-python-wrapper">
+<h1>FXCM Python Wrapper<a class="headerlink" href="#fxcm-python-wrapper" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>FXCM provides a RESTful API to interact with its trading platform. Among others, it allows the retrieval of historical data as well as of streaming data. In addition, it allows to place different types of orders and to read out account information. The overall goal is to allow the implementation automated, algortithmic trading programs. <code class="docutils literal notranslate"><span class="pre">fxcmpy.py</span></code> is a Python wrapper package for that API.</p>
 <ul class="simple">
 <li>fxcmpy Python wrapper package <a class="reference external" href="https://www.fxcm.com/fxcmpy/">documentation</a>.</li>
 <li>Download fxcmpy <a class="reference external" href="https://pypi.org/project/fxcmpy/">here</a>.</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.
+For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
+</div>
+<p><strong>Disclaimer</strong>:</p>
+<p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
 </div>
 
@@ -235,10 +269,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pythonrest.html" class="btn btn-neutral float-right" title="Python REST sample" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pythonrest.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="restapi.html" class="btn btn-neutral" title="RESTful API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="restapi.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

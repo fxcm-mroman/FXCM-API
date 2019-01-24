@@ -1,10 +1,11 @@
-Python REST sample
-------------------
+======
+Python
+======
 
 Clone this repository by clicking `here <https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-python3-example/>`_.
 
 Getting started
-^^^^^^^^^^^^^^^
+===============
 1. Install python
 2. Run: pip install -r requirements.txt
 3. Within the fxcm_rest.json file:
@@ -17,7 +18,7 @@ Getting started
    *  Set your token and environment (demo/real)
 
 Using Jupyter Notebook
-^^^^^^^^^^^^^^^^^^^^^^
+======================
 1. Install Python
 2. Run: pip install jupyter (if you don't have jupyter installed already)
 3. Run: pip install -r requirements.txt
@@ -25,7 +26,7 @@ Using Jupyter Notebook
 5. Start the RestApiNotebook.ipynb.
 
 Details
-^^^^^^^
+=======
 
 This API exposes the methods of the REST API as a class, dealing with all of the common tasks 
 involved with setting up connections and wiring callback listeners for you. In addition to that
@@ -70,7 +71,7 @@ A quick example is as follows:
         counter += 1 
   
 Candles
-^^^^^^^
+=======
 
 All calls to candles allow either ``instrument name``, or ``offerId``. They also allow the ``From`` and ``To`` to be specified as timestamp or a date/time format that will be interpreted ("2017/08/01 10:00", "Aug 1, 2017 10:00", etc.).
 In addition to ``instrument_id``, ``response``, ``period_id`` and ``candles``, a ``headers`` field (not documented in the API notes) is returned, representing the candle fields.
@@ -130,3 +131,11 @@ In addition to ``instrument_id``, ``response``, ``period_id`` and ``candles``, a
     Price update:  {"Updated":1504167248,"Rates":[110.446,110.468,110.629,110.156],"Symbol":"USD/JPY"}
     Price update:  {"Updated":1504167250,"Rates":[110.446,110.468,110.629,110.156],"Symbol":"USD/JPY"}
 	
+.. note::
+
+	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
+	For more information, you may contact us at api@fxcm.com
+
+**Disclaimer**:
+
+Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the `Financial Services Guide <https://docs.fxcorporate.com/financial-services-guide-au.pdf/>`_, `Product Disclosure Statement  <https://www.fxcm.com/au/legal/product-disclosure-statements/>`_, and `Terms of Business <https://docs.fxcorporate.com/tob_au_en.pdf/>`_. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.

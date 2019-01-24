@@ -1,14 +1,15 @@
-fxcmrest-php for PhP
---------------------
+===
+PHP
+===
 
 ``FxcmRest`` is a library for event-driven trading with FXCM over RestAPI using ``ReactPHP``.
 
 Requirements
-^^^^^^^^^^^^
+============
   PHP 7.0.2+
 
 Installation
-^^^^^^^^^^^^
+============
 The recommended way to install FxcmRest is through `Composer <https://getcomposer.org/>`_.
 
 This command will install the latest stable version:
@@ -19,7 +20,7 @@ This command will install the latest stable version:
 
 
 Usage
-^^^^^
+=====
 As FXCM Rest API requires you to keep Socket.IO connection open through the whole time it is used, this library must be run within a php script and not as part of php generated website.
 
 Interaction can be done either by using a console or through HTTP requests handled directly by the php script for example with ``\React\HTTP``.
@@ -35,14 +36,14 @@ Configuration class ``\FxcmRest\Config`` must be instantiated with an array cont
 	* ``token``
 
 Configuration Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^
+========================
 	* ``protocol`` - either ``\FxcmRest\Protocol::HTTPS`` (default) or ``\FxcmRest\Protocol::HTTP``
 	* ``host`` - either ``api.fxcm.com`` for Real accounts or ``api-demo.fxcm.com`` for Demo accounts
  	* ``port`` - port number. ``443`` default
  	* ``token`` - 40 char hexadecimal string
 
 Functions
-^^^^^^^^^
+=========
 .. code-block:: php
 
 	connect() : null
@@ -77,7 +78,7 @@ Functions
 5. Registers a ``$callback`` for a signal of ``$signalName``. For a list of signals and parameters that are passed with them please see **Signals** section.
  
 Signals
-^^^^^^^
+=======
 1. ``connected`` - Emitted when connection sequence is complete. After this socketID is valid and requests can be sent to the server. No parameters are passed.
 
 2. ``disconnected`` - Emitted when connection to the server is closed. No parameters are passed.
@@ -89,7 +90,7 @@ Signals
 5. ``(EUR/USD,EUR/GBP,...)`` - Emmited on price update. Passes the price update as a JSON string. Requires subscription through ``/subscribe``.
 
 Sample Code
-^^^^^^^^^^^
+===========
 
 .. code-block:: php
 

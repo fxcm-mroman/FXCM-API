@@ -1,5 +1,6 @@
-ForexConnect SDK
-================
+========
+Overview
+========
 
 This SDK is designed to get trading data, trade, load price histories and subscribe for the most recent prices. 
 It is intended to be used by FXCM clients on auto-trading robots and systems, 
@@ -12,7 +13,7 @@ You can use ForexConnect on Trading station account, no extra setup required.
 .. note:: If using ``O2G2`` namespace, keep in mind that it is currently deprecated as it has not been updated since the beginning of 2015. It may give the users errors or not be compatible in certain cases.
 
 Getting Started
----------------
+===============
 
 1) A FXCM TSII account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_. 
 2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download/>`_
@@ -23,7 +24,7 @@ Getting Started
 7) ForexConnect using `Python <http://fxcodebase.com/code/viewforum.php?f=51/>`_
 
 Top Development Platform IDEs
------------------------------
+=============================
 
 * Windows 32bit and 64bit – `Visual Studio 2005 and up <https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx/>`_
 * Linux 32bit and 64bit – `Eclipse <https://eclipse.org/>`_
@@ -31,14 +32,14 @@ Top Development Platform IDEs
 * Android - `Android Studio <https://developer.android.com/studio/intro/index.html/>`_
 
 Table manager vs Non-table manager
-----------------------------------
+==================================
 
 Table manager preload all tables to your local memory, it is an in-memory representation of API tables. The table manager allows you to subscribe to table change events such as updates, adding rows, or removing rows. It is important to note that the ``SummaryTable`` is only accessible through the table manager. ``Table manager`` presents a performance decrease because it is constantly recalculating fields.
 
 ``Non-table manager`` allow you to capture table updates adhoc via the use of a class that implements the ``IO2GResponseListener`` interface. It give performance advantage but you need to calculate some fields such as ``PipCost`` or ``P/L``.
 
-How to get current balance
---------------------------
+Request Current Balance
+=======================
 
 You need to request the table from server. Please refer to ``NonTableManagerSamples\PrintTable`` example program:
 
@@ -62,15 +63,15 @@ You need to request the table from server. Please refer to ``NonTableManagerSamp
           return accountsResponseReader.getRow(0);
       }
 
-How to get price history
-------------------------
+Retrieve Price History
+========================
 
 For pricehistory, you need to use non-table manager. 
 You can see examples under ``NonTableManagerSamples\GetHistPrices``
 
 
-Real Case Studies on Backtesting using ForexConnect API
--------------------------------------------------------
+Backtesting Sample Code
+=======================
 
 1. Learn how to build and backtest:
 
@@ -89,7 +90,7 @@ Real Case Studies on Backtesting using ForexConnect API
 .. note::
 
 	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
-	For more information, you may contact us at api@fxcm.com.
+	For more information, you may contact us at api@fxcm.com
 
 **Disclaimer**:
 

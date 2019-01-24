@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FIX API &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  <title>Overview &mdash; FXCM API Developer Documentation 1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="JAVA Trading SDK" href="javaapi.html" />
-    <link rel="prev" title="Backtesting using REST API" href="realcasebt.html" /> 
+    <link rel="next" title="Sample Projects" href="fixcode.html" />
+    <link rel="prev" title="Technical Analysis" href="realcasebt.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,9 +81,9 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">RESTful API</a><ul>
+              <p class="caption"><span class="caption-text">RESTful API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#how-to-connect">How to connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs snapshot</a></li>
@@ -93,18 +93,23 @@
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#difference-between-account-name-and-account-id">Difference between account name and account ID</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">fxcmpy Python wrapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#project-description">Project description</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">FXCM Python Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#overview">Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python REST sample</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">REST Sample Codes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#getting-started">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#details">Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pythonrest.html#candles">Candles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">fxcmrest-php for PhP</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">PHP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
@@ -114,17 +119,33 @@
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Backtesting using REST API</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">FIX API</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Technical Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting">Backtesting</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FIX API:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#order">Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sample-code">Sample code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA Trading SDK</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixcode.html">Sample Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-fix-example">C++ FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-net-fix-example">C# .NET FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#java-fix-example">Java FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#lamm-trading-example">LAMM Trading Example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Java API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#how-to-login">How to login</a></li>
@@ -132,16 +153,22 @@
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#backtesting-using-java-api">Backtesting using Java API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect SDK</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">ForexConnect API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-current-balance">How to get current balance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#how-to-get-price-history">How to get price history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#real-case-studies-on-backtesting-using-forexconnect-api">Real Case Studies on Backtesting using ForexConnect API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#request-current-balance">Request Current Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#retrieve-price-history">Retrieve Price History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#backtesting-sample-code">Backtesting Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Market Data</a><ul>
+</ul>
+<p class="caption"><span class="caption-text">Marketdata:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
@@ -196,7 +223,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>FIX API</li>
+      <li>Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,8 +242,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fix-api">
-<h1>FIX API<a class="headerlink" href="#fix-api" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><em>Based on FIX designed for institutional traders.</em></div></blockquote>
 <p>FIX API using FIX Protocol 4.4 designed for real-time, custom institutional interface which push up to 200 price update per second (not available on other APIs). It is our fastest and most popular solution. You will get full range of trading order types available at FXCM.</p>
@@ -326,10 +353,6 @@ Place market order via 35=D. you will get execution report in <code class="docut
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">35</span><span class="o">=</span><span class="mi">820160411</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mf">51.399</span><span class="p">:</span> <span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span> <span class="mi">9</span><span class="o">=</span><span class="mi">478</span> <span class="mi">35</span><span class="o">=</span><span class="mi">8</span> <span class="mi">34</span><span class="o">=</span><span class="mi">15</span> <span class="mi">49</span><span class="o">=</span><span class="n">FXCM</span> <span class="mi">50</span><span class="o">=</span><span class="n">U100D1</span> <span class="mi">52</span><span class="o">=</span><span class="mi">20160411</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mf">51.177</span> <span class="mi">56</span><span class="o">=</span><span class="n">D101546502001_client1</span> <span class="mi">1</span><span class="o">=</span><span class="mi">01537581</span> <span class="mi">6</span><span class="o">=</span><span class="mf">2047.53</span> <span class="mi">11</span><span class="o">=</span><span class="mi">635959630109097564</span> <span class="mi">14</span><span class="o">=</span><span class="mi">10</span> <span class="mi">15</span><span class="o">=</span><span class="n">USD</span> <span class="mi">17</span><span class="o">=</span><span class="mi">821172034</span> <span class="mi">31</span><span class="o">=</span><span class="mf">2047.53</span> <span class="mi">32</span><span class="o">=</span><span class="mi">10</span> <span class="mi">37</span><span class="o">=</span><span class="mi">225909074</span> <span class="mi">38</span><span class="o">=</span><span class="mi">10</span> <span class="mi">39</span><span class="o">=</span><span class="mi">2</span> <span class="mi">40</span><span class="o">=</span><span class="mi">1</span> <span class="mi">44</span><span class="o">=</span><span class="mf">2047.53</span> <span class="mi">54</span><span class="o">=</span><span class="mi">1</span> <span class="mi">55</span><span class="o">=</span><span class="n">SPX500</span> <span class="mi">58</span><span class="o">=</span><span class="n">Executed</span> <span class="mi">59</span><span class="o">=</span><span class="mi">1</span> <span class="mi">60</span><span class="o">=</span><span class="mi">20160411</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">51</span> <span class="mi">99</span><span class="o">=</span><span class="mi">0</span> <span class="mi">150</span><span class="o">=</span><span class="n">F</span> <span class="mi">151</span><span class="o">=</span><span class="mi">0</span> <span class="mi">211</span><span class="o">=</span><span class="mi">0</span> <span class="mi">336</span><span class="o">=</span><span class="n">FXCM</span> <span class="mi">625</span><span class="o">=</span><span class="n">U100D1</span> <span class="mi">835</span><span class="o">=</span><span class="mi">0</span> <span class="mi">836</span><span class="o">=</span><span class="mi">0</span> <span class="mi">1094</span><span class="o">=</span><span class="mi">0</span> <span class="mi">9000</span><span class="o">=</span><span class="mi">1010</span> <span class="mi">9041</span><span class="o">=</span><span class="mi">89603919</span> <span class="mi">9050</span><span class="o">=</span><span class="n">OM</span> <span class="mi">9051</span><span class="o">=</span><span class="n">F</span> <span class="mi">9061</span><span class="o">=</span><span class="mi">0</span> <span class="mi">453</span><span class="o">=</span><span class="mi">1</span> <span class="mi">448</span><span class="o">=</span><span class="n">FXCM</span> <span class="n">ID</span> <span class="mi">447</span><span class="o">=</span><span class="n">D</span> <span class="mi">452</span><span class="o">=</span><span class="mi">3</span> <span class="mi">802</span><span class="o">=</span><span class="mi">4523</span><span class="o">=</span><span class="mi">1537581</span> <span class="mi">803</span><span class="o">=</span><span class="mi">10</span> <span class="mi">523</span><span class="o">=</span><span class="n">d101546502001</span> <span class="mi">803</span><span class="o">=</span><span class="mi">2</span> <span class="mi">523</span><span class="o">=</span><span class="n">Halpert</span> <span class="mi">803</span><span class="o">=</span><span class="mi">22</span> <span class="mi">523</span><span class="o">=</span><span class="mi">32</span> <span class="mi">803</span><span class="o">=</span><span class="mi">26</span> <span class="mi">10</span><span class="o">=</span><span class="mi">088</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sample-code">
-<h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
-<p>Sample programs in C++/C#/Java are <a class="reference external" href="https://github.com/fxcm/FIXAPI/tree/master/Sample%20Projects/">here</a>.</p>
 <p><strong>Disclaimer</strong></p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the Financial Services Guide, Product Disclosure Statement, and Terms of Business. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
@@ -343,10 +366,10 @@ Place market order via 35=D. you will get execution report in <code class="docut
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="javaapi.html" class="btn btn-neutral float-right" title="JAVA Trading SDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fixcode.html" class="btn btn-neutral float-right" title="Sample Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="realcasebt.html" class="btn btn-neutral" title="Backtesting using REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="realcasebt.html" class="btn btn-neutral" title="Technical Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

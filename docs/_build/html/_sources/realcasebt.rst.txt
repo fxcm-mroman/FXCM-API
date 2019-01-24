@@ -1,5 +1,9 @@
-Backtesting using REST API
---------------------------
+==================
+Technical Analysis
+==================
+
+Backtesting
+===========
 
 1. `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 
