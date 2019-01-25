@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="FIX Sample Code" href="fixcode.html" />
+    <link rel="next" title="FIX Core Concepts" href="fixconcepts.html" />
     <link rel="prev" title="Technical Analysis using REST" href="realcasebt.html" /> 
 
   
@@ -94,9 +94,17 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">FXCM Python Wrapper</span></p>
+<p class="caption"><span class="caption-text">FXCM Python Wrapper:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">fxcmpy Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#demo-account">Demo Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#package-installation">Package Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#api-token">API Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">REST Sample Codes:</span></p>
 <ul>
@@ -119,6 +127,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Technical Analysis using REST</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting">Backtesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#sample-code">Sample Code</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +139,69 @@
 <li class="toctree-l2"><a class="reference internal" href="#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#order">Order</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixconcepts.html">FIX Core Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#getting-connected">Getting Connected</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#logon">Logon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#logon-messages">Logon Messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#tradingsessionstatusrequest-g">TradingSessionStatusRequest (g)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#tradingsessionstatus-message-h">TradingSessionStatus Message (h)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#collateralinquiry-bb">CollateralInquiry (BB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#requesting-market-data">Requesting Market Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#getting-positions">Getting Positions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#open-position-vs-closed-position">Open Position vs. Closed Position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#open-positions">Open Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#closed-positions">Closed Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#position-margin">Position Margin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#overview-of-basic-order-and-time-in-force-types">Overview of Basic Order and Time-In-Force Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#time-in-force-tif-types">Time-In-Force (TIF) Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#good-til-cancel-gtc">Good Til Cancel (GTC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#day">Day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#immediate-or-cancel-ioc">Immediate or Cancel (IOC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fill-or-kill-fok">Fill or Kill (FOK)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#order-types">Order Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#market">Market</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#market-range-stop-limit">Market Range (Stop-Limit)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#limit">Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#gtc-day-limit-order">GTC/Day Limit Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#ioc-fok-limit-order">IOC/FOK Limit Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#stop">Stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#gtc-and-day">GTC and DAY</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#handling-of-partial-fills">Handling of Partial Fills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#order-quantity-fields">Order Quantity Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#example-partial-fill">Example Partial Fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#closing-a-position">Closing A Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#sending-a-closing-order">Sending A Closing Order</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#getting-account-position-maintenance">Getting Account Position Maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#getting-position-maintenance-in-code">Getting Position Maintenance in Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#when-to-reset-msgseqnum">When To Reset MsgSeqNum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#reset-on-logon">Reset On Logon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#account-equity">Account Equity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#startcash-921">StartCash(921)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#steps-to-retrieve-short-version-of-market-price">Steps To Retrieve Short Version Of Market Price</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#emf">EMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#execution-disclaimer">Execution Disclaimer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fixcode.html">FIX Sample Code</a><ul>
@@ -174,6 +246,8 @@
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
 </ul>
 </li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -364,7 +438,7 @@ Place market order via 35=D. you will get execution report in <code class="docut
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="fixcode.html" class="btn btn-neutral float-right" title="FIX Sample Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fixconcepts.html" class="btn btn-neutral float-right" title="FIX Core Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="realcasebt.html" class="btn btn-neutral" title="Technical Analysis using REST" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

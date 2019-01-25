@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FIX Core Concepts &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FIX Sample Code" href="fixcode.html" />
+    <link rel="prev" title="FIX Overview" href="fixapi.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FXCM API Developer Documentation
+          
+
+          
+            
+            <img src="_static/fxcm-blue-2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">RESTful API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#connect">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#orderid-vs-tradeid">OrderID vs TradeID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#candle-request-limit">Candle Request Limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#placing-trailing-stops">Placing Trailing Stops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restapi.html#account-name-vs-account-id">Account Name vs Account ID</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FXCM Python Wrapper:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fxcmpy.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#demo-account">Demo Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#package-installation">Package Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#api-token">API Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">REST Sample Codes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#details">Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#candles">Candles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">PHP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Technical Analysis using REST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting">Backtesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#sample-code">Sample Code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FIX API:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fixapi.html">FIX Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FIX Core Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-connected">Getting Connected</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logon">Logon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#logon-messages">Logon Messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tradingsessionstatusrequest-g">TradingSessionStatusRequest (g)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tradingsessionstatus-message-h">TradingSessionStatus Message (h)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collateralinquiry-bb">CollateralInquiry (BB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requesting-market-data">Requesting Market Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-positions">Getting Positions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open-position-vs-closed-position">Open Position vs. Closed Position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#open-positions">Open Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#closed-positions">Closed Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#position-margin">Position Margin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-basic-order-and-time-in-force-types">Overview of Basic Order and Time-In-Force Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#time-in-force-tif-types">Time-In-Force (TIF) Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#good-til-cancel-gtc">Good Til Cancel (GTC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#day">Day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#immediate-or-cancel-ioc">Immediate or Cancel (IOC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fill-or-kill-fok">Fill or Kill (FOK)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#order-types">Order Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#market">Market</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#market-range-stop-limit">Market Range (Stop-Limit)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limit">Limit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gtc-day-limit-order">GTC/Day Limit Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ioc-fok-limit-order">IOC/FOK Limit Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stop">Stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gtc-and-day">GTC and DAY</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-of-partial-fills">Handling of Partial Fills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#order-quantity-fields">Order Quantity Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-partial-fill">Example Partial Fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#closing-a-position">Closing A Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-a-closing-order">Sending A Closing Order</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-account-position-maintenance">Getting Account Position Maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-position-maintenance-in-code">Getting Position Maintenance in Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#when-to-reset-msgseqnum">When To Reset MsgSeqNum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reset-on-logon">Reset On Logon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#account-equity">Account Equity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#startcash-921">StartCash(921)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-retrieve-short-version-of-market-price">Steps To Retrieve Short Version Of Market Price</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emf">EMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution-disclaimer">Execution Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixcode.html">FIX Sample Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-fix-example">C++ FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#c-net-fix-example">C# .NET FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#java-fix-example">Java FIX Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixcode.html#lamm-trading-example">LAMM Trading Example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Java API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javaapi.html#rollover">Rollover</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javabacktest.html">Java Strategies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ForexConnect API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#request-current-balance">Request Current Balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#retrieve-price-history">Retrieve Price History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectbt.html">ForexConnect Sample Codes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Marketdata:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Marketdata Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#sentiment">Sentiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marketdata.html#volume">Volume</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FXCM API Developer Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>FIX Core Concepts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/fixconcepts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fix-core-concepts">
+<h1>FIX Core Concepts<a class="headerlink" href="#fix-core-concepts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-connected">
+<h2>Getting Connected<a class="headerlink" href="#getting-connected" title="Permalink to this headline">¶</a></h2>
+<p>After your application has created a FIX session, you can begin sending and receiving FIX messages. However, there is a sequence of messages that should be sent prior to conducting any other messaging activity. These messages are described below.</p>
+<div class="section" id="logon">
+<h3>Logon<a class="headerlink" href="#logon" title="Permalink to this headline">¶</a></h3>
+<p>This is the first message that you must send. Any messages you send before this will be ignored. There are two ways to Logon, one is within the Logon message should include your <code class="docutils literal notranslate"><span class="pre">Username(553)</span></code> and <code class="docutils literal notranslate"><span class="pre">Password(554)</span></code>. The other one is send <code class="docutils literal notranslate"><span class="pre">Username(553)</span></code> and <code class="docutils literal notranslate"><span class="pre">Password(554)</span></code> on <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Request</span> <span class="pre">(35=BE)</span></code>. It is also important to note here that FXCM requires the <code class="docutils literal notranslate"><span class="pre">TargetSubID</span></code> on all messages, including your Logon. If you are not receiving any responses to your <code class="docutils literal notranslate"><span class="pre">Logon</span></code> message, it is likely because you have not included <code class="docutils literal notranslate"><span class="pre">TargetSubID</span></code>.</p>
+<div class="section" id="logon-messages">
+<h4>Logon Messages<a class="headerlink" href="#logon-messages" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Send Username/Password on <code class="docutils literal notranslate"><span class="pre">Logon</span> <span class="pre">(35=A)</span></code></li>
+</ul>
+<div class="highlight-FIX notranslate"><div class="highlight"><pre><span></span>8=FIX.4.4|9=114| 35=A |34=1| 49=fx1294946_client1| 52=20120927-13:15:34.754| 56=FXCM |57=U100D1| 553=fx1294946| 554=123| 98=0|108=30 |141=Y| 10=146|
+</pre></div>
+</div>
+<ul class="simple">
+<li>Send Username/Password on User <code class="docutils literal notranslate"><span class="pre">Request(35=BE)</span></code></li>
+</ul>
+<div class="highlight-FIX notranslate"><div class="highlight"><pre><span></span>8=FIX.4.4|9=114|35=BE|34=2|49=fx1294946_client1|52=20140515-00:29:11.372|56=FXCM|57=U100D1|553=fx1294946|554=1234|923=1|924=1|10=150|
+</pre></div>
+</div>
+<ul class="simple">
+<li>FXCM Logon response</li>
+</ul>
+<div class="highlight-FIX notranslate"><div class="highlight"><pre><span></span>8=FIX.4.4|9=92| 35=A| 34=1| 49=FXCM| 50=U100D1 |52=20120927-13:15:34.810| 56=fx1294946_client1| 98=0| 108=30| 141=Y| 10=187|
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tradingsessionstatusrequest-g">
+<h2>TradingSessionStatusRequest (g)<a class="headerlink" href="#tradingsessionstatusrequest-g" title="Permalink to this headline">¶</a></h2>
+<p>After successful authentication, it is necessary to receive an update on the status of the market (open or closed), common system parameters, and a list of securities with their characteristics. The <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> message is returned as a response to the <code class="docutils literal notranslate"><span class="pre">TradingSessionStatusRequest</span></code> and it accomplishes these things.</p>
+</div>
+<div class="section" id="tradingsessionstatus-message-h">
+<h2>TradingSessionStatus Message (h)<a class="headerlink" href="#tradingsessionstatus-message-h" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> message is used to provide an update on the status of the market. Furthermore, this message contains useful system parameters as well as information about each trading security (embedded <code class="docutils literal notranslate"><span class="pre">SecurityList</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> should be requested upon successful <code class="docutils literal notranslate"><span class="pre">Logon</span></code> and subscribed to. The contents of the <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> message, specifically the <code class="docutils literal notranslate"><span class="pre">SecurityList</span></code> and system parameters, should dictate how fields are set when sending messages to FXCM. For example, the instrument component within <code class="docutils literal notranslate"><span class="pre">SecurityList</span></code> indicates minimum order quantity <code class="docutils literal notranslate"><span class="pre">9095</span></code>. Subsequent <code class="docutils literal notranslate"><span class="pre">NewOrderSingle</span> <span class="pre">(D)</span></code> messages should not violate this value when setting the <code class="docutils literal notranslate"><span class="pre">OrderQty</span> <span class="pre">field</span> <span class="pre">(38)</span></code>.</p>
+<ul class="simple">
+<li>Requesting <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="o">::</span><span class="n">TradingSessionStatusRequest</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="p">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">TradSesReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
+<span class="n">request</span><span class="p">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Reading System Parameters</li>
+</ul>
+<p>Here we demonstrate how to extract the FXCM system properties from the <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> message. The code below will print out the name and value of the each of the properties. The following custom fields are used:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="mi">9016</span> <span class="o">-</span> <span class="n">FXCMNoParam</span>
+<span class="mi">9017</span> <span class="o">-</span> <span class="n">FXCMParamName</span>
+<span class="mi">9018</span> <span class="o">-</span> <span class="n">FXCMParamValue</span>
+<span class="kt">int</span> <span class="n">param_count</span> <span class="o">=</span> <span class="n">FIX</span><span class="o">::</span><span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9016</span><span class="p">));</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;TSS - FXCM System Parameters&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">param_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+         <span class="n">FIX</span><span class="o">::</span><span class="n">FieldMap</span> <span class="n">map</span> <span class="o">=</span> <span class="n">status</span><span class="p">.</span><span class="n">getGroupRef</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">9016</span><span class="p">);</span>
+         <span class="n">string</span> <span class="n">param_name</span> <span class="o">=</span> <span class="n">map</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9017</span><span class="p">);</span>
+         <span class="n">string</span> <span class="n">param_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9018</span><span class="p">);</span>
+
+         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">param_name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">param_value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">FIX</span><span class="o">::</span><span class="n">Session</span><span class="o">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collateralinquiry-bb">
+<h2>CollateralInquiry (BB)<a class="headerlink" href="#collateralinquiry-bb" title="Permalink to this headline">¶</a></h2>
+<p>CollateralInquiry is used to request the <code class="docutils literal notranslate"><span class="pre">CollateralReport(BA)</span></code> message from FXCM. This message contains important account related information such as the account number. With the exception of FIX sessions used solely for market data, you should include this message in your login sequence.</p>
+<p>The login you use to connect will have access to one or more trading accounts. You will receive a <code class="docutils literal notranslate"><span class="pre">CollateralReport`</span> <span class="pre">`for</span> <span class="pre">each</span> <span class="pre">of</span> <span class="pre">these</span> <span class="pre">accounts.</span> <span class="pre">When</span> <span class="pre">sending</span> <span class="pre">or</span> <span class="pre">modifying</span> <span class="pre">orders,</span> <span class="pre">you</span> <span class="pre">must</span> <span class="pre">set</span> <span class="pre">the</span> <span class="pre">``Account(1)`</span> <span class="pre">tag.</span> <span class="pre">This</span> <span class="pre">tag</span> <span class="pre">value</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">set</span> <span class="pre">only</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">account</span> <span class="pre">that</span> <span class="pre">you</span> <span class="pre">have</span> <span class="pre">actually</span> <span class="pre">received</span> <span class="pre">a</span> <span class="pre">``CollateralReport</span></code> for, otherwise, you will see a rejection.</p>
+</div>
+<div class="section" id="requesting-market-data">
+<h2>Requesting Market Data<a class="headerlink" href="#requesting-market-data" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">MarketDataSnapshotFullRefresh(W)</span></code> message contains the updates to market data. It is obtained as a response to the <code class="docutils literal notranslate"><span class="pre">MarketDataRequest(V)</span></code> message. FIX connections are then subscription based for the market data; meaning, you must request it to receive it.</p>
+<p>The types of data you can receive, such as the Bid price or Offer price, are referred to as <code class="docutils literal notranslate"><span class="pre">MDEntryTypes</span></code> in FIX. FXCM supports the following <code class="docutils literal notranslate"><span class="pre">MDEntryTypes</span></code> in each message: <code class="docutils literal notranslate"><span class="pre">Bid(0)</span></code>, <code class="docutils literal notranslate"><span class="pre">Offer(1)</span></code>, <code class="docutils literal notranslate"><span class="pre">High</span> <span class="pre">Price(7)</span></code>, and <code class="docutils literal notranslate"><span class="pre">Low</span> <span class="pre">Price(8)</span></code>. Additional <code class="docutils literal notranslate"><span class="pre">MDEntryTypes</span></code> such as <code class="docutils literal notranslate"><span class="pre">MDEntryDate</span></code>, <code class="docutils literal notranslate"><span class="pre">MDEntryTime</span></code>, <code class="docutils literal notranslate"><span class="pre">QuoteCondition</span></code>, etc., are found only once within the first repeating group of the message.</p>
+<ul class="simple">
+<li>Sending MarketDataRequest(V) Message</li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="o">::</span><span class="n">MarketDataRequest</span> <span class="n">mdr</span><span class="p">;</span>
+
+<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
+<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MarketDepth</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">NoMDEntryTypes</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+
+<span class="n">FIX44</span><span class="o">::</span><span class="n">MarketDataRequest</span><span class="o">::</span><span class="n">NoMDEntryTypes</span> <span class="n">types_group</span><span class="p">;</span>
+<span class="n">types_group</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType_BID</span><span class="p">));</span>
+<span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
+<span class="n">types_group</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType_OFFER</span><span class="p">));</span>
+<span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">no_sym</span> <span class="o">=</span> <span class="n">FIX</span><span class="o">::</span><span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">security_list</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">FIELD</span><span class="o">::</span><span class="n">NoRelatedSym</span><span class="p">));</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">no_sym</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">FIX44</span><span class="o">::</span><span class="n">SecurityList</span><span class="o">::</span><span class="n">NoRelatedSym</span> <span class="n">sym_group</span><span class="p">;</span>
+   <span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">security_list</span><span class="p">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sym_group</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">FIX</span><span class="o">::</span><span class="n">Session</span><span class="o">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">mdr</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-positions">
+<h2>Getting Positions<a class="headerlink" href="#getting-positions" title="Permalink to this headline">¶</a></h2>
+<p>Open and closed positions are retrieved through the <code class="docutils literal notranslate"><span class="pre">PositionReport(AP)</span></code> message. Unlike the <code class="docutils literal notranslate"><span class="pre">ExecutionReport(8)</span></code> message which contains information relating to orders, the <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> is not automatically sent to your FIX client. You can make individual requests for <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code>, or you can subscribe to updates on this message. Sending a <code class="docutils literal notranslate"><span class="pre">RequestForPositions(AN)</span></code> message with <code class="docutils literal notranslate"><span class="pre">SubscriptionRequestType(263)</span></code> set to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">(SnapshotAndUpdates)</span></code> will subscribe to updates.</p>
+<div class="section" id="open-position-vs-closed-position">
+<h3>Open Position vs. Closed Position<a class="headerlink" href="#open-position-vs-closed-position" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">PosReqType(724)</span></code> is used to determine if a received <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> represents an open position or closed position. A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> indicates an open position while a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> indicates a closed position.</p>
+<div class="section" id="open-positions">
+<h4>Open Positions<a class="headerlink" href="#open-positions" title="Permalink to this headline">¶</a></h4>
+<p>When a <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> representing an open position is sent to you, it will contain the price at which the position was opened. This can be seen using <code class="docutils literal notranslate"><span class="pre">SettlPrice(730)</span></code>. The close price and the P/L of the position are not present given that the position is open. Close price and P/L are real-time calculated values and are not contain in any <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> where <code class="docutils literal notranslate"><span class="pre">PosReqType(724)</span> <span class="pre">=</span> <span class="pre">0</span></code> (Open Position).</p>
+</div>
+<div class="section" id="closed-positions">
+<h4>Closed Positions<a class="headerlink" href="#closed-positions" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> messages representing closed positions will include the price at which the position was closed, as well as other useful information such as P/L. The following additional tags are present:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tag                                                     Description
+FXCMPosClosePNL (9052)          Gross P/L of the position; e.g., $24.17, or €43.72
+FXCMPosInterest (9040)          Rollover interest applied to the position
+FXCMPosCommission (9053)        Commission applied to the position
+FXCMCloseSettlPrice (9043)      Close price of the position
+</pre></div>
+</div>
+</div>
+<div class="section" id="position-margin">
+<h4>Position Margin<a class="headerlink" href="#position-margin" title="Permalink to this headline">¶</a></h4>
+<p>The margin applied to each individual position can be obtained from a <code class="docutils literal notranslate"><span class="pre">PositionReport</span></code> representing an open position. <code class="docutils literal notranslate"><span class="pre">FXCMUsedMargin(9038)</span></code> will contain this margin value. Note that the total margin required for an account can be obtained by this same tag from the <code class="docutils literal notranslate"><span class="pre">CollateralReport(BA)</span></code> message.</p>
+</div>
+</div>
+</div>
+<div class="section" id="overview-of-basic-order-and-time-in-force-types">
+<h2>Overview of Basic Order and Time-In-Force Types<a class="headerlink" href="#overview-of-basic-order-and-time-in-force-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-in-force-tif-types">
+<h3>Time-In-Force (TIF) Types<a class="headerlink" href="#time-in-force-tif-types" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Time-In-Force(59)</span></code> Tag is used to indicate how long an order should remain active before it is either executed by the broker or cancelled by the client. Below are the four TIF values with descriptions.</p>
+<div class="section" id="good-til-cancel-gtc">
+<h4>Good Til Cancel (GTC)<a class="headerlink" href="#good-til-cancel-gtc" title="Permalink to this headline">¶</a></h4>
+<p>Orders with this TIF value remain open and active until fully executed or cancelled. This means that the order remains active until the entire order amount is executed.</p>
+<p><strong>When to use GTC</strong></p>
+<p>Use GTC when your order must remain active until it can be filled
+Use GTC when your entire order must get filled</p>
+</div>
+<div class="section" id="day">
+<h4>Day<a class="headerlink" href="#day" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>Orders with this TIF value will remain open and active until fully executed, cancelled by the client, or when the trading day ends. Like Good Til Cancel (GTC), this means the order will remain active until the entire order amount is executed, unless the order is cancelled or the trading day ends.</div></blockquote>
+<p><strong>When to use Day</strong></p>
+<p>Use Day when your original intention for the order becomes obsolete with time.</p>
+</div>
+<div class="section" id="immediate-or-cancel-ioc">
+<h4>Immediate or Cancel (IOC)<a class="headerlink" href="#immediate-or-cancel-ioc" title="Permalink to this headline">¶</a></h4>
+<p>Orders with this TIF value will immediately attempt to execute as much of your order as possible and cancel any remaining amount if necessary. As a result, this TIF value will allow partial fills.</p>
+<p><strong>When to use IOC</strong></p>
+<p>Use IOC when you expect execution to take place immediately
+Use IOC when it is acceptable if your entire order does not get filled</p>
+</div>
+<div class="section" id="fill-or-kill-fok">
+<h4>Fill or Kill (FOK)<a class="headerlink" href="#fill-or-kill-fok" title="Permalink to this headline">¶</a></h4>
+<p>Orders with this TIF value will attempt to execute the entire order amount immediately. If the entire order amount cannot be executed, the order is cancelled.</p>
+<p><strong>When to use FOK</strong></p>
+<p>Use FOK when you expect execution to take place immediately
+Use FOK when your entire order must get filled</p>
+</div>
+</div>
+<div class="section" id="order-types">
+<h3>Order Types<a class="headerlink" href="#order-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="market">
+<h4>Market<a class="headerlink" href="#market" title="Permalink to this headline">¶</a></h4>
+<p>A market order is an order to buy or sell immediately at the next available price. This means that the order is not guaranteed to fill at any specific price.</p>
+<p><strong>When to Use Market</strong></p>
+<p>Use market when your order being filled is more important than the price it is filled at.</p>
+<p><strong>Supported TIF Values</strong></p>
+<p>GTC, DAY, IOC, and FOK</p>
+</div>
+<div class="section" id="market-range-stop-limit">
+<h4>Market Range (Stop-Limit)<a class="headerlink" href="#market-range-stop-limit" title="Permalink to this headline">¶</a></h4>
+<p>Market range is a market order that comes with a limitation on the price at which the order can be filled. In other words, it is a market order with a protection against slippage (price deviation).</p>
+<p>In FIX terms, you can convert a market order to a market range order by setting the <code class="docutils literal notranslate"><span class="pre">OrdType</span> <span class="pre">(40)</span></code> to <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">(Stop-Limit)</span></code> and by setting the <code class="docutils literal notranslate"><span class="pre">StopPx(99)</span></code> Tag. The StopPx tag value should be set to the worst price you would accept being filled.</p>
+<p><strong>Example</strong></p>
+<p>Assume you want to Buy EUR/USD now while it is trading at 1.4531 but you do not want to get filled at a price higher than 1.4535. In this case you would set the <code class="docutils literal notranslate"><span class="pre">StopPx</span> <span class="pre">(99)</span></code> tag value to 1.4535. If your order cannot be filled at 1.4535 or below, it will be cancelled.</p>
+<p><strong>When to use Market Range</strong></p>
+<p>Use market range when you are concerned about slippage
+Use market range when it is acceptable that your order may be cancelled</p>
+<p><strong>Supported TIF Values</strong></p>
+<p>IOC and FOK</p>
+</div>
+<div class="section" id="limit">
+<h4>Limit<a class="headerlink" href="#limit" title="Permalink to this headline">¶</a></h4>
+<p>A limit order is an order to buy or sell only at a specific price (or better). In other words, the order can only be filled at the limit price or for some better price.</p>
+<p><strong>When to use Limit</strong></p>
+<p>Use limit when you must guarantee the price at which an order is filled</p>
+<p><strong>Supported TIF Values</strong></p>
+<p>GTC, Day, IOC, and FOK</p>
+<p><strong>Common Applications</strong></p>
+<p>The limit order can be used to achieve multiple objectives when combined with different TIF values. The two common application are:</p>
+</div>
+<div class="section" id="gtc-day-limit-order">
+<h4>GTC/Day Limit Order<a class="headerlink" href="#gtc-day-limit-order" title="Permalink to this headline">¶</a></h4>
+<p>Recall that both GTC and DAY remain active until the entire order is filled, until cancelled, or the trading day ends (for DAY orders). When you combine the limit order with these TIF values, you have an order that will remain active until the entire amount is filled at your limit price or better. This type of order is often used to close an existing position and ensure the position is closed at a specific rate.</p>
+</div>
+<div class="section" id="ioc-fok-limit-order">
+<h4>IOC/FOK Limit Order<a class="headerlink" href="#ioc-fok-limit-order" title="Permalink to this headline">¶</a></h4>
+<p>Recall that with IOC and FOK, your order will immediately attempt execution. In the case of IOC, part of the order will be filled if possible. In the case of FOK, the entire order must be filled. When you combine IOC/FOK with the limit order, you have an order which will attempt execution immediately but will fill only at your limit price or better. This order type is commonly used to guarantee the price at which a new order is filled while also controlling how much can be filled; IOC would allow partial fills while FOK would not.</p>
+</div>
+<div class="section" id="stop">
+<h4>Stop<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>A stop is an order to buy or sell some amount when the current market price reaches your stop price. In other words, a stop order is a market order which is waiting to be active until the market price reaches a certain level (your stop price). Given that a stop is effectively a type of market order, it does not guarantee any specific fill price.</div></blockquote>
+<p><strong>When to use Stop</strong></p>
+<p>Use stop when your order being filled is more important than the price it is filled at</p>
+<p><strong>Supported TIF Values</strong></p>
+</div>
+<div class="section" id="gtc-and-day">
+<h4>GTC and DAY<a class="headerlink" href="#gtc-and-day" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="handling-of-partial-fills">
+<h2>Handling of Partial Fills<a class="headerlink" href="#handling-of-partial-fills" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="order-quantity-fields">
+<h3>Order Quantity Fields<a class="headerlink" href="#order-quantity-fields" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>There are three fields which can be used to determine the quantity filled or rejected by FXCM. These fields are:</p>
+<ul class="simple">
+<li>LastQty (32) – the quantity filled on the last successful attempt to fill the order</li>
+<li>CumQty (14) – the total quantity filled</li>
+<li>LeavesQty (151) – the remaining quantity to be filled</li>
+<li>Importance of OrdStatus (39)</li>
+</ul>
+<p>It is important to consider <code class="docutils literal notranslate"><span class="pre">OrdStatus</span> <span class="pre">(39)</span></code> when using the quantity fields above. As FXCM is attempting to execute an order, the values of <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code> will progress from an initial value of <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">(0)</span></code> to some final state. There are three possible final values for <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code>:</p>
+<ul class="simple">
+<li>OrdStatus = Filled (2)</li>
+<li>OrdStatus = Rejected (8)</li>
+<li>OrdStatus = Cancelled (4)</li>
+</ul>
+<p>When you receive an ExecutionReport <code class="docutils literal notranslate"><span class="pre">8</span></code> with <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code> set to one of these final values, you can inspect the <code class="docutils literal notranslate"><span class="pre">CumQty</span> <span class="pre">(14)</span></code> field to determine the total amount executed. If <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code> = <code class="docutils literal notranslate"><span class="pre">Filled</span></code> (2), the entire order was filled and <code class="docutils literal notranslate"><span class="pre">CumQty</span></code> will equal the original <code class="docutils literal notranslate"><span class="pre">OrdQty</span></code> value. If <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code> = <code class="docutils literal notranslate"><span class="pre">Rejected</span> <span class="pre">(8)</span></code>, the order was partially filled and <code class="docutils literal notranslate"><span class="pre">CumQty</span></code> will be some value less than the original <code class="docutils literal notranslate"><span class="pre">OrdQty</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="example-partial-fill">
+<h3>Example Partial Fill<a class="headerlink" href="#example-partial-fill" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>The following ExecutionReport messages serve as an example of a partially filled order. The original OrderQty(38) was 1,000,000. In this example only 600,000 of the order was filled. The most important line here is the last, where we can see a final <code class="docutils literal notranslate"><span class="pre">OrdStatus</span></code> value (Rejected in this case). When this last <code class="docutils literal notranslate"><span class="pre">ExecutionReport</span></code> is received, we can inspect <code class="docutils literal notranslate"><span class="pre">CumQty(14)</span></code> to see that 600,000 was filled.</div></blockquote>
+<div class="highlight-FIX notranslate"><div class="highlight"><pre><span></span>OrderQty(38) = 1,000,000; OrdStatus(39) = New
+6=85.558 14=0 17=59342024 31=85.558 32=0 37=31654622 38=1000000 39=0 40=4 44=85.55 854=2 59=3 99=0 150=0 151=1000000 211=0835=0 836=0 1094=0 9000=17 9041=13151786 9050=OR 9051=P 9061=0
+
+OrderQty(38) = 1,000,000; OrdStatus(39) = Stopped
+6=85.558 14=0 17=59342025 31=85.558 32=0 37=31654622 38=1000000 39=7 40=4 44=85.55 854=2 59=3 99=0 150=7 151=1000000 211=0835=0 836=0 1094=0 9000=17 9041=13151786 9050=OR 9051=U 9061=0
+
+OrderQty(38) = 1,000,000; OrdStatus(39) = Stopped
+6=85.488 14=0 17=59342047 31=85.488 32=0 37=31654622 38=1000000 39=7 40=4 44=85.48 854=2 9=3 99=0 150=7 151=1000000 211=0835=0 836=0 1094=0 9000=17 9041=13151786 9050=OR 9051=U 9061=0
+
+OrderQty(38) = 1,000,000; OrdStatus(39) = Partially Filled; LastQty(32) = 600,000; CumQty(14) = 600,000
+6=85.488 14=600000 17=59342048 31=85.488 32=600000 37=31654622 38=1000000 39=1 40=4 44=85.488 54=259=399=0 150=F 151=400000 211=0 835=0 836=0 1094=0 9000=17 9041=13151888 9050=OR 9051=U 9061=0
+
+OrderQty(38) = 1,000,000; OrdStatus(39) = Rejected; CumQty(14) = 600,000
+6=85.488 14=600000 17=59342049 31=85.488 32=0 37=31654622 38=1000000 39=8 40=4 44=85.488 54=258=Rejected 59=399=0 150=8 151=0 211=0 835=0 836=0 1094=0 9000=17 9041=13151888 9050=OR 9051=R 9061=0
+</pre></div>
+</div>
+</div>
+<div class="section" id="closing-a-position">
+<h3>Closing A Position<a class="headerlink" href="#closing-a-position" title="Permalink to this headline">¶</a></h3>
+<p>How you close a position depends upon the position maintenance type of the account. Some accounts support hedging while others do not. Hedging is the ability to have two positions in the same symbol but of a different side; for example, holding both Buy EUR/USD and Sell EUR/USD positions at the same time.</p>
+<p><strong>Accounts with Hedging</strong></p>
+<blockquote>
+<div>Accounts that support hedging allow you to close individual positions, regardless of when they were opened relative to other positions. Clearly with these accounts, Buy and Sell orders do not offset themselves but instead form a hedge. Consequently, you must close these positions with a NewOrderSingle message that specifies the <code class="docutils literal notranslate"><span class="pre">TicketID</span></code> to close.</div></blockquote>
+</div>
+<div class="section" id="sending-a-closing-order">
+<h3>Sending A Closing Order<a class="headerlink" href="#sending-a-closing-order" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>NewOrderSingle (D) can be used to close a specific position simply by setting the <code class="docutils literal notranslate"><span class="pre">FXCMPosID</span> <span class="pre">(9041)</span></code> field. This converts a basic market order into a closing order.</div></blockquote>
+<ul class="simple">
+<li>Closing Order in Code</li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span>        FIX44::NewOrderSingle order;
+
+        order.setField(ClOrdID(NextClOrdID()));
+        order.setField(Account(account_ID));
+        order.setField(Symbol(&quot;EUR/USD&quot;));
+        order.setField(Side(Side_BUY));
+        order.setField(TransactTime());
+        order.setField(OrderQty(10000));
+        order.setField(OrdType(OrdType_MARKET));
+        order.setField(FXCM_POS_ID/*9041*/, ”84736256”);
+
+Session::sendToTarget(order, session_ID);
+</pre></div>
+</div>
+<p><strong>Accounts without Hedging</strong></p>
+<blockquote>
+<div>For accounts without hedging, orders of the opposite Side cancel each other out; e.g., sending a <code class="docutils literal notranslate"><span class="pre">NewOrderSingle</span></code> with a Side of Buy will net against any existing Sell positions. This netting is done in First-In, First-Out <code class="docutils literal notranslate"><span class="pre">FIFO</span></code> order. As a result, a basic market order will suffice to close any open position.</div></blockquote>
+</div>
+</div>
+<div class="section" id="getting-account-position-maintenance">
+<h2>Getting Account Position Maintenance<a class="headerlink" href="#getting-account-position-maintenance" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>The position maintenance type of each account can be retrieved from the Parties component of <code class="docutils literal notranslate"><span class="pre">CollateralReport</span> <span class="pre">(BA)</span></code>. The <code class="docutils literal notranslate"><span class="pre">NoPartySubIDs</span></code> group contains a custom PartySubIDType for position maintenance. This specific <code class="docutils literal notranslate"><span class="pre">PartySubIDType</span></code> tag is set to a value of <code class="docutils literal notranslate"><span class="pre">4000</span></code>. <code class="docutils literal notranslate"><span class="pre">PartySubID</span></code> can be checked for the value of position maintenance. <code class="docutils literal notranslate"><span class="pre">Y</span></code> = “Hedging Enabled,” <code class="docutils literal notranslate"><span class="pre">N</span></code> = “No Hedging,” and <code class="docutils literal notranslate"><span class="pre">0</span></code> = “Netting.” Anything other than <code class="docutils literal notranslate"><span class="pre">Y</span></code> implies hedging is disabled and we will not use closing orders.</div></blockquote>
+<div class="section" id="getting-position-maintenance-in-code">
+<h3>Getting Position Maintenance in Code<a class="headerlink" href="#getting-position-maintenance-in-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_subID</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">NoPartySubIDs</span><span class="p">));</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="n">number_subID</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">FIX44</span><span class="o">::</span><span class="n">CollateralReport</span><span class="o">::</span><span class="n">NoPartyIDs</span><span class="o">::</span><span class="n">NoPartySubIDs</span> <span class="n">sub_group</span><span class="p">;</span>
+        <span class="n">group</span><span class="p">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">sub_group</span><span class="p">);</span>
+
+        <span class="n">string</span> <span class="n">sub_type</span>  <span class="o">=</span> <span class="n">sub_group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">PartySubIDType</span><span class="p">);</span>
+        <span class="n">string</span> <span class="n">sub_value</span> <span class="o">=</span> <span class="n">sub_group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">PartySubID</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">sub_type</span> <span class="o">==</span> <span class="s">&quot;4000&quot;</span><span class="p">){</span>
+                <span class="c1">// Check sub_value for position maintenance</span>
+                <span class="c1">// Y = Hedging</span>
+                <span class="c1">// N = No Hedging</span>
+                <span class="c1">// 0 = Netting</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="when-to-reset-msgseqnum">
+<h2>When To Reset MsgSeqNum<a class="headerlink" href="#when-to-reset-msgseqnum" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reset-on-logon">
+<h3>Reset On Logon<a class="headerlink" href="#reset-on-logon" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">MsgSeqNum</span></code> should be reset upon each Logon. This means that every Logon message should include tags <code class="docutils literal notranslate"><span class="pre">MsgSeqNum</span> <span class="pre">(34)</span></code> set to “1” and <code class="docutils literal notranslate"><span class="pre">ResetSeqNumFlag</span> <span class="pre">(141)</span></code> set to “Yes.” It is necessary to reset upon each Logon due to the fact that connections to FXCM are load balanced against a cluster of servers. This promotes a stable trading environment for users, but it also means you should reset upon each Logon.</p>
+<p>Example Logon Message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="p">(</span><span class="n">BeginString</span><span class="p">)</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span>
+<span class="mi">9</span><span class="p">(</span><span class="n">BodyLength</span><span class="p">)</span><span class="o">=</span><span class="mi">114</span>
+<span class="mi">35</span><span class="p">(</span><span class="n">MsgType</span><span class="p">)</span><span class="o">=</span><span class="n">A</span>
+<span class="mi">34</span><span class="p">(</span><span class="n">MsgSeqNum</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
+<span class="mi">49</span><span class="p">(</span><span class="n">SenderCompID</span><span class="p">)</span><span class="o">=</span><span class="n">sender_client1</span>
+<span class="mi">52</span><span class="p">(</span><span class="n">SendingTime</span><span class="p">)</span><span class="o">=</span><span class="mi">20120927</span><span class="o">-</span><span class="mi">13</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mf">34.754</span>
+<span class="mi">56</span><span class="p">(</span><span class="n">TargetCompID</span><span class="p">)</span><span class="o">=</span><span class="n">FXCM</span>
+<span class="mi">57</span><span class="p">(</span><span class="n">TargetSubID</span><span class="p">)</span><span class="o">=</span><span class="n">U100D1</span>
+<span class="mi">553</span><span class="p">(</span><span class="n">Username</span><span class="p">)</span><span class="o">=</span><span class="n">some_user</span>
+<span class="mi">554</span><span class="p">(</span><span class="n">Password</span><span class="p">)</span><span class="o">=</span><span class="n">some_password</span>
+<span class="mi">98</span><span class="p">(</span><span class="n">EncryptMethod</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span>
+<span class="mi">108</span><span class="p">(</span><span class="n">HeartBtInt</span><span class="p">)</span><span class="o">=</span><span class="mi">30</span>
+<span class="mi">141</span><span class="p">(</span><span class="n">ResetSeqNumFlag</span><span class="p">)</span><span class="o">=</span><span class="n">Y</span>
+<span class="mi">10</span><span class="p">(</span><span class="n">CheckSum</span><span class="p">)</span><span class="o">=</span><span class="mi">146</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="account-equity">
+<h2>Account Equity<a class="headerlink" href="#account-equity" title="Permalink to this headline">¶</a></h2>
+<p>FIX API does not have a field which represents account equity. Equity is a real-time value that is dependent upon a floating price. If your application needs immediate access to equity in real-time, you would have to calculate it using market data. However, the <code class="docutils literal notranslate"><span class="pre">CollateralReport</span> <span class="pre">(BA)</span></code> does provide an equity value that corresponds with a specific time in the trading day.</p>
+</div>
+<div class="section" id="startcash-921">
+<h2>StartCash(921)<a class="headerlink" href="#startcash-921" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">StartCash</span> <span class="pre">(921)</span></code> field from CollateralReport is the equity value of the account at 5:00pm EST (New York). This can be used as a snapshot of what the equity was at that time. This value will include the account balance and any profit or loss on open trades.</p>
+</div>
+<div class="section" id="steps-to-retrieve-short-version-of-market-price">
+<h2>Steps To Retrieve Short Version Of Market Price<a class="headerlink" href="#steps-to-retrieve-short-version-of-market-price" title="Permalink to this headline">¶</a></h2>
+<p>FXCM give client an oppertunity to retrieve market price for just <code class="docutils literal notranslate"><span class="pre">Bid/Ask</span></code>, please follow instructions at <a class="reference external" href="https://docs.fxcorporate.com/api-message-info.pdf/">here</a>.</p>
+</div>
+<div class="section" id="emf">
+<h2>EMF<a class="headerlink" href="#emf" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Important detail to note about order execution with FXCM is the difference between order fill notification and order finished notification. As an order is filled by a liquidity provider, client will be sent a fill confirmation in the form of an execution report that includes 35=8|39=7|150=F or, in case of a partial fill, 35=8|39=1|150=F. This confirmation is sent as soon as the LP confirms the trade. After the order is completed and every database operation associated with it is committed, the client will be sent an execution report of order being done. This execution report includes 35=8|39=2|150=F.Alternatively, if the order was filled only partially before being canceled, the final confirmation will include 35=8|39=4|150=4. You can find the remaining quantity that was not filled in tag 151. It is important to note, that the final execution report can be sent much later. When looking for fill confirmations, clients can take advantage of faster notifications than before implementing  EMF. Even if clients are not taking advantage of the EMF execution, they will always be notified of the orders being filled. The only difference would be the delivery delay.</p>
+</div>
+</div>
+<div class="section" id="execution-disclaimer">
+<h2>Execution Disclaimer<a class="headerlink" href="#execution-disclaimer" title="Permalink to this headline">¶</a></h2>
+<p>FXCM aggregates bid and ask prices from a pool of liquidity providers and is the final counterparty when trading forex on FXCM’s dealing desk and No Dealing Desk (NDD) execution models. With NDD, FXCM’s platforms display the best-available direct bid and ask prices from the liquidity providers. In addition to the spread, the trading cost with NDD is a fixed lot-based commission at the open and close of the trade. While generally NDD accounts offer spreads with no markups, in some circumstances, FXCM may add a markup to NDD spreads. This may occur due to, but not limited to, account type, such as accounts opened through a referring agent. With dealing desk execution, FXCM can act as the dealer on any or all currency pairs. Backup liquidity providers fill in when FXCM does not act as the dealer. FXCM’s dealing desk has fewer liquidity providers than NDD. There are many other factors to consider when choosing an execution model (such as conflict of interest, trading style or strategy). See Execution Risks. Note: Contractual relationships with liquidity providers are consolidated through the FXCM Group, which, in turn, provides technology and pricing to the group affiliate entities.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fixcode.html" class="btn btn-neutral float-right" title="FIX Sample Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fixapi.html" class="btn btn-neutral" title="FIX Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Forex Capital Markets
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -40,7 +40,11 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
+#    'sphinx.ext.intersphinx',
+#    'fxcmpy'
 ]
+       
+# intersphinx_mapping = {'fxcmpy': ('https://www.fxcm.com/fxcmpy/', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

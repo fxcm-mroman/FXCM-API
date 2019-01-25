@@ -15,6 +15,10 @@ Backtesting
 	
 5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio using FXCM data on QuantConnect LEAN platform.
 
+Sample Code
+===========
+
+
 .. note::
 
 	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
