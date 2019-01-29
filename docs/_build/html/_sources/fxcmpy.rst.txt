@@ -1,6 +1,6 @@
-============
-Introduction
-============
+=====================
+FXCMPY Python Wrapper
+=====================
 
 FXCM provides a RESTful API to interact with its trading platform. Among others, it allows the retrieval of historical data as well as of streaming data. In addition, it allows to place different types of orders and to read out account information. The overall goal is to allow the implementation automated, algortithmic trading programs. ``fxcmpy.py`` is a Python wrapper package for that API.
 
@@ -62,13 +62,6 @@ Documentation
 * The detailed documentation of the API is found under:
 
 	| https://github.com/fxcm/RestAPI
-	
-Sample Code
------------
-
-* MA
-* EMA
-* RSI
 
 .. note::
 

@@ -1,10 +1,10 @@
-================
-FIX Overview 
-================
+========
+Overview
+========
 
-   *Based on FIX designed for institutional traders.*
+**Based on FIX designed for institutional traders**
 
-FIX API using FIX Protocol 4.4 designed for real-time, custom institutional interface which push up to 200 price update per second (not available on other APIs). It is our fastest and most popular solution. You will get full range of trading order types available at FXCM.
+FIX API using FIX Protocol 4.4 is designed for real-time, custom institutional interface which can push up to 200 price update per second (not available on other APIs). It is our fastest and most popular solution. You will get full range of trading order types available at FXCM.
 
 In order to establish and maintain FIX connectivity, you must have an application that manages a network connection and which sends/receives FIX messages. An application that does this is referred to as a FIX engine. Today there are numerous commercial FIX engines as well as open-source alternatives, the most known of which is QuickFIX.
 
@@ -25,7 +25,9 @@ Getting Started
 Connecting
 ==========
 
-There are two ways to Logon, one is within the Logon message should include your ``Username(553)`` and ``Password(554)``. The other one is send ``Username(553)`` and ``Password(554)`` on ``User Request (35=BE)``. It is also important to note here that FXCM requires the ``TargetSubID`` on all messages, including your Logon:
+After your application has created a FIX session, you can begin sending and receiving FIX messages. However, there is a sequence of messages that should be sent prior to conducting any other messaging activity. These messages are described below.
+
+This is the first message that you must send. Any messages you send before this will be ignored. There are two ways to Logon, one is within the Logon message should include your ``Username(553)`` and ``Password(554)``. The other one is send ``Username(553)`` and ``Password(554)`` on ``User Request (35=BE)``. It is also important to note here that FXCM requires the ``TargetSubID`` on all messages, including your Logon. If you are not receiving any responses to your ``Logon`` message, it is likely because you have not included ``TargetSubID``.
 
 Example Logon Messages
 

@@ -1,6 +1,6 @@
-=============
-REST Overview
-=============
+========
+Overview
+========
 
 Our REST API is a web-based API using a Websocket connection and was developed with algorithmic trading in mind. 
 
@@ -25,6 +25,7 @@ Getting Started
 
 2. Sample code
 
+   * `Node.js sample code <https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-nodejs-example/>`_
    * `Java sample code <https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip/>`_
    * `C# sample code <https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip/>`_
 
@@ -36,7 +37,9 @@ Getting Started
    
 4. Download Rest API pdf documents `here <https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/>`_.
 
-5. Start coding. You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code.
+5. Access REST API documentation using `Swagger <https://fxcm.github.io/rest-api-docs/#/>`_.
+
+6. Start coding. You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code.
 
    * Using Javascript, click `here <https://www.npmjs.com/package/socket.io/>`_.
    * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
@@ -137,7 +140,7 @@ Candle Request Limit
    :align: center
 
 Placing Trailing Stops
-==========================
+======================
 
 The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, number between 2-9 will be rejected. Parameter is trailing_stop_step.
       
@@ -147,7 +150,7 @@ The fixed trailing stop should be 10 or above, for dynamic trailing stop = 1, nu
       POST /trading/create_entry_order account_id=1537581&symbol=EUR%2FUSD&is_buy=true&rate=1.1655&amount=3&order_type=Entry&time_in_force=GTC&stop=-50&trailing_stop_step=10&is_in_pips=true
 
 Account Name vs Account ID
-==============================================
+==========================
 
 There is a difference between account name and account id. Usually removing the heading zeros are account ID. You need to pass the account_id when placing orders. You can retrieve this information from /trading/get_model/accounts.
 
@@ -164,7 +167,18 @@ There is a difference between account name and account id. Usually removing the 
       
       request # 2  has been executed: {
       "response": {"executed": true}, "data": {"type": 0,"orderId": 194963057}}
+
+Offer Ids
+=========
+.. tabularcolumns:: |p{1cm}|p{8cm}|
 	
+.. csv-table:: Offer Ids 
+   :file: _files/offer_ids.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1
+   :align: center
+   
 .. note::
 
 	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.

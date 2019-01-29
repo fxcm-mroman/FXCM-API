@@ -1,41 +1,7 @@
-=================
-FIX Core Concepts
-=================
+=============
+Core Concepts
+=============
 
-
-Getting Connected
-=================
-
-After your application has created a FIX session, you can begin sending and receiving FIX messages. However, there is a sequence of messages that should be sent prior to conducting any other messaging activity. These messages are described below.
-
-
-Logon
------
-
-
-This is the first message that you must send. Any messages you send before this will be ignored. There are two ways to Logon, one is within the Logon message should include your ``Username(553)`` and ``Password(554)``. The other one is send ``Username(553)`` and ``Password(554)`` on ``User Request (35=BE)``. It is also important to note here that FXCM requires the ``TargetSubID`` on all messages, including your Logon. If you are not receiving any responses to your ``Logon`` message, it is likely because you have not included ``TargetSubID``.
-
-Logon Messages
-^^^^^^^^^^^^^^
-
-* Send Username/Password on ``Logon (35=A)``  
-
-.. code-block:: FIX
-	
-    8=FIX.4.4|9=114| 35=A |34=1| 49=fx1294946_client1| 52=20120927-13:15:34.754| 56=FXCM |57=U100D1| 553=fx1294946| 554=123| 98=0|108=30 |141=Y| 10=146|
-
-* Send Username/Password on User ``Request(35=BE)`` 
-
-.. code-block:: FIX
-
-	8=FIX.4.4|9=114|35=BE|34=2|49=fx1294946_client1|52=20140515-00:29:11.372|56=FXCM|57=U100D1|553=fx1294946|554=1234|923=1|924=1|10=150|
-	
-* FXCM Logon response 
-
-.. code-block:: FIX
-
-    8=FIX.4.4|9=92| 35=A| 34=1| 49=FXCM| 50=U100D1 |52=20120927-13:15:34.810| 56=fx1294946_client1| 98=0| 108=30| 141=Y| 10=187|
-	
 TradingSessionStatusRequest (g)
 ===============================
 
@@ -50,7 +16,7 @@ The ``TradingSessionStatus`` message is used to provide an update on the status 
 
 * Requesting ``TradingSessionStatus``
 
-.. code-block:: C++
+.. code-block:: cpp
 
 	FIX44::TradingSessionStatusRequest request;
 	request.setField(FIX::TradSesReqID(NextId())); 
@@ -60,7 +26,7 @@ The ``TradingSessionStatus`` message is used to provide an update on the status 
 
 Here we demonstrate how to extract the FXCM system properties from the ``TradingSessionStatus`` message. The code below will print out the name and value of the each of the properties. The following custom fields are used:
 
-.. code-block:: C++
+.. code-block:: cpp
 
 	9016 - FXCMNoParam
 	9017 - FXCMParamName
@@ -94,7 +60,7 @@ The types of data you can receive, such as the Bid price or Offer price, are ref
 
 * Sending MarketDataRequest(V) Message
 
-.. code-block:: C++
+.. code-block:: cpp
 
 	FIX44::MarketDataRequest mdr;
  
@@ -301,7 +267,7 @@ Example Partial Fill
 
 	The following ExecutionReport messages serve as an example of a partially filled order. The original OrderQty(38) was 1,000,000. In this example only 600,000 of the order was filled. The most important line here is the last, where we can see a final ``OrdStatus`` value (Rejected in this case). When this last ``ExecutionReport`` is received, we can inspect ``CumQty(14)`` to see that 600,000 was filled.
 	
-.. code-block:: FIX
+::
 
 	OrderQty(38) = 1,000,000; OrdStatus(39) = New 
 	6=85.558 14=0 17=59342024 31=85.558 32=0 37=31654622 38=1000000 39=0 40=4 44=85.55 854=2 59=3 99=0 150=0 151=1000000 211=0835=0 836=0 1094=0 9000=17 9041=13151786 9050=OR 9051=P 9061=0
@@ -334,7 +300,7 @@ Sending A Closing Order
 
 * Closing Order in Code
 
-.. code-block:: C++
+.. code-block:: cpp
 
 		FIX44::NewOrderSingle order;
 		 
@@ -361,7 +327,7 @@ Getting Account Position Maintenance
 Getting Position Maintenance in Code
 ------------------------------------
 
-.. code-block:: C++
+.. code-block:: cpp
 
 		int number_subID = IntConvertor::convert(group.getField(FIELD::NoPartySubIDs));
 		for(int u = 1; u <= number_subID; u++){

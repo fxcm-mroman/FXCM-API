@@ -2,28 +2,28 @@
 Python
 ======
 
-Clone this repository by clicking `here <https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-python3-example/>`_.
+.. note:: REST API Python code sample - **fxcm-api-rest-python3-example**. Clone this repository by clicking `here <https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-python3-example/>`_.
 
 Getting started
 ===============
-1. Install python
-2. Run: pip install -r requirements.txt
-3. Within the fxcm_rest.json file:
+1. Install `Python <https://www.python.org/>`_.
+2. Run: ``pip install -r requirements.txt``
+3. Within the ``fxcm_rest.json`` file:
 
-   *  Set log path via the logpath field
-   *  Set debugLevel if desired
+   *  Set log path via the ``logpath`` field
+   *  Set ``debugLevel`` if desired
    *  Set subscription lists if desired
-4. In the fxcm_rest_client_sample.py file:
+4. In the ``fxcm_rest_client_sample.py`` file:
 
    *  Set your token and environment (demo/real)
 
 Using Jupyter Notebook
 ======================
-1. Install Python
-2. Run: pip install jupyter (if you don't have jupyter installed already)
-3. Run: pip install -r requirements.txt
-4. In this directory run: jupyter notebook
-5. Start the RestApiNotebook.ipynb.
+1. Install `Python <https://www.python.org/>`_.
+2. Run: ``pip install jupyter`` (if you don't have jupyter installed already)
+3. Run: ``pip install -r requirements.txt``
+4. In this directory run: ``jupyter notebook``
+5. Start the ``RestApiNotebook.ipynb``.
 
 Details
 =======

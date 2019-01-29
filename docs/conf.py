@@ -12,8 +12,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -54,6 +54,7 @@ templates_path = ['_templates']
 #
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
+source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
@@ -103,6 +104,7 @@ html_theme_options = {
         'titles_only': False
 }
 
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -118,6 +120,16 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+# -- HTML Context ------------------------------------------------------------
+
+# If true, do not generate a @detailmenu in the "Top" node's menu.
+#texinfo_no_detailmenu = False
+
+html_context = {
+"display_github": False, # Add 'Edit on Github' link instead of 'View page source'
+"last_updated": True,
+"commit": False,
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
 

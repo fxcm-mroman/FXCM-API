@@ -1,8 +1,8 @@
-=========================
-ForexConnect Overview
-=========================
+========
+Overview
+========
 
-This SDK is designed to get trading data, trade, load price histories and subscribe for the most recent prices. 
+The ForexConnect SDK is designed to get trading data, trade, load price histories and subscribe for the most recent prices. 
 It is intended to be used by FXCM clients on auto-trading robots and systems, 
 chart and market analysis application, custom trading application on FXCM accounts.
 
@@ -73,6 +73,23 @@ You can see examples under ``NonTableManagerSamples\GetHistPrices``
 
 	This is for personal use and abides by our `EULA <https://www.fxcm.com/uk/forms/eula/>`_.
 	For more information, you may contact us at api@fxcm.com
+
+Sample Codes
+============
+
+1. Learn how to build and backtest:
+
+	* `Rsi signals <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip/>`_
+	* `CCI Oscillator <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip/>`_
+	* `Breakout strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip/>`_
+	* `Range Stochastic Strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip/>`_
+	* `Mean Reversion Strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip/>`_
+
+2. Some examples like `attached stop limit to position, create if-then ELS order, get rollover <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip/>`_
+
+3. `Matlab <https://github.com/fxcm/ForexConnectAPI/blob/master/FXCM-MATLAB-master.zip/>`_ sample code
+
+4. `Historical data <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip/>`_ download
 
 **Disclaimer**:
 

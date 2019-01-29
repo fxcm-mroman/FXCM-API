@@ -8,49 +8,37 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
 
 .. toctree::
    :maxdepth: 6
-   :caption: RESTful API:
+   :caption: REST API
    
    restapi
-   
-.. toctree::
-   :maxdepth: 6
-   :caption: FXCM Python Wrapper:
-   
-   fxcmpy
-   
-.. toctree::
-   :maxdepth: 6
-   :caption: REST Sample Codes:
-   
+   fxcmpy   
    pythonrest
-   fxcmrest-php.rst
+   fxcmrest-php
    realcasebt   
    
 .. toctree::
    :maxdepth: 6
-   :caption: FIX API:
+   :caption: FIX API
    
-   fixapi
-   fixconcepts
-   fixcode
+   fixdocs/fixapi
+   fixdocs/fixconcepts
+   fixdocs/fixcode
    
 .. toctree::
    :maxdepth: 6
-   :caption: Java API:
+   :caption: Java API
    
    javaapi
-   javabacktest
    
 .. toctree::
    :maxdepth: 6
-   :caption: ForexConnect API:
+   :caption: ForexConnect API
    
    forexconnectapi
-   forexconnectbt
    
 .. toctree::
    :maxdepth: 6
-   :caption: Marketdata:
+   :caption: Market Data
    
    marketdata
    
@@ -61,7 +49,3 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    license
    
 
-Indices and tables
-==================
-
-* :ref:`genindex`

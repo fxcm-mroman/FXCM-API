@@ -1,6 +1,6 @@
-=================
-JAVA Overview
-=================
+========
+Overview
+========
 
 Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functioning programmable API into the FXCM FX trading platform. The API’s main features are streaming executable FX trading prices, the ability to open/close positions and entry orders as well as set/update/delete stops ands limits. The API Object model is based on the FIX specification for FX. It is scalable, light and robust and is compatible on any Java-compliant operating system.
 
@@ -92,6 +92,19 @@ With Java API you can get the current rollover for each symbol, it can be done w
 
 	The 10k in this example is the server default base unit size, it can be 
 	found with FXCMParamValue where FXCMParamName = “BASE_UNIT_SIZE”
+	
+Sample Codes
+============
+	
+	1. `Rsi signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ strategy. 
+	
+	2. `CCI Oscillator <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/>`_ strategy.
+	
+	3. `Breakout <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/>`_ strategy.
+ 
+	4. `Range Stochastic <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/>`_ strategy .
+
+	5. `Mean Reversion <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
 
 .. note::
 
