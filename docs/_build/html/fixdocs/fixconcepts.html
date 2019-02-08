@@ -277,12 +277,6 @@
 
 
 
-
-
-
-
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -292,14 +286,7 @@
       <li>Core Concepts</li>
     
     
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/fixdocs/fixconcepts.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
+
   </ul>
 
   
@@ -351,7 +338,7 @@
 <div class="section" id="collateralinquiry-bb">
 <h2>CollateralInquiry (BB)<a class="headerlink" href="#collateralinquiry-bb" title="Permalink to this headline">¶</a></h2>
 <p>CollateralInquiry is used to request the <code class="docutils literal notranslate"><span class="pre">CollateralReport(BA)</span></code> message from FXCM. This message contains important account related information such as the account number. With the exception of FIX sessions used solely for market data, you should include this message in your login sequence.</p>
-<p>The login you use to connect will have access to one or more trading accounts. You will receive a <code class="docutils literal notranslate"><span class="pre">CollateralReport`</span> <span class="pre">`for</span> <span class="pre">each</span> <span class="pre">of</span> <span class="pre">these</span> <span class="pre">accounts.</span> <span class="pre">When</span> <span class="pre">sending</span> <span class="pre">or</span> <span class="pre">modifying</span> <span class="pre">orders,</span> <span class="pre">you</span> <span class="pre">must</span> <span class="pre">set</span> <span class="pre">the</span> <span class="pre">``Account(1)`</span> <span class="pre">tag.</span> <span class="pre">This</span> <span class="pre">tag</span> <span class="pre">value</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">set</span> <span class="pre">only</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">account</span> <span class="pre">that</span> <span class="pre">you</span> <span class="pre">have</span> <span class="pre">actually</span> <span class="pre">received</span> <span class="pre">a</span> <span class="pre">``CollateralReport</span></code> for, otherwise, you will see a rejection.</p>
+<p>The login you use to connect will have access to one or more trading accounts. You will receive a <code class="docutils literal notranslate"><span class="pre">CollateralReport</span></code> for each of these accounts. When sending or modifying orders, you must set the <code class="docutils literal notranslate"><span class="pre">Account(1)</span></code> tag. This tag value must be set only to an account that you have actually received a <code class="docutils literal notranslate"><span class="pre">CollateralReport</span></code> for, otherwise you will see a rejection.</p>
 </div>
 <div class="section" id="requesting-market-data">
 <h2>Requesting Market Data<a class="headerlink" href="#requesting-market-data" title="Permalink to this headline">¶</a></h2>
@@ -688,20 +675,11 @@ Session::sendToTarget(order, session_ID);
 
     
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
 
   

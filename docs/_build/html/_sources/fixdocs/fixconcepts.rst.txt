@@ -49,7 +49,7 @@ CollateralInquiry (BB)
 
 CollateralInquiry is used to request the ``CollateralReport(BA)`` message from FXCM. This message contains important account related information such as the account number. With the exception of FIX sessions used solely for market data, you should include this message in your login sequence.
 
-The login you use to connect will have access to one or more trading accounts. You will receive a ``CollateralReport` `for each of these accounts. When sending or modifying orders, you must set the ``Account(1)` tag. This tag value must be set only to an account that you have actually received a ``CollateralReport`` for, otherwise, you will see a rejection.
+The login you use to connect will have access to one or more trading accounts. You will receive a ``CollateralReport`` for each of these accounts. When sending or modifying orders, you must set the ``Account(1)`` tag. This tag value must be set only to an account that you have actually received a ``CollateralReport`` for, otherwise you will see a rejection.
 
 Requesting Market Data
 ======================
