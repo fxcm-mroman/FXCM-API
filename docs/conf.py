@@ -41,7 +41,12 @@ release = '1.0'
 extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.mathjax',
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.viewcode'
 ]
        
 # intersphinx_mapping = {'fxcmpy': ('https://www.fxcm.com/fxcmpy/', None)}
@@ -102,7 +107,6 @@ html_theme_options = {
         'navigation_depth': -1,
         'includehidden': True,
         'titles_only': False
-        #'css_files': '_static/css/custom.css'
 }
 
 
@@ -120,6 +124,7 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+html_show_sourcelink = False
 
 # -- HTML Context ------------------------------------------------------------
 

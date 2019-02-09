@@ -32,3 +32,8 @@ div.document {
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
     display: none;
 }
+
+/* Hide On Read the Docs */
+<dt>On Read the Docs</dt> {
+	display: none;
+}
