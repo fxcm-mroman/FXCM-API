@@ -40,8 +40,8 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-#    'sphinx.ext.intersphinx',
-#    'fxcmpy'
+    'sphinx.ext.mathjax',
+    'sphinx.ext.autodoc'
 ]
        
 # intersphinx_mapping = {'fxcmpy': ('https://www.fxcm.com/fxcmpy/', None)}
@@ -102,6 +102,7 @@ html_theme_options = {
         'navigation_depth': -1,
         'includehidden': True,
         'titles_only': False
+        #'css_files': '_static/css/custom.css'
 }
 
 
@@ -129,6 +130,7 @@ html_context = {
 "display_github": False, # Add 'Edit on Github' link instead of 'View page source'
 "last_updated": True,
 "commit": False,
+"css_files": ['_static/css/custom.css'],
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -171,7 +173,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'crawler', 'FXCM API',
+    (master_doc, 'FXCM', 'FXCM API',
      [author], 1)
 ]
 
@@ -182,9 +184,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'FXCM', 'FXCM API',
-     author, 'Forex Capital Markets', 'FXCM API',
-     'Miscellaneous'),
+   (master_doc, 'FXCM', 'FXCM API',
+    author, 'Forex Capital Markets', 'FXCM API',
+    'Miscellaneous'),
 ]
 
 
