@@ -43,5 +43,5 @@ div.rst-versions > div.rst-other-versions > div.injected > dl:first-child {
 	display: none;
 }
 
-div.rst-other-versions dl dd:nth-child(2), div.rst-other-versions dl dd:nth-child(3), {
+div.rst-versions > div.rst-other-versions dl dd:nth-child(2), div.rst_versions > div.rst-other-versions dl dd:nth-child(3), {
 	display: none;
