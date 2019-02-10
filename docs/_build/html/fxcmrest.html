@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  <title>REST Sample Codes &mdash; FXCM API Developer Documentation 1.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PHP" href="fxcmrest-php.html" />
+    <link rel="next" title="FIX API Specifications" href="fixdocs/fixapi.html" />
     <link rel="prev" title="FXCMPY Python Wrapper" href="fxcmpy.html" /> 
 
   
@@ -85,7 +85,7 @@
             
               <p class="caption"><span class="caption-text">REST API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#connect">Connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
@@ -102,40 +102,48 @@
 <li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#api-token">API Token</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#configuration-file">Configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmpy.html#fxcmpy-wrapper-sample-code">fxcmpy wrapper Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-jupyter-notebook">Using Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#details">Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#candles">Candles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">REST Sample Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-analysis-sample-codes">Technical Analysis Sample Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#php">PHP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#php-sample-code">PHP Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">PHP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#configuration-parameters">Configuration Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#signals">Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-jupyter-notebook">Using Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#details">Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#candles">Candles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Sample Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#connecting">Connecting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#real-case-studies">Real Case Studies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting-and-strategies">Backtesting and Strategies</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">FIX API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixapi.html">FIX API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#fix-sample-codes">FIX Sample Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-fix-example">C++ FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-net-fix-example">C# .NET FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#java-fix-example">Java FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#lamm-trading-example">LAMM Trading Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fixdocs/fixconcepts.html">Core Concepts</a><ul>
@@ -194,18 +202,10 @@
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#execution-disclaimer">Execution Disclaimer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixcode.html">Sample Codes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-fix-example">C++ FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-net-fix-example">C# .NET FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#java-fix-example">Java FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#lamm-trading-example">LAMM Trading Example</a></li>
-</ul>
-</li>
 </ul>
 <p class="caption"><span class="caption-text">Java API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#login">Login</a></li>
@@ -216,7 +216,7 @@
 </ul>
 <p class="caption"><span class="caption-text">ForexConnect API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
@@ -228,7 +228,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Market Data</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Marketdata Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Marketdata Download Instructions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
@@ -285,7 +285,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Python</li>
+      <li>REST Sample Codes</li>
     
     
 
@@ -297,14 +297,176 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="rest-sample-codes">
+<h1>REST Sample Codes<a class="headerlink" href="#rest-sample-codes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="connecting">
+<h2>Connecting<a class="headerlink" href="#connecting" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Europe-Algo-Meetup/FXCM-REST-API-Demonstration.ipynb/">FXCM REST API Demonstration</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/fxcmpy-doc/00_quick_start.ipynb/">Quick Start.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/fxcmpy-doc/01_connecting.ipynb/">Connecting.ipynb</a></li>
+</ol>
+</div>
+<div class="section" id="technical-analysis-sample-codes">
+<h2>Technical Analysis Sample Codes<a class="headerlink" href="#technical-analysis-sample-codes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BTstrategyonFXCMdata.zip/">bt backtest</a> using FXCM historical data. What is <a class="reference external" href="http://pmorissette.github.io/bt/">bt</a>?</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTraderonFXCMdata.zip/">QSTrader</a> using FXCM data. What is <a class="reference external" href="https://www.quantstart.com/qstrader/">QSTrader</a>?</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/">RSI strategy</a>.</li>
+<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/">Moving Average Crossover strategy</a>.</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=m6llfznP4d4/">Video demonstration</a> on how to backtest strategies in Visual Studio using FXCM data on QuantConnect LEAN platform.</li>
+</ol>
+</div>
+<div class="section" id="php">
+<h2>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">FxcmRest</span></code> is a library for event-driven trading with FXCM over RestAPI using <code class="docutils literal notranslate"><span class="pre">ReactPHP</span></code>.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>PHP 7.0.2+</div></blockquote>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>The recommended way to install FxcmRest is through <a class="reference external" href="https://getcomposer.org/">Composer</a>.</p>
+<p>This command will install the latest stable version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ composer require fxcm/fxcmrest
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>As FXCM Rest API requires you to keep Socket.IO connection open through the whole time it is used, this library must be run within a php script and not as part of php generated website.</p>
+<p>Interaction can be done either by using a console or through HTTP requests handled directly by the php script for example with <code class="docutils literal notranslate"><span class="pre">\React\HTTP</span></code>.</p>
+<p>Main class of the library is <code class="docutils literal notranslate"><span class="pre">\FxcmRest\FxcmRest</span></code>. It must be instantiated with two objects:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">\React\EventLoop\LoopInterface</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\FxcmRest\Config</span></code></li>
+</ul>
+</div></blockquote>
+<p>Configuration class <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Config</span></code> must be instantiated with an array containing at least the two following parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">host</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">token</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configuration-parameters">
+<h3>Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">protocol</span></code> - either <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Protocol::HTTPS</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">\FxcmRest\Protocol::HTTP</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">host</span></code> - either <code class="docutils literal notranslate"><span class="pre">api.fxcm.com</span></code> for Real accounts or <code class="docutils literal notranslate"><span class="pre">api-demo.fxcm.com</span></code> for Demo accounts</li>
+<li><code class="docutils literal notranslate"><span class="pre">port</span></code> - port number. <code class="docutils literal notranslate"><span class="pre">443</span></code> default</li>
+<li><code class="docutils literal notranslate"><span class="pre">token</span></code> - 40 char hexadecimal string</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">connect() : null</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>Opens a connection to the server. When connection is complete, <code class="docutils literal notranslate"><span class="pre">connected</span></code> signal will be emitted.</li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">disconnect() : null</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Disconnects from the server. When disconnection is complete, <code class="docutils literal notranslate"><span class="pre">disconnected</span></code> signal will be emitted.</li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">socketID() : string</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>If connected to the server, returns a string representing the socketID. If not connected, returns an empty string.</li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">request(\FxcmRest\HttpMethod $method, string $path, array $arguments, callable $callback) : null</span>
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first">Sends a http request to the server. When request is completed, <code class="docutils literal notranslate"><span class="pre">$callback</span></code> will be called with two parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">int</span></code> representing HTTP status code. 200 for OK</li>
+<li><code class="docutils literal notranslate"><span class="pre">string</span></code> representing server answer body</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">on</span><span class="o">(</span><span class="n">string</span> <span class="n">$signalName</span><span class="o">,</span> <span class="n">callable</span> <span class="n">$callback</span><span class="o">)</span> <span class="o">:</span> <span class="kc">null</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Registers a <code class="docutils literal notranslate"><span class="pre">$callback</span></code> for a signal of <code class="docutils literal notranslate"><span class="pre">$signalName</span></code>. For a list of signals and parameters that are passed with them please see <strong>Signals</strong> section.</li>
+</ol>
+</div>
+<div class="section" id="signals">
+<h3>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">connected</span></code> - Emitted when connection sequence is complete. After this socketID is valid and requests can be sent to the server. No parameters are passed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">disconnected</span></code> - Emitted when connection to the server is closed. No parameters are passed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">error</span></code> - Emitted on errors. Passes error description as string.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[Offer,OpenPosition,ClosedPosition,Account,Summary,Properties]</span></code> - Emmited on trading table changes. Passes table update contents as JSON string. Requires subscription through <code class="docutils literal notranslate"><span class="pre">/trading/subscribe</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">(EUR/USD,EUR/GBP,...)</span></code> - Emmited on price update. Passes the price update as a JSON string. Requires subscription through <code class="docutils literal notranslate"><span class="pre">/subscribe</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="php-sample-code">
+<h3>PHP Sample Code<a class="headerlink" href="#php-sample-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$loop</span> <span class="o">=</span> <span class="nx">\React\EventLoop\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
+
+<span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\FxcmRest\Config</span><span class="p">([</span>
+    <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api-demo.fxcm.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;YOUR_TOKEN&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="nv">$counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nv">$rest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\FxcmRest\FxcmRest</span><span class="p">(</span><span class="nv">$loop</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;/subscribe&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">&#39;pairs&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;EUR/USD&#39;</span><span class="p">],</span>
+        <span class="k">function</span><span class="p">(</span><span class="nv">$code</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nv">$code</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;EUR/USD&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$rest</span><span class="p">,</span><span class="o">&amp;</span><span class="nv">$counter</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="s2">&quot;price update: </span><span class="si">{</span><span class="nv">$data</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+                    <span class="nv">$counter</span><span class="o">++</span><span class="p">;</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nv">$counter</span> <span class="o">===</span> <span class="mi">5</span><span class="p">){</span>
+                        <span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$e</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$loop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;socket error: </span><span class="si">{</span><span class="nv">$e</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">stop</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;disconnected&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$loop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;FxcmRest disconnected</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">stop</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nv">$rest</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+
+<span class="nv">$loop</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">REST API Python code sample - <strong>fxcm-api-rest-python3-example</strong>. Clone this repository by clicking <a class="reference external" href="https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-python3-example/">here</a>.</p>
 </div>
 <div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Install <a class="reference external" href="https://www.python.org/">Python</a>.</li>
 <li>Run: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></li>
@@ -321,7 +483,7 @@
 </ol>
 </div>
 <div class="section" id="using-jupyter-notebook">
-<h2>Using Jupyter Notebook<a class="headerlink" href="#using-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<h3>Using Jupyter Notebook<a class="headerlink" href="#using-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Install <a class="reference external" href="https://www.python.org/">Python</a>.</li>
 <li>Run: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter</span></code> (if you don’t have jupyter installed already)</li>
@@ -331,7 +493,7 @@
 </ol>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
 <p>This API exposes the methods of the REST API as a class, dealing with all of the common tasks
 involved with setting up connections and wiring callback listeners for you. In addition to that
 there are a few convenience methods.</p>
@@ -373,7 +535,7 @@ there are a few convenience methods.</p>
 </div>
 </div>
 <div class="section" id="candles">
-<h2>Candles<a class="headerlink" href="#candles" title="Permalink to this headline">¶</a></h2>
+<h3>Candles<a class="headerlink" href="#candles" title="Permalink to this headline">¶</a></h3>
 <p>All calls to candles allow either <code class="docutils literal notranslate"><span class="pre">instrument</span> <span class="pre">name</span></code>, or <code class="docutils literal notranslate"><span class="pre">offerId</span></code>. They also allow the <code class="docutils literal notranslate"><span class="pre">From</span></code> and <code class="docutils literal notranslate"><span class="pre">To</span></code> to be specified as timestamp or a date/time format that will be interpreted (“2017/08/01 10:00”, “Aug 1, 2017 10:00”, etc.).
 In addition to <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code>, <code class="docutils literal notranslate"><span class="pre">response</span></code>, <code class="docutils literal notranslate"><span class="pre">period_id</span></code> and <code class="docutils literal notranslate"><span class="pre">candles</span></code>, a <code class="docutils literal notranslate"><span class="pre">headers</span></code> field (not documented in the API notes) is returned, representing the candle fields.</p>
 <p><code class="docutils literal notranslate"><span class="pre">basic</span></code></p>
@@ -429,6 +591,7 @@ For more information, you may contact us at <a class="reference external" href="
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
 </div>
+</div>
 
 
            </div>
@@ -438,7 +601,7 @@ For more information, you may contact us at <a class="reference external" href="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="fxcmrest-php.html" class="btn btn-neutral float-right" title="PHP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fixdocs/fixapi.html" class="btn btn-neutral float-right" title="FIX API Specifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="fxcmpy.html" class="btn btn-neutral" title="FXCMPY Python Wrapper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

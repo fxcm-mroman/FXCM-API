@@ -11,10 +11,9 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    :caption: REST API
    
    restapi
-   fxcmpy   
-   pythonrest
-   fxcmrest-php
-   realcasebt   
+   fxcmpy
+   fxcmrest   
+     
    
 .. toctree::
    :maxdepth: 6

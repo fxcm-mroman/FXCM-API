@@ -1,8 +1,8 @@
-========
-Overview
-========
+=======================
+REST API Specifications
+=======================
 
-Our REST API is a web-based API using a Websocket connection and was developed with algorithmic trading in mind. 
+Our **REST API** is a web-based API using a Websocket connection and was developed with algorithmic trading in mind. 
 
 Developers and investors can create custom trading applications, integrate into our platform, back test strategies and build robot trading. Calls can be made in any language that supports a standard HTTP. 
 

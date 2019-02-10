@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python" href="pythonrest.html" />
-    <link rel="prev" title="Overview" href="restapi.html" /> 
+    <link rel="next" title="REST Sample Codes" href="fxcmrest.html" />
+    <link rel="prev" title="REST API Specifications" href="restapi.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,7 +85,7 @@
             
               <p class="caption"><span class="caption-text">REST API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="restapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="restapi.html">REST API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#connect">Connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restapi.html#subscribe-vs-snapshot">Subscribe vs Snapshot</a></li>
@@ -102,40 +102,48 @@
 <li class="toctree-l2"><a class="reference internal" href="#api-token">API Token</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fxcmpy-wrapper-sample-code">fxcmpy wrapper Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pythonrest.html">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#details">Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pythonrest.html#candles">Candles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fxcmrest.html">REST Sample Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#connecting">Connecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#technical-analysis-sample-codes">Technical Analysis Sample Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#php">PHP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#configuration-parameters">Configuration Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#php-sample-code">PHP Sample Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fxcmrest-php.html">PHP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#configuration-parameters">Configuration Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#signals">Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest-php.html#sample-code">Sample Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#using-jupyter-notebook">Using Jupyter Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#details">Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#candles">Candles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="realcasebt.html">Sample Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#connecting">Connecting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#real-case-studies">Real Case Studies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="realcasebt.html#backtesting-and-strategies">Backtesting and Strategies</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">FIX API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixapi.html">FIX API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#connecting">Connecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixapi.html#fix-sample-codes">FIX Sample Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-fix-example">C++ FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-net-fix-example">C# .NET FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#java-fix-example">Java FIX Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#lamm-trading-example">LAMM Trading Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fixdocs/fixconcepts.html">Core Concepts</a><ul>
@@ -194,18 +202,10 @@
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#execution-disclaimer">Execution Disclaimer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixcode.html">Sample Codes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-fix-example">C++ FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#c-net-fix-example">C# .NET FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#java-fix-example">Java FIX Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixcode.html#lamm-trading-example">LAMM Trading Example</a></li>
-</ul>
-</li>
 </ul>
 <p class="caption"><span class="caption-text">Java API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">JAVA API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#running-qatest-java">Running QATest.java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javaapi.html#login">Login</a></li>
@@ -216,7 +216,7 @@
 </ul>
 <p class="caption"><span class="caption-text">ForexConnect API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="forexconnectapi.html">ForexConnect API Specifications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#top-development-platform-ides">Top Development Platform IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forexconnectapi.html#table-manager-vs-non-table-manager">Table manager vs Non-table manager</a></li>
@@ -228,7 +228,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Market Data</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Marketdata Overview</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="marketdata.html">Marketdata Download Instructions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#tickdata">TickData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#candledata">CandleData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketdata.html#order-flow">Order Flow</a></li>
@@ -360,6 +360,28 @@
 <p class="last">This is for personal use and abides by our <a class="reference external" href="https://www.fxcm.com/uk/forms/eula/">EULA</a>.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a></p>
 </div>
+</div>
+<div class="section" id="fxcmpy-wrapper-sample-code">
+<h2>fxcmpy wrapper Sample Code<a class="headerlink" href="#fxcmpy-wrapper-sample-code" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Europe-Algo-Meetup/EMA%20Crossover%20Strategy%20and%20Backtesting.ipynb/">EMA Crossover Strategy.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Europe-Algo-Meetup/Real-Time%20SMA%20Crossover%20Strategy.ipynb/">Real-Time SMA Crossover Strategy.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/FXCM-Algo-Summit/.ipynb_checkpoints/EMA%20Crossover%20Strategy%20and%20Backtest-checkpoint.ipynb/">EMA Crossover Strategy and Backtest-checkpoint.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/FXCM-Algo-Summit/Hull%20Moving%20Average.ipynb/">Hull Moving Average Strategy.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Backtest_Examples/Bollinger%20Band%20Backtest%20Part%201.ipynb/">Bollinger Band Backtest Part 1.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Backtest_Examples/Bollinger%20Band%20Backtest%20Part%202.ipynb/">Bollinger Band Backtest Part 2.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Backtest_Examples/EMA%20Crossover%20Strategy%20backtest.py/">EMA Crossover Strategy backtest.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Backtest_Examples/Introduction%20to%20Monte%20Carlo%20Simulation%20.ipynb/">Introduction to Monte Carlo Simulation.ipynb</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Backtest_Examples/Stochastic%20Strategy%20Backtest.py/">Stochastic Strategy Backtest.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/BB%20ADX%20Range%20Strategy.py/">BB ADX Range Strategy.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/Bitcoin%20Breakout%20Strategy.py/">Bitcoin Breakout Strategy.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/Python%20Strategy%20Template.py/">Python Strategy Template.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/RSI%20Range%20Strategy%20With%20Trading%20Time%20Range.py/">RSI Range Strategy with Trading Time Range.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/RSI%20Range%20Strategy.py/">RSI Range Strategy.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/RSI%20with%20SMA%20Trend%20Filter.py">RSI with SMA Trend Filter.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/blob/master/Python-Live-Trading-Examples/SMA%20Crossover%20Strategy.py/">SMA Crossover Strategy.py</a></li>
+<li><a class="reference external" href="https://github.com/fxcm/RestAPI/find/master/">Yves Webinar Code.ipynb</a></li>
+</ol>
 <p><strong>Disclaimer</strong>:</p>
 <p>Trading forex/CFDs on margin carries a high level of risk and may not be suitable for all investors as you could sustain losses in excess of deposits. Leverage can work against you. The products are intended for retail and professional clients. Due to the certain restrictions imposed by the local law and regulation, German resident retail client(s) could sustain a total loss of deposited funds but are not subject to subsequent payment obligations beyond the deposited funds. Be aware and fully understand all risks associated with the market and trading. Prior to trading any products, carefully consider your financial situation and experience level. If you decide to trade products offered by FXCM Australia Pty. Limited (“FXCM AU”) (AFSL 309763), you must read and understand the <a class="reference external" href="https://docs.fxcorporate.com/financial-services-guide-au.pdf/">Financial Services Guide</a>, <a class="reference external" href="https://www.fxcm.com/au/legal/product-disclosure-statements/">Product Disclosure Statement</a>, and <a class="reference external" href="https://docs.fxcorporate.com/tob_au_en.pdf/">Terms of Business</a>. Any opinions, news, research, analyses, prices, or other information is provided as general market commentary, and does not constitute investment advice. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. FXCM will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p>
 </div>
@@ -373,10 +395,10 @@ For more information, you may contact us at <a class="reference external" href="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pythonrest.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fxcmrest.html" class="btn btn-neutral float-right" title="REST Sample Codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="restapi.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="restapi.html" class="btn btn-neutral" title="REST API Specifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

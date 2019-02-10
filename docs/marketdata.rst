@@ -1,6 +1,6 @@
-===================
-Marketdata Overview
-===================
+================================
+Marketdata Download Instructions
+================================
 
 FXCM provides several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.
 
