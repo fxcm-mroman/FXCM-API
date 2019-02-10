@@ -33,7 +33,12 @@ div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
     display: none;
 }
 
-/* Hide On Read the Docs from versions menu*/
+/* Hide "On Read the Docs" from versions menu */
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3) {
+	display: none;
+}
+
+/* Hide "Versions" from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:first-child {
 	display: none;
 }
