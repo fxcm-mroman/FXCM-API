@@ -7,9 +7,9 @@ Java trading SDK, a wrapper SDK of FIX API, provides clients with a fully functi
 Getting Started
 ===============
 
-* A FXCM account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.	
+* Open a demo `Trading Station II <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_ account.	
 * Download the package `here <https://apiwiki.fxcorporate.com/api/java/trading_sdk.zip/>`_.	
-* Documents are in the package at trading_sdk\fxcm-api\javadoc.	
+* Documents are in the package at ``trading_sdk\fxcm-api\javadoc``.	
 * Sample code at ``trading_sdk\fxcm-api\src\QATest.java``	
 
 Running QATest.java
@@ -96,15 +96,15 @@ With Java API you can get the current rollover for each symbol, it can be done w
 Sample Codes
 ============
 	
-	1. `RSI signal and back testing 	<https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip/>`_ strategy. 
+	1. :download:`RSI signal and back testing </_downloads/FXCM_Java_API_Tutorial_RsiSignal_Strategy.zip>` strategy
 	
-	2. `CCI Oscillator <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/CCIOscillatorStrategy-2.zip/>`_ strategy.
+	2. :download:`CCI Oscillator </_downloads/CCIOscillatorStrategy-2.zip>` strategy
 	
-	3. `Breakout <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/BreakOutStrategy_JavaAPI.zip/>`_ strategy.
+	3. :download:`Breakout </_downloads/BreakOutStrategy_JavaAPI.zip>` strategy
  
-	4. `Range Stochastic <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/RangeStochasticStrategy.zip/>`_ strategy .
+	4. :download:`Range Stochastic </_downloads/RangeStochasticStrategy.zip>` strategy
 
-	5. `Mean Reversion <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/JavaAPI/MeanReversionStrategy.zip/>`_ strategy.
+	5. :download:`Mean Reversion </_downloads/MeanReversionStrategy.zip>`
 
 .. note::
 

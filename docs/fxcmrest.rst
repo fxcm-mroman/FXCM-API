@@ -15,13 +15,13 @@ Connecting
 Technical Analysis Sample Codes
 ===============================
 
-1. `bt backtest <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/BT strategy on FXCM data.zip/>`_ using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
+1. :download:`bt backtest </_downloads/BT_strategy_on_FXCM_data.zip>` using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 
-2. `QSTrader <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/QSTrader on FXCM data.zip/>`_ using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
+2. :download:`QSTrader </_downloads/QSTrader_on_FXCM_data.zip>` using FXCM data. What is `QSTrader <https://www.quantstart.com/qstrader/>`_?
 
-3. `RSI strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/RsiStrategy.zip/>`_.
+3. :download:`RSI Strategy </_downloads/RsiStrategy.zip>`
 	
-4. `Moving Average Crossover strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/RestAPI/Moving_Average_Crossover_Strategy.zip/>`_.
+4. :download:`Moving Average Crossover Strategy </_downloads/Moving_Average_Crossover_Strategy.zip>`
 	
 5. `Video demonstration <https://www.youtube.com/watch?v=m6llfznP4d4/>`_ on how to backtest strategies in Visual Studio using FXCM data on QuantConnect LEAN platform.
 

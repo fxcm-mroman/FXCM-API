@@ -15,11 +15,11 @@ You can use ForexConnect on Trading station account, no extra setup required.
 Getting Started
 ===============
 
-1) A FXCM TSII account. You can apply for a demo account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_. 
+1) Open a `demo Trading Station II account <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
 2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download/>`_
-3) Examples codes and documents are at ForexConnectAPI packages after installed.
-4) Online documents: `Getting Started <https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/>`_
-5) ForexConnect with `Matlab <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/>`_
+3) Examples codes and documents are included in the ForexConnectAPI packages after installation.
+4) Online documents: :download:`Getting Started </_downloads/Getting_Started-fc.pdf>`
+5) ForexConnect using :download:`Matlab </_downloads/FXCM-MATLAB-master.zip>`
 6) ForexConnect sample code for `Android/iOS/macOS/Python/Linux/Windows <https://github.com/gehtsoft/forex-connect/tree/master/samples/>`_
 7) ForexConnect using `Python <http://fxcodebase.com/code/viewforum.php?f=51/>`_
 
@@ -79,17 +79,15 @@ Sample Codes
 
 1. Learn how to build and backtest:
 
-	* `Rsi signals <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip/>`_
-	* `CCI Oscillator <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip/>`_
-	* `Breakout strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip/>`_
-	* `Range Stochastic Strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip/>`_
-	* `Mean Reversion Strategy <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip/>`_
+	* :download:`RSI Signals</_downloads/RsiSignals_via_ForexConnectAPI.zip>`
+	* :download:`CCI Oscillator </_downloads/2.1.CCI_via_FC_API.zip>`
+	* :download:`Breakout strategy </_downloads/3.1.BreakoutStrategy_via_FC_API.zip>`
+	* :download:`Range Stochastic Strategy </_downloads/4.1.StochasticStrategy_via.FC.API.zip>`
+	* :download:`Mean Reversion Strategy </_downloads/5.1.MeanReverionStrategy_via_FC_API.zip>`
 
-2. Some examples like `attached stop limit to position, create if-then ELS order, get rollover <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip/>`_
+2. Some examples like :download:`attached stop limit to position, create if-then ELS order, get rollover </_downloads/FC-examples-master-orders.zip>`
 
-3. `Matlab <https://github.com/fxcm/ForexConnectAPI/blob/master/FXCM-MATLAB-master.zip/>`_ sample code
-
-4. `Historical data <https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip/>`_ download
+3. :download:`Historical data </_downloads/FXCMHDD-master.zip>` download
 
 **Disclaimer**:
 

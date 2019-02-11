@@ -46,8 +46,11 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
 ]
+#exclude_patterns = ['_build', '**.ipynb_checkpoints']
+
+#nbsphinx_allow_errors = True
        
 # intersphinx_mapping = {'fxcmpy': ('https://www.fxcm.com/fxcmpy/', None)}
 
@@ -198,6 +201,13 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+
+#extensions = ['autoapi.extension']
+
+# Document Python Code
+
+#autoapi_type = 'ipython'
+#autoapi_dir = '../doc/_code'
 
 ##############################################################################
 

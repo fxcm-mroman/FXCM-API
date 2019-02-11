@@ -16,7 +16,7 @@ The ``TradingSessionStatus`` message is used to provide an update on the status 
 
 * Requesting ``TradingSessionStatus``
 
-.. code-block:: cpp
+::
 
 	FIX44::TradingSessionStatusRequest request;
 	request.setField(FIX::TradSesReqID(NextId())); 
@@ -26,7 +26,7 @@ The ``TradingSessionStatus`` message is used to provide an update on the status 
 
 Here we demonstrate how to extract the FXCM system properties from the ``TradingSessionStatus`` message. The code below will print out the name and value of the each of the properties. The following custom fields are used:
 
-.. code-block:: cpp
+::
 
 	9016 - FXCMNoParam
 	9017 - FXCMParamName
@@ -60,7 +60,7 @@ The types of data you can receive, such as the Bid price or Offer price, are ref
 
 * Sending MarketDataRequest(V) Message
 
-.. code-block:: cpp
+::
 
 	FIX44::MarketDataRequest mdr;
  
@@ -300,7 +300,7 @@ Sending A Closing Order
 
 * Closing Order in Code
 
-.. code-block:: cpp
+::
 
 		FIX44::NewOrderSingle order;
 		 
@@ -327,7 +327,7 @@ Getting Account Position Maintenance
 Getting Position Maintenance in Code
 ------------------------------------
 
-.. code-block:: cpp
+::
 
 		int number_subID = IntConvertor::convert(group.getField(FIELD::NoPartySubIDs));
 		for(int u = 1; u <= number_subID; u++){

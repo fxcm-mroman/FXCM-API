@@ -12,16 +12,14 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    
    restapi
    fxcmpy
-   fxcmrest   
-     
-   
+   fxcmrest
+
 .. toctree::
    :maxdepth: 6
    :caption: FIX API
    
    fixdocs/fixapi
    fixdocs/fixconcepts
-   fixdocs/fixcode
    
 .. toctree::
    :maxdepth: 6

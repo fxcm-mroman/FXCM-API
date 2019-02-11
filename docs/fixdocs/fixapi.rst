@@ -15,10 +15,10 @@ Please refer to our `GitHub <https://github.com/fxcm/FIXAPI/>`_.
 Getting Started
 ===============
 
-*	First open a demo TSII account `here <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
+*	Open a demo `Trading Station II account <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
 *	Send your login to api@fxcm.com to get FIX credentials. 
 *	Request documentation by signing our `EULA <https://www.fxcm.com/forms/eula/>`_. 
-*   Download the FXCM data dictionary - `FIXFXCM10.xml <https://apiwiki.fxcorporate.com/api/fix/docs/FIXFXCM10.xml/>`_.
+*   Download the :download:`FXCM data dictionary </_downloads/FIXFXCM10.xml>`.
 *	Install software development environment (SDE). For Java, you can try `Eclipse <https://www.eclipse.org/downloads/>`_ or `NetBeans <https://netbeans.org/downloads/>`_.  For C++/C#, please download `Visual Studio <https://visualstudio.microsoft.com/downloads/>`_.
 *	You also need to download FIX protocol package. `QuickFix/J or QuickFix/N <http://www.quickfixj.org/>`_.
 
@@ -137,34 +137,33 @@ FIX Sample Codes
 
 C++ FIX Example
 ---------------
-VS2010 Solution
+Visual Studio 2010 Solution
 	
-Download `QuickFIX FIX Engine <https://apiwiki.fxcorporate.com/api/fix/examples/cpp/fix_example.zip/>`_
+Download :download:`QuickFIX FIX Engine C++ Solution </_downloads/fix_example.zip>`
 
 C++ QuickFIX Example VS2017 with x64
 ------------------------------------
-VS2017 Solution
+Visual Studio 2017 Solution
 	
-Download `QuickFIX FIX Engine <https://github.com/fxcm/FIXAPI/blob/master/Sample%20Projects/fix_example_x64.7z/>`_
+Download :download:`QuickFIX FIX Engine C++ x64 Solution </_downloads/fix_example_x64.7z>`
 
 C# .NET FIX Example
 -------------------
-VS2010 Solution
+Visual Studio 2010 Solution
 	
-Download `QuickFIX FIX Engine <https://apiwiki.fxcorporate.com/api/fix/examples/cs/FIXTradingExample.zip/>`_
+Download :download:`QuickFIX FIX Engine .Net Solution </_downloads/FIXTradingExample.zip>`
 
 Java FIX Example
 ----------------
 Netbeans Project
 	
-Download `QuickFIX/J FIX Engine <https://apiwiki.fxcorporate.com/api/fix/examples/java/FIXTradingTester.zip/>`_
+Download :download:`QuickFIX/J FIX Engine Java Project </_downloads/FIXTradingTester.zip>`
 
-LAMM Trading Example
---------------------
-VC++ 2010 Solution
-	
-Download `QuickFIX FIX Engine <https://apiwiki.fxcorporate.com/api/fix/examples/lamm/LammFix.zip/>`_
+C++ LAMM Trading Example
+------------------------
+Visual Studio 2010 Solution
 
+Download :download:`QuickFIX FIX Engine for LAMM C++ Solution </_downloads/LammFix.zip>`
 
 **Disclaimer**
 

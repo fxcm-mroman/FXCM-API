@@ -25,9 +25,10 @@ Getting Started
 
 2. Sample code
 
+
    * `Node.js sample code <https://github.com/fxcm/RestAPI/tree/master/fxcm-api-rest-nodejs-example/>`_
-   * `Java sample code <https://apiwiki.fxcorporate.com/api/RestAPI/JavaRestClient.zip/>`_
-   * `C# sample code <https://apiwiki.fxcorporate.com/api/RestAPI/RestAPI_CSharp_sample_code.zip/>`_
+   * :download:`Java sample code </_downloads/JavaRestClient.zip>`
+   * :download:`C# sample code </_downloads/RestAPI_CSharp_sample_code.zip>`
 
 3. Account setup
 
@@ -35,14 +36,14 @@ Getting Started
    * Generate access token. You can generate one from `Trading Station web <https://tradingstation.fxcm.com/>`_. Click on User Account > Token Management on the upper right hand of the website. 
    * For live account, please send your username to api@fxcm.com, we will need to enable Rest API access. For demo account, Rest API access is enabled by default.
    
-4. Download Rest API pdf documents `here <https://apiwiki.fxcorporate.com/api/RestAPI/Socket%20REST%20API%20Specs.pdf/>`_.
+4. Download :download:`Rest API </_downloads/Socket REST API Specs.pdf>` document.
 
 5. Access REST API documentation using `Swagger <https://fxcm.github.io/rest-api-docs/#/>`_.
 
 6. Start coding. You will need to reference the `socket.io library <https://socket.io/docs/client-api/>`_ in your code.
 
-   * Using Javascript, click `here <https://www.npmjs.com/package/socket.io/>`_.
-   * Using Python, click `here <https://pypi.python.org/pypi/socketIO-client/>`_.
+   * `Socket.io for Javascript <https://www.npmjs.com/package/socket.io/>`_
+   * `Socket.io for Python <https://pypi.python.org/pypi/socketIO-client/>`_
 
 
 Connect

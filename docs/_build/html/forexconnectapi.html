@@ -141,7 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-net-fix-example">C# .NET FIX Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#java-fix-example">Java FIX Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#lamm-trading-example">LAMM Trading Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixapi.html#c-lamm-trading-example">C++ LAMM Trading Example</a></li>
 </ul>
 </li>
 </ul>
@@ -311,11 +311,11 @@ chart and market analysis application, custom trading application on FXCM accoun
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>A FXCM TSII account. You can apply for a demo account <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">here</a>.</li>
+<li>Open a <a class="reference external" href="https://www.fxcm.com/uk/algorithmic-trading/api-trading/">demo Trading Station II account</a>.</li>
 <li>Download <a class="reference external" href="http://www.fxcodebase.com/wiki/index.php/Download/">ForexConnect SDK</a></li>
-<li>Examples codes and documents are at ForexConnectAPI packages after installed.</li>
-<li>Online documents: <a class="reference external" href="https://apiwiki.fxcorporate.com/api/Getting%20Started.pdf/">Getting Started</a></li>
-<li>ForexConnect with <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCM-MATLAB-master.zip/">Matlab</a></li>
+<li>Examples codes and documents are included in the ForexConnectAPI packages after installation.</li>
+<li>Online documents: <a class="reference download internal" download="" href="_downloads/98c045224fce2b39c9687fa6f5551e35/Getting_Started-fc.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">Started</span></code></a></li>
+<li>ForexConnect using <a class="reference download internal" download="" href="_downloads/fce5c2b65d5f1efebb22af74e846d28f/FXCM-MATLAB-master.zip"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span></code></a></li>
 <li>ForexConnect sample code for <a class="reference external" href="https://github.com/gehtsoft/forex-connect/tree/master/samples/">Android/iOS/macOS/Python/Linux/Windows</a></li>
 <li>ForexConnect using <a class="reference external" href="http://fxcodebase.com/code/viewforum.php?f=51/">Python</a></li>
 </ol>
@@ -373,19 +373,17 @@ For more information, you may contact us at <a class="reference external" href="
 <li><p class="first">Learn how to build and backtest:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/RsiSignals_via_ForexConnectAPI.zip/">Rsi signals</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/2.1.CCI_via_FC_API.zip/">CCI Oscillator</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/3.1.BreakoutStrategy_via_FC_API.zip/">Breakout strategy</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/4.1.StochasticStrategy_via.FC.API.zip/">Range Stochastic Strategy</a></li>
-<li><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/5.1.MeanReverionStrategy_via_FC_API.zip/">Mean Reversion Strategy</a></li>
+<li><a class="reference download internal" download="" href="_downloads/cbf5a450f7ae846ec3be458cddecdd2e/RsiSignals_via_ForexConnectAPI.zip"><code class="xref download docutils literal notranslate"><span class="pre">RSI</span> <span class="pre">Signals</span></code></a></li>
+<li><a class="reference download internal" download="" href="_downloads/cfd365c71b8e74de11f067f4246dc8dc/2.1.CCI_via_FC_API.zip"><code class="xref download docutils literal notranslate"><span class="pre">CCI</span> <span class="pre">Oscillator</span></code></a></li>
+<li><a class="reference download internal" download="" href="_downloads/25e3f92d18ac96084405950ee5f05928/3.1.BreakoutStrategy_via_FC_API.zip"><code class="xref download docutils literal notranslate"><span class="pre">Breakout</span> <span class="pre">strategy</span></code></a></li>
+<li><a class="reference download internal" download="" href="_downloads/1e8a660bc18645cbff3c340b06febb52/4.1.StochasticStrategy_via.FC.API.zip"><code class="xref download docutils literal notranslate"><span class="pre">Range</span> <span class="pre">Stochastic</span> <span class="pre">Strategy</span></code></a></li>
+<li><a class="reference download internal" download="" href="_downloads/47476e3dc0b26df406ecf2aeaa62ef8c/5.1.MeanReverionStrategy_via_FC_API.zip"><code class="xref download docutils literal notranslate"><span class="pre">Mean</span> <span class="pre">Reversion</span> <span class="pre">Strategy</span></code></a></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Some examples like <a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FC-examples-master.zip/">attached stop limit to position, create if-then ELS order, get rollover</a></p>
+<li><p class="first">Some examples like <a class="reference download internal" download="" href="_downloads/d4997d9032c6cd711a7b2212cf7e7b52/FC-examples-master-orders.zip"><code class="xref download docutils literal notranslate"><span class="pre">attached</span> <span class="pre">stop</span> <span class="pre">limit</span> <span class="pre">to</span> <span class="pre">position,</span> <span class="pre">create</span> <span class="pre">if-then</span> <span class="pre">ELS</span> <span class="pre">order,</span> <span class="pre">get</span> <span class="pre">rollover</span></code></a></p>
 </li>
-<li><p class="first"><a class="reference external" href="https://github.com/fxcm/ForexConnectAPI/blob/master/FXCM-MATLAB-master.zip/">Matlab</a> sample code</p>
-</li>
-<li><p class="first"><a class="reference external" href="https://apiwiki.fxcorporate.com/api/StrategyRealCaseStudy/ForexConnectAPI/FXCMHDD-master.zip/">Historical data</a> download</p>
+<li><p class="first"><a class="reference download internal" download="" href="_downloads/cf9d0f5783cdb15220adb81b810d52b2/FXCMHDD-master.zip"><code class="xref download docutils literal notranslate"><span class="pre">Historical</span> <span class="pre">data</span></code></a> download</p>
 </li>
 </ol>
 <p><strong>Disclaimer</strong>:</p>

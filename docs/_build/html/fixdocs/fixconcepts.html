@@ -141,7 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-net-fix-example">C# .NET FIX Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#java-fix-example">Java FIX Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixapi.html#lamm-trading-example">LAMM Trading Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-lamm-trading-example">C++ LAMM Trading Example</a></li>
 </ul>
 </li>
 </ul>
@@ -310,30 +310,30 @@
 <ul class="simple">
 <li>Requesting <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="o">::</span><span class="n">TradingSessionStatusRequest</span> <span class="n">request</span><span class="p">;</span>
-<span class="n">request</span><span class="p">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">TradSesReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
-<span class="n">request</span><span class="p">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">TradingSessionStatusRequest</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TradSesReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li>Reading System Parameters</li>
 </ul>
 <p>Here we demonstrate how to extract the FXCM system properties from the <code class="docutils literal notranslate"><span class="pre">TradingSessionStatus</span></code> message. The code below will print out the name and value of the each of the properties. The following custom fields are used:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="mi">9016</span> <span class="o">-</span> <span class="n">FXCMNoParam</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9016</span> <span class="o">-</span> <span class="n">FXCMNoParam</span>
 <span class="mi">9017</span> <span class="o">-</span> <span class="n">FXCMParamName</span>
 <span class="mi">9018</span> <span class="o">-</span> <span class="n">FXCMParamValue</span>
-<span class="kt">int</span> <span class="n">param_count</span> <span class="o">=</span> <span class="n">FIX</span><span class="o">::</span><span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9016</span><span class="p">));</span>
+<span class="nb">int</span> <span class="n">param_count</span> <span class="o">=</span> <span class="n">FIX</span><span class="p">::</span><span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9016</span><span class="p">));</span>
 
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;TSS - FXCM System Parameters&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">param_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;TSS - FXCM System Parameters&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">param_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
-         <span class="n">FIX</span><span class="o">::</span><span class="n">FieldMap</span> <span class="n">map</span> <span class="o">=</span> <span class="n">status</span><span class="p">.</span><span class="n">getGroupRef</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">9016</span><span class="p">);</span>
-         <span class="n">string</span> <span class="n">param_name</span> <span class="o">=</span> <span class="n">map</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9017</span><span class="p">);</span>
-         <span class="n">string</span> <span class="n">param_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9018</span><span class="p">);</span>
+         <span class="n">FIX</span><span class="p">::</span><span class="n">FieldMap</span> <span class="nb">map</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">getGroupRef</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">9016</span><span class="p">);</span>
+         <span class="n">string</span> <span class="n">param_name</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9017</span><span class="p">);</span>
+         <span class="n">string</span> <span class="n">param_value</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9018</span><span class="p">);</span>
 
-         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">param_name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">param_value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">param_name</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">param_value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n">FIX</span><span class="o">::</span><span class="n">Session</span><span class="o">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -349,27 +349,27 @@
 <ul class="simple">
 <li>Sending MarketDataRequest(V) Message</li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="o">::</span><span class="n">MarketDataRequest</span> <span class="n">mdr</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span> <span class="n">mdr</span><span class="p">;</span>
 
-<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
-<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
-<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MarketDepth</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-<span class="n">mdr</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">NoMDEntryTypes</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MDReqID</span><span class="p">(</span><span class="n">NextId</span><span class="p">()));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MarketDepth</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">NoMDEntryTypes</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
 
-<span class="n">FIX44</span><span class="o">::</span><span class="n">MarketDataRequest</span><span class="o">::</span><span class="n">NoMDEntryTypes</span> <span class="n">types_group</span><span class="p">;</span>
-<span class="n">types_group</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType_BID</span><span class="p">));</span>
-<span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
-<span class="n">types_group</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">MDEntryType_OFFER</span><span class="p">));</span>
-<span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
+<span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span><span class="p">::</span><span class="n">NoMDEntryTypes</span> <span class="n">types_group</span><span class="p">;</span>
+<span class="n">types_group</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MDEntryType_BID</span><span class="p">));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
+<span class="n">types_group</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">MDEntryType_OFFER</span><span class="p">));</span>
+<span class="n">mdr</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">types_group</span><span class="p">);</span>
 
-<span class="kt">int</span> <span class="n">no_sym</span> <span class="o">=</span> <span class="n">FIX</span><span class="o">::</span><span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">security_list</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIX</span><span class="o">::</span><span class="n">FIELD</span><span class="o">::</span><span class="n">NoRelatedSym</span><span class="p">));</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">no_sym</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="nb">int</span> <span class="n">no_sym</span> <span class="o">=</span> <span class="n">FIX</span><span class="p">::</span><span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">security_list</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">FIELD</span><span class="p">::</span><span class="n">NoRelatedSym</span><span class="p">));</span>
+<span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">no_sym</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="n">FIX44</span><span class="o">::</span><span class="n">SecurityList</span><span class="o">::</span><span class="n">NoRelatedSym</span> <span class="n">sym_group</span><span class="p">;</span>
-   <span class="n">mdr</span><span class="p">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">security_list</span><span class="p">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sym_group</span><span class="p">));</span>
+   <span class="n">FIX44</span><span class="p">::</span><span class="n">SecurityList</span><span class="p">::</span><span class="n">NoRelatedSym</span> <span class="n">sym_group</span><span class="p">;</span>
+   <span class="n">mdr</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">security_list</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sym_group</span><span class="p">));</span>
 <span class="p">}</span>
 
-<span class="n">FIX</span><span class="o">::</span><span class="n">Session</span><span class="o">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">mdr</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">mdr</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -543,7 +543,7 @@ Use market range when it is acceptable that your order may be cancelled</p>
 <ul class="simple">
 <li>Closing Order in Code</li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>        FIX44::NewOrderSingle order;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        FIX44::NewOrderSingle order;
 
         order.setField(ClOrdID(NextClOrdID()));
         order.setField(Account(account_ID));
@@ -568,18 +568,18 @@ Session::sendToTarget(order, session_ID);
 <div>The position maintenance type of each account can be retrieved from the Parties component of <code class="docutils literal notranslate"><span class="pre">CollateralReport</span> <span class="pre">(BA)</span></code>. The <code class="docutils literal notranslate"><span class="pre">NoPartySubIDs</span></code> group contains a custom PartySubIDType for position maintenance. This specific <code class="docutils literal notranslate"><span class="pre">PartySubIDType</span></code> tag is set to a value of <code class="docutils literal notranslate"><span class="pre">4000</span></code>. <code class="docutils literal notranslate"><span class="pre">PartySubID</span></code> can be checked for the value of position maintenance. <code class="docutils literal notranslate"><span class="pre">Y</span></code> = “Hedging Enabled,” <code class="docutils literal notranslate"><span class="pre">N</span></code> = “No Hedging,” and <code class="docutils literal notranslate"><span class="pre">0</span></code> = “Netting.” Anything other than <code class="docutils literal notranslate"><span class="pre">Y</span></code> implies hedging is disabled and we will not use closing orders.</div></blockquote>
 <div class="section" id="getting-position-maintenance-in-code">
 <h3>Getting Position Maintenance in Code<a class="headerlink" href="#getting-position-maintenance-in-code" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_subID</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">NoPartySubIDs</span><span class="p">));</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="n">number_subID</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">){</span>
-        <span class="n">FIX44</span><span class="o">::</span><span class="n">CollateralReport</span><span class="o">::</span><span class="n">NoPartyIDs</span><span class="o">::</span><span class="n">NoPartySubIDs</span> <span class="n">sub_group</span><span class="p">;</span>
-        <span class="n">group</span><span class="p">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">sub_group</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">number_subID</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">NoPartySubIDs</span><span class="p">));</span>
+<span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="n">number_subID</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">FIX44</span><span class="p">::</span><span class="n">CollateralReport</span><span class="p">::</span><span class="n">NoPartyIDs</span><span class="p">::</span><span class="n">NoPartySubIDs</span> <span class="n">sub_group</span><span class="p">;</span>
+        <span class="n">group</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">sub_group</span><span class="p">);</span>
 
-        <span class="n">string</span> <span class="n">sub_type</span>  <span class="o">=</span> <span class="n">sub_group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">PartySubIDType</span><span class="p">);</span>
-        <span class="n">string</span> <span class="n">sub_value</span> <span class="o">=</span> <span class="n">sub_group</span><span class="p">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="o">::</span><span class="n">PartySubID</span><span class="p">);</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">sub_type</span> <span class="o">==</span> <span class="s">&quot;4000&quot;</span><span class="p">){</span>
-                <span class="c1">// Check sub_value for position maintenance</span>
-                <span class="c1">// Y = Hedging</span>
-                <span class="c1">// N = No Hedging</span>
-                <span class="c1">// 0 = Netting</span>
+        <span class="n">string</span> <span class="n">sub_type</span>  <span class="o">=</span> <span class="n">sub_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">PartySubIDType</span><span class="p">);</span>
+        <span class="n">string</span> <span class="n">sub_value</span> <span class="o">=</span> <span class="n">sub_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">PartySubID</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">sub_type</span> <span class="o">==</span> <span class="s2">&quot;4000&quot;</span><span class="p">){</span>
+                <span class="o">//</span> <span class="n">Check</span> <span class="n">sub_value</span> <span class="k">for</span> <span class="n">position</span> <span class="n">maintenance</span>
+                <span class="o">//</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">Hedging</span>
+                <span class="o">//</span> <span class="n">N</span> <span class="o">=</span> <span class="n">No</span> <span class="n">Hedging</span>
+                <span class="o">//</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">Netting</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
