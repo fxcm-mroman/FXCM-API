@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'FXCM API Developer Documentation'
-copyright = '2019, Forex Capital Markets'
+copyright = '2019, Forex Capital Markets, fxcm.com/uk/'
 author = 'Forex Capital Markets'
 
 # The short X.Y version
@@ -138,7 +138,7 @@ html_show_sourcelink = False
 
 html_context = {
 "display_github": False, # Add 'Edit on Github' link instead of 'View page source'
-"last_updated": True,
+#"last_updated": True,
 "commit": False,
 "css_files": ['_static/css/custom.css'],
 }
