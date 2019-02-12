@@ -15,12 +15,14 @@ Please refer to our `GitHub <https://github.com/fxcm/FIXAPI/>`_.
 Getting Started
 ===============
 
+
 *	Open a demo `Trading Station II account <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
 *	Send your login to api@fxcm.com to get FIX credentials. 
 *	Request documentation by signing our `EULA <https://www.fxcm.com/forms/eula/>`_. 
 *   Download the :download:`FXCM data dictionary </_downloads/FIXFXCM10.xml>`.
 *	Install software development environment (SDE). For Java, you can try `Eclipse <https://www.eclipse.org/downloads/>`_ or `NetBeans <https://netbeans.org/downloads/>`_.  For C++/C#, please download `Visual Studio <https://visualstudio.microsoft.com/downloads/>`_.
 *	You also need to download FIX protocol package. `QuickFix/J or QuickFix/N <http://www.quickfixj.org/>`_.
+*   Download sample :download:`QuickFIX configuration file </_files/Samplequickfix.cfg>`.
 
 Connecting
 ==========
@@ -132,8 +134,8 @@ Place market order via 35=D. you will get execution report in ``35=8``:
 	35=820160411-06:16:51.399: 8=FIX.4.4 9=478 35=8 34=15 49=FXCM 50=U100D1 52=20160411-06:16:51.177 56=D101546502001_client1 1=01537581 6=2047.53 11=635959630109097564 14=10 15=USD 17=821172034 31=2047.53 32=10 37=225909074 38=10 39=2 40=1 44=2047.53 54=1 55=SPX500 58=Executed 59=1 60=20160411-06:16:51 99=0 150=F 151=0 211=0 336=FXCM 625=U100D1 835=0 836=0 1094=0 9000=1010 9041=89603919 9050=OM 9051=F 9061=0 453=1 448=FXCM ID 447=D 452=3 802=4523=1537581 803=10 523=d101546502001 803=2 523=Halpert 803=22 523=32 803=26 10=088
 	
 
-FIX Sample Codes
-================
+FIX Sample Solutions and Projects
+=================================
 
 C++ FIX Example
 ---------------

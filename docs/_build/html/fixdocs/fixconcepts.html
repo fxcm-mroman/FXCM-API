@@ -136,7 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#marketdata">Marketdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#table">Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixapi.html#order">Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixapi.html#fix-sample-codes">FIX Sample Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixapi.html#fix-sample-solutions-and-projects">FIX Sample Solutions and Projects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-fix-example">C++ FIX Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-quickfix-example-vs2017-with-x64">C++ QuickFIX Example VS2017 with x64</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fixapi.html#c-net-fix-example">C# .NET FIX Example</a></li>
@@ -200,24 +200,85 @@
 <li class="toctree-l2"><a class="reference internal" href="#steps-to-retrieve-short-version-of-market-price">Steps To Retrieve Short Version Of Market Price</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#emf">EMF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#execution-disclaimer">Execution Disclaimer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commonly-asked-questions">Commonly Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#error-messages-received">1. Error Messages received</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-zdas-exception-ora-20103-session-expired">a. ZDas Exception ORA-20103: Session expired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#b-zdas-exception-ora-20143-order-price-too-far-from-market-price">b. ZDas Exception ORA-20143: Order price too far from market price</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#c-zdas-exception-ora-20112-limit-price-did-not-pass-validation">c. ZDas Exception ORA-20112: Limit price did not pass validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#d-zdas-exception-ora-20113-insufficient-margin-in-session">d. ZDas Exception ORA-20113: Insufficient margin in session</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#e-zdas-exception-ora-20102-access-violation">e. ZDas Exception ORA-20102: Access Violation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#f-zdas-exception-ora-20105-order-price-did-not-pass-validation">f. ZDas Exception ORA-20105: Order price did not pass validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-ora-20103-session-expired">a. ORA-20103: Session expired</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-ora-20143-order-price-too-far-from-market-price">b. ORA-20143: Order price too far from market price</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-ora-20112-limit-price-did-not-pass-validation">c. ORA-20112: Limit price did not pass validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-ora-20113-insufficient-margin-in-session">d. ORA-20113: Insufficient margin in session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#e-ora-20102-access-violation">e. ORA-20102: Access Violation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#f-ora-20105-order-price-did-not-pass-validation">f. ORA-20105: Order price did not pass validation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#g-ora-20008-failed-to-create-order-primary-validation">g. ORA-20008: Failed to create order, primary validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#h-tag-specified-out-of-required-order">h. tag specified out of required order</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#tag-specified-out-of-required-order">2. tag specified out of required order</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-can-i-tell-what-account-type-i-have">3. How can I tell what account type I have?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#limit-order-day-order-vs-limit-ioc-fok">4. Limit order Day order vs Limit IOC/FOK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">5. What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-can-i-get-positions-side-and-quantity-from-open-position-report">6. How can I get Positions side and quantity from open position report?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-can-i-get-closed-positions">7. How can I get closed positions?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-can-i-close-open-positions">8. How can I close open positions?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-can-i-tell-what-account-type-i-have">2. How can I tell what account type I have?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limit-order-day-order-vs-limit-ioc-fok">3. Limit order Day order vs Limit IOC/FOK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">4. What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-can-i-get-positions-side-and-quantity-from-open-position-report">5. How can I get Positions side and quantity from open position report?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-can-i-get-closed-positions">6. How can I get closed positions?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-can-i-close-open-positions">7. How can I close open positions?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-code-in-c">Sample Code in C++</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-fxcm-system-parameters-c">1. Get FXCM System Parameters: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-rollover-interest-c">2. Get Rollover Interest: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determine-hedging-status-c">3. Determine Hedging Status: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subscribe-to-a-symbol-c">4. Subscribe to a Symbol: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subscribe-to-all-symbols-c">5. Subscribe to All Symbols: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-market-order-c">6. Create Market Order: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-market-range-order-c">7. Create Market Range Order: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-entry-pending-order-c">8. Create Entry (Pending) Order: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-one-cancels-other-oco-order-c">9. Create One-Cancels-Other (OCO) Order: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-entry-with-limit-and-stop-els-order-c">10. Create Entry with Limit and Stop (ELS) Order: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-market-order-with-trailing-stop-c">11. Create Market Order with Trailing Stop: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-order-status-and-executed-amount-c">12. Get Order Status and Executed Amount: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-all-open-positions-c">13. Request All Open Positions: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-open-positions-for-a-single-account-c">14. Request Open Positions for a Single Account: C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-all-waiting-orders-c">15. Get All Waiting Orders: C++</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fxcm-custom-fields">FXCM Custom fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-tradingsessionstatus-h">From TradingSessionStatus(h):</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmsymprecision-9001">FXCMSymPrecision (9001)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmsympointsize-9002">FXCMSymPointSize (9002)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmsyminterestbuy-9003">FXCMSymInterestBuy (9003)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmsyminterestsell-9004">FXCMSymInterestSell (9004)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmproductid-9080">FXCMProductID (9080)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmconddiststop-9090">FXCMCondDistStop (9090)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmconddistlimit-9091">FXCMCondDistLimit (9091)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmconddistentrystop-9092">FXCMCondDistEntryStop (9092)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmconddistentrylimit-9093">FXCMCondDistEntryLimit (9093)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmmaxquantity-9094">FXCMMaxQuantity (9094)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmminquantity-9095">FXCMMinQuantity (9095)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fxcmtradingstatus-9096">FXCMTradingStatus (9096)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#from-marketdatasnapshotfullrefresh-w">From MarketDataSnapshotFullRefresh(W):</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#trading-status">Trading Status</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#field-quotetype-537">Field: QuoteType(537)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#field-quotecondition-276">Field: QuoteCondition(276)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#from-collateralreport-ba">From CollateralReport(BA):</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#minimum-order-qty-forex">Minimum Order Qty. - Forex</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#field-quantity-53">Field: Quantity(53)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fxcm-system-parameters">FXCM System Parameters:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base-crncy">BASE_CRNCY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-time-utc">SERVER_TIME_UTC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base-time-zone">BASE_TIME_ZONE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cond-dist">COND_DIST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cond-dist-entry">COND_DIST_ENTRY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base-unit-size">BASE_UNIT_SIZE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#end-trading-day">END_TRADING_DAY</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -653,47 +714,47 @@ Session::sendToTarget(order, session_ID);
 <h2>Execution Disclaimer<a class="headerlink" href="#execution-disclaimer" title="Permalink to this headline">¶</a></h2>
 <p>FXCM aggregates bid and ask prices from a pool of liquidity providers and is the final counterparty when trading forex on FXCM’s dealing desk and No Dealing Desk (NDD) execution models. With NDD, FXCM’s platforms display the best-available direct bid and ask prices from the liquidity providers. In addition to the spread, the trading cost with NDD is a fixed lot-based commission at the open and close of the trade. While generally NDD accounts offer spreads with no markups, in some circumstances, FXCM may add a markup to NDD spreads. This may occur due to, but not limited to, account type, such as accounts opened through a referring agent. With dealing desk execution, FXCM can act as the dealer on any or all currency pairs. Backup liquidity providers fill in when FXCM does not act as the dealer. FXCM’s dealing desk has fewer liquidity providers than NDD. There are many other factors to consider when choosing an execution model (such as conflict of interest, trading style or strategy). See Execution Risks. Note: Contractual relationships with liquidity providers are consolidated through the FXCM Group, which, in turn, provides technology and pricing to the group affiliate entities.</p>
 </div>
-<div class="section" id="commonly-asked-questions">
-<h2>Commonly Asked Questions<a class="headerlink" href="#commonly-asked-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="frequently-asked-questions">
+<h2>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="error-messages-received">
 <h3>1. Error Messages received<a class="headerlink" href="#error-messages-received" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="a-zdas-exception-ora-20103-session-expired">
-<h4>a. ZDas Exception ORA-20103: Session expired<a class="headerlink" href="#a-zdas-exception-ora-20103-session-expired" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="a-ora-20103-session-expired">
+<h4>a. ORA-20103: Session expired<a class="headerlink" href="#a-ora-20103-session-expired" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEVERE</span><span class="p">:</span> <span class="n">onMessageRecieved</span><span class="p">::</span><span class="n">Forcereconnect</span> <span class="kn">from</span> <span class="nn">server.</span> <span class="n">Update</span> <span class="n">session</span> <span class="n">state</span><span class="p">::</span><span class="mi">19915</span><span class="p">;</span><span class="n">DAS</span> <span class="mi">19915</span><span class="p">:</span> <span class="n">ZDas</span> <span class="ne">Exception</span> <span class="n">ORA</span><span class="o">-</span><span class="mi">20103</span><span class="p">:</span> <span class="n">Session</span> <span class="n">expired</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Unordered List Item Error code <code class="docutils literal notranslate"><span class="pre">20103</span></code> session expired means your connection has been lost. This error message could be displayed due to a number of reasons, including network instability, a system issue or a client side program crash. If the problem is a system issue, please try to reboot.</p>
 </div>
-<div class="section" id="b-zdas-exception-ora-20143-order-price-too-far-from-market-price">
-<h4>b. ZDas Exception ORA-20143: Order price too far from market price<a class="headerlink" href="#b-zdas-exception-ora-20143-order-price-too-far-from-market-price" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="b-ora-20143-order-price-too-far-from-market-price">
+<h4>b. ORA-20143: Order price too far from market price<a class="headerlink" href="#b-ora-20143-order-price-too-far-from-market-price" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Done! request.RequestID: U10D1_0F742A280DE8276EE053182B3C0A1526_02192015163720178345_XIX0-2 offer.OfferID:1 AccountID: 831293 iAmount: 10000 dRate: 1.13953 dRateLimit: 1.14153 dRateStop: 1.13803 BuySell: B OrderType: LE 19915;DAS 19915: ZDas Exception ORA-20143: Order price too far from market price :1.14219 vs 1.14162
 </pre></div>
 </div>
 <p>Unordered List Item This error message is generated when the Buy Limit price is above the Bid price. For example if the Bid price was 1.13919, and your Buy limit 1.13953. If you want to place a Buy Limit above the Bid price you can do so using an OpenLimit order, which is available in API ver. 1.3.2. The fill price will be the limit price or better.</p>
 </div>
-<div class="section" id="c-zdas-exception-ora-20112-limit-price-did-not-pass-validation">
-<h4>c. ZDas Exception ORA-20112: Limit price did not pass validation<a class="headerlink" href="#c-zdas-exception-ora-20112-limit-price-did-not-pass-validation" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="c-ora-20112-limit-price-did-not-pass-validation">
+<h4>c. ORA-20112: Limit price did not pass validation<a class="headerlink" href="#c-ora-20112-limit-price-did-not-pass-validation" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">19915</span><span class="p">;</span><span class="n">DAS</span> <span class="mi">19915</span><span class="p">:</span> <span class="n">ZDas</span> <span class="ne">Exception</span> <span class="n">ORA</span><span class="o">-</span><span class="mi">20112</span><span class="p">:</span> <span class="n">Limit</span> <span class="n">price</span> <span class="n">did</span> <span class="ow">not</span> <span class="k">pass</span> <span class="n">validation</span><span class="p">:</span> <span class="n">A</span><span class="p">:</span><span class="mi">308386</span> <span class="n">OF</span><span class="p">:</span><span class="mi">22</span> <span class="n">SB</span><span class="p">:</span><span class="n">B</span>
 </pre></div>
 </div>
 <p>Unordered List Item This error message is generated when the Limit price does not correspond to the ask price for the order type required. If the Time in Force is IOC or FOK then the Buy limit price should be &gt;= Ask price. For GTC or GTD the Buy Limit should be ⇐ Ask price.</p>
 </div>
-<div class="section" id="d-zdas-exception-ora-20113-insufficient-margin-in-session">
-<h4>d. ZDas Exception ORA-20113: Insufficient margin in session<a class="headerlink" href="#d-zdas-exception-ora-20113-insufficient-margin-in-session" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="d-ora-20113-insufficient-margin-in-session">
+<h4>d. ORA-20113: Insufficient margin in session<a class="headerlink" href="#d-ora-20113-insufficient-margin-in-session" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">19915</span><span class="p">;</span><span class="n">DAS</span> <span class="mi">19915</span><span class="p">:</span> <span class="n">ZDas</span> <span class="ne">Exception</span> <span class="n">ORA</span><span class="o">-</span><span class="mi">20113</span><span class="p">:</span> <span class="n">Insufficient</span> <span class="n">margin</span> <span class="ow">in</span> <span class="n">session</span>
 </pre></div>
 </div>
 <p>Unordered List Item This error message is generated when you don’t have enough margin.</p>
 </div>
-<div class="section" id="e-zdas-exception-ora-20102-access-violation">
-<h4>e. ZDas Exception ORA-20102: Access Violation<a class="headerlink" href="#e-zdas-exception-ora-20102-access-violation" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="e-ora-20102-access-violation">
+<h4>e. ORA-20102: Access Violation<a class="headerlink" href="#e-ora-20102-access-violation" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">19915</span><span class="p">;</span><span class="n">DAS</span> <span class="mi">19915</span><span class="p">:</span> <span class="n">ZDas</span> <span class="ne">Exception</span> <span class="n">ORA</span><span class="o">-</span><span class="mi">20102</span><span class="p">:</span> <span class="n">Access</span> <span class="n">Violation</span><span class="p">:</span> <span class="n">U10D1_0C73B32A0A4299C5E053182B3C0ADFC8_01122015125318715906_UGQ1</span> <span class="n">phase</span><span class="p">:</span><span class="mi">4</span>
 </pre></div>
 </div>
 <p>Unordered List Item This error message is generated when a trade account is missing from the dealer account.</p>
 </div>
-<div class="section" id="f-zdas-exception-ora-20105-order-price-did-not-pass-validation">
-<h4>f. ZDas Exception ORA-20105: Order price did not pass validation<a class="headerlink" href="#f-zdas-exception-ora-20105-order-price-did-not-pass-validation" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="f-ora-20105-order-price-did-not-pass-validation">
+<h4>f. ORA-20105: Order price did not pass validation<a class="headerlink" href="#f-ora-20105-order-price-did-not-pass-validation" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span><span class="o">|</span><span class="mi">9</span><span class="o">=</span><span class="mi">179</span><span class="o">|</span><span class="mi">35</span><span class="o">=</span><span class="n">D</span><span class="o">|</span><span class="mi">1</span><span class="o">=</span><span class="mi">2620231783</span><span class="o">|</span><span class="mi">11</span><span class="o">=</span><span class="n">FXSTAT_32951421147085</span><span class="o">|</span><span class="mi">15</span><span class="o">=</span><span class="n">EUR</span><span class="o">|</span><span class="mi">38</span><span class="o">=</span><span class="mi">5</span><span class="o">|</span><span class="mi">40</span><span class="o">=</span><span class="mi">3</span><span class="o">|</span><span class="mi">54</span><span class="o">=</span><span class="mi">2</span><span class="o">|</span><span class="mi">55</span><span class="o">=</span><span class="n">ESP35</span><span class="o">|</span><span class="mi">59</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">60</span><span class="o">=</span><span class="mi">20150113</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">45</span><span class="o">|</span><span class="mi">99</span><span class="o">=</span><span class="mi">9864</span><span class="o">|</span><span class="mi">386</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">336</span><span class="o">=</span><span class="n">FXCM</span><span class="o">|</span><span class="mi">625</span><span class="o">=</span><span class="n">EUREAL</span><span class="o">|</span><span class="mi">516</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">526</span><span class="o">=</span><span class="n">OT_</span><span class="o">-</span><span class="mi">2</span><span class="n">_1421147086_ESP35_ESP35_0_0_</span><span class="o">|</span><span class="mi">10</span><span class="o">=</span><span class="mi">080</span>
 </pre></div>
 </div>
@@ -708,29 +769,29 @@ DEBUG (2015-03-04 10:00:00,171) [0:Bus:2620237129_client1FXCMEUREAL] (app) - »&
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="tag-specified-out-of-required-order">
-<h3>2. tag specified out of required order<a class="headerlink" href="#tag-specified-out-of-required-order" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="h-tag-specified-out-of-required-order">
+<h4>h. tag specified out of required order<a class="headerlink" href="#h-tag-specified-out-of-required-order" title="Permalink to this headline">¶</a></h4>
 <p>This error message is generated when the tag order does not pass our system check. You can avoid this by setting <code class="docutils literal notranslate"><span class="pre">ValidateFieldsOutOfOrder=N</span></code> in your config file.</p>
 </div>
+</div>
 <div class="section" id="how-can-i-tell-what-account-type-i-have">
-<h3>3. How can I tell what account type I have?<a class="headerlink" href="#how-can-i-tell-what-account-type-i-have" title="Permalink to this headline">¶</a></h3>
+<h3>2. How can I tell what account type I have?<a class="headerlink" href="#how-can-i-tell-what-account-type-i-have" title="Permalink to this headline">¶</a></h3>
 <p>Checking on Trading station: To check the type of account you have, you can login to Trading station and look in the tab “Accounts”. Scroll to the end and find column Type. <code class="docutils literal notranslate"><span class="pre">Y</span> <span class="pre">=</span> <span class="pre">Hedging</span></code> is allowed; <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">Hedging</span></code> is not allowed, <code class="docutils literal notranslate"><span class="pre">O</span> <span class="pre">=</span> <span class="pre">Netting</span></code> only, <code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">Day</span> <span class="pre">netting</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">=</span> <span class="pre">FIFO</span></code></p>
 <p>FIX: Using tag <code class="docutils literal notranslate"><span class="pre">453</span></code> and <code class="docutils literal notranslate"><span class="pre">803</span> <span class="pre">(PartySubIDType)</span></code> <code class="docutils literal notranslate"><span class="pre">Y</span> <span class="pre">=</span> <span class="pre">Hedging</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">No</span> <span class="pre">Hedging</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">Netting</span></code>. This is located on page 34 of the documentation.</p>
 </div>
 <div class="section" id="limit-order-day-order-vs-limit-ioc-fok">
-<h3>4. Limit order Day order vs Limit IOC/FOK<a class="headerlink" href="#limit-order-day-order-vs-limit-ioc-fok" title="Permalink to this headline">¶</a></h3>
+<h3>3. Limit order Day order vs Limit IOC/FOK<a class="headerlink" href="#limit-order-day-order-vs-limit-ioc-fok" title="Permalink to this headline">¶</a></h3>
 <p>A Limit Order is an order to buy or sell a predetermined amount at a specified price. This order will be filled only when the market price equals the specified limit price or better. Limit orders also allow a trader to limit the length of time an order can be outstanding before being canceled with the following time in force values GTC, DAY, GTD, IOC, FOK.</p>
 <p>The Limit price for order with TIF GTC or DAY (for future execution) should be market or better than current market price, but for orders with TIF IOC or FOK (immediate execution) the Limit price should be market or worse. This is because IOC/FOK orders will be sent immediately for execution, without waiting for the market price to reach the Limit price.</p>
 <p>If the current Bid is 100, and you place a Sell Limit IOC/FOK at 102, this order will be rejected because the Limit price has to be market or worse for IOC/FOK, (it would be like asking to get order filled immediately at 102 or better).</p>
 <p>If your intention was to control the slippage, you can use a Limit OIC or FOK. The Limit price should be the Bid price or below. So in this example, if Limit=98, the order will be filled at 98 or better, but because it’s immediate execution, if for any reason the order can’t be filled in few attempts, the order will be canceled. Can you fix the paragraph spacing below?</p>
 </div>
 <div class="section" id="what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">
-<h3>5. What is the Base Unit Size (also the minimum trade size) for all FX instruments?<a class="headerlink" href="#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments" title="Permalink to this headline">¶</a></h3>
+<h3>4. What is the Base Unit Size (also the minimum trade size) for all FX instruments?<a class="headerlink" href="#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments" title="Permalink to this headline">¶</a></h3>
 <p>tag <code class="docutils literal notranslate"><span class="pre">53</span></code> in collateral report(35=BA) For each CFD - tag <code class="docutils literal notranslate"><span class="pre">228</span></code> in Trading Session Status <code class="docutils literal notranslate"><span class="pre">35=h</span></code></p>
 </div>
 <div class="section" id="how-can-i-get-positions-side-and-quantity-from-open-position-report">
-<h3>6. How can I get Positions side and quantity from open position report?<a class="headerlink" href="#how-can-i-get-positions-side-and-quantity-from-open-position-report" title="Permalink to this headline">¶</a></h3>
+<h3>5. How can I get Positions side and quantity from open position report?<a class="headerlink" href="#how-can-i-get-positions-side-and-quantity-from-open-position-report" title="Permalink to this headline">¶</a></h3>
 <p>First you need to send position report request <code class="docutils literal notranslate"><span class="pre">35=AN</span></code> with <code class="docutils literal notranslate"><span class="pre">724=0</span></code> (open position), <code class="docutils literal notranslate"><span class="pre">724=1</span></code> is for closed positions. If you have open position you will get positon report <code class="docutils literal notranslate"><span class="pre">35=AP</span></code> for each open position. If you don’t have it you will receive “no open position” in message <code class="docutils literal notranslate"><span class="pre">AO</span></code> instead of <code class="docutils literal notranslate"><span class="pre">35=AP</span></code> message. In the positon report, you need to look at <code class="docutils literal notranslate"><span class="pre">704</span> <span class="pre">(LongQty)</span></code> or <code class="docutils literal notranslate"><span class="pre">705(shortQty)</span></code>. If you see <code class="docutils literal notranslate"><span class="pre">704</span></code> it is long order (buy order), if you see <code class="docutils literal notranslate"><span class="pre">705</span></code> it is short order (sell order).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span><span class="o">|</span><span class="mi">9</span><span class="o">=</span><span class="mi">149</span><span class="o">|</span><span class="mi">35</span><span class="o">=</span><span class="n">AN</span><span class="o">|</span><span class="mi">34</span><span class="o">=</span><span class="mi">5</span><span class="o">|</span><span class="mi">49</span><span class="o">=</span><span class="n">d101968168_client1</span><span class="o">|</span><span class="mi">52</span><span class="o">=</span><span class="mi">20151111</span><span class="o">-</span><span class="mi">21</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">12.396</span><span class="o">|</span><span class="mi">56</span><span class="o">=</span><span class="n">FXCM</span><span class="o">|</span><span class="mi">57</span><span class="o">=</span><span class="n">U100D1</span><span class="o">|</span><span class="mi">1</span><span class="o">=</span><span class="mi">01958448</span><span class="o">|</span><span class="mi">60</span><span class="o">=</span><span class="mi">20151111</span><span class="o">-</span><span class="mi">21</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">12.395</span><span class="o">|</span><span class="mi">263</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">581</span><span class="o">=</span><span class="mi">6</span><span class="o">|</span><span class="mi">710</span><span class="o">=</span><span class="mi">4</span><span class="o">|</span><span class="mi">715</span><span class="o">=</span><span class="mi">20151111</span><span class="o">|</span><span class="mi">724</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span><span class="mi">10</span><span class="o">=</span><span class="mi">085</span><span class="o">|</span>
 
@@ -739,7 +800,7 @@ DEBUG (2015-03-04 10:00:00,171) [0:Bus:2620237129_client1FXCMEUREAL] (app) - »&
 </div>
 </div>
 <div class="section" id="how-can-i-get-closed-positions">
-<h3>7. How can I get closed positions?<a class="headerlink" href="#how-can-i-get-closed-positions" title="Permalink to this headline">¶</a></h3>
+<h3>6. How can I get closed positions?<a class="headerlink" href="#how-can-i-get-closed-positions" title="Permalink to this headline">¶</a></h3>
 <p>First you need to send position request with <code class="docutils literal notranslate"><span class="pre">724=1</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span><span class="o">|</span><span class="mi">9</span><span class="o">=</span><span class="mi">177</span><span class="o">|</span><span class="mi">35</span><span class="o">=</span><span class="n">AN</span><span class="o">|</span><span class="mi">34</span><span class="o">=</span><span class="mi">6</span><span class="o">|</span><span class="mi">49</span><span class="o">=</span><span class="n">d101968168_client1</span><span class="o">|</span><span class="mi">52</span><span class="o">=</span><span class="mi">20151111</span><span class="o">-</span><span class="mi">21</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">12.400</span><span class="o">|</span><span class="mi">56</span><span class="o">=</span><span class="n">FXCM</span><span class="o">|</span><span class="mi">57</span><span class="o">=</span><span class="n">U100D1</span><span class="o">|</span><span class="mi">1</span><span class="o">=</span><span class="mi">01958448</span><span class="o">|</span><span class="mi">60</span><span class="o">=</span><span class="mi">20151111</span><span class="o">-</span><span class="mi">21</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">12.400</span><span class="o">|</span><span class="mi">263</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">581</span><span class="o">=</span><span class="mi">6</span><span class="o">|</span><span class="mi">710</span><span class="o">=</span><span class="mi">5</span><span class="o">|</span><span class="mi">715</span><span class="o">=</span><span class="mi">20151111</span><span class="o">|</span><span class="mi">724</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="mi">9012</span><span class="o">=</span><span class="mi">20150311</span><span class="o">|</span><span class="mi">9014</span><span class="o">=</span><span class="mi">20151112</span><span class="o">|</span><span class="mi">10</span><span class="o">=</span><span class="mi">110</span><span class="o">|</span>
 <span class="mi">9043</span>       <span class="n">Closing</span> <span class="n">price</span>
@@ -754,7 +815,7 @@ DEBUG (2015-03-04 10:00:00,171) [0:Bus:2620237129_client1FXCMEUREAL] (app) - »&
 </div>
 </div>
 <div class="section" id="how-can-i-close-open-positions">
-<h3>8. How can I close open positions?<a class="headerlink" href="#how-can-i-close-open-positions" title="Permalink to this headline">¶</a></h3>
+<h3>7. How can I close open positions?<a class="headerlink" href="#how-can-i-close-open-positions" title="Permalink to this headline">¶</a></h3>
 <p>If your account is <strong>non-hedgng</strong> account, you just need to send same qantity with opposite side.</p>
 <p>If your account is <strong>hedging</strong> account, get the ticket id tag <code class="docutils literal notranslate"><span class="pre">9041</span></code> from open position then send single market order with ticket id = 9041 and opposite side.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">07.432</span> <span class="p">:</span> <span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span> <span class="mi">9</span><span class="o">=</span><span class="mi">193</span> <span class="mi">35</span><span class="o">=</span><span class="n">D</span> <span class="mi">34</span><span class="o">=</span><span class="mi">7</span> <span class="mi">49</span><span class="o">=</span><span class="n">D101546502001_client1</span> <span class="mi">52</span><span class="o">=</span><span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">07.432</span> <span class="mi">56</span><span class="o">=</span><span class="n">FXCM</span> <span class="mi">57</span><span class="o">=</span><span class="n">U100D1</span> <span class="mi">1</span><span class="o">=</span><span class="mi">01537581</span> <span class="mi">11</span><span class="o">=</span><span class="mi">635953582874324718</span> <span class="mi">38</span><span class="o">=</span><span class="mi">100000</span> <span class="mi">40</span><span class="o">=</span><span class="mi">1</span> <span class="mi">44</span><span class="o">=</span><span class="mf">0.99629</span> <span class="mi">54</span><span class="o">=</span><span class="mi">2</span> <span class="mi">55</span><span class="o">=</span><span class="n">AUD</span><span class="o">/</span><span class="n">CAD</span> <span class="mi">59</span><span class="o">=</span><span class="mi">1</span> <span class="mi">60</span><span class="o">=</span><span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">07</span> <span class="mi">9041</span><span class="o">=</span><span class="mi">89061181</span> <span class="mi">10</span><span class="o">=</span><span class="mi">006</span>
@@ -762,8 +823,512 @@ DEBUG (2015-03-04 10:00:00,171) [0:Bus:2620237129_client1FXCMEUREAL] (app) - »&
 <span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">07.922</span> <span class="p">:</span> <span class="mi">8</span><span class="o">=</span><span class="n">FIX</span><span class="o">.</span><span class="mf">4.4</span> <span class="mi">9</span><span class="o">=</span><span class="mi">489</span> <span class="mi">35</span><span class="o">=</span><span class="mi">8</span> <span class="mi">34</span><span class="o">=</span><span class="mi">15</span> <span class="mi">49</span><span class="o">=</span><span class="n">FXCM</span> <span class="mi">50</span><span class="o">=</span><span class="n">U100D1</span> <span class="mi">52</span><span class="o">=</span><span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">07.634</span> <span class="mi">56</span><span class="o">=</span><span class="n">D101546502001_client1</span> <span class="mi">1</span><span class="o">=</span><span class="mi">01537581</span> <span class="mi">6</span><span class="o">=</span><span class="mf">0.99631</span> <span class="mi">11</span><span class="o">=</span><span class="mi">635953582874324718</span> <span class="mi">14</span><span class="o">=</span><span class="mi">100000</span> <span class="mi">15</span><span class="o">=</span><span class="n">AUD</span> <span class="mi">17</span><span class="o">=</span><span class="mi">819171964</span> <span class="mi">31</span><span class="o">=</span><span class="mf">0.99631</span> <span class="mi">32</span><span class="o">=</span><span class="mi">100000</span> <span class="mi">37</span><span class="o">=</span><span class="mi">225010828</span> <span class="mi">38</span><span class="o">=</span><span class="mi">100000</span> <span class="mi">39</span><span class="o">=</span><span class="mi">2</span> <span class="mi">40</span><span class="o">=</span><span class="mi">1</span> <span class="mi">44</span><span class="o">=</span><span class="mf">0.99631</span> <span class="mi">54</span><span class="o">=</span><span class="mi">2</span> <span class="mi">55</span><span class="o">=</span><span class="n">AUD</span><span class="o">/</span><span class="n">CAD</span> <span class="mi">58</span><span class="o">=</span><span class="n">Executed</span> <span class="mi">59</span><span class="o">=</span><span class="mi">1</span> <span class="mi">60</span><span class="o">=</span><span class="mi">20160404</span><span class="o">-</span><span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">07</span> <span class="mi">99</span><span class="o">=</span><span class="mi">0</span> <span class="mi">150</span><span class="o">=</span><span class="n">F</span> <span class="mi">151</span><span class="o">=</span><span class="mi">0</span> <span class="mi">211</span><span class="o">=</span><span class="mi">0</span> <span class="mi">336</span><span class="o">=</span><span class="n">FXCM</span> <span class="mi">625</span><span class="o">=</span><span class="n">U100D1</span> <span class="mi">835</span><span class="o">=</span><span class="mi">0</span> <span class="mi">836</span><span class="o">=</span><span class="mi">0</span> <span class="mi">1094</span><span class="o">=</span><span class="mi">0</span> <span class="mi">9000</span><span class="o">=</span><span class="mi">16</span> <span class="mi">9041</span><span class="o">=</span><span class="mi">89061181</span> <span class="mi">9050</span><span class="o">=</span><span class="n">CM</span> <span class="mi">9051</span><span class="o">=</span><span class="n">F</span> <span class="mi">9061</span><span class="o">=</span><span class="mi">0</span> <span class="mi">453</span><span class="o">=</span><span class="mi">1</span> <span class="mi">448</span><span class="o">=</span><span class="n">FXCM</span> <span class="n">ID</span> <span class="mi">447</span><span class="o">=</span><span class="n">D</span> <span class="mi">452</span><span class="o">=</span><span class="mi">3</span> <span class="mi">802</span><span class="o">=</span><span class="mi">4</span> <span class="mi">523</span><span class="o">=</span><span class="mi">1537581</span> <span class="mi">803</span><span class="o">=</span><span class="mi">10</span> <span class="mi">523</span><span class="o">=</span><span class="n">d101546502001</span> <span class="mi">803</span><span class="o">=</span><span class="mi">2</span> <span class="mi">523</span><span class="o">=</span><span class="n">Halpert</span> <span class="mi">803</span><span class="o">=</span><span class="mi">22</span> <span class="mi">523</span><span class="o">=</span><span class="mi">32</span> <span class="mi">803</span><span class="o">=</span><span class="mi">26</span> <span class="mi">10</span><span class="o">=</span><span class="mi">128</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="sample-code-in-c">
+<h2>Sample Code in C++<a class="headerlink" href="#sample-code-in-c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-fxcm-system-parameters-c">
+<h3>1. Get FXCM System Parameters: C++<a class="headerlink" href="#get-fxcm-system-parameters-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">FixApplication</span><span class="p">::</span><span class="n">onMessage</span><span class="p">(</span><span class="n">const</span> <span class="n">FIX44</span><span class="p">::</span><span class="n">TradingSessionStatus</span><span class="o">&amp;</span> <span class="n">tss</span><span class="p">,</span> <span class="n">const</span> <span class="n">SessionID</span><span class="o">&amp;</span> <span class="n">session_ID</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nb">int</span> <span class="n">param_count</span> <span class="o">=</span> <span class="n">FIX</span><span class="p">::</span><span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9016</span><span class="p">));</span>
+
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;TSS - FXCM System Parameters&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">=&lt;</span> <span class="n">param_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">FIX</span><span class="p">::</span><span class="n">FieldMap</span> <span class="nb">map</span>  <span class="o">=</span> <span class="n">tss</span><span class="o">.</span><span class="n">getGroupRef</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9016</span><span class="p">);</span>
+
+                <span class="n">string</span> <span class="n">param_name</span>  <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9017</span><span class="p">);</span>
+                <span class="n">string</span> <span class="n">param_value</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9018</span><span class="p">);</span>
+
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">param_name</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; - &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">param_value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-rollover-interest-c">
+<h3>2. Get Rollover Interest: C++<a class="headerlink" href="#get-rollover-interest-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">FixApplication</span><span class="p">::</span><span class="n">onMessage</span><span class="p">(</span><span class="n">const</span> <span class="n">FIX44</span><span class="p">::</span><span class="n">TradingSessionStatus</span><span class="o">&amp;</span> <span class="n">tss</span><span class="p">,</span> <span class="n">const</span> <span class="n">SessionID</span><span class="o">&amp;</span> <span class="n">session_ID</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nb">int</span> <span class="n">symbols_count</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">NoRelatedSym</span><span class="p">));</span>
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">symbols_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">FIX44</span><span class="p">::</span><span class="n">SecurityList</span><span class="p">::</span><span class="n">NoRelatedSym</span> <span class="n">symbols_group</span><span class="p">;</span>
+                <span class="n">tss</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">symbols_group</span><span class="p">);</span>
+                <span class="n">string</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbols_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">Symbol</span><span class="p">);</span>
+
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;    Symbol -&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">symbol</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;      RolloverBuy -&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">symbols_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9003</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;      RolloverSell -&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">symbols_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="mi">9004</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="determine-hedging-status-c">
+<h3>3. Determine Hedging Status: C++<a class="headerlink" href="#determine-hedging-status-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">FixApplication</span><span class="p">::</span><span class="n">onMessage</span><span class="p">(</span><span class="n">const</span> <span class="n">FIX44</span><span class="p">::</span><span class="n">CollateralReport</span><span class="o">&amp;</span> <span class="n">cr</span><span class="p">,</span> <span class="n">const</span> <span class="n">SessionID</span><span class="o">&amp;</span> <span class="n">session_ID</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">FIX44</span><span class="p">::</span><span class="n">CollateralReport</span><span class="p">::</span><span class="n">NoPartyIDs</span> <span class="n">group</span><span class="p">;</span>
+        <span class="n">cr</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">group</span><span class="p">);</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;  Parties -&gt; &quot;</span><span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+        <span class="nb">int</span> <span class="n">number_subID</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">NoPartySubIDs</span><span class="p">));</span>
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="n">number_subID</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">FIX44</span><span class="p">::</span><span class="n">CollateralReport</span><span class="p">::</span><span class="n">NoPartyIDs</span><span class="p">::</span><span class="n">NoPartySubIDs</span> <span class="n">sub_group</span><span class="p">;</span>
+                <span class="n">group</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">sub_group</span><span class="p">);</span>
+
+                <span class="n">string</span> <span class="n">sub_type</span>  <span class="o">=</span> <span class="n">sub_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">PartySubIDType</span><span class="p">);</span>
+                <span class="n">string</span> <span class="n">sub_value</span> <span class="o">=</span> <span class="n">sub_group</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">PartySubID</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">sub_type</span> <span class="o">==</span> <span class="s2">&quot;4000&quot;</span><span class="p">){</span>
+                        <span class="o">//</span> <span class="n">Check</span> <span class="n">sub_value</span> <span class="k">for</span> <span class="n">position</span> <span class="n">maintenance</span>
+                <span class="o">//</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">Hedging</span>
+                        <span class="o">//</span> <span class="n">N</span> <span class="o">=</span> <span class="n">No</span> <span class="n">Hedging</span>
+                <span class="o">//</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">Netting</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subscribe-to-a-symbol-c">
+<h3>4. Subscribe to a Symbol: C++<a class="headerlink" href="#subscribe-to-a-symbol-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">request_ID</span> <span class="o">=</span> <span class="s2">&quot;EUR_USD_Request_&quot;</span><span class="p">;</span>
+<span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDReqID</span><span class="p">(</span><span class="n">request_ID</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">SubscriptionRequestType</span><span class="p">(</span>
+        <span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MarketDepth</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">NoRelatedSym</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span><span class="p">::</span><span class="n">NoRelatedSym</span> <span class="n">symbols_group</span><span class="p">;</span>
+<span class="n">symbols_group</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">symbols_group</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span><span class="p">::</span><span class="n">NoMDEntryTypes</span> <span class="n">entry_types</span><span class="p">;</span>
+<span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_BID</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+<span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_OFFER</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+<span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_TRADING_SESSION_HIGH_PRICE</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+<span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_TRADING_SESSION_LOW_PRICE</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+
+<span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">sessionID</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subscribe-to-all-symbols-c">
+<h3>5. Subscribe to All Symbols: C++<a class="headerlink" href="#subscribe-to-all-symbols-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">FixApplication</span><span class="p">::</span><span class="n">onMessage</span><span class="p">(</span><span class="n">const</span> <span class="n">FIX44</span><span class="p">::</span><span class="n">TradingSessionStatus</span><span class="o">&amp;</span> <span class="n">tss</span><span class="p">,</span> <span class="n">const</span> <span class="n">SessionID</span><span class="o">&amp;</span> <span class="n">session_ID</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span> <span class="n">request</span><span class="p">;</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDReqID</span><span class="p">(</span><span class="n">NextRequestID</span><span class="p">()));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">SubscriptionRequestType</span><span class="p">(</span>
+                <span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MarketDepth</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+        <span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span><span class="p">::</span><span class="n">NoMDEntryTypes</span> <span class="n">entry_types</span><span class="p">;</span>
+        <span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_BID</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+        <span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_OFFER</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+        <span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_TRADING_SESSION_HIGH_PRICE</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+        <span class="n">entry_types</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MDEntryType</span><span class="p">(</span><span class="n">MDEntryType_TRADING_SESSION_LOW_PRICE</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">entry_types</span><span class="p">);</span>
+
+        <span class="nb">int</span> <span class="n">symbols_count</span> <span class="o">=</span> <span class="n">IntConvertor</span><span class="p">::</span><span class="n">convert</span><span class="p">(</span><span class="n">tss</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">NoRelatedSym</span><span class="p">));</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">NoRelatedSym</span><span class="p">(</span><span class="n">symbols_count</span><span class="p">));</span>
+        <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">symbols_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">FIX44</span><span class="p">::</span><span class="n">SecurityList</span><span class="p">::</span><span class="n">NoRelatedSym</span> <span class="n">symbols_group_SL</span><span class="p">;</span>
+                <span class="n">tss</span><span class="o">.</span><span class="n">getGroup</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">symbols_group_SL</span><span class="p">);</span>
+                <span class="n">string</span> <span class="n">symbol</span> <span class="o">=</span> <span class="n">symbols_group_SL</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">Symbol</span><span class="p">);</span>
+
+                <span class="n">FIX44</span><span class="p">::</span><span class="n">MarketDataRequest</span><span class="p">::</span><span class="n">NoRelatedSym</span> <span class="n">symbols_group_MDR</span><span class="p">;</span>
+                <span class="n">symbols_group_MDR</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+                <span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">symbols_group_MDR</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">sessionID</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-market-order-c">
+<h3>6. Create Market Order: C++<a class="headerlink" href="#create-market-order-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderSingle</span> <span class="n">order</span><span class="p">;</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">NextClOrdID</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_BUY</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_MARKET</span><span class="p">));</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">order</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-market-range-order-c">
+<h3>7. Create Market Range Order: C++<a class="headerlink" href="#create-market-range-order-c" title="Permalink to this headline">¶</a></h3>
+<p>In the case of a market range order, we set the OrdType to StopLimit and we must set the <code class="docutils literal notranslate"><span class="pre">StopPx</span></code> tag. The <code class="docutils literal notranslate"><span class="pre">StopPx</span></code> tag indicates the worst price we are willing to get filled at; i.e., the stop.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderSingle</span> <span class="n">order</span><span class="p">;</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">NextClOrdID</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_BUY</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_STOPLIMIT</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">StopPx</span><span class="p">(</span><span class="n">stop</span><span class="p">));</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">order</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-entry-pending-order-c">
+<h3>8. Create Entry (Pending) Order: C++<a class="headerlink" href="#create-entry-pending-order-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderSingle</span> <span class="n">order</span><span class="p">;</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">NextClOrdID</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_BUY</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TransactTime</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_LIMIT</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Price</span><span class="p">(</span><span class="n">price</span><span class="p">));</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">order</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-one-cancels-other-oco-order-c">
+<h3>9. Create One-Cancels-Other (OCO) Order: C++<a class="headerlink" href="#create-one-cancels-other-oco-order-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span> <span class="n">olist</span><span class="p">;</span>
+
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListID</span><span class="p">(</span><span class="n">NextClOrdID</span><span class="p">()));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TotNoOrders</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ContingencyType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ContingencyType_ONE_CANCELS_THE_OTHER</span><span class="p">));</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">stop</span><span class="p">;</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_SELL</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">20000</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_STOP</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">StopPx</span><span class="p">(</span><span class="n">stop_price</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">stop</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">limit</span><span class="p">;</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_SELL</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">20000</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_LIMIT</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Price</span><span class="p">(</span><span class="n">limit_price</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">limit</span><span class="p">);</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">olist</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-entry-with-limit-and-stop-els-order-c">
+<h3>10. Create Entry with Limit and Stop (ELS) Order: C++<a class="headerlink" href="#create-entry-with-limit-and-stop-els-order-c" title="Permalink to this headline">¶</a></h3>
+<p>The entry with limit and stop is a FXCM specific contingency type that allows you to associate a stop and limit with a specific position (or market order). In this case, the ContingencyType field must be set to <code class="docutils literal notranslate"><span class="pre">101</span></code> for the ELS contingency. When the stop or limit is executed, or when you close the position, these contingent orders will be deleted automatically.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span> <span class="n">olist</span><span class="p">;</span>
+
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TotNoOrders</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">FIELD</span><span class="p">::</span><span class="n">ContingencyType</span><span class="p">,</span><span class="s2">&quot;101&quot;</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">order</span><span class="p">;</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_BUY</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_MARKET</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">stop</span><span class="p">;</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_SELL</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_STOP</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">StopPx</span><span class="p">(</span><span class="n">stop_price</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">stop</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">limit</span><span class="p">;</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_SELL</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_LIMIT</span><span class="p">));</span>
+<span class="n">limit</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Price</span><span class="p">(</span><span class="n">limit_price</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">limit</span><span class="p">);</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">olist</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-market-order-with-trailing-stop-c">
+<h3>11. Create Market Order with Trailing Stop: C++<a class="headerlink" href="#create-market-order-with-trailing-stop-c" title="Permalink to this headline">¶</a></h3>
+<p>In our example below, we use two orders with ELS contingency type (see above for details on ELS). Specifically, we send both a market order and a stop order. What makes this stop order a trailing stop is the existence of the <code class="docutils literal notranslate"><span class="pre">FXCMPegFluctuatePts(9061)</span></code> tag, which we have enumerated as <code class="docutils literal notranslate"><span class="pre">FXCM_PEG_FLUCTUATE_PTS</span></code>. This field is set to``10`` which means our stop will trail the market at a rate of 10 pips.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span> <span class="n">olist</span><span class="p">;</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">TotNoOrders</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">FIELD</span><span class="p">::</span><span class="n">ContingencyType</span><span class="p">,</span><span class="s2">&quot;101&quot;</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">order</span><span class="p">;</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_BUY</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">order</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_MARKET</span><span class="p">));</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+
+<span class="n">FIX44</span><span class="p">::</span><span class="n">NewOrderList</span><span class="p">::</span><span class="n">NoOrders</span> <span class="n">stop</span><span class="p">;</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdID</span><span class="p">(</span><span class="n">next_ClOrdID</span><span class="p">()));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ListSeqNo</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">ClOrdLinkID</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Account</span><span class="p">(</span><span class="n">account</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Side_SELL</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">Symbol</span><span class="p">(</span><span class="n">symbol</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrderQty</span><span class="p">(</span><span class="mi">10000</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">OrdType_STOP</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FIX</span><span class="p">::</span><span class="n">StopPx</span><span class="p">(</span><span class="n">stop_price</span><span class="p">));</span>
+<span class="n">stop</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">FXCM_PEG_FLUCTUATE_PTS</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">);</span>
+<span class="n">olist</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">stop</span><span class="p">);</span>
+
+<span class="n">FIX</span><span class="p">::</span><span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">olist</span><span class="p">,</span><span class="n">session_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-order-status-and-executed-amount-c">
+<h3>12. Get Order Status and Executed Amount: C++<a class="headerlink" href="#get-order-status-and-executed-amount-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">FixApplication</span><span class="p">::</span><span class="n">onMessage</span><span class="p">(</span><span class="n">const</span> <span class="n">FIX44</span><span class="p">::</span><span class="n">ExecutionReport</span><span class="o">&amp;</span> <span class="n">er</span><span class="p">,</span> <span class="n">const</span> <span class="n">SessionID</span><span class="o">&amp;</span> <span class="n">session_ID</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">string</span> <span class="n">status</span>  <span class="o">=</span> <span class="n">er</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">OrdStatus</span><span class="p">);</span>
+        <span class="n">string</span> <span class="n">execQty</span> <span class="o">=</span> <span class="n">er</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="n">FIELD</span><span class="p">::</span><span class="n">CumQty</span><span class="p">);</span>
+
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;ExecutionReport -&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;  OrderStatus: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">status</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span> <span class="o">/*</span><span class="n">Filled</span><span class="o">*/</span> <span class="o">||</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;8&quot;</span> <span class="o">/*</span><span class="n">Rejected</span> <span class="o">*/</span> <span class="o">||</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span> <span class="o">/*</span><span class="n">Cancelled</span><span class="o">*/</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;    Executed Amount: &quot;</span>  <span class="o">&lt;&lt;</span> <span class="n">execQty</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="request-all-open-positions-c">
+<h3>13. Request All Open Positions: C++<a class="headerlink" href="#request-all-open-positions-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">RequestForPositions</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PosReqID</span><span class="p">(</span><span class="n">NextRequestID</span><span class="p">()));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PosReqType</span><span class="p">(</span><span class="n">PosReqType_POSITIONS</span><span class="p">));</span>
+
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">Account</span><span class="p">(</span><span class="n">account_ID</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">AccountType</span><span class="p">(</span>
+        <span class="n">AccountType_ACCOUNT_IS_CARRIED_ON_NON_CUSTOMER_SIDE_OF_BOOKS_AND_IS_CROSS_MARGINED</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">TransactTime</span><span class="p">());</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">ClearingBusinessDate</span><span class="p">());</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">TradingSessionID</span><span class="p">(</span><span class="s2">&quot;FXCM&quot;</span><span class="p">));</span>
+
+<span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">sessionID</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="request-open-positions-for-a-single-account-c">
+<h3>14. Request Open Positions for a Single Account: C++<a class="headerlink" href="#request-open-positions-for-a-single-account-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">RequestForPositions</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PosReqID</span><span class="p">(</span><span class="n">NextRequestID</span><span class="p">()));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PosReqType</span><span class="p">(</span><span class="n">PosReqType_POSITIONS</span><span class="p">));</span>
+
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">Account</span><span class="p">(</span><span class="n">account_ID</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">SubscriptionRequestType</span><span class="p">(</span><span class="n">SubscriptionRequestType_SNAPSHOT_PLUS_UPDATES</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">AccountType</span><span class="p">(</span>
+        <span class="n">AccountType_ACCOUNT_IS_CARRIED_ON_NON_CUSTOMER_SIDE_OF_BOOKS_AND_IS_CROSS_MARGINED</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">TransactTime</span><span class="p">());</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">ClearingBusinessDate</span><span class="p">());</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">TradingSessionID</span><span class="p">(</span><span class="s2">&quot;FXCM&quot;</span><span class="p">));</span>
+
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">NoPartyIDs</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">FIX44</span><span class="p">::</span><span class="n">RequestForPositions</span><span class="p">::</span><span class="n">NoPartyIDs</span> <span class="n">parties_group</span><span class="p">;</span>
+<span class="n">parties_group</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PartyID</span><span class="p">(</span><span class="s2">&quot;FXCM ID&quot;</span><span class="p">));</span>
+<span class="n">parties_group</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PartyIDSource</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">));</span>
+<span class="n">parties_group</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PartyRole</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="n">parties_group</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">NoPartySubIDs</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">FIX44</span><span class="p">::</span><span class="n">RequestForPositions</span><span class="p">::</span><span class="n">NoPartyIDs</span><span class="p">::</span><span class="n">NoPartySubIDs</span> <span class="n">sub_parties</span><span class="p">;</span>
+<span class="n">sub_parties</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PartySubIDType</span><span class="p">(</span><span class="n">PartySubIDType_SECURITIES_ACCOUNT_NUMBER</span><span class="p">));</span>
+<span class="n">sub_parties</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">PartySubID</span><span class="p">(</span><span class="n">account_ID</span><span class="p">));</span>
+<span class="n">parties_group</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">sub_parties</span><span class="p">);</span>
+<span class="n">request</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="n">parties_group</span><span class="p">);</span>
+
+<span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">sessionID</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-all-waiting-orders-c">
+<h3>15. Get All Waiting Orders: C++<a class="headerlink" href="#get-all-waiting-orders-c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIX44</span><span class="p">::</span><span class="n">OrderMassStatusRequest</span> <span class="n">request</span><span class="p">;</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MassStatusReqID</span><span class="p">(</span><span class="n">NextRequestID</span><span class="p">()));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">MassStatusReqType</span><span class="p">(</span><span class="n">MassStatusReqType_STATUS_FOR_ALL_ORDERS</span><span class="p">));</span>
+<span class="n">request</span><span class="o">.</span><span class="n">setField</span><span class="p">(</span><span class="n">Account</span><span class="p">(</span><span class="n">account_ID</span><span class="p">));</span>
+<span class="n">Session</span><span class="p">::</span><span class="n">sendToTarget</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">sessionID</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fxcm-custom-fields">
+<h2>FXCM Custom fields<a class="headerlink" href="#fxcm-custom-fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-tradingsessionstatus-h">
+<h3>From TradingSessionStatus(h):<a class="headerlink" href="#from-tradingsessionstatus-h" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fxcmsymprecision-9001">
+<h4>FXCMSymPrecision (9001)<a class="headerlink" href="#fxcmsymprecision-9001" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This shows the numerical precision of the security. For example, the USD/JPY security would show a value of 3 for this field because it is quoted to 3 decimal places. AUD/USD would show a value of 5 for this field given that it is quoted to 5 decimal places.</div></blockquote>
+</div>
+<div class="section" id="fxcmsympointsize-9002">
+<h4>FXCMSymPointSize (9002)<a class="headerlink" href="#fxcmsympointsize-9002" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The size of the point (pip) of the security. For example, the EUR/USD security would show a value of 0.0001 for this field. This is useful for many purposes, such as calculating the profit or loss of a position in points.</div></blockquote>
+</div>
+<div class="section" id="fxcmsyminterestbuy-9003">
+<h4>FXCMSymInterestBuy (9003)<a class="headerlink" href="#fxcmsyminterestbuy-9003" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="fxcmsyminterestsell-9004">
+<h4>FXCMSymInterestSell (9004)<a class="headerlink" href="#fxcmsyminterestsell-9004" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>The price is in the currency of your account for the default lot size for your server. If your account is in USD and server default lot size is 10k For example for CAD/JPY 9003(FXCMSymInterestBuy) = 0.64 - you will get $0.64 for 10k 9004(FXCMSymInterestSell) = -1.48 - you will pay $1.48 for 10k The server default lot size you can get from same report from tags: 9017=BASE_UNIT_SIZE 9018=10000</p>
+<p>You can get it also from Trading Station in Simple Dealing Rates under columns Roll S and Roll B</p>
+</div></blockquote>
+</div>
+<div class="section" id="fxcmproductid-9080">
+<h4>FXCMProductID (9080)<a class="headerlink" href="#fxcmproductid-9080" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>FXCMProductID distinguishes each security by its type. There are 5 types of securities: 1-Forex, 2-Index, 3-Commodity, 4-Treasury, and 5-Bullion. As an example, GBP/USD would obviously show a value of 1 for this field, but the CFD Index JPY225 would show a value of 2.</div></blockquote>
+</div>
+<div class="section" id="fxcmconddiststop-9090">
+<h4>FXCMCondDistStop (9090)<a class="headerlink" href="#fxcmconddiststop-9090" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The value of this field indicates the minimum distance for stop orders on an open position. The distance referred to here is the distance between your stop order price and the current market price. For example, assume you want to place a stop order on an existing buy position. Your stop order price then must meet or exceed the minimum distance from the current bid (sell) price.</div></blockquote>
+</div>
+<div class="section" id="fxcmconddistlimit-9091">
+<h4>FXCMCondDistLimit (9091)<a class="headerlink" href="#fxcmconddistlimit-9091" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The value of this field indicates the minimum distance for limit orders on an open position. The distance referred to here is the distance between your limit order price and the current market price. For example, assume you want to place a limit order on an existing buy position. Your limit order price then must meet or exceed the minimum distance from the current Bid (Sell) price.</div></blockquote>
+</div>
+<div class="section" id="fxcmconddistentrystop-9092">
+<h4>FXCMCondDistEntryStop (9092)<a class="headerlink" href="#fxcmconddistentrystop-9092" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This field indicates the minimum distance for new stop entry (pending) orders. The distance referred to here is the distance between your stop entry order price and the current market price. For example, assume you wanted to place a stop entry order to buy. The price of this order must or exceed the minimum distance from the current Ask (Buy) price.</div></blockquote>
+</div>
+<div class="section" id="fxcmconddistentrylimit-9093">
+<h4>FXCMCondDistEntryLimit (9093)<a class="headerlink" href="#fxcmconddistentrylimit-9093" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This field indicates the minimum distance for new limit entry (pending) orders. The distance referred to here is the distance between your limit entry order price and the current market price. For example, assume you wanted to place a limit entry order to buy. The price of this order must or exceed the minimum distance from the current Ask (Buy) price.</div></blockquote>
+</div>
+<div class="section" id="fxcmmaxquantity-9094">
+<h4>FXCMMaxQuantity (9094)<a class="headerlink" href="#fxcmmaxquantity-9094" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This is the largest quantity for which you can place an order.</div></blockquote>
+</div>
+<div class="section" id="fxcmminquantity-9095">
+<h4>FXCMMinQuantity (9095)<a class="headerlink" href="#fxcmminquantity-9095" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This is the smallest quantity for which you can place an order. This field only applies to CFD products. The minimum trade size for Forex must be obtained from the Quantity(53) field from CollateralReport.</div></blockquote>
+</div>
+<div class="section" id="fxcmtradingstatus-9096">
+<h4>FXCMTradingStatus (9096)<a class="headerlink" href="#fxcmtradingstatus-9096" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This field indicates whether the trading desk is opened or closed. When trading is open, this will return “O” for Open. When trading is closed, this will return “C” for Closed. Forex securities are open throughout the entire trading week. However, CFD securities such as Indices often have daily schedules and/or daily break times. In order to determine if a CFD security is both Open and Tradeable, you must refer to the MarketDataSnapshot message. See Requesting Market Data for more on this topic.</div></blockquote>
+</div>
+</div>
+<div class="section" id="from-marketdatasnapshotfullrefresh-w">
+<h3>From MarketDataSnapshotFullRefresh(W):<a class="headerlink" href="#from-marketdatasnapshotfullrefresh-w" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="trading-status">
+<h4>Trading Status<a class="headerlink" href="#trading-status" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="field-quotetype-537">
+<h5>Field: QuoteType(537)<a class="headerlink" href="#field-quotetype-537" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="field-quotecondition-276">
+<h5>Field: QuoteCondition(276)<a class="headerlink" href="#field-quotecondition-276" title="Permalink to this headline">¶</a></h5>
+<blockquote>
+<div>To determine if a specific instrument is open and available for trading, you must refer to the QuoteType(537) and QuoteCondition(276) tags from this message. With QuoteType, a value of 0 = Indicative, and a value of 1 = Tradeable. With QuoteCondition, a value of “A” = Open, and a value of “B” = Closed.</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="from-collateralreport-ba">
+<h3>From CollateralReport(BA):<a class="headerlink" href="#from-collateralreport-ba" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="minimum-order-qty-forex">
+<h4>Minimum Order Qty. - Forex<a class="headerlink" href="#minimum-order-qty-forex" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="field-quantity-53">
+<h5>Field: Quantity(53)<a class="headerlink" href="#field-quantity-53" title="Permalink to this headline">¶</a></h5>
+<blockquote>
+<div>The value of this field represents the minimum quantity for which you can place a Forex order. This minimum quantity is specific to the trading account in the same CollateralReport. The Account(1) field can be used to obtain the AccountID. Most accounts are defaulted to 1,000 (Micro Lot).</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="fxcm-system-parameters">
+<h3>FXCM System Parameters:<a class="headerlink" href="#fxcm-system-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The following is a list of parameter names. You will see these returned as the values for Tag 9017, FXCMParamName. The value of this parameter is found in Tag 9018, FXCMParamValue.</p>
+<div class="section" id="base-crncy">
+<h4>BASE_CRNCY<a class="headerlink" href="#base-crncy" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This parameter shows the currency of the account. Margin, P/L, balance, and equity will all be expressed in this currency. An example base currency would be “USD”.</div></blockquote>
+</div>
+<div class="section" id="server-time-utc">
+<h4>SERVER_TIME_UTC<a class="headerlink" href="#server-time-utc" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The value of this parameter indicates whether or not time values sent from the server will be expressed in UTC. If this is the case, the value of this parameter will be set to “UTC.” If the value of this parameter is not “UTC,” then time values sent from the server will be expressed in the local time zone of the server, which can be checked with the BASE_TIME_ZONE parameter.</div></blockquote>
+</div>
+<div class="section" id="base-time-zone">
+<h4>BASE_TIME_ZONE<a class="headerlink" href="#base-time-zone" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This parameter shows the name of the time zone of the server. For example, “America/New_York.”</div></blockquote>
+</div>
+<div class="section" id="cond-dist">
+<h4>COND_DIST<a class="headerlink" href="#cond-dist" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This parameter shows the minimum recommended distance between the price of new stop or limit orders and the current market price. This is expressed in pips and it is generally defaulted to 0.10. It important to note that CFD securities often have their own minimum stop or limit distances, which should be checked in the SecurityList message.</div></blockquote>
+</div>
+<div class="section" id="cond-dist-entry">
+<h4>COND_DIST_ENTRY<a class="headerlink" href="#cond-dist-entry" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>This parameter shows the minimum recommended distance between the price of new stop entry or limit entry orders and the current market price. This is expressed in pips and it is generally defaulted to 0.10. It important to note that CFD securities often have their own minimum stop entry or limit entry distances, which should be checked in the SecurityList message.</div></blockquote>
+</div>
+<div class="section" id="base-unit-size">
+<h4>BASE_UNIT_SIZE<a class="headerlink" href="#base-unit-size" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The minimum order size allowed for Forex securities. For example, 1,000 (Micro Lot) or 10,000 (Mini Lot). Note that in order to check the minimum order size for CFD securities, it is necessary to check the FXCMMinQuantity (9095) Tag from the SecurityList message. It is recommended that your application relies on this field when determining minimum order size for all securities, including Forex.</div></blockquote>
+</div>
+<div class="section" id="end-trading-day">
+<h4>END_TRADING_DAY<a class="headerlink" href="#end-trading-day" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>The value of this parameter contains the time when the trading day ends. The time is expressed in the format hh:mm:ss, where hh is in 24-hour format, mm is minutes, and ss is seconds. The time is always in UTC time. For example, 21:00:00.</div></blockquote>
 <p><strong>Disclaimer</strong></p>
 <p>High Risk Investment Warning: Trading foreign exchange and/or contracts for differences on margin carries a high level of risk, and may not be suitable for all investors. The possibility exists that you could sustain a loss in excess of your deposited funds and therefore, you should not speculate with capital that you cannot afford to lose. Before deciding to trade the products offered by FXCM you should carefully consider your objectives, financial situation, needs and level of experience. You should be aware of all the risks associated with trading on margin. FXCM provides general advice that does not take into account your objectives, financial situation or needs. The content of this Website must not be construed as personal advice. FXCM recommends you seek advice from a separate financial advisor.</p>
+</div>
 </div>
 </div>
 </div>
