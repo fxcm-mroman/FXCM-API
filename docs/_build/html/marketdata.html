@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Marketdata Download Instructions &mdash; FXCM API Developer Documentation 1.0 documentation</title>
+  <title>Market Data &mdash; FXCM API Developer Documentation 1.0 documentation</title>
   
 
   
@@ -107,7 +107,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fxcmrest.html">REST Sample Codes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#connecting">Connecting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#technical-analysis-sample-codes">Technical Analysis Sample Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#backtest-and-strategy-sample-codes">Backtest and Strategy Sample Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fxcmrest.html#php">PHP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#requirements">Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fxcmrest.html#installation">Installation</a></li>
@@ -146,7 +146,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixconcepts.html">Core Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixconcepts.html">FIX Core Concepts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#tradingsessionstatusrequest-g">TradingSessionStatusRequest (g)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#tradingsessionstatus-message-h">TradingSessionStatus Message (h)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#collateralinquiry-bb">CollateralInquiry (BB)</a></li>
@@ -175,7 +175,7 @@
 <li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#gtc-day-limit-order">GTC/Day Limit Order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#ioc-fok-limit-order">IOC/FOK Limit Order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#stop">Stop</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#gtc-and-day">GTC and DAY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#trailing-stop-peg-order">Trailing Stop Peg Order</a></li>
 </ul>
 </li>
 </ul>
@@ -200,87 +200,23 @@
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#steps-to-retrieve-short-version-of-market-price">Steps To Retrieve Short Version Of Market Price</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#emf">EMF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#execution-disclaimer">Execution Disclaimer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#frequently-asked-questions">Frequently Asked Questions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#error-messages-received">1. Error Messages received</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#a-ora-20103-session-expired">a. ORA-20103: Session expired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#b-ora-20143-order-price-too-far-from-market-price">b. ORA-20143: Order price too far from market price</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#c-ora-20112-limit-price-did-not-pass-validation">c. ORA-20112: Limit price did not pass validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#d-ora-20113-insufficient-margin-in-session">d. ORA-20113: Insufficient margin in session</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#e-ora-20102-access-violation">e. ORA-20102: Access Violation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#f-ora-20105-order-price-did-not-pass-validation">f. ORA-20105: Order price did not pass validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#g-ora-20008-failed-to-create-order-primary-validation">g. ORA-20008: Failed to create order, primary validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#h-tag-specified-out-of-required-order">h. tag specified out of required order</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#how-can-i-tell-what-account-type-i-have">2. How can I tell what account type I have?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#limit-order-day-order-vs-limit-ioc-fok">3. Limit order Day order vs Limit IOC/FOK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">4. What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#how-can-i-get-positions-side-and-quantity-from-open-position-report">5. How can I get Positions side and quantity from open position report?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#how-can-i-get-closed-positions">6. How can I get closed positions?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#how-can-i-close-open-positions">7. How can I close open positions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixdocs/fixfaq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#error-messages-received">Error Messages received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#limit-order-day-order-vs-limit-ioc-fok">Limit order Day order vs Limit IOC/FOK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#how-can-i-get-positions-side-and-quantity-from-open-position-report">How can I get Positions side and quantity from open position report?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#how-can-i-get-closed-positions">How can I get closed positions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#how-can-i-close-open-positions">How can I close open positions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#sample-code-in-c">Sample Code in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#fxcm-custom-fields">FXCM Custom fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixfaq.html#from-tradingsessionstatus-h">From TradingSessionStatus(h)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixfaq.html#from-marketdatasnapshotfullrefresh-w">From MarketDataSnapshotFullRefresh(W)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixfaq.html#from-collateralreport-ba">From CollateralReport(BA)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#sample-code-in-c">Sample Code in C++</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#get-fxcm-system-parameters-c">1. Get FXCM System Parameters: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#get-rollover-interest-c">2. Get Rollover Interest: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#determine-hedging-status-c">3. Determine Hedging Status: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#subscribe-to-a-symbol-c">4. Subscribe to a Symbol: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#subscribe-to-all-symbols-c">5. Subscribe to All Symbols: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-market-order-c">6. Create Market Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-market-range-order-c">7. Create Market Range Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-entry-pending-order-c">8. Create Entry (Pending) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-one-cancels-other-oco-order-c">9. Create One-Cancels-Other (OCO) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-entry-with-limit-and-stop-els-order-c">10. Create Entry with Limit and Stop (ELS) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#create-market-order-with-trailing-stop-c">11. Create Market Order with Trailing Stop: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#get-order-status-and-executed-amount-c">12. Get Order Status and Executed Amount: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#request-all-open-positions-c">13. Request All Open Positions: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#request-open-positions-for-a-single-account-c">14. Request Open Positions for a Single Account: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#get-all-waiting-orders-c">15. Get All Waiting Orders: C++</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcm-custom-fields">FXCM Custom fields</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#from-tradingsessionstatus-h">From TradingSessionStatus(h):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmsymprecision-9001">FXCMSymPrecision (9001)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmsympointsize-9002">FXCMSymPointSize (9002)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmsyminterestbuy-9003">FXCMSymInterestBuy (9003)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmsyminterestsell-9004">FXCMSymInterestSell (9004)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmproductid-9080">FXCMProductID (9080)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmconddiststop-9090">FXCMCondDistStop (9090)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmconddistlimit-9091">FXCMCondDistLimit (9091)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmconddistentrystop-9092">FXCMCondDistEntryStop (9092)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmconddistentrylimit-9093">FXCMCondDistEntryLimit (9093)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmmaxquantity-9094">FXCMMaxQuantity (9094)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmminquantity-9095">FXCMMinQuantity (9095)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcmtradingstatus-9096">FXCMTradingStatus (9096)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#from-marketdatasnapshotfullrefresh-w">From MarketDataSnapshotFullRefresh(W):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#trading-status">Trading Status</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="fixdocs/fixconcepts.html#field-quotetype-537">Field: QuoteType(537)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="fixdocs/fixconcepts.html#field-quotecondition-276">Field: QuoteCondition(276)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#from-collateralreport-ba">From CollateralReport(BA):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#minimum-order-qty-forex">Minimum Order Qty. - Forex</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="fixdocs/fixconcepts.html#field-quantity-53">Field: Quantity(53)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixdocs/fixconcepts.html#fxcm-system-parameters">FXCM System Parameters:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#base-crncy">BASE_CRNCY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#server-time-utc">SERVER_TIME_UTC</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#base-time-zone">BASE_TIME_ZONE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#cond-dist">COND_DIST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#cond-dist-entry">COND_DIST_ENTRY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#base-unit-size">BASE_UNIT_SIZE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixdocs/fixconcepts.html#end-trading-day">END_TRADING_DAY</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="fixdocs/fixfaq.html#fxcm-system-parameters">FXCM System Parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -309,9 +245,24 @@
 </ul>
 <p class="caption"><span class="caption-text">Market Data</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Marketdata Download Instructions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tickdata">TickData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#candledata">CandleData</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tickdata">TickData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-tick-data-code">Sample tick data code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tickdata34-py">TickData34.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tickdata27-py">TickData27.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#candledata">CandleData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-candle-data-code">Sample candle data code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#candledata-pandas-py">CandleData(pandas).py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#candledata34-py">CandleData34.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#candledata27-py">CandleData27.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#order-flow">Order Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sentiment">Sentiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#volume">Volume</a></li>
@@ -366,7 +317,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Marketdata Download Instructions</li>
+      <li>Market Data</li>
     
     
 
@@ -378,9 +329,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="marketdata-download-instructions">
-<h1>Marketdata Download Instructions<a class="headerlink" href="#marketdata-download-instructions" title="Permalink to this headline">¶</a></h1>
-<p>FXCM provides several sample data for free. Historical tick or candle data. Order flow, sentiment and volume.</p>
+  <div class="section" id="market-data">
+<h1>Market Data<a class="headerlink" href="#market-data" title="Permalink to this headline">¶</a></h1>
+<p>FXCM provides several sample data for free. Historical tick, candle, order flow, sentiment and volume data.</p>
 <div class="section" id="tickdata">
 <h2>TickData<a class="headerlink" href="#tickdata" title="Permalink to this headline">¶</a></h2>
 <p>Enjoy free access to our historical Tick Data.</p>
@@ -401,6 +352,111 @@
 </pre></div>
 </div>
 <p>If you are familiar with Python, we have two scripts that you may use for Python 2.7 and Python 3.4</p>
+<div class="section" id="sample-tick-data-code">
+<h3>Sample tick data code<a class="headerlink" href="#sample-tick-data-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tickdata34-py">
+<h4>TickData34.py<a class="headerlink" href="#tickdata34-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Dec 08 15:46:59 2016</span>
+
+<span class="sd">@author: fxcm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">##from StringIO import StringIO</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://tickdata.fxcorporate.com/&#39;</span><span class="c1">##This is the base url</span>
+<span class="n">url_suffix</span> <span class="o">=</span> <span class="s1">&#39;.csv.gz&#39;</span> <span class="c1">##Extension of the file name</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;EURUSD&#39;</span> <span class="c1">##symbol we want to get tick data for</span>
+<span class="c1">##Available Currencies</span>
+<span class="c1">##AUDCAD,AUDCHF,AUDJPY, AUDNZD,CADCHF,EURAUD,EURCHF,EURGBP</span>
+<span class="c1">##EURJPY,EURUSD,GBPCHF,GBPJPY,GBPNZD,GBPUSD,GBPCHF,GBPJPY</span>
+<span class="c1">##GBPNZD,NZDCAD,NZDCHF.NZDJPY,NZDUSD,USDCAD,USDCHF,USDJPY</span>
+
+
+<span class="c1">##The tick files are stored a compressed csv.  The storage structure comes as {symbol}/{year}/{week_of_year}.csv.gz</span>
+<span class="c1">##The first week of the year will be 1.csv.gz where the</span>
+<span class="c1">##last week might be 52 or 53.  That will depend on the year.</span>
+<span class="c1">##Once we have the week of the year we will be able to pull the correct file with the data that is needed.</span>
+<span class="n">start_dt</span> <span class="o">=</span>  <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random start date</span>
+<span class="n">end_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random end date</span>
+
+
+<span class="n">start_wk</span> <span class="o">=</span> <span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="c1">##find the week of the year for the start</span>
+<span class="n">end_wk</span> <span class="o">=</span> <span class="n">end_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">##find the week of the year for the end</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">##pull out the year of the start</span>
+
+<span class="c1">###The URL is a combination of the currency, year, and week of the year.</span>
+<span class="c1">###Example URL https://tickdata.fxcorporate.com/EURUSD/2015/29.csv.gz</span>
+<span class="c1">###The example URL should be the first URL of this example</span>
+
+<span class="c1">##This will loop through the weeks needed, create the correct URL and print out the lenght of the file.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_wk</span><span class="p">,</span> <span class="n">end_wk</span> <span class="p">):</span>
+    <span class="n">url_data</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">symbol</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">url_suffix</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tickdata27-py">
+<h4>TickData27.py<a class="headerlink" href="#tickdata27-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Dec 08 15:46:59 2016</span>
+
+<span class="sd">@author: fxcm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://tickdata.fxcorporate.com/&#39;</span><span class="c1">##This is the base url</span>
+<span class="n">url_suffix</span> <span class="o">=</span> <span class="s1">&#39;.csv.gz&#39;</span> <span class="c1">##Extension of the file name</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;EURUSD&#39;</span> <span class="c1">##symbol we want to get tick data for</span>
+<span class="c1">##Available Currencies</span>
+<span class="c1">##AUDCAD,AUDCHF,AUDJPY, AUDNZD,CADCHF,EURAUD,EURCHF,EURGBP</span>
+<span class="c1">##EURJPY,EURUSD,GBPCHF,GBPJPY,GBPNZD,GBPUSD,GBPCHF,GBPJPY</span>
+<span class="c1">##GBPNZD,NZDCAD,NZDCHF.NZDJPY,NZDUSD,USDCAD,USDCHF,USDJPY</span>
+
+
+<span class="c1">##The tick files are stored a compressed csv.  The storage structure comes as {symbol}/{year}/{week_of_year}.csv.gz</span>
+<span class="c1">##The first week of the year will be 1.csv.gz where the</span>
+<span class="c1">##last week might be 52 or 53.  That will depend on the year.</span>
+<span class="c1">##Once we have the week of the year we will be able to pull the correct file with the data that is needed.</span>
+<span class="n">start_dt</span> <span class="o">=</span>  <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random start date</span>
+<span class="n">end_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random end date</span>
+
+
+<span class="n">start_wk</span> <span class="o">=</span> <span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="c1">##find the week of the year for the start</span>
+<span class="n">end_wk</span> <span class="o">=</span> <span class="n">end_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">##find the week of the year for the end</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">##pull out the year of the start</span>
+
+<span class="c1">###The URL is a combination of the currency, year, and week of the year.</span>
+<span class="c1">###Example URL https://tickdata.fxcorporate.com/EURUSD/2015/29.csv.gz</span>
+<span class="c1">###The example URL should be the first URL of this example</span>
+
+<span class="c1">##This will loop through the weeks needed, create the correct URL and print out the lenght of the file.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_wk</span><span class="p">,</span> <span class="n">end_wk</span> <span class="p">):</span>
+    <span class="n">url_data</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">symbol</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">url_suffix</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Losses can exceed deposits.
@@ -409,6 +465,8 @@ Timestamps are in UTC.
 Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="candledata">
@@ -416,30 +474,197 @@ For more information, you may contact us at <a class="reference external" href="
 <p>Enjoy free access to our historical Time Series or Candle Data.</p>
 <p>Our repository contains Candle Data from 1 January 2012. The data is compiled by trading instrument for that trading week for m1 &amp; H1, and trading year for D1. The files are stored in our public directory and is updated every Monday for minute (m1) and hour (H1) data only:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">periodicity</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">instrument</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">int</span> <span class="n">of</span> <span class="n">week</span> <span class="n">of</span> <span class="n">year</span><span class="p">}</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
-
-<span class="n">Periodicity</span><span class="p">:</span>  <span class="n">m1</span><span class="p">,</span> <span class="n">H1</span><span class="p">,</span> <span class="n">D1</span>
-
-<span class="n">Instrument</span><span class="p">:</span>
-                 <span class="n">AUDCAD</span><span class="p">,</span> <span class="n">AUDCHF</span><span class="p">,</span> <span class="n">AUDJPY</span><span class="p">,</span> <span class="n">AUDNZD</span><span class="p">,</span> <span class="n">CADCHF</span><span class="p">,</span> <span class="n">EURAUD</span><span class="p">,</span>
-     <span class="n">EURCHF</span><span class="p">,</span> <span class="n">EURGBP</span><span class="p">,</span> <span class="n">EURJPY</span><span class="p">,</span> <span class="n">EURUSD</span><span class="p">,</span> <span class="n">GBPCHF</span><span class="p">,</span> <span class="n">GBPJPY</span><span class="p">,</span>
-     <span class="n">GBPNZD</span><span class="p">,</span> <span class="n">GBPUSD</span><span class="p">,</span> <span class="n">NZDCAD</span><span class="p">,</span> <span class="n">NZDCHF</span><span class="p">,</span> <span class="n">NZDJPY</span><span class="p">,</span> <span class="n">NZDUSD</span><span class="p">,</span>
-     <span class="n">USDCAD</span><span class="p">,</span> <span class="n">USDCHF</span><span class="p">,</span> <span class="n">USDJPY</span>
-
-<span class="n">Year</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span>
-
-<span class="n">Week</span><span class="p">:</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">52</span><span class="o">/</span><span class="mi">53</span> <span class="p">(</span><span class="n">only</span> <span class="n">applicable</span> <span class="n">to</span> <span class="n">m1</span> <span class="ow">and</span> <span class="n">H1</span><span class="p">)</span>
-
-<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">minute</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">week</span> <span class="n">of</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span>
-        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">m1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
-
-<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">hourly</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">week</span> <span class="n">of</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span>
-        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">H1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
-
-<span class="n">To</span> <span class="n">give</span> <span class="n">an</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="k">for</span> <span class="n">extracting</span> <span class="n">EURUSD</span> <span class="n">daily</span><span class="o">-</span><span class="n">data</span> <span class="k">for</span> <span class="mi">2012</span> <span class="n">would</span> <span class="n">be</span>
-        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">D1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mf">2012.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
-<p>If you are familiar with Python, we have three scripts that you may use for Python 2.7, Python 3.4, or a pandas data frame</p>
+<p>Periodicity</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="p">,</span> <span class="n">H1</span><span class="p">,</span> <span class="n">D1</span>
+</pre></div>
+</div>
+<p>Instrument</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AUDCAD</span><span class="p">,</span> <span class="n">AUDCHF</span><span class="p">,</span> <span class="n">AUDJPY</span><span class="p">,</span> <span class="n">AUDNZD</span><span class="p">,</span> <span class="n">CADCHF</span><span class="p">,</span> <span class="n">EURAUD</span><span class="p">,</span>
+<span class="n">EURCHF</span><span class="p">,</span> <span class="n">EURGBP</span><span class="p">,</span> <span class="n">EURJPY</span><span class="p">,</span> <span class="n">EURUSD</span><span class="p">,</span> <span class="n">GBPCHF</span><span class="p">,</span> <span class="n">GBPJPY</span><span class="p">,</span>
+<span class="n">GBPNZD</span><span class="p">,</span> <span class="n">GBPUSD</span><span class="p">,</span> <span class="n">NZDCAD</span><span class="p">,</span> <span class="n">NZDCHF</span><span class="p">,</span> <span class="n">NZDJPY</span><span class="p">,</span> <span class="n">NZDUSD</span><span class="p">,</span>
+<span class="n">USDCAD</span><span class="p">,</span> <span class="n">USDCHF</span><span class="p">,</span> <span class="n">USDJPY</span>
+</pre></div>
+</div>
+<p>Year</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span>
+</pre></div>
+</div>
+<p>Week</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="n">to</span> <span class="mi">52</span><span class="o">/</span><span class="mi">53</span> <span class="p">(</span><span class="n">only</span> <span class="n">applicable</span> <span class="n">to</span> <span class="n">m1</span> <span class="ow">and</span> <span class="n">H1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To give an example, the path for extracting EURUSD minute-data for the 1st week of 2012 would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">m1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>To give an example, the path for extracting EURUSD hourly-data for the 1st week of 2012 would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">H1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mf">1.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>To give an example, the path for extracting EURUSD daily-data for 2012 would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">candledata</span><span class="o">.</span><span class="n">fxcorporate</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">D1</span><span class="o">/</span><span class="n">EURUSD</span><span class="o">/</span><span class="mf">2012.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>If you are familiar with Python, we have three scripts that you may use for Python 2.7, Python 3.4, or a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data frame.</p>
+<div class="section" id="sample-candle-data-code">
+<h3>Sample candle data code<a class="headerlink" href="#sample-candle-data-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="candledata-pandas-py">
+<h4>CandleData(pandas).py<a class="headerlink" href="#candledata-pandas-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Feb 08 08:11:38 2018</span>
+
+<span class="sd">@author: fxcm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://candledata.fxcorporate.com/&#39;</span><span class="c1">##This is the base url</span>
+<span class="n">periodicity</span><span class="o">=</span><span class="s1">&#39;m1&#39;</span> <span class="c1">##periodicity, can be m1, H1, D1</span>
+<span class="n">url_suffix</span> <span class="o">=</span> <span class="s1">&#39;.csv.gz&#39;</span> <span class="c1">##Extension of the file name</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;EURUSD&#39;</span>
+<span class="c1">##symbol we want to get tick data for</span>
+<span class="c1">##Available Currencies</span>
+<span class="c1">##AUDCAD,AUDCHF,AUDJPY, AUDNZD,CADCHF,EURAUD,EURCHF,EURGBP</span>
+<span class="c1">##EURJPY,EURUSD,GBPCHF,GBPJPY,GBPNZD,GBPUSD,GBPCHF,GBPJPY</span>
+<span class="c1">##GBPNZD,NZDCAD,NZDCHF.NZDJPY,NZDUSD,USDCAD,USDCHF,USDJPY</span>
+
+
+<span class="c1">##The candle files are stored in compressed csv.  The storage structure comes as {periodicity}/{symbol}/{year}/{week_of_year}.csv.gz</span>
+<span class="c1">##The first week of the year will be 1.csv.gz where the</span>
+<span class="c1">##last week might be 52 or 53.  That will depend on the year.</span>
+<span class="c1">##Once we have the week of the year we will be able to pull the correct</span>
+<span class="c1">##file with the data that is needed.</span>
+<span class="n">start_dt</span> <span class="o">=</span>  <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="c1">##random start date</span>
+<span class="n">end_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random end date</span>
+
+
+<span class="n">start_wk</span> <span class="o">=</span> <span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="c1">##find the week of the year for the start</span>
+<span class="n">end_wk</span> <span class="o">=</span> <span class="n">end_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">##find the week of the year for the end</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">##pull out the year of the start</span>
+
+<span class="c1">###The URL is a combination of the currency, periodicity,  year, and week of the year.</span>
+<span class="c1">###Example URL https://candledata.fxcorporate.com/m1/EURUSD/2017/29.csv.gz</span>
+<span class="c1">###The example URL should be the first URL of this example</span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="c1">##This will loop through the weeks needed, create the correct URL and print out the lenght of the file.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_wk</span><span class="p">,</span> <span class="n">end_wk</span> <span class="p">):</span>
+    <span class="n">url_data</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">periodicity</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">symbol</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">url_suffix</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">tempdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_data</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">tempdata</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="candledata34-py">
+<h4>CandleData34.py<a class="headerlink" href="#candledata34-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Feb 08 07:35:59 2018</span>
+
+<span class="sd">@author: fxcm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">##from StringIO import StringIO</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">ur</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://candledata.fxcorporate.com/&#39;</span><span class="c1">##This is the base url</span>
+<span class="n">periodicity</span><span class="o">=</span><span class="s1">&#39;m1&#39;</span> <span class="c1">##periodicity, can be m1, H1, D1</span>
+<span class="n">url_suffix</span> <span class="o">=</span> <span class="s1">&#39;.csv.gz&#39;</span> <span class="c1">##Extension of the file name</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;EURUSD&#39;</span> <span class="c1">##symbol we want to get candle data for</span>
+<span class="c1">##Available Currencies</span>
+<span class="c1">##AUDCAD,AUDCHF,AUDJPY, AUDNZD,CADCHF,EURAUD,EURCHF,EURGBP</span>
+<span class="c1">##EURJPY,EURUSD,GBPCHF,GBPJPY,GBPNZD,GBPUSD,GBPCHF,GBPJPY</span>
+<span class="c1">##GBPNZD,NZDCAD,NZDCHF.NZDJPY,NZDUSD,USDCAD,USDCHF,USDJPY</span>
+
+
+<span class="c1">##The candle files are stored in compressed csv.  The storage structure comes as {periodicity}/{symbol}/{year}/{week_of_year}.csv.gz</span>
+<span class="c1">##The first week of the year will be 1.csv.gz where the</span>
+<span class="c1">##last week might be 52 or 53.  That will depend on the year.</span>
+<span class="c1">##Once we have the week of the year we will be able to pull the correct file with the data that is needed.</span>
+<span class="n">start_dt</span> <span class="o">=</span>  <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="c1">##random start date</span>
+<span class="n">end_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random end date</span>
+
+
+<span class="n">start_wk</span> <span class="o">=</span> <span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="c1">##find the week of the year for the start</span>
+<span class="n">end_wk</span> <span class="o">=</span> <span class="n">end_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">##find the week of the year for the end</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">##pull out the year of the start</span>
+
+<span class="c1">###The URL is a combination of the currency, periodicity, year, and week of the year.</span>
+<span class="c1">###Example URL https://candledata.fxcorporate.com/m1/EURUSD/2017/29.csv.gz</span>
+<span class="c1">###The example URL should be the first URL of this example</span>
+
+<span class="c1">##This will loop through the weeks needed, create the correct URL and print out the lenght of the file.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_wk</span><span class="p">,</span> <span class="n">end_wk</span> <span class="p">):</span>
+    <span class="n">url_data</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">periodicity</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">symbol</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">url_suffix</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="candledata27-py">
+<h4>CandleData27.py<a class="headerlink" href="#candledata27-py" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Feb 08 07:35:59 2018</span>
+
+<span class="sd">@author: fxcm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://candledata.fxcorporate.com/&#39;</span><span class="c1">##This is the base url</span>
+<span class="n">periodicity</span><span class="o">=</span><span class="s1">&#39;m1&#39;</span> <span class="c1">##periodicity, can be m1, H1, D1</span>
+<span class="n">url_suffix</span> <span class="o">=</span> <span class="s1">&#39;.csv.gz&#39;</span> <span class="c1">##Extension of the file name</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;EURUSD&#39;</span> <span class="c1">##symbol we want to get tick data for</span>
+<span class="c1">##Available Currencies</span>
+<span class="c1">##AUDCAD,AUDCHF,AUDJPY, AUDNZD,CADCHF,EURAUD,EURCHF,EURGBP</span>
+<span class="c1">##EURJPY,EURUSD,GBPCHF,GBPJPY,GBPNZD,GBPUSD,GBPCHF,GBPJPY</span>
+<span class="c1">##GBPNZD,NZDCAD,NZDCHF.NZDJPY,NZDUSD,USDCAD,USDCHF,USDJPY</span>
+
+
+<span class="c1">##The candle files are stored in compressed csv.  The storage structure comes as {periodicity}/{symbol}/{year}/{week_of_year}.csv.gz</span>
+<span class="c1">##The first week of the year will be 1.csv.gz where the</span>
+<span class="c1">##last week might be 52 or 53.  That will depend on the year.</span>
+<span class="c1">##Once we have the week of the year we will be able to pull the correct file with the data that is needed.</span>
+<span class="n">start_dt</span> <span class="o">=</span>  <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="c1">##random start date</span>
+<span class="n">end_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="c1">##random end date</span>
+
+
+<span class="n">start_wk</span> <span class="o">=</span> <span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="c1">##find the week of the year for the start</span>
+<span class="n">end_wk</span> <span class="o">=</span> <span class="n">end_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">##find the week of the year for the end</span>
+<span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_dt</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">##pull out the year of the start</span>
+
+<span class="c1">###The URL is a combination of the currency, periodicity,  year, and week of the year.</span>
+<span class="c1">###Example URL https://candledata.fxcorporate.com/m1/EURUSD/2017/29.csv.gz</span>
+<span class="c1">###The example URL should be the first URL of this example</span>
+
+<span class="c1">##This will loop through the weeks needed, create the correct URL and print out the lenght of the file.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_wk</span><span class="p">,</span> <span class="n">end_wk</span> <span class="p">):</span>
+    <span class="n">url_data</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">periodicity</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">symbol</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">url_suffix</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url_data</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Losses can exceed deposits.
@@ -448,6 +673,8 @@ Timestamps are in UTC.
 Data points are indicative and based on the lowest spreads available exclusively on Active Trader accounts.
 This is for personal use and abides by our EULA.
 For more information, you may contact us at <a class="reference external" href="mailto:api&#37;&#52;&#48;fxcm&#46;com">api<span>&#64;</span>fxcm<span>&#46;</span>com</a>.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="order-flow">

@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Core Concepts" href="fixconcepts.html" />
+    <link rel="next" title="FIX Core Concepts" href="fixconcepts.html" />
     <link rel="prev" title="REST Sample Codes" href="../fxcmrest.html" /> 
 
   
@@ -107,7 +107,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fxcmrest.html">REST Sample Codes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../fxcmrest.html#connecting">Connecting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fxcmrest.html#technical-analysis-sample-codes">Technical Analysis Sample Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fxcmrest.html#backtest-and-strategy-sample-codes">Backtest and Strategy Sample Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fxcmrest.html#php">PHP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../fxcmrest.html#requirements">Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../fxcmrest.html#installation">Installation</a></li>
@@ -146,7 +146,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fixconcepts.html">Core Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fixconcepts.html">FIX Core Concepts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#tradingsessionstatusrequest-g">TradingSessionStatusRequest (g)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#tradingsessionstatus-message-h">TradingSessionStatus Message (h)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#collateralinquiry-bb">CollateralInquiry (BB)</a></li>
@@ -175,7 +175,7 @@
 <li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#gtc-day-limit-order">GTC/Day Limit Order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#ioc-fok-limit-order">IOC/FOK Limit Order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#stop">Stop</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#gtc-and-day">GTC and DAY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#trailing-stop-peg-order">Trailing Stop Peg Order</a></li>
 </ul>
 </li>
 </ul>
@@ -200,87 +200,23 @@
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#steps-to-retrieve-short-version-of-market-price">Steps To Retrieve Short Version Of Market Price</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#emf">EMF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#execution-disclaimer">Execution Disclaimer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#frequently-asked-questions">Frequently Asked Questions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#error-messages-received">1. Error Messages received</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#a-ora-20103-session-expired">a. ORA-20103: Session expired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#b-ora-20143-order-price-too-far-from-market-price">b. ORA-20143: Order price too far from market price</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#c-ora-20112-limit-price-did-not-pass-validation">c. ORA-20112: Limit price did not pass validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#d-ora-20113-insufficient-margin-in-session">d. ORA-20113: Insufficient margin in session</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#e-ora-20102-access-violation">e. ORA-20102: Access Violation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#f-ora-20105-order-price-did-not-pass-validation">f. ORA-20105: Order price did not pass validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#g-ora-20008-failed-to-create-order-primary-validation">g. ORA-20008: Failed to create order, primary validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#h-tag-specified-out-of-required-order">h. tag specified out of required order</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#how-can-i-tell-what-account-type-i-have">2. How can I tell what account type I have?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#limit-order-day-order-vs-limit-ioc-fok">3. Limit order Day order vs Limit IOC/FOK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">4. What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#how-can-i-get-positions-side-and-quantity-from-open-position-report">5. How can I get Positions side and quantity from open position report?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#how-can-i-get-closed-positions">6. How can I get closed positions?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#how-can-i-close-open-positions">7. How can I close open positions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixfaq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#error-messages-received">Error Messages received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#limit-order-day-order-vs-limit-ioc-fok">Limit order Day order vs Limit IOC/FOK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#what-is-the-base-unit-size-also-the-minimum-trade-size-for-all-fx-instruments">What is the Base Unit Size (also the minimum trade size) for all FX instruments?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#how-can-i-get-positions-side-and-quantity-from-open-position-report">How can I get Positions side and quantity from open position report?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#how-can-i-get-closed-positions">How can I get closed positions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#how-can-i-close-open-positions">How can I close open positions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#sample-code-in-c">Sample Code in C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#fxcm-custom-fields">FXCM Custom fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fixfaq.html#from-tradingsessionstatus-h">From TradingSessionStatus(h)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixfaq.html#from-marketdatasnapshotfullrefresh-w">From MarketDataSnapshotFullRefresh(W)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fixfaq.html#from-collateralreport-ba">From CollateralReport(BA)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#sample-code-in-c">Sample Code in C++</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#get-fxcm-system-parameters-c">1. Get FXCM System Parameters: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#get-rollover-interest-c">2. Get Rollover Interest: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#determine-hedging-status-c">3. Determine Hedging Status: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#subscribe-to-a-symbol-c">4. Subscribe to a Symbol: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#subscribe-to-all-symbols-c">5. Subscribe to All Symbols: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-market-order-c">6. Create Market Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-market-range-order-c">7. Create Market Range Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-entry-pending-order-c">8. Create Entry (Pending) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-one-cancels-other-oco-order-c">9. Create One-Cancels-Other (OCO) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-entry-with-limit-and-stop-els-order-c">10. Create Entry with Limit and Stop (ELS) Order: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#create-market-order-with-trailing-stop-c">11. Create Market Order with Trailing Stop: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#get-order-status-and-executed-amount-c">12. Get Order Status and Executed Amount: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#request-all-open-positions-c">13. Request All Open Positions: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#request-open-positions-for-a-single-account-c">14. Request Open Positions for a Single Account: C++</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#get-all-waiting-orders-c">15. Get All Waiting Orders: C++</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="fixconcepts.html#fxcm-custom-fields">FXCM Custom fields</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#from-tradingsessionstatus-h">From TradingSessionStatus(h):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmsymprecision-9001">FXCMSymPrecision (9001)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmsympointsize-9002">FXCMSymPointSize (9002)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmsyminterestbuy-9003">FXCMSymInterestBuy (9003)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmsyminterestsell-9004">FXCMSymInterestSell (9004)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmproductid-9080">FXCMProductID (9080)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmconddiststop-9090">FXCMCondDistStop (9090)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmconddistlimit-9091">FXCMCondDistLimit (9091)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmconddistentrystop-9092">FXCMCondDistEntryStop (9092)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmconddistentrylimit-9093">FXCMCondDistEntryLimit (9093)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmmaxquantity-9094">FXCMMaxQuantity (9094)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmminquantity-9095">FXCMMinQuantity (9095)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#fxcmtradingstatus-9096">FXCMTradingStatus (9096)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#from-marketdatasnapshotfullrefresh-w">From MarketDataSnapshotFullRefresh(W):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#trading-status">Trading Status</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="fixconcepts.html#field-quotetype-537">Field: QuoteType(537)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="fixconcepts.html#field-quotecondition-276">Field: QuoteCondition(276)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#from-collateralreport-ba">From CollateralReport(BA):</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#minimum-order-qty-forex">Minimum Order Qty. - Forex</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="fixconcepts.html#field-quantity-53">Field: Quantity(53)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="fixconcepts.html#fxcm-system-parameters">FXCM System Parameters:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#base-crncy">BASE_CRNCY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#server-time-utc">SERVER_TIME_UTC</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#base-time-zone">BASE_TIME_ZONE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#cond-dist">COND_DIST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#cond-dist-entry">COND_DIST_ENTRY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#base-unit-size">BASE_UNIT_SIZE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fixconcepts.html#end-trading-day">END_TRADING_DAY</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="fixfaq.html#fxcm-system-parameters">FXCM System Parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -309,9 +245,24 @@
 </ul>
 <p class="caption"><span class="caption-text">Market Data</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../marketdata.html">Marketdata Download Instructions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../marketdata.html#tickdata">TickData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../marketdata.html#candledata">CandleData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../marketdata.html">Market Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../marketdata.html#tickdata">TickData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../marketdata.html#sample-tick-data-code">Sample tick data code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../marketdata.html#tickdata34-py">TickData34.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../marketdata.html#tickdata27-py">TickData27.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../marketdata.html#candledata">CandleData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../marketdata.html#sample-candle-data-code">Sample candle data code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../marketdata.html#candledata-pandas-py">CandleData(pandas).py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../marketdata.html#candledata34-py">CandleData34.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../marketdata.html#candledata27-py">CandleData27.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../marketdata.html#order-flow">Order Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marketdata.html#sentiment">Sentiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marketdata.html#volume">Volume</a></li>
@@ -395,6 +346,7 @@
 <li>Install software development environment (SDE). For Java, you can try <a class="reference external" href="https://www.eclipse.org/downloads/">Eclipse</a> or <a class="reference external" href="https://netbeans.org/downloads/">NetBeans</a>.  For C++/C#, please download <a class="reference external" href="https://visualstudio.microsoft.com/downloads/">Visual Studio</a>.</li>
 <li>You also need to download FIX protocol package. <a class="reference external" href="http://www.quickfixj.org/">QuickFix/J or QuickFix/N</a>.</li>
 <li>Download sample <a class="reference download internal" download="" href="../_downloads/a9035bacbd525529371de797b5cb4524/Samplequickfix.cfg"><code class="xref download docutils literal notranslate"><span class="pre">QuickFIX</span> <span class="pre">configuration</span> <span class="pre">file</span></code></a>.</li>
+<li>Download the <a class="reference external" href="https://github.com/fxcm/FIXAPI/blob/master/FIX_quick_start_guide.docx/">quickstart guide</a>.</li>
 </ul>
 </div>
 <div class="section" id="connecting">
@@ -531,7 +483,7 @@ Place market order via 35=D. you will get execution report in <code class="docut
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="fixconcepts.html" class="btn btn-neutral float-right" title="Core Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fixconcepts.html" class="btn btn-neutral float-right" title="FIX Core Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../fxcmrest.html" class="btn btn-neutral" title="REST Sample Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

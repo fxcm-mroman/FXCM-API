@@ -12,8 +12,8 @@ Connecting
 3. `Connecting.ipynb <https://github.com/fxcm/RestAPI/blob/master/fxcmpy-doc/01_connecting.ipynb/>`_
 
 
-Technical Analysis Sample Codes
-===============================
+Backtest and Strategy Sample Codes
+==================================
 
 1. :download:`bt backtest </_downloads/BT_strategy_on_FXCM_data.zip>` using FXCM historical data. What is `bt <http://pmorissette.github.io/bt/>`_?
 

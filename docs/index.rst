@@ -20,6 +20,7 @@ FXCM offers APIs ideal to automate your trading strategies. Learn about our REST
    
    fixdocs/fixapi
    fixdocs/fixconcepts
+   fixdocs/fixfaq.rst
    
 .. toctree::
    :maxdepth: 6

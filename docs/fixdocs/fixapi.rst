@@ -23,6 +23,7 @@ Getting Started
 *	Install software development environment (SDE). For Java, you can try `Eclipse <https://www.eclipse.org/downloads/>`_ or `NetBeans <https://netbeans.org/downloads/>`_.  For C++/C#, please download `Visual Studio <https://visualstudio.microsoft.com/downloads/>`_.
 *	You also need to download FIX protocol package. `QuickFix/J or QuickFix/N <http://www.quickfixj.org/>`_.
 *   Download sample :download:`QuickFIX configuration file </_files/Samplequickfix.cfg>`.
+* Download the `quickstart guide <https://github.com/fxcm/FIXAPI/blob/master/FIX_quick_start_guide.docx/>`_.
 
 Connecting
 ==========
