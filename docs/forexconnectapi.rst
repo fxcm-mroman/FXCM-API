@@ -16,7 +16,7 @@ Getting Started
 ===============
 
 1) Open a `demo Trading Station II account <https://www.fxcm.com/uk/algorithmic-trading/api-trading/>`_.
-2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download/>`_
+2) Download `ForexConnect SDK <http://www.fxcodebase.com/wiki/index.php/Download>`_
 3) Examples codes and documents are included in the ForexConnectAPI packages after installation.
 4) Online documents: :download:`Getting Started </_downloads/Getting_Started-fc.pdf>`
 5) ForexConnect using :download:`Matlab </_downloads/FXCM-MATLAB-master.zip>`
